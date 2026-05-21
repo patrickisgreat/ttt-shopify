@@ -146,7 +146,7 @@
       "name": "t:sections.blocks.video.name",
       "settings": {
         "color_scheme": "",
-        "video_url": "",
+        "video_url": "https://youtu.be/4ScK3RsoMSk",
         "title": "Instructional Video",
         "text": "<p>Prefer to watch? Here's a quick walkthrough of the full process. </p>",
         "align_content": "text-align-center",
@@ -178,29 +178,29 @@
         "faq_item_kw7Xec": {
           "type": "faq_item",
           "settings": {
-            "question": "Lorem ipsum dolor sit amet, consectetur adipiscing?",
-            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas orci netus feugiat ut egestas ut sagittis tincidunt phasellus elit etiam cursus orci in. Id sed montes.</p>"
+            "question": "Do I need any experience?",
+            "answer": "<p>None at all. The app guides you through every step, one thread at a time. If you can follow numbers, you can make a Threaditate.</p>"
           }
         },
         "faq_item_D8zJqt": {
           "type": "faq_item",
           "settings": {
-            "question": "Lorem ipsum dolor sit amet, consectetur?",
-            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas.</p>"
+            "question": "Can I use any photo?",
+            "answer": "<p>Almost any photo works. Portraits and close-ups with clear contrast come out best, since the loom reads light and shadow. Upload a person, a pet, or a place that matters to you.</p>"
           }
         },
         "faq_item_JTeLJB": {
           "type": "faq_item",
           "settings": {
-            "question": "Lorem ipsum dolor sit amet, consectetur adipiscing?",
-            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas.</p>"
+            "question": "How long does it take?",
+            "answer": "<p>Most pieces take about four to eight hours, depending on the photo. The app saves your place after every thread, so you can take it at your own pace.</p>"
           }
         },
         "faq_item_FBchyJ": {
           "type": "faq_item",
           "settings": {
-            "question": "Lorem ipsum dolor sit amet adipiscing?",
-            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas.</p>"
+            "question": "What if I make a mistake?",
+            "answer": "<p>There's nothing to undo. If you lose your place, just continue from your last confirmed step. Small slips tend to blend right into the finished piece.</p>"
           }
         }
       },
@@ -213,11 +213,11 @@
       "name": "FAQ with Image",
       "settings": {
         "color_scheme": "",
-        "heading": "Frequently Asked Questions",
-        "subheading": "Lorem ipsum dolor sit amet consectetur adipiscing elit aenean id volutpat imperdiet quis at pellentesque nunc commodo nunc purus pulvinar nisi fusce.",
+        "heading": "Frequently asked questions",
+        "subheading": "A few quick answers before you begin. The full list is just a tap away.",
         "image": "shopify://shop_images/faq-image.jpg",
-        "button_label": "View more FAQ's",
-        "button_link": "",
+        "button_label": "See all FAQs",
+        "button_link": "shopify://pages/faq",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,

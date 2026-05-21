@@ -27,169 +27,200 @@
     "faq_full_fdH9HE": {
       "type": "faq-full",
       "blocks": {
-        "topic_header_zGCp6T": {
+        "topic_getting_started": {
           "type": "topic_header",
           "settings": {
-            "topic_title": "Getting Started"
+            "topic_title": "Getting started"
           }
         },
-        "faq_item_EnxBqF": {
-          "type": "faq_item",
-          "settings": {
-            "question": "How does Threaditate work?",
-            "answer": "<p>You upload a photo to the app, and it converts it into a personalized string-by-number guide in seconds. Your kit arrives with everything you need: a loom, thread, tools, and a phone stand to hold your guide. From there, you follow the steps, confirm each string placement, and build toward a finished piece one string at a time.</p>"
-          }
-        },
-        "faq_item_XcnwX8": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Is Threaditate hard to do?",
-            "answer": "<p>Not really. Threaditate is designed so that no crafting background is required. The app accounts for that from the first step. It might look complicated in photos, but the guided confirmation process breaks the whole project into a series of small, manageable moves. If you can place a string and tap confirm, you can finish a Threaditate.</p>"
-          }
-        },
-        "faq_item_ExUz6V": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What skill level do I need?",
-            "answer": "<p>Zero experience required. The app converts your photo into a numbered guide and walks you through every placement in real time. There's no prior knowledge assumed at any step. If you can follow a confirmed sequence, you can finish a Threaditate.</p>"
-          }
-        },
-        "topic_header_RLpthH": {
-          "type": "topic_header",
-          "settings": {
-            "topic_title": "The Kit"
-          }
-        },
-        "faq_item_eeaBHi": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What exactly do I get with my order?",
-            "answer": "<p>The full kit includes: 20\" interlocking loom (pins pre-placed, tool-free assembly), pre-cut thread set with spool holder, precision stringing tool, numbered paper template, wooden phone stand, zip ties, convertible easel box, and free access to the Threaditate companion app. Open the box and you're ready to start your session the same day.</p>"
-          }
-        },
-        "faq_item_kA8bGJ": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Do I need the app?",
-            "answer": "<p>The app is what makes Threaditate guided rather than instructional. Without it, you have a loom and thread. With it, you have a real-time session that walks you through every string placement from your specific photo. It's free, available on iOS and Android, and included with every kit.</p>"
-          }
-        },
-        "faq_item_DdcYmc": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Do I need any extra tools or materials?",
-            "answer": "<p>Nothing extra needed. The kit is complete: loom, thread, tools, phone stand, easel, and app. The box even converts to a stable work surface, so you don't need a separate stand. Your first session can start the same day the kit arrives.</p>"
-          }
-        },
-        "topic_header_JeRzp6": {
-          "type": "topic_header",
-          "settings": {
-            "topic_title": "The Process"
-          }
-        },
-        "faq_item_jEKgbr": {
-          "type": "faq_item",
-          "settings": {
-            "question": "How long does it take?",
-            "answer": "<p>The estimated completion time is between 4-8 hours, design-dependent. Sessions can be paused and resumed at any point — progress is saved automatically in the app. No session time limits. No restart required if you step away.</p>"
-          }
-        },
-        "faq_item_Ah76tC": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What if I make a mistake?",
-            "answer": "<p>Keep going. Threaditate's loom is forgiving by design, so small errors tend to blend into the finished piece in a way that surprises most first-time makers. And because the app confirms each step individually, losing your place only means returning to your last confirmed string, not starting over.</p>"
-          }
-        },
-        "faq_item_VJJHrx": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Can I pause and come back to it?",
-            "answer": "<p>Yes. The app saves your progress after every confirmed step, so you can put it down and pick it up whenever you're ready. Some people finish in one sitting. Others take it a session at a time over the course of a week. The guide holds your place either way.</p>"
-          }
-        },
-        "topic_header_kzUxT3": {
-          "type": "topic_header",
-          "settings": {
-            "topic_title": "Orders & Shipping"
-          }
-        },
-        "faq_item_48VkfE": {
-          "type": "faq_item",
-          "settings": {
-            "question": "How long does shipping take?",
-            "answer": "<p>Threaditate ships within [X] business days of your order. Standard delivery takes [X–X] business days from there. Expedited options are available at checkout. You'll receive a tracking number as soon as your kit leaves our warehouse.</p>"
-          }
-        },
-        "faq_item_YpPCJF": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What's your return policy?",
-            "answer": "<p>Need to fill in</p>"
-          }
-        },
-        "topic_header_GYGmRf": {
-          "type": "topic_header",
-          "settings": {
-            "topic_title": "About Threaditate"
-          }
-        },
-        "faq_item_JThUHp": {
+        "q_what_is": {
           "type": "faq_item",
           "settings": {
             "question": "What is Threaditate?",
-            "answer": "<p>Threaditate is a guided hands-on art kit that turns any photo into custom string art. You upload a photo, the app converts it into a step-by-step instruction sequence, and you follow along string by string until the piece is finished and ready to display. No crafting background needed. Everything ships in the box.</p>"
+            "answer": "<p>Threaditate turns a photo you love into string art you make by hand. You upload the photo to the app, it creates a numbered pattern, and you follow that pattern thread by thread on a 20-inch loom until your picture appears. No experience needed, and everything you need comes in the kit.</p>"
           }
         },
-        "faq_item_JbjnLA": {
+        "q_any_photo": {
           "type": "faq_item",
           "settings": {
-            "question": "Who is Threaditate for?",
-            "answer": "<p>Threaditate was built for anyone who wants to make something by hand but doesn't want the overhead of figuring out a complicated craft. That includes first-time makers, experienced crafters looking for a more personal project, people who want a low-screen creative outlet, and anyone who's ever started a DIY kit and not finished it. If you have a photo that matters and a few hours to give it, Threaditate is for you.</p>"
+            "question": "Can I use any photo?",
+            "answer": "<p>Almost any photo works. Portraits and close-ups with clear contrast tend to come out best, since the loom reads light and shadow rather than fine detail. A favorite person, a pet, a place that means something to you. Upload it, and the app does the rest.</p>"
           }
         },
-        "faq_item_naaHUn": {
+        "q_experience": {
           "type": "faq_item",
           "settings": {
-            "question": "What makes String Ring different from other string art kits?",
-            "answer": "<p>Most string art kits give you a preset pattern and leave the rest to you. Threaditate gives you a guided session built from your own photo. The companion app converts any image into a real-time, step-confirmed instruction sequence, so you always know exactly where the next string goes. No other string art kit does this.</p>"
+            "question": "Do I need any experience?",
+            "answer": "<p>None at all. The app walks you through every step, one thread at a time, so there's nothing to figure out on your own. If you can follow numbers, you can make a Threaditate.</p>"
           }
         },
-        "faq_item_VewiGw": {
+        "topic_the_kit": {
+          "type": "topic_header",
+          "settings": {
+            "topic_title": "The kit"
+          }
+        },
+        "q_whats_in_kit": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I restring my Threaditate?",
-            "answer": "<p>Yes! Each Threaditate can be re-strung as many times as you’d like using the same frame. Simply remove the thread and start again with a new design.</p><p>If you’d like to create multiple pieces simultaneously, you’ll need additional kits, as each frame is designed to hold one artwork at a time.</p>"
+            "question": "What's in the kit?",
+            "answer": "<p>Your kit comes with a 20-inch birch loom set with 240 pins, thread, and free access to the Threaditate app. Open the box and you have everything you need to start the same day.</p>"
+          }
+        },
+        "q_need_app": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I need the app?",
+            "answer": "<p>Yes, and it's free. The app is what turns your photo into a pattern and guides you through each thread in order. It works on iPhone and Android, and access is included with every kit.</p>"
+          }
+        },
+        "q_other_tools": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I need any other tools or supplies?",
+            "answer": "<p>Nothing extra. The loom, the pins, the thread, and the app are all you need. Set aside a comfortable spot with good light, and you're ready to begin.</p>"
+          }
+        },
+        "topic_the_process": {
+          "type": "topic_header",
+          "settings": {
+            "topic_title": "The process"
+          }
+        },
+        "q_how_long": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does it take?",
+            "answer": "<p>Most pieces take about four to eight hours, depending on the photo. There's no clock, and you don't have to finish in one sitting. The app saves your place after every thread, so you can take it at your own pace.</p>"
+          }
+        },
+        "q_lose_place": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if I lose my place?",
+            "answer": "<p>The app remembers exactly where you stopped, down to the last thread you confirmed. Step away for an hour or a week, then pick up right where you left off.</p>"
+          }
+        },
+        "q_mistake": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if I make a mistake?",
+            "answer": "<p>There's nothing to undo. If a thread goes in the wrong spot or you lose track, you simply carry on from your last confirmed step. Small slips tend to disappear into the finished piece, and that's part of the charm.</p>"
+          }
+        },
+        "q_thread_breaks": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if the thread breaks?",
+            "answer": "<p>It rarely happens, but if it does, tie the two ends together in a small knot and keep going. The knot tucks behind the pins and won't show in your finished piece.</p>"
+          }
+        },
+        "q_pause": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I pause and come back to it?",
+            "answer": "<p>Anytime. The app holds your progress automatically, so a Threaditate fits around your life. Some people finish in an afternoon. Others thread a little each evening over a week.</p>"
+          }
+        },
+        "topic_after_finish": {
+          "type": "topic_header",
+          "settings": {
+            "topic_title": "After you finish"
+          }
+        },
+        "q_display": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I display my finished piece?",
+            "answer": "<p>Your finished piece is made to be seen. The 20-inch loom looks at home on a wall, a shelf, or an easel. Find a spot with good light and let it become the conversation piece it is.</p>"
+          }
+        },
+        "q_reuse": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I make a new piece with the same loom?",
+            "answer": "<p>Yes. When you're ready for a new picture, remove the thread and start fresh with a new pattern on the same loom. Each loom holds one piece at a time, so to make several at once, simply add more kits.</p>"
+          }
+        },
+        "topic_orders": {
+          "type": "topic_header",
+          "settings": {
+            "topic_title": "Orders and shipping"
+          }
+        },
+        "q_shipping": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Orders ship within [confirm] business days, and standard delivery takes another [confirm] business days from there. You'll get a tracking link as soon as your kit is on its way.</p>"
+          }
+        },
+        "q_returns": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What's your return policy?",
+            "answer": "<p>[Add your return policy here.]</p>"
+          }
+        },
+        "q_missing": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if something is missing from my kit?",
+            "answer": "<p>We'll make it right. Email us at [support email] with your order number and what you're missing, and we'll send a replacement.</p>"
+          }
+        },
+        "topic_good_to_know": {
+          "type": "topic_header",
+          "settings": {
+            "topic_title": "Good to know"
+          }
+        },
+        "q_photo_privacy": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What happens to my photo?",
+            "answer": "<p>Your photo is used only to create your pattern, and we never share it. [Confirm your retention or deletion policy here.]</p>"
+          }
+        },
+        "q_buy_finished": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I buy a finished piece instead of making it myself?",
+            "answer": "<p>Threaditate is about the making. The quiet hours you spend creating something by hand are the whole point, so we don't sell finished pieces. We give you the kit and the guidance to make your own.</p>"
           }
         }
       },
       "block_order": [
-        "topic_header_zGCp6T",
-        "faq_item_EnxBqF",
-        "faq_item_XcnwX8",
-        "faq_item_ExUz6V",
-        "topic_header_RLpthH",
-        "faq_item_eeaBHi",
-        "faq_item_kA8bGJ",
-        "faq_item_DdcYmc",
-        "topic_header_JeRzp6",
-        "faq_item_jEKgbr",
-        "faq_item_Ah76tC",
-        "faq_item_VJJHrx",
-        "topic_header_kzUxT3",
-        "faq_item_48VkfE",
-        "faq_item_YpPCJF",
-        "topic_header_GYGmRf",
-        "faq_item_JThUHp",
-        "faq_item_JbjnLA",
-        "faq_item_naaHUn",
-        "faq_item_VewiGw"
+        "topic_getting_started",
+        "q_what_is",
+        "q_any_photo",
+        "q_experience",
+        "topic_the_kit",
+        "q_whats_in_kit",
+        "q_need_app",
+        "q_other_tools",
+        "topic_the_process",
+        "q_how_long",
+        "q_lose_place",
+        "q_mistake",
+        "q_thread_breaks",
+        "q_pause",
+        "topic_after_finish",
+        "q_display",
+        "q_reuse",
+        "topic_orders",
+        "q_shipping",
+        "q_returns",
+        "q_missing",
+        "topic_good_to_know",
+        "q_photo_privacy",
+        "q_buy_finished"
       ],
       "name": "FAQ Full Page",
       "settings": {
         "color_scheme": "",
-        "heading": "Frequently Asked Questions",
-        "subheading": "Quick answers to help you feel confident getting started.",
+        "heading": "Frequently asked questions",
+        "subheading": "Quick answers to help you feel confident before you begin.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
@@ -200,9 +231,9 @@
       "type": "cta-banner",
       "name": "CTA Banner",
       "settings": {
-        "heading": "Still have Questions?",
-        "subheading": "If you didn’t find what you were looking for, we’re happy to help.",
-        "button_label": "Contact Us →",
+        "heading": "Still have questions?",
+        "subheading": "If you didn't find what you were looking for, we're happy to help.",
+        "button_label": "Get in touch →",
         "button_link": "shopify://pages/contact",
         "caption": "",
         "md_padding_top": 120,

@@ -1,0 +1,65 @@
+name: Shopify theme
+
+# Auto-deploys this theme to Shopify.
+#  - On every PR to main: lint the theme (Theme Check). No deploy.
+#  - On every push to main: lint, then push the theme to the store.
+#
+# Required repo secrets (Settings -> Secrets and variables -> Actions):
+#   SHOPIFY_FLAG_STORE        your-store.myshopify.com
+#   SHOPIFY_CLI_THEME_TOKEN   a Theme Access password (see notes at bottom)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Never run two deploys at once; a newer push supersedes an in-flight one.
+concurrency:
+  group: shopify-theme-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: Theme check (lint)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Shopify CLI
+        run: npm install -g @shopify/cli@latest
+      - name: Run Theme Check
+        # Only fail the build on real errors, not warnings/suggestions.
+        run: shopify theme check --fail-level error
+
+  deploy:
+    name: Deploy to Shopify
+    needs: check
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Shopify CLI
+        run: npm install -g @shopify/cli@latest
+      - name: Push theme to Shopify
+        env:
+          SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}
+          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+        # --live --allow-live pushes to the PUBLISHED theme without a prompt.
+        # --ignore config/settings_data.json keeps CI from overwriting settings
+        #   a merchant changed in the Theme Editor (theme-editor data lives there).
+        #
+        # SAFER ALTERNATIVE: push to a dedicated, unpublished theme instead of
+        # live, by replacing "--live --allow-live" with "--theme <THEME_ID>".
+        # Find IDs with: shopify theme list
+        run: |
+          shopify theme push \
+            --live --allow-live \
+            --ignore config/settings_data.json \
+            --json
