@@ -1,0 +1,284 @@
+{{ 'section-testimonials-slider.css' | asset_url | stylesheet_tag }}
+
+<div
+  id="{{ section.id }}"
+  class="testimonials-section container pt pb sm-pt sm-pb color-{{ section.settings.color_scheme }}"
+  style="
+    --pt: {{ section.settings.padding_top | append: 'px' }};
+    --pb: {{ section.settings.padding_bottom | append: 'px' }};
+    --sm-pt: {{ section.settings.md_padding_top | append: 'px' }};
+    --sm-pb: {{ section.settings.md_padding_bottom | append: 'px' }};
+  "
+>
+
+  <div class="testimonials__header text-align-center">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="testimonials__title">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <p class="testimonials__subheading">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+  </div>
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="testimonials__slider-wrapper">
+      <div class="testimonials__slider" id="testimonials-slider-{{ section.id }}">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'testimonial' -%}
+            <div class="testimonials__card-wrapper" {{ block.shopify_attributes }}>
+              <div class="testimonials__card">
+                <div class="testimonials__card-top">
+                  <div class="testimonials__avatar">
+                    {%- if block.settings.avatar != blank -%}
+                      <img
+                        src="{{ block.settings.avatar | img_url: '120x120', crop: 'center' }}"
+                        alt="{{ block.settings.author_name }}"
+                        width="56"
+                        height="56"
+                        loading="lazy"
+                      >
+                    {%- else -%}
+                      <div class="testimonials__avatar-placeholder">
+                        {{ block.settings.author_name | slice: 0 | upcase }}
+                      </div>
+                    {%- endif -%}
+                  </div>
+                  <div class="testimonials__quote-mark" aria-hidden="true">&rdquo;</div>
+                </div>
+
+                <div class="testimonials__card-body">
+                  {%- if block.settings.quote_headline != blank -%}
+                    <p class="testimonials__quote-headline">&ldquo;{{ block.settings.quote_headline }}&rdquo;</p>
+                  {%- endif -%}
+                  {%- if block.settings.quote_body != blank -%}
+                    <p class="testimonials__quote-body">{{ block.settings.quote_body }}</p>
+                  {%- endif -%}
+                </div>
+
+                <div class="testimonials__card-footer">
+                  {%- if block.settings.author_name != blank -%}
+                    <p class="testimonials__author-name">{{ block.settings.author_name }}</p>
+                  {%- endif -%}
+                  {%- if block.settings.author_role != blank -%}
+                    <p class="testimonials__author-role">{{ block.settings.author_role }}</p>
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    {%- if section.blocks.size > 1 -%}
+      <div class="testimonials__dots" id="testimonials-dots-{{ section.id }}" aria-label="Testimonial navigation">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'testimonial' -%}
+            <button
+              class="testimonials__dot{% if forloop.first %} is-active{% endif %}"
+              data-index="{{ forloop.index0 }}"
+              aria-label="Go to testimonial {{ forloop.index }}"
+            ></button>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+
+</div>
+
+<script>
+  (function() {
+    const slider = document.getElementById('testimonials-slider-{{ section.id }}');
+    const dotsContainer = document.getElementById('testimonials-dots-{{ section.id }}');
+    if (!slider || !dotsContainer) return;
+
+    const dots = dotsContainer.querySelectorAll('.testimonials__dot');
+
+    // Update active dot based on scroll position
+    function updateDots() {
+      const cards = slider.querySelectorAll('.testimonials__card-wrapper');
+      if (!cards.length) return;
+      const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(slider).gap || 0);
+      const scrollLeft = slider.scrollLeft;
+      // Find which "page" we're on (groups of visible cards)
+      const visibleCount = Math.round(slider.offsetWidth / cardWidth) || 1;
+      const page = Math.round(scrollLeft / (cardWidth * visibleCount));
+      dots.forEach((dot, i) => dot.classList.toggle('is-active', i === page));
+    }
+
+    // Click dot to scroll
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        const cards = slider.querySelectorAll('.testimonials__card-wrapper');
+        if (!cards.length) return;
+        const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(slider).gap || 0);
+        const visibleCount = Math.round(slider.offsetWidth / cardWidth) || 1;
+        slider.scrollTo({ left: i * cardWidth * visibleCount, behavior: 'smooth' });
+      });
+    });
+
+    slider.addEventListener('scroll', updateDots, { passive: true });
+    updateDots();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Testimonials Slider",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "default",
+      "label": "Color scheme"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What People Are Saying"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Real experiences from people who turned meaningful photos into finished art."
+    },
+    {
+      "type": "header",
+      "content": "Desktop layout"
+    },
+    {
+      "type": "range",
+      "id": "md_padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "md_padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Testimonial",
+      "type": "testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Avatar photo",
+          "info": "Square image recommended. Will be cropped to a circle."
+        },
+        {
+          "type": "text",
+          "id": "quote_headline",
+          "label": "Quote headline",
+          "default": "Lorem ipsum dolor",
+          "info": "Short bold pull-quote. Shown in bold at the top of the card."
+        },
+        {
+          "type": "textarea",
+          "id": "quote_body",
+          "label": "Full quote",
+          "default": "Lorem ipsum dolor sit ametolil col consectetur adipiscing lectus a nunc mauris scelerisque sed egestas."
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author name",
+          "default": "John Carter"
+        },
+        {
+          "type": "text",
+          "id": "author_role",
+          "label": "Author role / descriptor",
+          "default": "First-time creator"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials Slider",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "Lorem ipsum dolor",
+            "quote_body": "Lorem ipsum dolor sit ametolil col consectetur adipiscing lectus a nunc mauris scelerisque sed egestas.",
+            "author_name": "John Carter",
+            "author_role": "First-time creator"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "Lorem ipsum dolor",
+            "quote_body": "Ultrices eros in cursus turpis massa tincidunt sem nulla pharetra diam sit amet nisl suscipit adipis.",
+            "author_name": "Sophie Moore",
+            "author_role": "First-time creator"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "Lorem ipsum dolor",
+            "quote_body": "Convallis posuere morbi leo urna molestie at elementum eu facilisis sapien pellentesque habitant.",
+            "author_name": "Andy Smith",
+            "author_role": "First-time creator"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "Lorem ipsum dolor",
+            "quote_body": "Convallis posuere morbi leo urna molestie at elementum eu facilisis sapien pellentesque habitant.",
+            "author_name": "Andy Smith",
+            "author_role": "First-time creator"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,192 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "alternative-2",
+        "show_breadcrumb": false,
+        "image_layout": "hide",
+        "center_text": true,
+        "md_padding_top": 160,
+        "md_padding_bottom": 160,
+        "padding_top": 144,
+        "padding_bottom": 80
+      }
+    },
+    "hero_VKqt4B": {
+      "type": "hero",
+      "blocks": {
+        "image_xGaF7a": {
+          "type": "image",
+          "settings": {
+            "media_toggle": "show_video",
+            "video_url": "",
+            "video_url_mobile": ""
+          }
+        },
+        "text_3cmaUq": {
+          "type": "text",
+          "settings": {
+            "text": "<h1>{{ collection.title }}</h1>{{ collection.description }}",
+            "sm_size_multiplier": "sm-size--huge",
+            "sm_margin_top": 0,
+            "size_multiplier": "size--default",
+            "margin_top": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_xGaF7a",
+        "text_3cmaUq"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "overlay_opacity": 20,
+        "media_link": "",
+        "enable_full_width": true,
+        "section_height_desktop": "by_pixels",
+        "section_pixel_height_desktop": 540,
+        "content_width": "col-sm-max-4",
+        "content_align_desktop": "sm-vertical-center sm-horizontal-center",
+        "desktop_alignment": "sm-text-align-center",
+        "md_padding_top": 0,
+        "md_padding_bottom": 0,
+        "section_height": "by_pixels",
+        "section_pixel_height": 400,
+        "content_align_mobile": "vertical-center horizontal-center",
+        "mobile_alignment": "text-align-center",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "divider_HEcjPW": {
+      "type": "divider",
+      "blocks": {
+        "standard_BhFqEa": {
+          "type": "standard",
+          "settings": {
+            "divider_graphics": "waves",
+            "top_part_color": "rgba(0,0,0,0)",
+            "middle_part_color": "linear-gradient(54deg, rgba(114, 255, 179, 1) 14%, rgba(176, 255, 121, 1) 49.64%, rgba(255, 250, 99, 1) 85%)",
+            "bottom_part_color": "#ffffff",
+            "position": "top-previous",
+            "flip_horizontal": false,
+            "flip_vertical": false,
+            "sm_graphics_height": 0,
+            "sm_graphics_width": 100,
+            "graphics_height": 0,
+            "graphics_width": 100
+          }
+        }
+      },
+      "block_order": [
+        "standard_BhFqEa"
+      ],
+      "settings": {
+        "md_padding_top": 0,
+        "md_padding_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "products": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "banner_YdDt7L": {
+          "type": "banner",
+          "settings": {
+            "video_file_name": "",
+            "nth_item": 1,
+            "only_on_first_page": true,
+            "url": "",
+            "title": "",
+            "title_style": "body-text",
+            "content_alignment": "vertical-bottom horizontal-left",
+            "text_color": "#ffffff",
+            "overlay_color": "#111111",
+            "overlay_opacity": 0,
+            "md_column_span": 1,
+            "sm_column_span": 1,
+            "column_span": 1
+          }
+        },
+        "banner_fYgFGq": {
+          "type": "banner",
+          "settings": {
+            "video_file_name": "",
+            "nth_item": 4,
+            "only_on_first_page": true,
+            "url": "",
+            "title": "",
+            "title_style": "body-text",
+            "content_alignment": "vertical-bottom horizontal-left",
+            "text_color": "#ffffff",
+            "overlay_color": "#111111",
+            "overlay_opacity": 0,
+            "md_column_span": 1,
+            "sm_column_span": 1,
+            "column_span": 1
+          }
+        },
+        "banner_wfAnLR": {
+          "type": "banner",
+          "settings": {
+            "video_file_name": "",
+            "nth_item": 7,
+            "only_on_first_page": true,
+            "url": "",
+            "title": "",
+            "title_style": "body-text",
+            "content_alignment": "vertical-bottom horizontal-left",
+            "text_color": "#ffffff",
+            "overlay_color": "#111111",
+            "overlay_opacity": 0,
+            "md_column_span": 1,
+            "sm_column_span": 1,
+            "column_span": 1
+          }
+        }
+      },
+      "block_order": [
+        "banner_YdDt7L",
+        "banner_fYgFGq",
+        "banner_wfAnLR"
+      ],
+      "settings": {
+        "color_scheme": "color-main",
+        "products_per_page": 9,
+        "show_count": true,
+        "enable_sorting": true,
+        "enable_filtering": true,
+        "enable_swatches": true,
+        "pagination_type": "button",
+        "enable_full_width": false,
+        "md_items_per_row": 3,
+        "sm_grid_gap": -1,
+        "md_padding_top": 24,
+        "md_padding_bottom": 56,
+        "sm_items_per_row": 3,
+        "items_per_row": 1,
+        "grid_gap": -1,
+        "padding_top": 24,
+        "padding_bottom": 32
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "hero_VKqt4B",
+    "divider_HEcjPW",
+    "products"
+  ]
+}

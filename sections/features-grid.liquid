@@ -1,0 +1,219 @@
+{{ 'section-features-grid.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign section_heading = section.settings.heading
+  assign section_subheading = section.settings.subheading
+-%}
+
+<div
+  id="{{ section.id }}"
+  class="features-grid-section container pt pb sm-pt sm-pb color-{{ section.settings.color_scheme }}"
+  style="
+    --pt: {{ section.settings.padding_top | append: 'px' }};
+    --pb: {{ section.settings.padding_bottom | append: 'px' }};
+    --sm-pt: {{ section.settings.md_padding_top | append: 'px' }};
+    --sm-pb: {{ section.settings.md_padding_bottom | append: 'px' }};
+  "
+>
+  <div class="features-grid__header text-align-center sm-text-align-center">
+    {%- if section_heading != blank -%}
+      <h2 class="features-grid__title">{{ section_heading }}</h2>
+    {%- endif -%}
+    {%- if section_subheading != blank -%}
+      <p class="features-grid__subheading">{{ section_subheading }}</p>
+    {%- endif -%}
+  </div>
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="features-grid__grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'feature_card' -%}
+          <div class="features-grid__card-wrapper" {{ block.shopify_attributes }}>
+            <div class="features-grid__card">
+              {%- if block.settings.icon != blank -%}
+                <div class="features-grid__icon">
+                  <img
+                    src="{{ block.settings.icon | img_url: '80x80' }}"
+                    alt="{{ block.settings.title }}"
+                    width="48"
+                    height="48"
+                    loading="lazy"
+                  >
+                </div>
+              {%- elsif block.settings.icon_svg != blank -%}
+                <div class="features-grid__icon">
+                  {{ block.settings.icon_svg }}
+                </div>
+              {%- endif -%}
+              {%- if block.settings.title != blank -%}
+                <h3 class="features-grid__card-title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+              {%- if block.settings.description != blank -%}
+                <p class="features-grid__card-description">{{ block.settings.description }}</p>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Features Grid",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "default",
+      "label": "Color scheme"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Meet String Ring"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "A hands-on, guided art kit designed to help you unplug, create, and actually finish something meaningful."
+    },
+    {
+      "type": "header",
+      "content": "Desktop layout"
+    },
+    {
+      "type": "range",
+      "id": "md_padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "md_padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Feature Card",
+      "type": "feature_card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon image",
+          "info": "Upload an icon image (SVG or PNG, ideally 80x80px). Or paste SVG code below."
+        },
+        {
+          "type": "textarea",
+          "id": "icon_svg",
+          "label": "Icon SVG code",
+          "info": "Paste raw SVG code here if not using an image. Icon image above takes priority."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Feature Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "A short description of this feature."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Features Grid",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "feature_card",
+          "settings": {
+            "title": "Mistake-Friendly",
+            "description": "Keep going even if you lose your place — no undoing required."
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "title": "Beginner-Friendly",
+            "description": "No crafting experience needed. Just follow the guided steps."
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "title": "Custom from Any Photo",
+            "description": "Turn any meaningful image into one-of-a-kind string art."
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "title": "All-in-One Kit",
+            "description": "Everything you need comes in the box — no extra tools."
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "title": "Calming & Hands-On",
+            "description": "A screen-optional way to slow down and focus."
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "title": "Finish with Confidence",
+            "description": "Designed to be satisfying from the first string to the last."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

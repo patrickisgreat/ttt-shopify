@@ -1,0 +1,166 @@
+/* =================
+   FAQ Full Page Section
+   ================= */
+
+/* Header */
+.faq-full__header {
+  max-width: 680px;
+  margin: 0 auto 64px;
+}
+
+.faq-full__title {
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
+  font-style: var(--font-heading-style);
+  font-size: 2.8rem;
+  line-height: var(--font-heading-line-height);
+  letter-spacing: var(--font-heading-letter-spacing);
+  text-transform: var(--font-heading-text-transform);
+  color: var(--color-foreground);
+  margin: 0 0 12px;
+}
+
+.faq-full__subheading {
+  font-family: var(--font-body-family);
+  font-size: 1.6rem;
+  line-height: var(--font-body-line-height);
+  color: var(--color-foreground);
+  opacity: 0.70;
+  margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .faq-full__title      { font-size: 3.6rem; }
+  .faq-full__subheading { font-size: 1.8rem; }
+}
+
+/* Body — constrained width centered */
+.faq-full__body {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Topic heading — adds extra top space above each group */
+.faq-full__topic-heading {
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
+  font-style: var(--font-heading-style);
+  font-size: 1.8rem;
+  line-height: 1.3;
+  letter-spacing: var(--font-heading-letter-spacing);
+  text-transform: var(--font-heading-text-transform);
+  color: var(--color-foreground);
+  margin: 28px 0 4px;
+  padding: 0;
+}
+
+/* First topic heading needs no extra top margin */
+.faq-full__topic-heading:first-child {
+  margin-top: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .faq-full__topic-heading {
+    font-size: 2.0rem;
+    margin-top: 40px;
+  }
+}
+
+/* FAQ item */
+.faq-full__item {
+  border: 1.5px solid var(--color-borders, #e5e7eb);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.faq-full__item.is-open {
+  border-color: var(--color-outlines, #d1d5db);
+}
+
+/* Question button */
+.faq-full__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--color-foreground);
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
+  font-size: 1.6rem;
+  line-height: 1.4;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.15s ease;
+}
+
+.faq-full__question:hover {
+  opacity: 0.75;
+}
+
+@media only screen and (min-width: 768px) {
+  .faq-full__question { font-size: 1.8rem; }
+}
+
+/* Chevron icons */
+.faq-full__icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--color-foreground);
+  opacity: 0.45;
+}
+
+.faq-full__chevron-down  { display: none; }
+.faq-full__chevron-right { display: block; }
+
+.faq-full__item.is-open .faq-full__chevron-down  { display: block; }
+.faq-full__item.is-open .faq-full__chevron-right { display: none; }
+
+/* Answer — CSS grid trick for smooth animation */
+.faq-full__answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.faq-full__item.is-open .faq-full__answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-full__answer-inner {
+  overflow: hidden;
+  padding: 0 24px;
+}
+
+.faq-full__item.is-open .faq-full__answer-inner {
+  padding-bottom: 24px;
+}
+
+.faq-full__answer-inner p,
+.faq-full__answer-inner li {
+  font-family: var(--font-body-family);
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: var(--color-foreground);
+  opacity: 0.70;
+  margin: 0 0 10px;
+}
+
+.faq-full__answer-inner p:last-child,
+.faq-full__answer-inner li:last-child {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .faq-full__answer-inner p,
+  .faq-full__answer-inner li { font-size: 1.6rem; }
+}

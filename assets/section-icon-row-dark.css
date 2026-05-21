@@ -1,0 +1,94 @@
+/* ===================
+   Icon Row Dark Section
+   =================== */
+
+.icon-row-dark {
+  background-color: #0d0d0d;
+  width: 100%;
+}
+
+.icon-row-dark__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 600px) {
+  .icon-row-dark__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .icon-row-dark__grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+  }
+}
+
+/* Item */
+.icon-row-dark__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+/* Icon */
+.icon-row-dark__icon {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 4px;
+}
+
+.icon-row-dark__icon img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  display: block;
+  /* Invert black icons to white if needed */
+  filter: brightness(0) invert(1);
+}
+
+.icon-row-dark__icon svg {
+  width: 64px;
+  height: 64px;
+}
+
+/* Title */
+.icon-row-dark__title {
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
+  font-style: var(--font-heading-style);
+  font-size: 1.8rem;
+  line-height: 1.3;
+  letter-spacing: var(--font-heading-letter-spacing);
+  text-transform: var(--font-heading-text-transform);
+  color: #ffffff;
+  margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .icon-row-dark__title { font-size: 2.0rem; }
+}
+
+/* Description */
+.icon-row-dark__description {
+  font-family: var(--font-body-family);
+  font-size: 1.5rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  max-width: 260px;
+}
+
+@media only screen and (min-width: 768px) {
+  .icon-row-dark__description { font-size: 1.6rem; }
+}

@@ -1,0 +1,94 @@
+/* ================
+   Icon Row Section
+   ================ */
+
+.icon-row-section {
+  width: 100%;
+}
+
+.icon-row__title {
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
+  font-style: var(--font-heading-style);
+  font-size: 2.6rem;
+  line-height: var(--font-heading-line-height);
+  letter-spacing: var(--font-heading-letter-spacing);
+  text-transform: var(--font-heading-text-transform);
+  color: var(--color-foreground);
+  margin: 0 0 48px;
+}
+
+@media only screen and (min-width: 768px) {
+  .icon-row__title { font-size: 3.2rem; }
+}
+
+/* Grid */
+.icon-row__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 540px) {
+  .icon-row__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .icon-row__grid {
+    /* Auto-fit so any number of blocks distributes evenly */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 24px;
+  }
+}
+
+/* Item */
+.icon-row__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+/* Icon container */
+.icon-row__icon {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-foreground);
+}
+
+.icon-row__icon img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  display: block;
+}
+
+.icon-row__icon svg {
+  width: 64px;
+  height: 64px;
+  color: var(--color-foreground);
+}
+
+/* Label */
+.icon-row__label {
+  font-family: var(--font-body-family);
+  font-size: 1.5rem;
+  line-height: var(--font-body-line-height);
+  color: var(--color-foreground);
+  opacity: 0.85;
+  margin: 0;
+  max-width: 200px;
+}
+
+@media only screen and (min-width: 768px) {
+  .icon-row__label { font-size: 1.6rem; }
+}

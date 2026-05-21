@@ -1,0 +1,195 @@
+{{ 'section-tips-grid.css' | asset_url | stylesheet_tag }}
+
+<div
+  id="{{ section.id }}"
+  class="tips-grid-section container pt pb sm-pt sm-pb color-{{ section.settings.color_scheme }}"
+  style="
+    --pt: {{ section.settings.padding_top | append: 'px' }};
+    --pb: {{ section.settings.padding_bottom | append: 'px' }};
+    --sm-pt: {{ section.settings.md_padding_top | append: 'px' }};
+    --sm-pb: {{ section.settings.md_padding_bottom | append: 'px' }};
+  "
+>
+
+  <div class="tips-grid__header text-align-center">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="tips-grid__title">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <p class="tips-grid__subheading">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+  </div>
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="tips-grid__grid">
+      {%- assign tip_count = 0 -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'tip_card' -%}
+          {%- assign tip_count = tip_count | plus: 1 -%}
+          <div class="tips-grid__card-wrapper" {{ block.shopify_attributes }}>
+            <div class="tips-grid__card">
+
+              <div class="tips-grid__badge">
+                {%- if block.settings.badge_label != blank -%}
+                  {{ block.settings.badge_label }}
+                {%- else -%}
+                  Tip #{{ tip_count }}
+                {%- endif -%}
+              </div>
+
+              {%- if block.settings.title != blank -%}
+                <h3 class="tips-grid__card-title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+
+              {%- if block.settings.description != blank -%}
+                <p class="tips-grid__card-description">{{ block.settings.description }}</p>
+              {%- endif -%}
+
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+</div>
+
+{% schema %}
+{
+  "name": "Tips Grid",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "default",
+      "label": "Color scheme"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Helpful Tips for a Smooth Experience"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "You don't need to rush — this is meant to be enjoyed."
+    },
+    {
+      "type": "header",
+      "content": "Desktop layout"
+    },
+    {
+      "type": "range",
+      "id": "md_padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "md_padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Tip Card",
+      "type": "tip_card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge_label",
+          "label": "Badge label",
+          "info": "Leave blank to auto-number (Tip #1, Tip #2, etc.)",
+          "placeholder": "Tip #1"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Take Your Time"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "There's no rush. Pause, step away, and come back whenever you want."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tips Grid",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "tip_card",
+          "settings": {
+            "title": "Take Your Time",
+            "description": "There's no rush. Pause, step away, and come back whenever you want."
+          }
+        },
+        {
+          "type": "tip_card",
+          "settings": {
+            "title": "Mistakes Are Okay",
+            "description": "If you lose your place, just keep going — no undoing required."
+          }
+        },
+        {
+          "type": "tip_card",
+          "settings": {
+            "title": "No \"Right\" Result",
+            "description": "Every finished piece is unique, and that's part of the process."
+          }
+        },
+        {
+          "type": "tip_card",
+          "settings": {
+            "title": "Trust the Guide",
+            "description": "Following the numbered steps will get you where you need to go."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

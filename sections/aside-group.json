@@ -1,0 +1,68 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:section_groups.aside",
+  "type": "aside",
+  "sections": {
+    "modal-newsletter": {
+      "type": "modal-newsletter",
+      "blocks": {
+        "the-title": {
+          "type": "title",
+          "settings": {
+            "title": "Limited time only!"
+          }
+        },
+        "the-image": {
+          "type": "image",
+          "settings": {
+            "media_link": "",
+            "aspect_ratio": "landscape",
+            "margin_top": 0
+          }
+        },
+        "text_cQRGV8": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>🍹 Buy 5 Kombuchas, Get 1 FREE! </strong>Stock up on your favorites — your 6th bottle is on us.</p>",
+            "sm_size_multiplier": "sm-size--default",
+            "sm_margin_top": 24,
+            "size_multiplier": "size--default",
+            "margin_top": 12
+          }
+        },
+        "button_Hrhdem": {
+          "type": "button",
+          "settings": {
+            "btn_text": "Browse products",
+            "btn_style": "btn btn--primary",
+            "btn_link": "shopify://collections/all",
+            "margin_top": 12
+          }
+        }
+      },
+      "block_order": [
+        "the-title",
+        "the-image",
+        "text_cQRGV8",
+        "button_Hrhdem"
+      ],
+      "disabled": true,
+      "settings": {
+        "test_mode": false,
+        "delay": 15,
+        "frequency": "once"
+      }
+    }
+  },
+  "order": [
+    "modal-newsletter"
+  ]
+}

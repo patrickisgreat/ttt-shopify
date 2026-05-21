@@ -1,0 +1,669 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "2cb069aa-470f-47b0-97d9-b6a2c86aa996": {
+          "type": "badges",
+          "settings": {
+            "badges_position": "over-media",
+            "margin_top": 0
+          }
+        },
+        "rating_Ccm9zT": {
+          "type": "rating",
+          "settings": {
+            "margin_top": 0
+          }
+        },
+        "the-title": {
+          "type": "title",
+          "settings": {
+            "margin_top": 12
+          }
+        },
+        "the-price": {
+          "type": "price",
+          "settings": {
+            "margin_top": 8,
+            "font_weight": "normal",
+            "sm_size_multiplier": "sm-size--huge",
+            "size_multiplier": "size--huge"
+          }
+        },
+        "the-description": {
+          "type": "description",
+          "settings": {
+            "enable_collapsible": false,
+            "collapsible_type": "collapsible",
+            "margin_top": 24
+          }
+        },
+        "2ad218b6-4cf8-49f8-a948-4ca131ed654a": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A guided art kit that turns meaningful photos into wall-worthy string art.</p><p>Threaditate turns any photo into a step-by-step guided string art session. Upload any photo: a face, a pet, a skyline, and the app converts it into step-by-step string placement instructions. Walk away with a finished piece made entirely by your own hands.</p>",
+            "read_more": false,
+            "margin_top": 24
+          }
+        },
+        "text_tRMRrA": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>What's Included: </strong></p><ul><li>20\" Interlocking Loom Pieces</li><li>Pre-Cut String & Spool Holder</li><li>Precision Stringing Tool</li><li>Numbered Paper Template</li><li>Wooden Phone Stand</li><li>Convertible Box Easel</li><li>Zip Ties for Assembly</li><li>App Access for Custom Guides</li></ul>",
+            "read_more": true,
+            "margin_top": 8
+          }
+        },
+        "557a3a73-80c5-47b2-abb8-a78027516c90": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "picker_type": "button",
+            "cross_out_unavailable": false,
+            "margin_top": 8
+          }
+        },
+        "6fc29670-ecc3-4bbf-bc13-6d7232b75085": {
+          "type": "quantity_selector",
+          "settings": {
+            "next_to_add_to_cart": true,
+            "margin_top": 12
+          }
+        },
+        "the-buy-buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false,
+            "add_multipliers": "",
+            "add_multipliers_layout": "single-line",
+            "margin_top": 28
+          }
+        },
+        "custom_liquid_6FiWtW": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<a href=\"https://go.stringring.com/login\" class=\"try-photo-button btn btn--secondary\">\n  <span class=\"try-photo-icon\" aria-hidden=\"true\">\n    <!-- Simple image icon (SVG, no external assets) -->\n    <svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\">\n      <rect x=\"2\" y=\"3\" width=\"20\" height=\"18\" rx=\"4\" fill=\"black\"/>\n      <circle cx=\"9\" cy=\"9\" r=\"2\" fill=\"white\"/>\n      <path d=\"M5 17l4-4 3 3 4-5 3 6H5z\" fill=\"white\"/>\n    </svg>\n  </span>\n  <span class=\"try-photo-text\">Try it with your photo</span>\n</a>",
+            "margin_top": 20
+          }
+        },
+        "text_ytmJky": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Beginner-friendly • No experience needed</p>",
+            "read_more": false,
+            "margin_top": 16
+          }
+        },
+        "the-inventory-status": {
+          "type": "inventory_status",
+          "disabled": true,
+          "settings": {
+            "inventory_threshold": 12,
+            "show_available_quantity": true,
+            "inventory_transfers_enable": true,
+            "additional__in_stock": "– 24h express shipping",
+            "additional__few_on_stock": "",
+            "additional__out_of_stock": "",
+            "additional__out_of_stock_continue_selling": "",
+            "margin_top": 20
+          }
+        },
+        "the-pickup-availability": {
+          "type": "pickup_availability",
+          "disabled": true,
+          "settings": {
+            "margin_top": 24
+          }
+        },
+        "the-sticky-buy-bar": {
+          "type": "sticky_buy_bar",
+          "settings": {
+            "color_scheme": "",
+            "overlay_str": 10,
+            "border_radius": 16
+          }
+        },
+        "75b14a74-c1c5-4fcc-932f-e2bfa017fba2": {
+          "type": "collapsible_tab",
+          "settings": {
+            "title": "Features",
+            "content": "<ul><li><strong>Real-Time Guided App</strong> - Free download (iOS & Android). Converts any photo into a numbered, confirmed-step session.</li><li><strong>Photo-to-Pattern Conversion</strong> - Any image, personalized guide generated in seconds. Live preview before you start.</li><li><strong>20\" Interlocking Loom</strong> - Tool-free assembly. Mounts to easel box or wall.</li><li><strong>Step Confirmation Loop</strong> - Each placement is confirmed before the guide advances. No missed strings.</li><li><strong>Convertible Easel Box</strong> - Packaging that becomes your work surface.</li><li><strong>Wooden Phone Stand</strong> - Holds your guide hands-free while you string.</li><li><strong>Full Thread Set with Spool Holder</strong> - Pre-cut, organized, and ready to use.</li><li><strong>Precision Stringing Tool</strong> - Designed for clean, accurate string placement.</li><li><strong>Numbered Paper Template</strong> - Physical reference guide included alongside the app.</li><li><strong>Patent-Pending Software & Loom Design</strong></li></ul>",
+            "page": "",
+            "open_as_drawer": false,
+            "icon": "icon-caret__right",
+            "margin_top": 24
+          }
+        },
+        "cb99c690-44cf-4273-8519-6e54272edcba": {
+          "type": "collapsible_tab",
+          "settings": {
+            "title": "Benefits",
+            "content": "<ul><li><strong>Your hands know what to do next</strong> - the app provides real-time confirmed guidance from first string to last.</li><li><strong>The finished piece is yours</strong> - every Threaditate starts from a photo you uploaded. It can't exist anywhere else.</li><li><strong>You will finish this</strong> - the process is designed around completion. Every confirmed step is progress. </li><li><strong>No experience required</strong> - the app accounts for zero crafting background.</li><li><strong>Nothing missing from the box</strong> - the kit ships complete with the loom, thread, tools, phone stand, easel box, and app access.</li><li><strong>The hour resets you</strong> - your hands are occupied, mind settled, screen optional. The kind of focus screens don't provide.</li><li><strong>It makes a real gift</strong> - a completed Theaditate made from a meaningful photo says more than anything off a shelf.</li></ul>",
+            "page": "",
+            "open_as_drawer": false,
+            "icon": "icon-caret__right",
+            "margin_top": 0
+          }
+        },
+        "collapsible_tab_GJhtdP": {
+          "type": "collapsible_tab",
+          "settings": {
+            "title": "Specs",
+            "content": "<p><strong>Loom</strong></p><ul><li>Diameter: 20\"</li><li>Interlocking modular pieces</li><li>Tool-free</li><li>Mounting: Easel box or wall compatible</li><li>U.S. patent pending</li></ul><p><strong>Thread</strong></p><ul><li>Pre-cut string set</li><li>Integrated spool holder included</li></ul><p><strong>Tools Included</strong></p><ul><li>Precision stringing tool</li><li>Numbered paper template</li><li>Wooden phone stand</li><li>Zip ties for assembly</li></ul><p><strong>Packaging</strong></p><ul><li>Mailbox-sized box converts to easel work surface</li><li>No additional stand required</li></ul><p><strong>App</strong></p><ul><li>iOS and Android</li><li>Cost: Free (included with kit)</li><li>Features: Photo upload, real-time guided session, step confirmation loop, design preview</li><li>U.S. patent pending</li></ul><p><strong>Project Duration</strong></p><ul><li>Estimated completion: 3–6 hours depending on design complexity</li><li>Session flexibility: Pause and resume, the app saves progress</li></ul>",
+            "page": "",
+            "open_as_drawer": false,
+            "icon": "icon-caret__right",
+            "margin_top": 8
+          }
+        },
+        "collapsible_tab_ftBRFa": {
+          "type": "collapsible_tab",
+          "settings": {
+            "title": "Shipping & Returns",
+            "content": "",
+            "page": "",
+            "open_as_drawer": false,
+            "icon": "icon-caret__right",
+            "margin_top": 8
+          }
+        },
+        "share_7PLqah": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share",
+            "hide_on_desktop": true,
+            "margin_top": 0
+          }
+        }
+      },
+      "block_order": [
+        "2cb069aa-470f-47b0-97d9-b6a2c86aa996",
+        "rating_Ccm9zT",
+        "the-title",
+        "the-price",
+        "the-description",
+        "2ad218b6-4cf8-49f8-a948-4ca131ed654a",
+        "text_tRMRrA",
+        "557a3a73-80c5-47b2-abb8-a78027516c90",
+        "6fc29670-ecc3-4bbf-bc13-6d7232b75085",
+        "the-buy-buttons",
+        "custom_liquid_6FiWtW",
+        "text_ytmJky",
+        "the-inventory-status",
+        "the-pickup-availability",
+        "the-sticky-buy-bar",
+        "75b14a74-c1c5-4fcc-932f-e2bfa017fba2",
+        "cb99c690-44cf-4273-8519-6e54272edcba",
+        "collapsible_tab_GJhtdP",
+        "collapsible_tab_ftBRFa",
+        "share_7PLqah"
+      ],
+      "custom_css": [
+        "span.try-photo-text {color: black;}",
+        "a.try-photo-button.btn.btn--secondary {border-color: black !important;}"
+      ],
+      "settings": {
+        "product_image_aspect_ratio": "square",
+        "media_fill_rule": "contain",
+        "color_scheme": "scheme-d41b7294-aad9-4454-94d4-1e261262bb1f",
+        "show_breadcrumb": false,
+        "section_bg": "",
+        "media_col_bg": "",
+        "content_col_bg": "",
+        "border_radius": 15,
+        "product_media_bg": "rgba(0,0,0,0)",
+        "media_border_radius": 15,
+        "enable_full_width": false,
+        "sm-p": 0,
+        "media_layout": "traditional-below",
+        "media_col_width": "wide",
+        "sm_media_zoom": "disabled",
+        "sm_media_gap": 24,
+        "md_padding_top": 64,
+        "md_padding_bottom": 0,
+        "enable_slider_peek": false,
+        "show_thumbnails_sm_down": false,
+        "media_zoom": "disabled",
+        "media_gap": 3,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "sliding_text_rcCeE8": {
+      "type": "sliding-text",
+      "blocks": {
+        "text_Ytzbjp": {
+          "type": "text",
+          "settings": {
+            "text": "🤝",
+            "link": ""
+          }
+        },
+        "text_caxCW4": {
+          "type": "text",
+          "settings": {
+            "text": "2,013 Backers",
+            "link": ""
+          }
+        },
+        "text_DkifYx": {
+          "type": "text",
+          "settings": {
+            "text": ":💸",
+            "link": ""
+          }
+        },
+        "text_w6yp7R": {
+          "type": "text",
+          "settings": {
+            "text": "$172,797 Raised",
+            "link": ""
+          }
+        },
+        "text_xkBnEe": {
+          "type": "text",
+          "settings": {
+            "text": "⭐",
+            "link": ""
+          }
+        },
+        "text_M4KAGR": {
+          "type": "text",
+          "settings": {
+            "text": "5 Star Reviews",
+            "link": ""
+          }
+        },
+        "text_gjb7wp": {
+          "type": "text",
+          "settings": {
+            "text": "🇺🇸",
+            "link": ""
+          }
+        },
+        "text_3jVyPi": {
+          "type": "text",
+          "settings": {
+            "text": "Made in the USA",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_Ytzbjp",
+        "text_caxCW4",
+        "text_DkifYx",
+        "text_w6yp7R",
+        "text_xkBnEe",
+        "text_M4KAGR",
+        "text_gjb7wp",
+        "text_3jVyPi"
+      ],
+      "settings": {
+        "color_scheme": "scheme-be8ef671-53c2-4895-89a6-144af711f198",
+        "text_gradient_color": "",
+        "content_order": "horizontal",
+        "font": "heading",
+        "direction": "normal",
+        "speed": 10,
+        "pause_on_hover": false,
+        "sm_size_multiplier": "sm-size--small",
+        "sm_item_gap": 80,
+        "sm_padding": 32,
+        "md_padding_top": 0,
+        "md_padding_bottom": 0,
+        "size_multiplier": "size--default",
+        "item_gap": 24,
+        "padding": 24,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "the-product-recommendations": {
+      "type": "product-recommendations",
+      "blocks": {
+        "9929005a-ce0f-4c79-aec7-6480a85f6eee": {
+          "type": "section_header",
+          "settings": {
+            "subtitle": "",
+            "subtitle_tag": "h3",
+            "title": "You might also like",
+            "title_tag": "h2",
+            "text": "",
+            "text_alignment": "text-align-center",
+            "sm_size_multiplier": "sm-size--default",
+            "size_multiplier": "size--default"
+          }
+        }
+      },
+      "block_order": [
+        "9929005a-ce0f-4c79-aec7-6480a85f6eee"
+      ],
+      "disabled": true,
+      "settings": {
+        "product_limit": 10,
+        "color_scheme": "",
+        "enable_full_width": false,
+        "sm_enable_card_thumbnail": false,
+        "layout_desktop": "slide",
+        "products_per_row_desktop": 4,
+        "sm_custom_gap": -1,
+        "md_padding_top": 40,
+        "md_padding_bottom": 40,
+        "products_per_row_tablet": 3,
+        "sm_down_enable_card_thumbnail": false,
+        "layout_mobile": "slide",
+        "products_per_row_mobile": 1,
+        "custom_gap": -1,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "sliding_behavior": "all"
+      }
+    },
+    "features_grid_aiQeMA": {
+      "type": "features-grid",
+      "blocks": {
+        "feature_card_Qnxz7P": {
+          "type": "feature_card",
+          "settings": {
+            "icon_svg": "",
+            "title": "Mistake-Friendly",
+            "description": "Keep going even if you lose your place; no undoing required."
+          }
+        },
+        "feature_card_jMkMTj": {
+          "type": "feature_card",
+          "settings": {
+            "icon_svg": "",
+            "title": "Beginner-Friendly",
+            "description": "No crafting experience needed. Just follow the guided steps."
+          }
+        },
+        "feature_card_JkAaLp": {
+          "type": "feature_card",
+          "settings": {
+            "icon_svg": "",
+            "title": "Custom from Any Photo",
+            "description": "Turn any meaningful image into one-of-a-kind string art."
+          }
+        }
+      },
+      "block_order": [
+        "feature_card_Qnxz7P",
+        "feature_card_jMkMTj",
+        "feature_card_JkAaLp"
+      ],
+      "name": "Features Grid",
+      "settings": {
+        "color_scheme": "",
+        "heading": "What is Threaditate?",
+        "subheading": "A hands-on, guided art kit designed to help you unplug, create, and actually finish something meaningful.",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "video_HFaPVc": {
+      "type": "video",
+      "name": "t:sections.blocks.video.name",
+      "settings": {
+        "color_scheme": "",
+        "video_url": "",
+        "title": "",
+        "text": "",
+        "align_content": "text-align-left",
+        "position_content": "above",
+        "md_padding_top": 0,
+        "md_padding_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "split_image_content_3xrpVG": {
+      "type": "split-image-content",
+      "name": "Split Image & Content",
+      "settings": {
+        "color_scheme": "",
+        "image": "shopify://shop_images/everything-you-need.jpg",
+        "image_position": "left",
+        "heading": "Everything You Need, In One Box",
+        "intro": "No extra tools. No guesswork. Everything you need to get started is included.",
+        "bullet_1": "Interlocking Loom Pieces",
+        "bullet_2": "Pre-Cut String & Spool Holder",
+        "bullet_3": "Precision Stringing Tool",
+        "bullet_4": "Numbered Paper Template",
+        "bullet_5": "Wooden Phone Stand",
+        "bullet_6": "Convertible Box Easel",
+        "bullet_7": "Zip Ties for Assembly",
+        "bullet_8": "App Access for Custom Guides",
+        "bullet_9": "",
+        "bullet_10": "",
+        "button_label": "Add to Cart",
+        "product": "string-ring-custom-string-art-kit",
+        "button_link": "",
+        "button_color": "#e8622a",
+        "md_padding_top": 64,
+        "md_padding_bottom": 64,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "before_after_JDmxdx": {
+      "type": "before-after",
+      "blocks": {
+        "before_after_Uktgrm": {
+          "type": "before_after",
+          "settings": {
+            "media_aspect_ratio": "landscape_alt",
+            "label_colors": "#000000",
+            "before_label": "Before",
+            "after_label": "After",
+            "label_position": "top"
+          }
+        },
+        "title_Mhnqb6": {
+          "type": "title",
+          "settings": {
+            "title": "From Your Camera Roll to Your Wall",
+            "heading_tag": "h2",
+            "sm_size_multiplier": "sm-size--default",
+            "sm_margin_top": 4,
+            "size_multiplier": "size--default",
+            "margin_top": 4
+          }
+        },
+        "text_VFiFGN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Slide to reveal how a single photo becomes a piece you made with your hands.</p>",
+            "sm_size_multiplier": "sm-size--default",
+            "sm_margin_top": 12,
+            "size_multiplier": "size--default",
+            "margin_top": 12
+          }
+        },
+        "button_MgLy7Q": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "",
+            "sm_size_multiplier": "sm-size--default",
+            "sm_margin_top": 24,
+            "size_multiplier": "size--default",
+            "margin_top": 24
+          }
+        }
+      },
+      "block_order": [
+        "before_after_Uktgrm",
+        "title_Mhnqb6",
+        "text_VFiFGN",
+        "button_MgLy7Q"
+      ],
+      "name": "t:sections.before_after.name",
+      "settings": {
+        "color_scheme": "scheme-be8ef671-53c2-4895-89a6-144af711f198",
+        "media_position_desktop": "top",
+        "media_width": "wide",
+        "content_width": "col-sm-max-5",
+        "desktop_alignment": "center",
+        "sm_full_width_buttons": false,
+        "md_padding_top": 40,
+        "md_padding_bottom": 40,
+        "media_position": "top",
+        "mobile_alignment": "center",
+        "full_width_buttons": false,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "app_carousel_ehEbit": {
+      "type": "app-carousel",
+      "blocks": {
+        "slide_HWKJ8i": {
+          "type": "slide",
+          "settings": {
+            "caption": "Start with Any Photo - Open the app, upload an image, and your personalized guide is ready in seconds."
+          }
+        },
+        "slide_XUMeEJ": {
+          "type": "slide",
+          "settings": {
+            "caption": "Get Your Guide - The app converts your photo into a numbered, step-by-step instruction sequence in seconds."
+          }
+        },
+        "slide_njUDNd": {
+          "type": "slide",
+          "settings": {
+            "caption": "Follow the Steps - The guide walks you through every string placement. Confirming each one before moving to the next."
+          }
+        },
+        "slide_QKEPLP": {
+          "type": "slide",
+          "settings": {
+            "caption": "Display What You Made - When the final step is confirmed, you have a finished piece made entirely by your own hands."
+          }
+        }
+      },
+      "block_order": [
+        "slide_HWKJ8i",
+        "slide_XUMeEJ",
+        "slide_njUDNd",
+        "slide_QKEPLP"
+      ],
+      "name": "App Carousel",
+      "settings": {
+        "heading": "How The App Works",
+        "subheading": "Upload a photo. Get your personalized guide. Follow along, string by string, until it's done.",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "feature_carousel_6FG3qV": {
+      "type": "feature-carousel",
+      "blocks": {
+        "slide_DjKFWA": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/step-2.jpg",
+            "title": "Custom from Any Photo",
+            "caption": "Every Threaditate starts from a photo you already have. Upload it to the app, and it generates a step-by-step numbered guide built specifically around that image."
+          }
+        },
+        "slide_ENz4BQ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/features-image.jpg",
+            "title": "Everything You Need, In One Box",
+            "caption": "The loom arrives with pins pre-placed. The thread is pre-cut and loaded onto the spool holder. The easel box holds the loom; the phone stand holds your guide."
+          }
+        },
+        "slide_pRbLiy": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/finished-image.jpg",
+            "title": "Your Mind Goes Quiet",
+            "caption": "There's something about placing one string at a time that turns the noise down. Threaditate is screen-light by design. The app is there when you need it. The rest of the time, it's just you and the thread."
+          }
+        },
+        "slide_GDPB8K": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/everything-you-need.jpg",
+            "title": "Any Skill Level, Any Age",
+            "caption": "The forgiving design, clear numbered guides, and precision stringing tool make it work for first-time makers, casual creatives, and neurodivergent users alike."
+          }
+        },
+        "slide_aCGwWy": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/everything-you-need.jpg",
+            "title": "Built to Be Completed",
+            "caption": "Threaditate is built around a simple idea: finishing should feel as good as starting. The step-confirmed process gets you to the last string. What you're left with is art you made with your own hands"
+          }
+        }
+      },
+      "block_order": [
+        "slide_DjKFWA",
+        "slide_ENz4BQ",
+        "slide_pRbLiy",
+        "slide_GDPB8K",
+        "slide_aCGwWy"
+      ],
+      "name": "Features Carousel",
+      "settings": {
+        "color_scheme": "",
+        "heading": "What Makes Threaditate Different",
+        "subheading": "From the guided app to the convertible easel box, every detail was built to help you create a finished piece you're proud of.",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "cta_banner_GTHMPG": {
+      "type": "cta-banner",
+      "name": "CTA Banner",
+      "settings": {
+        "heading": "Create Your Threaditate",
+        "subheading": "Turn a meaningful photo into custom string art: guided, calming, and designed to be finished.",
+        "button_label": "Start Your Threaditate →",
+        "button_link": "shopify://products/string-ring-custom-string-art-kit",
+        "caption": "No experience needed. Everything included.",
+        "md_padding_top": 120,
+        "md_padding_bottom": 120,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "main",
+    "sliding_text_rcCeE8",
+    "the-product-recommendations",
+    "features_grid_aiQeMA",
+    "video_HFaPVc",
+    "split_image_content_3xrpVG",
+    "before_after_JDmxdx",
+    "app_carousel_ehEbit",
+    "feature_carousel_6FG3qV",
+    "cta_banner_GTHMPG"
+  ]
+}

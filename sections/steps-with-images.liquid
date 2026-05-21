@@ -1,0 +1,258 @@
+{{ 'section-steps-with-images.css' | asset_url | stylesheet_tag }}
+
+<div
+  id="{{ section.id }}"
+  class="steps-section container pt pb sm-pt sm-pb color-{{ section.settings.color_scheme }}"
+  style="
+    --pt: {{ section.settings.padding_top | append: 'px' }};
+    --pb: {{ section.settings.padding_bottom | append: 'px' }};
+    --sm-pt: {{ section.settings.md_padding_top | append: 'px' }};
+    --sm-pb: {{ section.settings.md_padding_bottom | append: 'px' }};
+  "
+>
+
+  <div class="steps__header text-align-center">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="steps__title">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <p class="steps__subheading">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+  </div>
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="steps__list">
+      {%- assign step_num = 0 -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'step' -%}
+          {%- assign step_num = step_num | plus: 1 -%}
+          <div class="steps__row" {{ block.shopify_attributes }}>
+
+            <div class="steps__text-col">
+              <span class="steps__number" aria-hidden="true">{{ step_num }}.</span>
+              {%- if block.settings.title != blank -%}
+                <h3 class="steps__step-title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+              {%- if block.settings.description != blank -%}
+                <p class="steps__description">{{ block.settings.description }}</p>
+              {%- endif -%}
+              {%- if block.settings.tip != blank -%}
+                <p class="steps__tip">{{ block.settings.tip }}</p>
+              {%- endif -%}
+            </div>
+
+            <div class="steps__image-col">
+              {%- if block.settings.image != blank -%}
+                <div class="steps__image sm-br-img">
+                  {%- render 'img',
+                    lazyload: true,
+                    wrapped: false,
+                    src: block.settings.image
+                  -%}
+                </div>
+              {%- else -%}
+                <div class="steps__image steps__image--placeholder sm-br-img">
+                  {{ 'lifestyle-1' | placeholder_svg_tag }}
+                </div>
+              {%- endif -%}
+            </div>
+
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.button_label != blank -%}
+    <div class="steps__cta text-align-center">
+      
+        <a href="{{ section.settings.button_link | default: '#' }}"
+        class="btn{% if section.settings.button_style == 'secondary' %} btn--secondary{% elsif section.settings.button_style == 'link' %} btn--link{% endif %}"
+      >
+        {{ section.settings.button_label }}
+      </a>
+    </div>
+  {%- endif -%}
+
+</div>
+
+{% schema %}
+{
+  "name": "Steps with Images",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "default",
+      "label": "Color scheme"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Getting Started"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Follow these steps in order, or jump ahead at your own pace."
+    },
+    {
+      "type": "color",
+      "id": "number_color",
+      "label": "Step number color",
+      "default": "#2563EB"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Start Your String Ring →"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" },
+        { "value": "link", "label": "Link" }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "header",
+      "content": "Desktop layout"
+    },
+    {
+      "type": "range",
+      "id": "md_padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "md_padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Step",
+      "type": "step",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Step image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step title",
+          "default": "Assemble Your Loom"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Snap the interlocking pieces together to form your loom."
+        },
+        {
+          "type": "text",
+          "id": "tip",
+          "label": "Tip (smaller text below description)",
+          "info": "Optional. Use for a short pro-tip or note.",
+          "default": "No tools required — everything clicks into place."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Steps with Images",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Assemble Your Loom",
+            "description": "Snap the interlocking pieces together to form your loom.",
+            "tip": "No tools required — everything clicks into place."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Prepare Your Workspace",
+            "description": "Set up a comfortable space with good lighting and room to move.",
+            "tip": "Use the box easel or phone stand to keep your guide visible."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Upload Your Photo",
+            "description": "Upload your image in the app to generate a custom stringing guide.",
+            "tip": "High-contrast photos work best."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Start Stringing",
+            "description": "Follow the numbered guide at your own pace.",
+            "tip": "There's no wrong order — just keep going."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

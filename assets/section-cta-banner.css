@@ -1,0 +1,123 @@
+/* ================
+   CTA Banner Section
+   ================ */
+
+.cta-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient mesh background */
+.cta-banner__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  /* Dark base */
+  background-color: #0a0a0a;
+
+  /* Layered radial gradients to recreate the colorful mesh */
+  background-image:
+    radial-gradient(ellipse 60% 70% at 0% 100%,   rgba(30,  80, 200, 0.85)  0%, transparent 55%),
+    radial-gradient(ellipse 45% 55% at 100% 100%,  rgba(200, 120,  20, 0.90) 0%, transparent 50%),
+    radial-gradient(ellipse 35% 40% at 75%  90%,   rgba(20,  160,  80, 0.55) 0%, transparent 45%),
+    radial-gradient(ellipse 40% 50% at 100% 40%,   rgba(160,  40,  20, 0.70) 0%, transparent 50%),
+    radial-gradient(ellipse 30% 35% at 30%  80%,   rgba(100,  20, 180, 0.40) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 50%  110%,  rgba(180, 100,  10, 0.35) 0%, transparent 55%);
+
+  pointer-events: none;
+}
+
+/* Inner layout */
+.cta-banner__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-banner__content {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Heading */
+.cta-banner__title {
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
+  font-style: var(--font-heading-style);
+  font-size: 3.0rem;
+  line-height: var(--font-heading-line-height);
+  letter-spacing: var(--font-heading-letter-spacing);
+  text-transform: var(--font-heading-text-transform);
+  color: #ffffff;
+  margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .cta-banner__title { font-size: 4.4rem; }
+}
+
+/* Subheading */
+.cta-banner__subheading {
+  font-family: var(--font-body-family);
+  font-size: 1.6rem;
+  line-height: var(--font-body-line-height);
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  max-width: 600px;
+}
+
+@media only screen and (min-width: 768px) {
+  .cta-banner__subheading { font-size: 1.8rem; }
+}
+
+/* CTA Button — white pill */
+.cta-banner__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  color: #0a0a0a;
+  font-family: var(--font-button-family, var(--font-heading-family));
+  font-weight: var(--font-heading-weight);
+  font-size: 1.6rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  padding: 18px 36px;
+  border-radius: 14px;
+  margin-top: 12px;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+.cta-banner__btn:hover {
+  background: #f0f0f0;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+.cta-banner__btn:active {
+  transform: translateY(0);
+}
+
+@media only screen and (min-width: 768px) {
+  .cta-banner__btn {
+    font-size: 1.8rem;
+    padding: 20px 44px;
+  }
+}
+
+/* Caption */
+.cta-banner__caption {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .cta-banner__caption { font-size: 1.5rem; }
+}

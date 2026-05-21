@@ -1,0 +1,356 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "product-hero": {
+  "type": "product-hero",
+  "settings": {}
+  },
+    "the-product-recommendations": {
+      "type": "product-recommendations",
+      "blocks": {
+        "9929005a-ce0f-4c79-aec7-6480a85f6eee": {
+          "type": "section_header",
+          "settings": {
+            "subtitle": "",
+            "subtitle_tag": "h3",
+            "title": "You might also like",
+            "title_tag": "h2",
+            "text": "",
+            "text_alignment": "text-align-center",
+            "sm_size_multiplier": "sm-size--default",
+            "size_multiplier": "size--default"
+          }
+        }
+      },
+      "block_order": [
+        "9929005a-ce0f-4c79-aec7-6480a85f6eee"
+      ],
+      "disabled": true,
+      "settings": {
+        "product_limit": 10,
+        "color_scheme": "",
+        "enable_full_width": false,
+        "sm_enable_card_thumbnail": false,
+        "layout_desktop": "slide",
+        "products_per_row_desktop": 4,
+        "sm_custom_gap": -1,
+        "md_padding_top": 40,
+        "md_padding_bottom": 40,
+        "products_per_row_tablet": 3,
+        "sm_down_enable_card_thumbnail": false,
+        "layout_mobile": "slide",
+        "products_per_row_mobile": 1,
+        "custom_gap": -1,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "sliding_behavior": "all"
+      }
+    },
+    "features_grid_aiQeMA": {
+      "type": "features-grid",
+      "blocks": {
+        "feature_card_Qnxz7P": {
+          "type": "feature_card",
+          "settings": {
+            "icon_svg": "",
+            "title": "Mistake-Friendly",
+            "description": "Keep going even if you lose your place — no undoing required."
+          }
+        },
+        "feature_card_jMkMTj": {
+          "type": "feature_card",
+          "settings": {
+            "icon_svg": "",
+            "title": "Beginner-Friendly",
+            "description": "No crafting experience needed. Just follow the guided steps."
+          }
+        },
+        "feature_card_JkAaLp": {
+          "type": "feature_card",
+          "settings": {
+            "icon_svg": "",
+            "title": "Custom from Any Photo",
+            "description": "Turn any meaningful image into one-of-a-kind string art."
+          }
+        }
+      },
+      "block_order": [
+        "feature_card_Qnxz7P",
+        "feature_card_jMkMTj",
+        "feature_card_JkAaLp"
+      ],
+      "name": "Features Grid",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Meet String Ring",
+        "subheading": "A hands-on, guided art kit designed to help you unplug, create, and actually finish something meaningful.",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "video_HFaPVc": {
+      "type": "video",
+      "name": "t:sections.blocks.video.name",
+      "settings": {
+        "color_scheme": "",
+        "video_url": "",
+        "title": "",
+        "text": "",
+        "align_content": "text-align-left",
+        "position_content": "above",
+        "md_padding_top": 0,
+        "md_padding_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "split_image_content_3xrpVG": {
+      "type": "split-image-content",
+      "name": "Split Image & Content",
+      "settings": {
+        "color_scheme": "",
+        "image": "shopify://shop_images/everything-you-need.jpg",
+        "image_position": "left",
+        "heading": "Everything You Need, In One Box",
+        "intro": "No extra tools. No guesswork. Everything you need to get started is included.",
+        "bullet_1": "Interlocking Loom Pieces",
+        "bullet_2": "Pre-Cut String & Spool Holder",
+        "bullet_3": "Precision Stringing Tool",
+        "bullet_4": "Numbered Paper Template",
+        "bullet_5": "Wooden Phone Stand",
+        "bullet_6": "Convertible Box Easel",
+        "bullet_7": "Zip Ties for Assembly",
+        "bullet_8": "App Access for Custom Guides",
+        "bullet_9": "",
+        "bullet_10": "",
+        "button_label": "Add to Cart",
+        "product": "",
+        "button_link": "",
+        "button_color": "#E8622A",
+        "md_padding_top": 64,
+        "md_padding_bottom": 64,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "before_after_JDmxdx": {
+      "type": "before-after",
+      "blocks": {
+        "before_after_Uktgrm": {
+          "type": "before_after",
+          "settings": {
+            "media_aspect_ratio": "landscape_alt",
+            "label_colors": "#000000",
+            "before_label": "Before",
+            "after_label": "After",
+            "label_position": "top"
+          }
+        },
+        "title_Mhnqb6": {
+          "type": "title",
+          "settings": {
+            "title": "Comparison Section",
+            "heading_tag": "h2",
+            "sm_size_multiplier": "sm-size--default",
+            "sm_margin_top": 4,
+            "size_multiplier": "size--default",
+            "margin_top": 4
+          }
+        },
+        "text_VFiFGN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this section to compare before-and-after images. Useful for showcasing results before and after using a product or service.</p>",
+            "sm_size_multiplier": "sm-size--default",
+            "sm_margin_top": 12,
+            "size_multiplier": "size--default",
+            "margin_top": 12
+          }
+        },
+        "button_MgLy7Q": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "",
+            "sm_size_multiplier": "sm-size--default",
+            "sm_margin_top": 24,
+            "size_multiplier": "size--default",
+            "margin_top": 24
+          }
+        }
+      },
+      "block_order": [
+        "before_after_Uktgrm",
+        "title_Mhnqb6",
+        "text_VFiFGN",
+        "button_MgLy7Q"
+      ],
+      "name": "t:sections.before_after.name",
+      "settings": {
+        "color_scheme": "scheme-be8ef671-53c2-4895-89a6-144af711f198",
+        "media_position_desktop": "top",
+        "media_width": "wide",
+        "content_width": "col-sm-max-5",
+        "desktop_alignment": "center",
+        "sm_full_width_buttons": false,
+        "md_padding_top": 40,
+        "md_padding_bottom": 40,
+        "media_position": "top",
+        "mobile_alignment": "center",
+        "full_width_buttons": false,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "app_carousel_ehEbit": {
+      "type": "app-carousel",
+      "blocks": {
+        "slide_HWKJ8i": {
+          "type": "slide",
+          "settings": {
+            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+          }
+        },
+        "slide_XUMeEJ": {
+          "type": "slide",
+          "settings": {
+            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+          }
+        },
+        "slide_njUDNd": {
+          "type": "slide",
+          "settings": {
+            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+          }
+        },
+        "slide_QKEPLP": {
+          "type": "slide",
+          "settings": {
+            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+          }
+        },
+        "slide_B6FX6q": {
+          "type": "slide",
+          "settings": {
+            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+          }
+        },
+        "slide_PMEMT9": {
+          "type": "slide",
+          "settings": {
+            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+          }
+        }
+      },
+      "block_order": [
+        "slide_HWKJ8i",
+        "slide_XUMeEJ",
+        "slide_njUDNd",
+        "slide_QKEPLP",
+        "slide_B6FX6q",
+        "slide_PMEMT9"
+      ],
+      "name": "App Carousel",
+      "settings": {
+        "heading": "How The App Works",
+        "subheading": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan.",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "feature_carousel_6FG3qV": {
+      "type": "feature-carousel",
+      "blocks": {
+        "slide_DjKFWA": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/step-2.jpg",
+            "title": "Header",
+            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+          }
+        },
+        "slide_ENz4BQ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/features-image.jpg",
+            "title": "Header",
+            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+          }
+        },
+        "slide_pRbLiy": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/finished-image.jpg",
+            "title": "Header",
+            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+          }
+        },
+        "slide_GDPB8K": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/everything-you-need.jpg",
+            "title": "Header",
+            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+          }
+        }
+      },
+      "block_order": [
+        "slide_DjKFWA",
+        "slide_ENz4BQ",
+        "slide_pRbLiy",
+        "slide_GDPB8K"
+      ],
+      "name": "Features Carousel",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Features Section",
+        "subheading": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan.",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "cta_banner_GTHMPG": {
+      "type": "cta-banner",
+      "name": "CTA Banner",
+      "settings": {
+        "heading": "Create Your String Ring",
+        "subheading": "Turn a meaningful photo into custom string art — guided, calming, and designed to be finished.",
+        "button_label": "Start Your String Ring →",
+        "button_link": "",
+        "caption": "No experience needed. Everything included.",
+        "md_padding_top": 120,
+        "md_padding_bottom": 120,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "product-hero",
+    "the-product-recommendations",
+    "features_grid_aiQeMA",
+    "video_HFaPVc",
+    "split_image_content_3xrpVG",
+    "before_after_JDmxdx",
+    "app_carousel_ehEbit",
+    "feature_carousel_6FG3qV",
+    "cta_banner_GTHMPG"
+  ]
+}

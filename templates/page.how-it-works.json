@@ -1,0 +1,291 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "heading_text_align": "text-align-left",
+        "page_pixel_width_desktop": 650,
+        "sm_size_multiplier": "sm-size--default",
+        "md_padding_top": 40,
+        "md_padding_bottom": 40,
+        "size_multiplier": "size--default",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "media_hero_pWfKnK": {
+      "type": "media-hero",
+      "name": "Media Hero",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Set Up Your String Ring",
+        "subheading": "Everything you need to go from box to first string — step by step.",
+        "caption": "No experience needed • Take it at your own pace",
+        "overlay_opacity": 0,
+        "foreground_image": "shopify://shop_images/setup-ring.jpg",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "icon_row_d3kQV7": {
+      "type": "icon-row",
+      "blocks": {
+        "icon_item_4RmbNa": {
+          "type": "icon_item",
+          "settings": {
+            "icon_svg": "<svg width=\"75\" height=\"75\" viewbox=\"0 0 75 75\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M37.5 1.5C17.6177 1.5 1.5 17.6177 1.5 37.5C1.5 57.3823 17.6177 73.5 37.5 73.5\" stroke=\"white\" stroke-width=\"3\" stroke-dasharray=\"12.18 9.47\"></path>\n<path d=\"M37.5 73.5C57.3822 73.5 73.5 57.3823 73.5 37.5C73.5 17.6177 57.3823 1.5 37.5 1.5\" stroke=\"white\" stroke-width=\"3\"></path>\n</svg>",
+            "label": "Assemble your loom"
+          }
+        },
+        "icon_item_ErqxAD": {
+          "type": "icon_item",
+          "settings": {
+            "icon_svg": "<svg width=\"65\" height=\"72\" viewbox=\"0 0 65 72\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M0.000337791 1.05946V67.3394C0.000337791 67.8689 0.441617 68.3984 1.05926 68.3984H36.6263C36.9794 68.3984 37.244 67.9571 37.0676 67.604C33.4492 61.7792 33.7137 54.1009 38.3914 48.4525C39.3621 47.2169 40.5096 46.2461 41.7453 45.3636C42.1865 45.0987 41.9216 44.481 41.4804 44.481H4.94254C4.85434 44.481 4.76614 44.3928 4.76614 44.3046L4.76586 4.50133C4.76586 4.41313 4.85405 4.32493 4.94225 4.32493H53.0416C53.1298 4.32493 53.218 4.41313 53.218 4.50133L53.2183 42.1865C53.2183 42.4514 53.3946 42.6278 53.6595 42.6278C54.8952 42.8042 56.1308 43.1572 57.3661 43.6867C57.7192 43.8631 58.0723 43.5985 58.0723 43.2454V1.05921C58.0723 0.529733 57.631 0.000287291 57.0134 0.000287291L0.971033 0C0.441271 0 0 0.441278 0 1.05921L0.000337791 1.05946Z\" fill=\"white\"></path>\n<path d=\"M7.94305 40.5097H49.9527C50.7471 40.5097 51.1884 39.539 50.7471 38.921L36.4497 17.6514C36.0084 17.0337 35.214 17.0337 34.861 17.6514L22.9464 35.2142C22.5934 35.8319 21.7108 35.8319 21.3577 35.2142L16.3273 27.7125C15.9742 27.0948 15.0916 27.0948 14.7385 27.7125L7.23679 38.8327C6.7076 39.5389 7.14888 40.5096 7.94295 40.5096L7.94305 40.5097Z\" fill=\"white\"></path>\n<path d=\"M16.5924 17.2102C16.5924 15.2687 15.0037 13.6799 13.0622 13.6799C11.1207 13.6799 9.53198 15.2687 9.53198 17.2102C9.53198 19.1516 11.1207 20.7404 13.0622 20.7404C15.0037 20.8289 16.5924 19.2402 16.5924 17.2102Z\" fill=\"white\"></path>\n<path d=\"M61.073 67.2511C65.6622 61.6909 64.8682 53.395 59.3079 48.8057C53.7476 44.2166 45.4518 45.0106 40.8625 50.5708C36.2733 56.1311 37.0673 64.427 42.6276 69.0163C48.276 73.6054 56.4837 72.8111 61.073 67.2511ZM56.1308 57.7195H53.3067C53.1303 57.7195 53.0419 57.8959 53.0419 57.9844V66.81C53.0419 67.0749 52.777 67.3395 52.6006 67.3395H49.4234C49.1586 67.3395 48.894 67.0746 48.894 66.81V57.9844C48.894 57.808 48.8058 57.7195 48.6291 57.7195H45.8051C45.3638 57.7195 45.1874 57.2782 45.452 56.9252L50.5709 50.6591C50.7473 50.3942 51.1886 50.3942 51.3653 50.6591L56.4843 56.9252C56.8368 57.2782 56.5722 57.7195 56.1309 57.7195H56.1308Z\" fill=\"white\"></path>\n</svg>",
+            "label": "Upload a photo and generate your guide"
+          }
+        },
+        "icon_item_cymWwb": {
+          "type": "icon_item",
+          "settings": {
+            "icon_svg": "<svg width=\"72\" height=\"72\" viewbox=\"0 0 72 72\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle cx=\"36\" cy=\"36\" r=\"34.5\" stroke=\"white\" stroke-width=\"3\"></circle>\n<path d=\"M36 1.75128V70.2487\" stroke=\"white\" stroke-width=\"3\"></path>\n<path d=\"M1.75635 36.005L70.2538 36.005\" stroke=\"white\" stroke-width=\"3\"></path>\n<path d=\"M4.13525 48.5417L67.8784 23.4675\" stroke=\"white\" stroke-width=\"3\"></path>\n<path d=\"M22.0039 67.2562L50.0148 4.7479\" stroke=\"white\" stroke-width=\"3\"></path>\n<path d=\"M49.457 67.4962L22.5615 4.49994\" stroke=\"white\" stroke-width=\"3\"></path>\n<path d=\"M68.2661 47.4973L3.74691 24.4936\" stroke=\"white\" stroke-width=\"3\"></path>\n<path d=\"M11.7842 11.786L60.2192 60.221\" stroke=\"white\" stroke-width=\"3\"></path>\n<path d=\"M11.791 60.2209L60.226 11.7859\" stroke=\"white\" stroke-width=\"3\"></path>\n</svg>",
+            "label": "Start stringing with confidence"
+          }
+        }
+      },
+      "block_order": [
+        "icon_item_4RmbNa",
+        "icon_item_ErqxAD",
+        "icon_item_cymWwb"
+      ],
+      "name": "Icon Row",
+      "settings": {
+        "color_scheme": "scheme-be8ef671-53c2-4895-89a6-144af711f198",
+        "heading": "What You'll Do",
+        "md_padding_top": 64,
+        "md_padding_bottom": 64,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "steps_with_images_WMKPeF": {
+      "type": "steps-with-images",
+      "blocks": {
+        "step_dPEj8J": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/setp-1.jpg",
+            "title": "Assemble Your Loom",
+            "description": "Snap the interlocking pieces together to form your loom.",
+            "tip": "No tools required — everything clicks into place."
+          }
+        },
+        "step_xQfen7": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/step-2.jpg",
+            "title": "Prepare Your Workspace",
+            "description": "Set up a comfortable space with good lighting and room to move.",
+            "tip": "Use the box easel or phone stand to keep your guide visible."
+          }
+        },
+        "step_Xm4zYR": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/step-3.jpg",
+            "title": "Upload Your Photo",
+            "description": "Upload your image in the app to generate a custom stringing guide.",
+            "tip": "High-contrast photos work best."
+          }
+        },
+        "step_AaEBpH": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/step-4.jpg",
+            "title": "Start Stringing",
+            "description": "Follow the numbered guide at your own pace.",
+            "tip": "There's no wrong order — just keep going."
+          }
+        }
+      },
+      "block_order": [
+        "step_dPEj8J",
+        "step_xQfen7",
+        "step_Xm4zYR",
+        "step_AaEBpH"
+      ],
+      "name": "Steps with Images",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Getting Started",
+        "subheading": "Follow these steps in order, or jump ahead at your own pace.",
+        "number_color": "#2563eb",
+        "button_label": "Start Your String Ring →",
+        "button_link": "",
+        "button_style": "primary",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "video_AHgbbw": {
+      "type": "video",
+      "name": "t:sections.blocks.video.name",
+      "settings": {
+        "color_scheme": "",
+        "video_url": "",
+        "title": "Instructional Video",
+        "text": "<p>Prefer to watch? Here's a quick walkthrough of the full process. </p>",
+        "align_content": "text-align-center",
+        "position_content": "above",
+        "md_padding_top": 0,
+        "md_padding_bottom": 40,
+        "padding_top": 0,
+        "padding_bottom": 24
+      }
+    },
+    "cta_banner_HAWR4j": {
+      "type": "cta-banner",
+      "name": "CTA Banner",
+      "settings": {
+        "heading": "Create Your String Ring",
+        "subheading": "Turn a meaningful photo into custom string art — guided, calming, and designed to be finished.",
+        "button_label": "Start Your String Ring →",
+        "button_link": "",
+        "caption": "No experience needed. Everything included.",
+        "md_padding_top": 120,
+        "md_padding_bottom": 120,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "faq_with_image_TKFwQq": {
+      "type": "faq-with-image",
+      "blocks": {
+        "faq_item_kw7Xec": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Lorem ipsum dolor sit amet, consectetur adipiscing?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas orci netus feugiat ut egestas ut sagittis tincidunt phasellus elit etiam cursus orci in. Id sed montes.</p>"
+          }
+        },
+        "faq_item_D8zJqt": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Lorem ipsum dolor sit amet, consectetur?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas.</p>"
+          }
+        },
+        "faq_item_JTeLJB": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Lorem ipsum dolor sit amet, consectetur adipiscing?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas.</p>"
+          }
+        },
+        "faq_item_FBchyJ": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Lorem ipsum dolor sit amet adipiscing?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_kw7Xec",
+        "faq_item_D8zJqt",
+        "faq_item_JTeLJB",
+        "faq_item_FBchyJ"
+      ],
+      "name": "FAQ with Image",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Frequently Asked Questions",
+        "subheading": "Lorem ipsum dolor sit amet consectetur adipiscing elit aenean id volutpat imperdiet quis at pellentesque nunc commodo nunc purus pulvinar nisi fusce.",
+        "image": "shopify://shop_images/faq-image.jpg",
+        "button_label": "View more FAQ's",
+        "button_link": "",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "tips_grid_zVTVpN": {
+      "type": "tips-grid",
+      "blocks": {
+        "tip_card_XARwRN": {
+          "type": "tip_card",
+          "settings": {
+            "badge_label": "",
+            "title": "Take Your Time",
+            "description": "There's no rush. Pause, step away, and come back whenever you want."
+          }
+        },
+        "tip_card_waGgg8": {
+          "type": "tip_card",
+          "settings": {
+            "badge_label": "",
+            "title": "Mistakes Are Okay",
+            "description": "If you lose your place, just keep going — no undoing required."
+          }
+        },
+        "tip_card_xewCbr": {
+          "type": "tip_card",
+          "settings": {
+            "badge_label": "",
+            "title": "No \"Right\" Result",
+            "description": "Every finished piece is unique, and that's part of the process."
+          }
+        },
+        "tip_card_EzwCKR": {
+          "type": "tip_card",
+          "settings": {
+            "badge_label": "",
+            "title": "Trust the Guide",
+            "description": "Following the numbered steps will get you where you need to go."
+          }
+        }
+      },
+      "block_order": [
+        "tip_card_XARwRN",
+        "tip_card_waGgg8",
+        "tip_card_xewCbr",
+        "tip_card_EzwCKR"
+      ],
+      "name": "Tips Grid",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Helpful Tips for a Smooth Experience",
+        "subheading": "You don't need to rush — this is meant to be enjoyed.",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "main",
+    "media_hero_pWfKnK",
+    "icon_row_d3kQV7",
+    "steps_with_images_WMKPeF",
+    "video_AHgbbw",
+    "cta_banner_HAWR4j",
+    "faq_with_image_TKFwQq",
+    "tips_grid_zVTVpN"
+  ]
+}

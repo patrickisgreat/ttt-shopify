@@ -1,0 +1,273 @@
+{{ 'section-faq-with-image.css' | asset_url | stylesheet_tag }}
+
+<div
+  id="{{ section.id }}"
+  class="faq-section container pt pb sm-pt sm-pb color-{{ section.settings.color_scheme }}"
+  style="
+    --pt: {{ section.settings.padding_top | append: 'px' }};
+    --pb: {{ section.settings.padding_bottom | append: 'px' }};
+    --sm-pt: {{ section.settings.md_padding_top | append: 'px' }};
+    --sm-pb: {{ section.settings.md_padding_bottom | append: 'px' }};
+  "
+>
+
+  <div class="faq__header text-align-center">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="faq__title">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <p class="faq__subheading">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+  </div>
+
+  <div class="faq__body">
+
+    <div class="faq__accordion-col">
+      {%- if section.blocks.size > 0 -%}
+        <div class="faq__accordion" id="faq-accordion-{{ section.id }}">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'faq_item' -%}
+              <div
+                class="faq__item{% if forloop.first %} is-open{% endif %}"
+                {{ block.shopify_attributes }}
+              >
+                <button
+                  class="faq__question"
+                  aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                  aria-controls="faq-answer-{{ section.id }}-{{ forloop.index }}"
+                >
+                  <span>{{ block.settings.question }}</span>
+                  <span class="faq__icon" aria-hidden="true">
+                    <svg class="faq__icon-chevron-right" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.5 4.5L13 10L7.5 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg class="faq__icon-chevron-up" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4.5 13L10 7.5L15.5 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div
+                  class="faq__answer"
+                  id="faq-answer-{{ section.id }}-{{ forloop.index }}"
+                  role="region"
+                >
+                  <div class="faq__answer-inner">
+                    {{ block.settings.answer }}
+                  </div>
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.button_label != blank -%}
+        <div class="faq__cta">
+          
+            <a href="{{ section.settings.button_link | default: '#' }}"
+            class="btn btn--secondary"
+          >
+            {{ section.settings.button_label }}
+          </a>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="faq__image-col">
+      {%- if section.settings.image != blank -%}
+        <div class="faq__image sm-br-img">
+          {%- render 'img',
+            lazyload: true,
+            wrapped: false,
+            src: section.settings.image
+          -%}
+        </div>
+      {%- else -%}
+        <div class="faq__image faq__image--placeholder sm-br-img">
+          {{ 'lifestyle-1' | placeholder_svg_tag }}
+        </div>
+      {%- endif -%}
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (function() {
+    const accordion = document.getElementById('faq-accordion-{{ section.id }}');
+    if (!accordion) return;
+
+    accordion.addEventListener('click', function(e) {
+      const btn = e.target.closest('.faq__question');
+      if (!btn) return;
+
+      const item = btn.closest('.faq__item');
+      const isOpen = item.classList.contains('is-open');
+
+      // Close all
+      accordion.querySelectorAll('.faq__item').forEach(function(el) {
+        el.classList.remove('is-open');
+        el.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
+      });
+
+      // Open clicked (unless it was already open)
+      if (!isOpen) {
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "FAQ with Image",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "default",
+      "label": "Color scheme"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Lorem ipsum dolor sit amet consectetur adipiscing elit aenean id volutpat imperdiet quis at pellentesque nunc commodo nunc purus pulvinar nisi fusce."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Side image"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "View more FAQ's"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Desktop layout"
+    },
+    {
+      "type": "range",
+      "id": "md_padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "md_padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "name": "FAQ Item",
+      "type": "faq_item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas orci netus feugiat ut egestas ut sagittis tincidunt phasellus elit etiam cursus orci in. Id sed montes.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ with Image",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Lorem ipsum dolor sit amet, consectetur adipiscing?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas orci netus feugiat ut egestas ut sagittis tincidunt phasellus elit etiam cursus orci in. Id sed montes.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Lorem ipsum dolor sit amet, consectetur?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Lorem ipsum dolor sit amet, consectetur adipiscing?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Lorem ipsum dolor sit amet adipiscing?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

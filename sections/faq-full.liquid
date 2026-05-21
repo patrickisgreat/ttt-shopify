@@ -1,0 +1,254 @@
+{{ 'section-faq-full.css' | asset_url | stylesheet_tag }}
+
+<div
+  id="{{ section.id }}"
+  class="faq-full container pt pb sm-pt sm-pb color-{{ section.settings.color_scheme }}"
+  style="
+    --pt: {{ section.settings.padding_top | append: 'px' }};
+    --pb: {{ section.settings.padding_bottom | append: 'px' }};
+    --sm-pt: {{ section.settings.md_padding_top | append: 'px' }};
+    --sm-pb: {{ section.settings.md_padding_bottom | append: 'px' }};
+  "
+>
+
+  <div class="faq-full__header text-align-center">
+    {%- if section.settings.heading != blank -%}
+      <h1 class="faq-full__title">{{ section.settings.heading }}</h1>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <p class="faq-full__subheading">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+  </div>
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="faq-full__body" id="faq-full-{{ section.id }}">
+      {%- assign item_index = 0 -%}
+      {%- for block in section.blocks -%}
+
+        {%- if block.type == 'topic_header' -%}
+          <h2 class="faq-full__topic-heading" {{ block.shopify_attributes }}>
+            {{ block.settings.topic_title }}
+          </h2>
+
+        {%- elsif block.type == 'faq_item' -%}
+          {%- assign item_index = item_index | plus: 1 -%}
+          <div
+            class="faq-full__item{% if item_index == 1 %} is-open{% endif %}"
+            {{ block.shopify_attributes }}
+          >
+            <button
+              class="faq-full__question"
+              aria-expanded="{% if item_index == 1 %}true{% else %}false{% endif %}"
+              aria-controls="faq-full-answer-{{ section.id }}-{{ item_index }}"
+            >
+              <span>{{ block.settings.question }}</span>
+              <span class="faq-full__icon" aria-hidden="true">
+                <svg class="faq-full__chevron-right" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.5 4.5L13 10L7.5 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <svg class="faq-full__chevron-down" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.5 7.5L10 13L15.5 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div
+              class="faq-full__answer"
+              id="faq-full-answer-{{ section.id }}-{{ item_index }}"
+              role="region"
+            >
+              <div class="faq-full__answer-inner">
+                {{ block.settings.answer }}
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+</div>
+
+<script>
+  (function() {
+    const container = document.getElementById('faq-full-{{ section.id }}');
+    if (!container) return;
+
+    container.addEventListener('click', function(e) {
+      const btn = e.target.closest('.faq-full__question');
+      if (!btn) return;
+
+      const item = btn.closest('.faq-full__item');
+      const isOpen = item.classList.contains('is-open');
+
+      // Close all items
+      container.querySelectorAll('.faq-full__item').forEach(function(el) {
+        el.classList.remove('is-open');
+        el.querySelector('.faq-full__question').setAttribute('aria-expanded', 'false');
+      });
+
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "FAQ Full Page",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "default",
+      "label": "Color scheme"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Page heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Quick answers to help you feel confident getting started."
+    },
+    {
+      "type": "header",
+      "content": "Desktop layout"
+    },
+    {
+      "type": "range",
+      "id": "md_padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "md_padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Topic Header",
+      "type": "topic_header",
+      "settings": [
+        {
+          "type": "text",
+          "id": "topic_title",
+          "label": "Topic heading",
+          "default": "Topic Header"
+        }
+      ]
+    },
+    {
+      "name": "FAQ Item",
+      "type": "faq_item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Lorem ipsum dolor sit amet consectetur?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas orci netus feugiat ut egestas ut sagittis tincidunt phasellus elit etiam cursus orci in. Id sed montes.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Full Page",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "topic_header",
+          "settings": { "topic_title": "Getting Started" }
+        },
+        {
+          "type": "faq_item",
+          "settings": { "question": "Lorem ipsum dolor sit amet consectetur?" }
+        },
+        {
+          "type": "faq_item",
+          "settings": { "question": "Lorem ipsum dolor sit amet consectetur?" }
+        },
+        {
+          "type": "faq_item",
+          "settings": { "question": "Lorem ipsum dolor sit amet consectetur?" }
+        },
+        {
+          "type": "faq_item",
+          "settings": { "question": "Lorem ipsum dolor sit amet consectetur?" }
+        },
+        {
+          "type": "topic_header",
+          "settings": { "topic_title": "Your Order" }
+        },
+        {
+          "type": "faq_item",
+          "settings": { "question": "Lorem ipsum dolor sit amet consectetur?" }
+        },
+        {
+          "type": "faq_item",
+          "settings": { "question": "Lorem ipsum dolor sit amet consectetur?" }
+        },
+        {
+          "type": "faq_item",
+          "settings": { "question": "Lorem ipsum dolor sit amet consectetur?" }
+        },
+        {
+          "type": "faq_item",
+          "settings": { "question": "Lorem ipsum dolor sit amet consectetur?" }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

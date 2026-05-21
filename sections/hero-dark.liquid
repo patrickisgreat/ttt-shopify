@@ -1,0 +1,209 @@
+{{ 'section-hero-dark.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #{{ section.id }} .hero-dark__btn--primary {
+    background: {{ section.settings.primary_button_color | default: '#E8622A' }};
+  }
+{%- endstyle -%}
+
+<div
+  id="{{ section.id }}"
+  class="hero-dark pt pb sm-pt sm-pb"
+  style="
+    --pt: {{ section.settings.padding_top | append: 'px' }};
+    --pb: {{ section.settings.padding_bottom | append: 'px' }};
+    --sm-pt: {{ section.settings.md_padding_top | append: 'px' }};
+    --sm-pb: {{ section.settings.md_padding_bottom | append: 'px' }};
+  "
+>
+  <div class="hero-dark__bg" aria-hidden="true"></div>
+
+  <div class="hero-dark__inner container">
+    <div class="hero-dark__grid">
+
+      {%- comment -%} ── Left: Text ── {%- endcomment -%}
+      <div class="hero-dark__text-col">
+
+        {%- if section.settings.heading != blank -%}
+          <h1 class="hero-dark__title">{{ section.settings.heading }}</h1>
+        {%- endif -%}
+
+        {%- if section.settings.subheading != blank -%}
+          <p class="hero-dark__subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+
+        <div class="hero-dark__buttons">
+          {%- if section.settings.primary_button_label != blank -%}
+            
+              <a href="{{ section.settings.primary_button_link | default: '#' }}"
+              class="hero-dark__btn hero-dark__btn--primary"
+            >
+              {{ section.settings.primary_button_label }}
+              <span aria-hidden="true">→</span>
+            </a>
+          {%- endif -%}
+          {%- if section.settings.secondary_button_label != blank -%}
+            
+             <a href="{{ section.settings.secondary_button_link | default: '#' }}"
+              class="hero-dark__btn hero-dark__btn--secondary"
+            >
+              {{ section.settings.secondary_button_label }}
+            </a>
+          {%- endif -%}
+        </div>
+
+        {%- if section.settings.caption != blank -%}
+          <p class="hero-dark__caption">{{ section.settings.caption }}</p>
+        {%- endif -%}
+
+      </div>
+
+      {%- comment -%} ── Right: Image ── {%- endcomment -%}
+      {%- if section.settings.image != blank -%}
+        <div class="hero-dark__image-col">
+          <div class="hero-dark__image">
+            {%- render 'img',
+              lazyload: false,
+              wrapped: false,
+              src: section.settings.image
+            -%}
+          </div>
+        </div>
+      {%- endif -%}
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero Dark",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your Photo. Your Art. Your Way."
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "A calming, hands-on art kit that turns meaningful photos into custom string art — no experience needed."
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption (below buttons)",
+      "default": "Beginner-friendly • No experience needed"
+    },
+    {
+      "type": "header",
+      "content": "Primary button"
+    },
+    {
+      "type": "text",
+      "id": "primary_button_label",
+      "label": "Label",
+      "default": "Start Your String Ring →"
+    },
+    {
+      "type": "url",
+      "id": "primary_button_link",
+      "label": "Link"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_color",
+      "label": "Button color",
+      "default": "#E8622A"
+    },
+    {
+      "type": "header",
+      "content": "Secondary button"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_label",
+      "label": "Label",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Right side image",
+      "info": "Portrait or square image recommended."
+    },
+    {
+      "type": "header",
+      "content": "Desktop layout"
+    },
+    {
+      "type": "range",
+      "id": "md_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "md_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 56
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Dark",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

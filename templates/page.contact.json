@@ -1,0 +1,185 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "heading_text_align": "text-align-left",
+        "page_pixel_width_desktop": 650,
+        "sm_size_multiplier": "sm-size--default",
+        "md_padding_top": 40,
+        "md_padding_bottom": 40,
+        "size_multiplier": "size--default",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "contact_split_9gxpVC": {
+      "type": "contact-split",
+      "name": "Contact Split",
+      "settings": {
+        "color_scheme": "",
+        "eyebrow": "CONTACT US",
+        "heading": "Get in touch today",
+        "body_text": "<p>Threaditate is a small team, and we read every message. Whether you're stuck, curious, or just getting started, we'll point you in the right direction.</p>",
+        "bullet_1": "Questions about your kit",
+        "bullet_2": "Help getting started",
+        "bullet_3": "Feedback or suggestions",
+        "email_label": "Email us instead:",
+        "email_address": "contact@company.com",
+        "card_bg": "#333392",
+        "button_color": "#e8622a",
+        "label_name": "Name",
+        "placeholder_name": "John Carter",
+        "label_email": "Email",
+        "placeholder_email": "example@email.com",
+        "show_phone": true,
+        "label_phone": "Phone",
+        "placeholder_phone": "(123) 456 – 789",
+        "show_company": true,
+        "label_company": "Company",
+        "placeholder_company": "Facebook",
+        "label_message": "Message",
+        "placeholder_message": "Please type your message here…",
+        "button_label": "Submit",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "icon_row_dark_w7EU4t": {
+      "type": "icon-row-dark",
+      "blocks": {
+        "icon_item_KzFDMF": {
+          "type": "icon_item",
+          "settings": {
+            "icon_svg": "<svg width=\"65\" height=\"65\" viewbox=\"0 0 65 65\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_211_2522)\">\n<path d=\"M59.9194 0H5.07568C2.27657 0 -0.00244141 2.27901 -0.00244141 5.07813V44.6875C-0.00244141 47.4866 2.27657 49.7656 5.07568 49.7656H12.1851V62.9688C12.1851 63.7569 12.64 64.4759 13.3552 64.8092C13.6315 64.9391 13.9239 65 14.2163 65C14.6835 65 15.1467 64.8375 15.5163 64.5288L33.2326 49.7657H59.9194C62.7186 49.7657 64.9976 47.4867 64.9976 44.6876V5.07819C64.9976 2.27907 62.7186 6.5e-05 59.9194 6.5e-05V0ZM60.9351 44.6875C60.9351 45.2359 60.4719 45.7031 59.9194 45.7031H32.4976C32.0223 45.7031 31.5632 45.8696 31.1976 46.1743L16.2476 58.6338V47.7381C16.2476 46.6169 15.3375 45.7069 14.2163 45.7069H5.07568C4.52324 45.7069 4.06006 45.2397 4.06006 44.6913V5.07808C4.06006 4.52964 4.52323 4.06246 5.07568 4.06246H59.9194C60.4719 4.06246 60.9351 4.52964 60.9351 5.07808V44.6875ZM40.1145 10.6643C36.8319 10.6643 34.1464 12.4355 32.542 13.8331C30.9819 12.4192 28.3453 10.6643 24.8801 10.6643C19.2901 10.6643 15.2319 14.4465 15.2319 19.6587C15.2319 23.636 16.3125 26.7556 22.0082 31.818C25.124 34.5886 31.1163 38.59 31.3725 38.7611C31.7138 38.9886 32.1078 39.1024 32.4977 39.1024C32.8877 39.1024 33.2819 38.9886 33.6229 38.7611C33.8747 38.5906 39.8711 34.589 42.9873 31.818C47.3828 27.914 49.7635 24.8181 49.7635 19.6587C49.7635 14.4993 45.705 10.6643 40.1153 10.6643H40.1145ZM40.2892 28.7831C38.1564 30.6802 34.3786 33.3291 32.4974 34.6168C30.6163 33.3291 26.838 30.6802 24.7055 28.7831C20.5088 25.0496 19.2944 23.0062 19.2944 19.6625C19.2944 16.7578 21.5897 14.7306 24.88 14.7306C28.4387 14.7306 30.8319 17.9236 30.8481 17.948C31.2178 18.4638 31.8108 18.7728 32.4448 18.7888C33.0705 18.8091 33.6878 18.5247 34.0821 18.0332C34.1104 18.0006 36.7876 14.7303 40.1152 14.7303C43.4058 14.7303 45.7008 16.7575 45.7008 19.6622C45.7008 23.0058 44.4861 25.0531 40.2897 28.7828L40.2892 28.7831Z\" fill=\"white\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_211_2522\">\n<rect width=\"65\" height=\"65\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "title": "Thoughtful Support",
+            "description": "We believe help should feel calm and encouraging."
+          }
+        },
+        "icon_item_EbbmxB": {
+          "type": "icon_item",
+          "settings": {
+            "icon_svg": "<svg width=\"65\" height=\"65\" viewbox=\"0 0 65 65\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M4.53243 32.5001C4.53243 17.0583 17.0581 4.53258 32.5 4.53258H41.5649C42.8121 4.53258 43.8312 3.51351 43.8312 2.26629C43.8312 1.01907 42.8298 0 41.5649 0H32.5C14.5459 0 0 14.5459 0 32.5C0 50.4541 14.5459 65 32.5 65C50.4541 65 65 50.4541 65 32.5V30.9891C65 29.7419 63.9809 28.7228 62.7337 28.7228C61.4865 28.7228 60.4674 29.7419 60.4674 30.9891V32.5C60.4674 47.9419 47.9417 60.4676 32.4999 60.4676C17.058 60.4676 4.53229 47.9419 4.53229 32.5L4.53243 32.5001ZM61.3108 15.9691C62.1892 15.0907 62.1892 13.6501 61.3108 12.7541C60.4324 11.8757 58.9919 11.8757 58.0958 12.7541L32.3944 38.473L21.9066 29.2851C20.9579 28.4594 19.5351 28.5474 18.7093 29.4959C17.8836 30.4446 17.9716 31.8673 18.92 32.6932L31.0065 43.2688C31.9023 44.0595 33.2551 44.0065 34.0983 43.1633L61.3108 15.9691Z\" fill=\"white\"></path>\n</svg>",
+            "title": "No Pressure",
+            "description": "There's no such thing as a silly question."
+          }
+        },
+        "icon_item_c4g6zg": {
+          "type": "icon_item",
+          "settings": {
+            "icon_svg": "<svg width=\"64\" height=\"67\" viewbox=\"0 0 64 67\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M52.3475 35.1102C51.7274 34.8052 50.9751 35.0576 50.6699 35.6776C50.3649 36.2951 50.6173 37.0451 51.235 37.3526C57.0175 40.2177 60.3349 44.1872 60.3349 48.2499C60.3349 56.5225 47.5303 63.2498 31.7924 63.2498C16.0545 63.2498 3.24988 56.5225 3.24988 48.2499C3.24988 44.1874 6.565 40.2153 12.3472 37.3526C12.9646 37.045 13.2196 36.2951 12.9123 35.6776C12.6047 35.0576 11.8597 34.8075 11.2373 35.1102C4.57218 38.4101 0.75 43.2001 0.75 48.2501C0.75 58.0627 14.3846 65.75 31.7925 65.75C49.1998 65.75 62.835 58.0627 62.835 48.2501C62.8324 43.2001 59.0124 38.4101 52.3477 35.1102H52.3475Z\" fill=\"white\" stroke=\"white\" stroke-width=\"1.5\"></path>\n<path d=\"M20.5271 38.2274V49.502C20.5271 52.9494 23.332 55.752 26.7797 55.752H36.7823C40.2297 55.752 43.0322 52.9494 43.0322 49.502V38.2294C46.2598 37.987 48.8147 35.287 48.8147 31.9995C48.8147 25.5446 45.2246 19.8269 39.5821 16.9249C40.9347 15.2174 41.7746 13.0924 41.7746 10.75C41.7746 5.23484 37.2897 0.75 31.7746 0.75C26.2595 0.75 21.7747 5.23484 21.7747 10.75C21.7747 13.095 22.6197 15.2275 23.9773 16.9348C18.3422 19.842 14.7646 25.5547 14.7646 31.9994C14.7646 35.2819 17.3097 37.9793 20.5272 38.227L20.5271 38.2274ZM31.7744 3.25025C35.9092 3.25025 39.2743 6.61537 39.2743 10.7502C39.2743 14.8851 35.9092 18.2502 31.7744 18.2502C27.6395 18.2502 24.2744 14.8851 24.2744 10.7502C24.2744 6.61537 27.6395 3.25025 31.7744 3.25025ZM25.8796 18.7875C27.5369 20.005 29.5644 20.75 31.7744 20.75C33.9895 20.75 36.0168 20.0026 37.6769 18.7776C42.9344 21.1125 46.3142 26.2123 46.3142 32.0002C46.3142 34.0654 44.6294 35.7476 42.5642 35.7476H41.7817C41.0916 35.7476 40.5317 36.3075 40.5317 36.9976V49.5022C40.5317 51.5697 38.8492 53.2522 36.7817 53.2522H26.7791C24.7117 53.2522 23.0291 51.5697 23.0291 49.5022V36.9976C23.0291 36.3075 22.4693 35.7476 21.7791 35.7476H21.0143C18.9468 35.7476 17.2643 34.0651 17.2643 32.0002C17.2643 26.2203 20.6367 21.1256 25.8796 18.7876V18.7875Z\" fill=\"white\" stroke=\"white\" stroke-width=\"1.5\"></path>\n</svg>",
+            "title": "Human Responses",
+            "description": "You'll hear from a real person — not a bot."
+          }
+        }
+      },
+      "block_order": [
+        "icon_item_KzFDMF",
+        "icon_item_EbbmxB",
+        "icon_item_c4g6zg"
+      ],
+      "name": "Icon Row Dark",
+      "settings": {
+        "md_padding_top": 72,
+        "md_padding_bottom": 72,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "faq_with_image_Frazwi": {
+      "type": "faq-with-image",
+      "blocks": {
+        "faq_item_kwyQVn": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will my photo actually turn out good?",
+            "answer": "<p>Yes, as long as your photo is clear and the subject stands out, you’ll get a strong result. Faces, pets, and simple compositions work best.</p>"
+          }
+        },
+        "faq_item_g4fKTt": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does this actually work?",
+            "answer": "<p>Upload your photo, and we turn it into a custom string pattern. You’ll get a kit with everything you need, just follow the guide and connect the thread to bring your image to life.</p>"
+          }
+        },
+        "faq_item_FtzWVk": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Be honest…is Threaditate hard?",
+            "answer": "<p>Not really. It might look intimidating at first, but it’s designed for beginners. If you can follow a step-by-step guide, you can definitely do this, most people get the hang of it pretty quickly.</p>"
+          }
+        },
+        "faq_item_w8AKYB": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does it take to make?",
+            "answer": "<p>Most pieces take around 4–8 hours, depending on size and detail. Some people finish it in one sitting, others spread it out over a few nights.</p>"
+          }
+        },
+        "faq_item_MqCbY4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What exactly do I get?",
+            "answer": "<p>Everything you need: a pre-nailed board, thread, your custom pattern, and the tools to complete it. No extra trips to the store required.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_kwyQVn",
+        "faq_item_g4fKTt",
+        "faq_item_FtzWVk",
+        "faq_item_w8AKYB",
+        "faq_item_MqCbY4"
+      ],
+      "name": "FAQ with Image",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Frequently Asked Questions",
+        "subheading": "If you're wondering it, someone else already asked it. Here's what we told them.",
+        "image": "shopify://shop_images/faq-image.jpg",
+        "button_label": "View more FAQ's",
+        "button_link": "shopify://pages/faq",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "cta_banner_RGMe4a": {
+      "type": "cta-banner",
+      "name": "CTA Banner",
+      "settings": {
+        "heading": "Create Your Threaditate",
+        "subheading": "Turn a meaningful photo into custom string art; guided, calming, and designed to be finished.",
+        "button_label": "Start Your String Ring →",
+        "button_link": "shopify://products/string-ring-custom-string-art-kit",
+        "caption": "No experience needed. Everything included.",
+        "md_padding_top": 120,
+        "md_padding_bottom": 120,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "main",
+    "contact_split_9gxpVC",
+    "icon_row_dark_w7EU4t",
+    "faq_with_image_Frazwi",
+    "cta_banner_RGMe4a"
+  ]
+}

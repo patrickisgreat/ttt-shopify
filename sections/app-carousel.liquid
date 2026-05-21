@@ -1,0 +1,245 @@
+{{ 'section-app-carousel.css' | asset_url | stylesheet_tag }}
+
+<div
+  id="{{ section.id }}"
+  class="app-carousel pt pb sm-pt sm-pb"
+  style="
+    --pt: {{ section.settings.padding_top | append: 'px' }};
+    --pb: {{ section.settings.padding_bottom | append: 'px' }};
+    --sm-pt: {{ section.settings.md_padding_top | append: 'px' }};
+    --sm-pb: {{ section.settings.md_padding_bottom | append: 'px' }};
+  "
+>
+  <div class="app-carousel__inner container">
+
+    <div class="app-carousel__header text-align-center">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="app-carousel__title">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="app-carousel__subheading">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="app-carousel__stage">
+        <div class="app-carousel__track" id="app-carousel-track-{{ section.id }}">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'slide' -%}
+              <div class="app-carousel__slide" {{ block.shopify_attributes }}>
+                <div class="app-carousel__image">
+                  {%- if block.settings.image != blank -%}
+                    {%- render 'img',
+                      lazyload: true,
+                      wrapped: false,
+                      src: block.settings.image
+                    -%}
+                  {%- else -%}
+                    <div class="app-carousel__placeholder"></div>
+                  {%- endif -%}
+                </div>
+                {%- if block.settings.caption != blank -%}
+                  <p class="app-carousel__caption">{{ block.settings.caption }}</p>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+
+      {%- if section.blocks.size > 1 -%}
+        <div class="app-carousel__controls">
+          <button class="app-carousel__arrow app-carousel__arrow--prev" id="app-carousel-prev-{{ section.id }}" aria-label="Previous slide">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.5 4.5L7 10L12.5 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <div class="app-carousel__dots" id="app-carousel-dots-{{ section.id }}">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'slide' -%}
+                <button
+                  class="app-carousel__dot{% if forloop.first %} is-active{% endif %}"
+                  data-index="{{ forloop.index0 }}"
+                  aria-label="Go to slide {{ forloop.index }}"
+                ></button>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+
+          <button class="app-carousel__arrow app-carousel__arrow--next" id="app-carousel-next-{{ section.id }}" aria-label="Next slide">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.5 4.5L13 10L7.5 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+
+  </div>
+</div>
+
+<script>
+(function() {
+  var track = document.getElementById('app-carousel-track-{{ section.id }}');
+  var prevBtn = document.getElementById('app-carousel-prev-{{ section.id }}');
+  var nextBtn = document.getElementById('app-carousel-next-{{ section.id }}');
+  var dotsContainer = document.getElementById('app-carousel-dots-{{ section.id }}');
+
+  if (!track) return;
+
+  var slides = Array.from(track.querySelectorAll('.app-carousel__slide'));
+  var dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('.app-carousel__dot')) : [];
+  var current = 0;
+  var total = slides.length;
+
+  function getVisibleCount() {
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 640) return 2;
+    return 1;
+  }
+
+  function getMaxIndex() {
+    return Math.max(0, total - getVisibleCount());
+  }
+
+  function goTo(index) {
+    var max = getMaxIndex();
+    current = Math.max(0, Math.min(index, max));
+
+    var slideWidth = slides[0].offsetWidth;
+    var gap = parseInt(getComputedStyle(track).gap) || 0;
+    track.style.transform = 'translateX(-' + (current * (slideWidth + gap)) + 'px)';
+
+    // Update dots — active dot = current index relative to max
+    dots.forEach(function(dot, i) {
+      dot.classList.toggle('is-active', i === current);
+    });
+
+    // Disable arrows at ends
+    if (prevBtn) prevBtn.disabled = current === 0;
+    if (nextBtn) nextBtn.disabled = current >= max;
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function() { goTo(current - 1); });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() { goTo(current + 1); });
+  }
+
+  dots.forEach(function(dot, i) {
+    dot.addEventListener('click', function() { goTo(i); });
+  });
+
+  // Re-calculate on resize
+  window.addEventListener('resize', function() { goTo(current); });
+
+  // Init
+  goTo(0);
+})();
+</script>
+
+{% schema %}
+{
+  "name": "App Carousel",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "How The App Works"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+    },
+    {
+      "type": "header",
+      "content": "Desktop layout"
+    },
+    {
+      "type": "range",
+      "id": "md_padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "md_padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Portrait images recommended (2:3 ratio)."
+        },
+        {
+          "type": "textarea",
+          "id": "caption",
+          "label": "Caption",
+          "default": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "App Carousel",
+      "category": "Custom",
+      "blocks": [
+        { "type": "slide", "settings": { "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan." } },
+        { "type": "slide", "settings": { "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan." } },
+        { "type": "slide", "settings": { "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan." } },
+        { "type": "slide", "settings": { "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,183 @@
+/* =====================
+   Features Carousel Section
+   ===================== */
+
+/* Header */
+.features-carousel__header {
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+
+.features-carousel__title {
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
+  font-style: var(--font-heading-style);
+  font-size: 2.6rem;
+  line-height: var(--font-heading-line-height);
+  letter-spacing: var(--font-heading-letter-spacing);
+  text-transform: var(--font-heading-text-transform);
+  color: var(--color-foreground);
+  margin: 0 0 16px;
+}
+
+.features-carousel__subheading {
+  font-family: var(--font-body-family);
+  font-size: 1.6rem;
+  line-height: var(--font-body-line-height);
+  color: var(--color-foreground);
+  opacity: 0.70;
+  margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .features-carousel__title      { font-size: 3.2rem; }
+  .features-carousel__subheading { font-size: 1.8rem; }
+}
+
+/* Stage — bleeds off the right edge intentionally.
+   Overflow visible on right, hidden on left via negative margin trick. */
+.features-carousel__stage {
+  /* Pull left to align first slide with container,
+     but allow right side to bleed past viewport */
+  overflow: hidden;
+  /* Extend stage past container right edge */
+  margin-right: calc(-1 * var(--container-margin, 24px));
+  padding-right: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .features-carousel__stage {
+    margin-right: calc(-1 * var(--container-margin, 40px));
+  }
+}
+
+/* Track */
+.features-carousel__track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  /* Extra right padding so last slide doesn't sit flush at bleed edge */
+  padding-right: calc(var(--container-margin, 24px) + 20px);
+}
+
+@media only screen and (min-width: 768px) {
+  .features-carousel__track {
+    gap: 24px;
+    padding-right: calc(var(--container-margin, 40px) + 24px);
+  }
+}
+
+/* Slide */
+.features-carousel__slide {
+  flex: 0 0 calc(80vw);
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media only screen and (min-width: 640px) {
+  .features-carousel__slide {
+    flex: 0 0 calc(45vw);
+    max-width: 380px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .features-carousel__slide {
+    flex: 0 0 calc(30vw);
+    max-width: 360px;
+  }
+}
+
+/* Image */
+.features-carousel__image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--color-background-alt);
+}
+
+.features-carousel__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.features-carousel__placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+.features-carousel__placeholder svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Slide text */
+.features-carousel__slide-text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.features-carousel__slide-title {
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
+  font-style: var(--font-heading-style);
+  font-size: 1.8rem;
+  line-height: 1.3;
+  letter-spacing: var(--font-heading-letter-spacing);
+  text-transform: var(--font-heading-text-transform);
+  color: var(--color-foreground);
+  margin: 0;
+}
+
+.features-carousel__slide-caption {
+  font-family: var(--font-body-family);
+  font-size: 1.5rem;
+  line-height: 1.65;
+  color: var(--color-foreground);
+  opacity: 0.65;
+  margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .features-carousel__slide-title   { font-size: 2.0rem; }
+  .features-carousel__slide-caption { font-size: 1.6rem; }
+}
+
+/* Dots */
+.features-carousel__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 36px;
+}
+
+.features-carousel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-foreground);
+  opacity: 0.20;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.features-carousel__dot.is-active {
+  opacity: 0.70;
+  transform: scale(1.2);
+}
+
+.features-carousel__dot:hover {
+  opacity: 0.45;
+}

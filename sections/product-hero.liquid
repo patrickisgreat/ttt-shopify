@@ -1,0 +1,473 @@
+{{ 'section-product-hero.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign product_form_id = 'product-form-' | append: section.id
+-%}
+
+{%- style -%}
+  #{{ section.id }} .product-hero__btn--atc {
+    background: {{ section.settings.atc_button_color | default: '#E8622A' }};
+  }
+  #{{ section.id }} .product-hero__btn--try {
+    border-color: {{ section.settings.atc_button_color | default: '#E8622A' }};
+    color: {{ section.settings.atc_button_color | default: '#E8622A' }};
+  }
+{%- endstyle -%}
+
+<div id="{{ section.id }}" class="product-hero color-{{ section.settings.color_scheme }}">
+  <div class="product-hero__inner container">
+    <div class="product-hero__grid">
+
+      {%- comment -%} ── Left: Image gallery ── {%- endcomment -%}
+      <div class="product-hero__gallery">
+
+        <div class="product-hero__main-image sm-br-img" id="product-main-image-{{ section.id }}">
+          {%- if product.featured_image != blank -%}
+            <img
+              src="{{ product.featured_image | img_url: '800x800', crop: 'center' }}"
+              alt="{{ product.featured_image.alt | escape }}"
+              id="product-featured-img-{{ section.id }}"
+              width="800"
+              height="800"
+              loading="eager"
+            >
+          {%- else -%}
+            {{ 'product-1' | placeholder_svg_tag }}
+          {%- endif -%}
+        </div>
+
+        {%- if product.images.size > 1 -%}
+          <div class="product-hero__thumbnails" id="product-thumbs-{{ section.id }}">
+            {%- for image in product.images limit: 6 -%}
+              <button
+                class="product-hero__thumb{% if forloop.first %} is-active{% endif %}"
+                data-src="{{ image | img_url: '800x800', crop: 'center' }}"
+                data-alt="{{ image.alt | escape }}"
+                aria-label="View image {{ forloop.index }}"
+              >
+                <img
+                  src="{{ image | img_url: '120x120', crop: 'center' }}"
+                  alt="{{ image.alt | escape }}"
+                  width="120"
+                  height="120"
+                  loading="lazy"
+                >
+              </button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+      </div>
+
+      {%- comment -%} ── Right: Product info ── {%- endcomment -%}
+      <div class="product-hero__info">
+
+        {%- comment -%} Rating {%- endcomment -%}
+        {%- if section.settings.show_rating -%}
+          <div class="product-hero__rating">
+            <div class="product-hero__stars" aria-label="{{ section.settings.rating_value }} out of 5 stars">
+              {%- assign rating_val = section.settings.rating_value | times: 1.0 -%}
+              {%- for i in (1..5) -%}
+                {%- if i <= rating_val -%}
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.25 4.3 12.5l.7-4.08L2 5.5l4.15-.75L8 1z"/></svg>
+                {%- else -%}
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.25 4.3 12.5l.7-4.08L2 5.5l4.15-.75L8 1z" stroke="currentColor" stroke-width="1"/></svg>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+            {%- if section.settings.review_count > 0 -%}
+              <span class="product-hero__review-count">{{ section.settings.review_count }} Backers</span>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} Title & Price {%- endcomment -%}
+        <h1 class="product-hero__title">{{ product.title }}</h1>
+
+        <div class="product-hero__price-row">
+          {%- if current_variant.compare_at_price > current_variant.price -%}
+            <span class="product-hero__price product-hero__price--sale">
+              {{ current_variant.price | money }}
+            </span>
+            <span class="product-hero__price product-hero__price--compare">
+              {{ current_variant.compare_at_price | money }}
+            </span>
+          {%- else -%}
+            <span class="product-hero__price">{{ current_variant.price | money }}</span>
+          {%- endif -%}
+        </div>
+
+        {%- comment -%} Try it button {%- endcomment -%}
+        {%- if section.settings.try_it_label != blank and section.settings.try_it_url != blank -%}
+          
+            href="{{ section.settings.try_it_url }}"
+            class="product-hero__btn product-hero__btn--try"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {%- if section.settings.try_it_icon != blank -%}
+              <span class="product-hero__btn-icon">{{ section.settings.try_it_icon }}</span>
+            {%- endif -%}
+            {{ section.settings.try_it_label }}
+          </a>
+        {%- endif -%}
+
+        {%- comment -%} Includes list from metafield {%- endcomment -%}
+        {%- assign includes_meta = product.metafields.custom.includes.value -%}
+        {%- if includes_meta != blank -%}
+          <div class="product-hero__includes">
+            <p class="product-hero__includes-label">Includes</p>
+            <ul class="product-hero__includes-list">
+              {%- assign includes_lines = includes_meta | newline_to_br | split: '<br />' -%}
+              {%- for line in includes_lines -%}
+                {%- assign trimmed = line | strip -%}
+                {%- if trimmed != blank -%}
+                  <li>{{ trimmed }}</li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- elsif section.settings.includes_fallback != blank -%}
+          <div class="product-hero__includes">
+            <p class="product-hero__includes-label">Includes</p>
+            <ul class="product-hero__includes-list">
+              {%- assign fallback_lines = section.settings.includes_fallback | newline_to_br | split: '<br />' -%}
+              {%- for line in fallback_lines -%}
+                {%- assign trimmed = line | strip -%}
+                {%- if trimmed != blank -%}
+                  <li>{{ trimmed }}</li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} Variant selector + ATC form {%- endcomment -%}
+        {%- form 'product', product, id: product_form_id -%}
+          <input type="hidden" name="id" value="{{ current_variant.id }}" id="variant-id-{{ section.id }}">
+
+          {%- if product.variants.size > 1 -%}
+            <div class="product-hero__variants">
+              {%- for option in product.options_with_values -%}
+                <div class="product-hero__option">
+                  <p class="product-hero__option-label">{{ option.name }}</p>
+                  <div class="product-hero__option-values">
+                    {%- for value in option.values -%}
+                      {%- assign variant_for_value = product.variants | where: 'option1', value | first -%}
+                      <button
+                        type="button"
+                        class="product-hero__option-btn{% if option.selected_value == value %} is-selected{% endif %}{% unless variant_for_value.available %} is-unavailable{% endunless %}"
+                        data-option-index="{{ forloop.parentloop.index0 }}"
+                        data-value="{{ value | escape }}"
+                      >
+                        {{ value }}
+                      </button>
+                    {%- endfor -%}
+                  </div>
+                </div>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+
+          <button
+            type="submit"
+            class="product-hero__btn product-hero__btn--atc"
+            {% unless current_variant.available %}disabled{% endunless %}
+            id="atc-btn-{{ section.id }}"
+          >
+            {%- if current_variant.available -%}
+              {{ section.settings.atc_label | default: 'Add to Cart' }} →
+            {%- else -%}
+              Sold Out
+            {%- endif -%}
+          </button>
+
+        {%- endform -%}
+
+        {%- comment -%} Accordion {%- endcomment -%}
+        <div class="product-hero__accordion" id="product-accordion-{{ section.id }}">
+
+          {%- comment -%} Features {%- endcomment -%}
+          {%- assign features_meta = product.metafields.custom.features.value -%}
+          {%- assign features_content = features_meta | default: section.settings.features_fallback -%}
+          {%- if features_content != blank -%}
+            <div class="product-hero__accordion-item">
+              <button class="product-hero__accordion-btn" aria-expanded="false">
+                <span>{{ section.settings.label_features | default: 'Features' }}</span>
+                <svg class="accordion-chevron-right" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M6.75 4.5L11.25 9L6.75 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg class="accordion-chevron-down" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="product-hero__accordion-panel">
+                <div class="product-hero__accordion-inner rte">{{ features_content }}</div>
+              </div>
+            </div>
+          {%- endif -%}
+
+          {%- comment -%} Benefits {%- endcomment -%}
+          {%- assign benefits_meta = product.metafields.custom.benefits.value -%}
+          {%- assign benefits_content = benefits_meta | default: section.settings.benefits_fallback -%}
+          {%- if benefits_content != blank -%}
+            <div class="product-hero__accordion-item">
+              <button class="product-hero__accordion-btn" aria-expanded="false">
+                <span>{{ section.settings.label_benefits | default: 'Benefits' }}</span>
+                <svg class="accordion-chevron-right" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M6.75 4.5L11.25 9L6.75 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg class="accordion-chevron-down" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="product-hero__accordion-panel">
+                <div class="product-hero__accordion-inner rte">{{ benefits_content }}</div>
+              </div>
+            </div>
+          {%- endif -%}
+
+          {%- comment -%} Shipping & Returns {%- endcomment -%}
+          {%- assign shipping_meta = product.metafields.custom.shipping_returns.value -%}
+          {%- assign shipping_content = shipping_meta | default: section.settings.shipping_fallback -%}
+          {%- if shipping_content != blank -%}
+            <div class="product-hero__accordion-item">
+              <button class="product-hero__accordion-btn" aria-expanded="false">
+                <span>{{ section.settings.label_shipping | default: 'Shipping & Returns' }}</span>
+                <svg class="accordion-chevron-right" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M6.75 4.5L11.25 9L6.75 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg class="accordion-chevron-down" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="product-hero__accordion-panel">
+                <div class="product-hero__accordion-inner rte">{{ shipping_content }}</div>
+              </div>
+            </div>
+          {%- endif -%}
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+
+  // ── Thumbnail gallery ──
+  var thumbs = document.querySelectorAll('#product-thumbs-{{ section.id }} .product-hero__thumb');
+  var featuredImg = document.getElementById('product-featured-img-{{ section.id }}');
+
+  thumbs.forEach(function(thumb) {
+    thumb.addEventListener('click', function() {
+      if (featuredImg) {
+        featuredImg.src = thumb.dataset.src;
+        featuredImg.alt = thumb.dataset.alt || '';
+      }
+      thumbs.forEach(function(t) { t.classList.remove('is-active'); });
+      thumb.classList.add('is-active');
+    });
+  });
+
+  // ── Accordion ──
+  var accordion = document.getElementById('product-accordion-{{ section.id }}');
+  if (accordion) {
+    accordion.addEventListener('click', function(e) {
+      var btn = e.target.closest('.product-hero__accordion-btn');
+      if (!btn) return;
+      var item = btn.closest('.product-hero__accordion-item');
+      var isOpen = item.classList.contains('is-open');
+
+      accordion.querySelectorAll('.product-hero__accordion-item').forEach(function(el) {
+        el.classList.remove('is-open');
+        el.querySelector('.product-hero__accordion-btn').setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isOpen) {
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  }
+
+  // ── Variant selector ──
+  var optionBtns = document.querySelectorAll('#{{ section.id }} .product-hero__option-btn');
+  var variantInput = document.getElementById('variant-id-{{ section.id }}');
+  var atcBtn = document.getElementById('atc-btn-{{ section.id }}');
+  var productVariants = {{ product.variants | json }};
+
+  optionBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var optionIndex = parseInt(btn.dataset.optionIndex);
+      var value = btn.dataset.value;
+
+      // Update active state for this option group
+      var siblings = document.querySelectorAll(
+        '#{{ section.id }} .product-hero__option-btn[data-option-index="' + optionIndex + '"]'
+      );
+      siblings.forEach(function(s) { s.classList.remove('is-selected'); });
+      btn.classList.add('is-selected');
+
+      // Find matching variant
+      var selectedOptions = [];
+      for (var i = 0; i < {{ product.options.size }}; i++) {
+        var activeBtnForOption = document.querySelector(
+          '#{{ section.id }} .product-hero__option-btn[data-option-index="' + i + '"].is-selected'
+        );
+        selectedOptions.push(activeBtnForOption ? activeBtnForOption.dataset.value : '');
+      }
+
+      var matchedVariant = productVariants.find(function(v) {
+        return selectedOptions.every(function(opt, idx) {
+          return !opt || v['option' + (idx + 1)] === opt;
+        });
+      });
+
+      if (matchedVariant && variantInput) {
+        variantInput.value = matchedVariant.id;
+        // Update price
+        var priceEl = document.querySelector('#{{ section.id }} .product-hero__price:not(.product-hero__price--compare)');
+        if (priceEl) {
+          priceEl.textContent = formatMoney(matchedVariant.price);
+        }
+        // Update ATC button
+        if (atcBtn) {
+          atcBtn.disabled = !matchedVariant.available;
+          atcBtn.textContent = matchedVariant.available ? '{{ section.settings.atc_label | default: "Add to Cart" }} →' : 'Sold Out';
+        }
+      }
+    });
+  });
+
+  function formatMoney(cents) {
+    return '$' + (cents / 100).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Product Hero",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "default",
+      "label": "Color scheme"
+    },
+    {
+      "type": "header",
+      "content": "Try It Button"
+    },
+    {
+      "type": "text",
+      "id": "try_it_label",
+      "label": "Button label",
+      "default": "Try it with your photo →"
+    },
+    {
+      "type": "url",
+      "id": "try_it_url",
+      "label": "External URL",
+      "info": "Link to your app or external tool."
+    },
+    {
+      "type": "text",
+      "id": "try_it_icon",
+      "label": "Icon (emoji or SVG)",
+      "info": "Optional. E.g. 📷 or paste a small SVG.",
+      "default": "📷"
+    },
+    {
+      "type": "header",
+      "content": "Add to Cart"
+    },
+    {
+      "type": "text",
+      "id": "atc_label",
+      "label": "Button label",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "color",
+      "id": "atc_button_color",
+      "label": "Button color",
+      "default": "#E8622A"
+    },
+    {
+      "type": "header",
+      "content": "Rating"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show star rating",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "rating_value",
+      "label": "Star rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "number",
+      "id": "review_count",
+      "label": "Backer / review count",
+      "default": 2013
+    },
+    {
+      "type": "header",
+      "content": "Accordion labels"
+    },
+    {
+      "type": "text",
+      "id": "label_features",
+      "label": "Features label",
+      "default": "Features"
+    },
+    {
+      "type": "text",
+      "id": "label_benefits",
+      "label": "Benefits label",
+      "default": "Benefits"
+    },
+    {
+      "type": "text",
+      "id": "label_shipping",
+      "label": "Shipping label",
+      "default": "Shipping & Returns"
+    },
+    {
+      "type": "header",
+      "content": "Fallback content",
+      "info": "Used only if product metafields are not set."
+    },
+    {
+      "type": "textarea",
+      "id": "includes_fallback",
+      "label": "Includes list (one item per line)",
+      "default": "Interlocking Loom Pieces\nPre-Cut String & Spool Holder\nPrecision Stringing Tool\nNumbered Paper Template\nWooden Phone Stand\nConvertible Box Easel\nZip Ties for Assembly\nApp Access for Custom Guides"
+    },
+    {
+      "type": "richtext",
+      "id": "features_fallback",
+      "label": "Features content"
+    },
+    {
+      "type": "richtext",
+      "id": "benefits_fallback",
+      "label": "Benefits content"
+    },
+    {
+      "type": "richtext",
+      "id": "shipping_fallback",
+      "label": "Shipping & Returns content",
+      "default": "<p>Free shipping on all orders. Returns accepted within 30 days.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Hero",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

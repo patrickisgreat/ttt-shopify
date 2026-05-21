@@ -1,0 +1,220 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "heading_text_align": "text-align-left",
+        "page_pixel_width_desktop": 650,
+        "sm_size_multiplier": "sm-size--default",
+        "md_padding_top": 40,
+        "md_padding_bottom": 40,
+        "size_multiplier": "size--default",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "faq_full_fdH9HE": {
+      "type": "faq-full",
+      "blocks": {
+        "topic_header_zGCp6T": {
+          "type": "topic_header",
+          "settings": {
+            "topic_title": "Getting Started"
+          }
+        },
+        "faq_item_EnxBqF": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does Threaditate work?",
+            "answer": "<p>You upload a photo to the app, and it converts it into a personalized string-by-number guide in seconds. Your kit arrives with everything you need: a loom, thread, tools, and a phone stand to hold your guide. From there, you follow the steps, confirm each string placement, and build toward a finished piece one string at a time.</p>"
+          }
+        },
+        "faq_item_XcnwX8": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is Threaditate hard to do?",
+            "answer": "<p>Not really. Threaditate is designed so that no crafting background is required. The app accounts for that from the first step. It might look complicated in photos, but the guided confirmation process breaks the whole project into a series of small, manageable moves. If you can place a string and tap confirm, you can finish a Threaditate.</p>"
+          }
+        },
+        "faq_item_ExUz6V": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What skill level do I need?",
+            "answer": "<p>Zero experience required. The app converts your photo into a numbered guide and walks you through every placement in real time. There's no prior knowledge assumed at any step. If you can follow a confirmed sequence, you can finish a Threaditate.</p>"
+          }
+        },
+        "topic_header_RLpthH": {
+          "type": "topic_header",
+          "settings": {
+            "topic_title": "The Kit"
+          }
+        },
+        "faq_item_eeaBHi": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What exactly do I get with my order?",
+            "answer": "<p>The full kit includes: 20\" interlocking loom (pins pre-placed, tool-free assembly), pre-cut thread set with spool holder, precision stringing tool, numbered paper template, wooden phone stand, zip ties, convertible easel box, and free access to the Threaditate companion app. Open the box and you're ready to start your session the same day.</p>"
+          }
+        },
+        "faq_item_kA8bGJ": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I need the app?",
+            "answer": "<p>The app is what makes Threaditate guided rather than instructional. Without it, you have a loom and thread. With it, you have a real-time session that walks you through every string placement from your specific photo. It's free, available on iOS and Android, and included with every kit.</p>"
+          }
+        },
+        "faq_item_DdcYmc": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I need any extra tools or materials?",
+            "answer": "<p>Nothing extra needed. The kit is complete: loom, thread, tools, phone stand, easel, and app. The box even converts to a stable work surface, so you don't need a separate stand. Your first session can start the same day the kit arrives.</p>"
+          }
+        },
+        "topic_header_JeRzp6": {
+          "type": "topic_header",
+          "settings": {
+            "topic_title": "The Process"
+          }
+        },
+        "faq_item_jEKgbr": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does it take?",
+            "answer": "<p>The estimated completion time is between 4-8 hours, design-dependent. Sessions can be paused and resumed at any point — progress is saved automatically in the app. No session time limits. No restart required if you step away.</p>"
+          }
+        },
+        "faq_item_Ah76tC": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if I make a mistake?",
+            "answer": "<p>Keep going. Threaditate's loom is forgiving by design, so small errors tend to blend into the finished piece in a way that surprises most first-time makers. And because the app confirms each step individually, losing your place only means returning to your last confirmed string, not starting over.</p>"
+          }
+        },
+        "faq_item_VJJHrx": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I pause and come back to it?",
+            "answer": "<p>Yes. The app saves your progress after every confirmed step, so you can put it down and pick it up whenever you're ready. Some people finish in one sitting. Others take it a session at a time over the course of a week. The guide holds your place either way.</p>"
+          }
+        },
+        "topic_header_kzUxT3": {
+          "type": "topic_header",
+          "settings": {
+            "topic_title": "Orders & Shipping"
+          }
+        },
+        "faq_item_48VkfE": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Threaditate ships within [X] business days of your order. Standard delivery takes [X–X] business days from there. Expedited options are available at checkout. You'll receive a tracking number as soon as your kit leaves our warehouse.</p>"
+          }
+        },
+        "faq_item_YpPCJF": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What's your return policy?",
+            "answer": "<p>Need to fill in</p>"
+          }
+        },
+        "topic_header_GYGmRf": {
+          "type": "topic_header",
+          "settings": {
+            "topic_title": "About Threaditate"
+          }
+        },
+        "faq_item_JThUHp": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is Threaditate?",
+            "answer": "<p>Threaditate is a guided hands-on art kit that turns any photo into custom string art. You upload a photo, the app converts it into a step-by-step instruction sequence, and you follow along string by string until the piece is finished and ready to display. No crafting background needed. Everything ships in the box.</p>"
+          }
+        },
+        "faq_item_JbjnLA": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Who is Threaditate for?",
+            "answer": "<p>Threaditate was built for anyone who wants to make something by hand but doesn't want the overhead of figuring out a complicated craft. That includes first-time makers, experienced crafters looking for a more personal project, people who want a low-screen creative outlet, and anyone who's ever started a DIY kit and not finished it. If you have a photo that matters and a few hours to give it, Threaditate is for you.</p>"
+          }
+        },
+        "faq_item_naaHUn": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What makes String Ring different from other string art kits?",
+            "answer": "<p>Most string art kits give you a preset pattern and leave the rest to you. Threaditate gives you a guided session built from your own photo. The companion app converts any image into a real-time, step-confirmed instruction sequence, so you always know exactly where the next string goes. No other string art kit does this.</p>"
+          }
+        },
+        "faq_item_VewiGw": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I restring my Threaditate?",
+            "answer": "<p>Yes! Each Threaditate can be re-strung as many times as you’d like using the same frame. Simply remove the thread and start again with a new design.</p><p>If you’d like to create multiple pieces simultaneously, you’ll need additional kits, as each frame is designed to hold one artwork at a time.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "topic_header_zGCp6T",
+        "faq_item_EnxBqF",
+        "faq_item_XcnwX8",
+        "faq_item_ExUz6V",
+        "topic_header_RLpthH",
+        "faq_item_eeaBHi",
+        "faq_item_kA8bGJ",
+        "faq_item_DdcYmc",
+        "topic_header_JeRzp6",
+        "faq_item_jEKgbr",
+        "faq_item_Ah76tC",
+        "faq_item_VJJHrx",
+        "topic_header_kzUxT3",
+        "faq_item_48VkfE",
+        "faq_item_YpPCJF",
+        "topic_header_GYGmRf",
+        "faq_item_JThUHp",
+        "faq_item_JbjnLA",
+        "faq_item_naaHUn",
+        "faq_item_VewiGw"
+      ],
+      "name": "FAQ Full Page",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Frequently Asked Questions",
+        "subheading": "Quick answers to help you feel confident getting started.",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "cta_banner_fGi6J4": {
+      "type": "cta-banner",
+      "name": "CTA Banner",
+      "settings": {
+        "heading": "Still have Questions?",
+        "subheading": "If you didn’t find what you were looking for, we’re happy to help.",
+        "button_label": "Contact Us →",
+        "button_link": "shopify://pages/contact",
+        "caption": "",
+        "md_padding_top": 120,
+        "md_padding_bottom": 120,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq_full_fdH9HE",
+    "cta_banner_fGi6J4"
+  ]
+}

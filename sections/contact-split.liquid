@@ -1,0 +1,407 @@
+{{ 'section-contact-split.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #{{ section.id }} .contact-split__card {
+    background: {{ section.settings.card_bg | default: '#3B3B98' }};
+  }
+  #{{ section.id }} .contact-split__submit {
+    background: {{ section.settings.button_color | default: '#E8622A' }};
+  }
+  #{{ section.id }} .contact-split__submit:hover {
+    filter: brightness(1.1);
+  }
+{%- endstyle -%}
+
+<div
+  id="{{ section.id }}"
+  class="contact-split container pt pb sm-pt sm-pb color-{{ section.settings.color_scheme }}"
+  style="
+    --pt: {{ section.settings.padding_top | append: 'px' }};
+    --pb: {{ section.settings.padding_bottom | append: 'px' }};
+    --sm-pt: {{ section.settings.md_padding_top | append: 'px' }};
+    --sm-pb: {{ section.settings.md_padding_bottom | append: 'px' }};
+  "
+>
+  <div class="contact-split__grid">
+
+    <div class="contact-split__text-col">
+
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="contact-split__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h1 class="contact-split__title">{{ section.settings.heading }}</h1>
+      {%- endif -%}
+
+      {%- if section.settings.body_text != blank -%}
+        <div class="contact-split__body rte">{{ section.settings.body_text }}</div>
+      {%- endif -%}
+
+      {%- if section.settings.bullet_1 != blank or section.settings.bullet_2 != blank or section.settings.bullet_3 != blank -%}
+        <ul class="contact-split__bullets">
+          {%- if section.settings.bullet_1 != blank -%}
+            <li>{{ section.settings.bullet_1 }}</li>
+          {%- endif -%}
+          {%- if section.settings.bullet_2 != blank -%}
+            <li>{{ section.settings.bullet_2 }}</li>
+          {%- endif -%}
+          {%- if section.settings.bullet_3 != blank -%}
+            <li>{{ section.settings.bullet_3 }}</li>
+          {%- endif -%}
+        </ul>
+      {%- endif -%}
+
+      {%- if section.settings.email_address != blank -%}
+        <div class="contact-split__divider"></div>
+        <div class="contact-split__email-block">
+          {%- if section.settings.email_label != blank -%}
+            <p class="contact-split__email-label">{{ section.settings.email_label }}</p>
+          {%- endif -%}
+          <a href="mailto:{{ section.settings.email_address }}" class="contact-split__email-link">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M1.5 4L8 9.5L14.5 4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+            </svg>
+            {{ section.settings.email_address }}
+          </a>
+        </div>
+      {%- endif -%}
+
+    </div>
+
+    <div class="contact-split__form-col">
+      <div class="contact-split__card">
+
+        {%- form 'contact', id: 'ContactForm' -%}
+
+          {%- if form.posted_successfully? -%}
+            <div class="contact-split__success">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="20" stroke="#ffffff" stroke-width="2"/>
+                <path d="M15 24.5L21 30.5L33 18" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p>Thanks for reaching out! We'll get back to you soon.</p>
+            </div>
+          {%- else -%}
+
+            {%- if form.errors -%}
+              <div class="contact-split__errors">
+                {{ form.errors | default_errors }}
+              </div>
+            {%- endif -%}
+
+            <div class="contact-split__row">
+              <div class="contact-split__field">
+                <label for="ContactForm-name" class="contact-split__label">
+                  {{ section.settings.label_name | default: 'Name' }}
+                </label>
+                <input
+                  type="text"
+                  id="ContactForm-name"
+                  name="contact[name]"
+                  class="contact-split__input"
+                  value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                  placeholder="{{ section.settings.placeholder_name | default: 'John Carter' }}"
+                  autocomplete="name"
+                >
+              </div>
+              <div class="contact-split__field">
+                <label for="ContactForm-email" class="contact-split__label">
+                  {{ section.settings.label_email | default: 'Email' }}
+                </label>
+                <input
+                  type="email"
+                  id="ContactForm-email"
+                  name="contact[email]"
+                  class="contact-split__input"
+                  value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                  placeholder="{{ section.settings.placeholder_email | default: 'example@email.com' }}"
+                  autocomplete="email"
+                  required
+                >
+              </div>
+            </div>
+
+            {%- if section.settings.show_phone or section.settings.show_company -%}
+              <div class="contact-split__row">
+                {%- if section.settings.show_phone -%}
+                  <div class="contact-split__field">
+                    <label for="ContactForm-phone" class="contact-split__label">
+                      {{ section.settings.label_phone | default: 'Phone' }}
+                    </label>
+                    <input
+                      type="tel"
+                      id="ContactForm-phone"
+                      name="contact[phone]"
+                      class="contact-split__input"
+                      placeholder="{{ section.settings.placeholder_phone | default: '(123) 456 – 789' }}"
+                      autocomplete="tel"
+                    >
+                  </div>
+                {%- endif -%}
+                {%- if section.settings.show_company -%}
+                  <div class="contact-split__field">
+                    <label for="ContactForm-company" class="contact-split__label">
+                      {{ section.settings.label_company | default: 'Company' }}
+                    </label>
+                    <input
+                      type="text"
+                      id="ContactForm-company"
+                      name="contact[company]"
+                      class="contact-split__input"
+                      placeholder="{{ section.settings.placeholder_company | default: 'Company name' }}"
+                    >
+                  </div>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+
+            <div class="contact-split__field">
+              <label for="ContactForm-message" class="contact-split__label">
+                {{ section.settings.label_message | default: 'Message' }}
+              </label>
+              <textarea
+                id="ContactForm-message"
+                name="contact[body]"
+                class="contact-split__input contact-split__textarea"
+                placeholder="{{ section.settings.placeholder_message | default: 'Please type your message here…' }}"
+                rows="6"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="contact-split__submit">
+              {{ section.settings.button_label | default: 'Submit' }}
+            </button>
+
+          {%- endif -%}
+
+        {%- endform -%}
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Contact Split",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "default",
+      "label": "Color scheme"
+    },
+    {
+      "type": "header",
+      "content": "Left column"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow label",
+      "default": "CONTACT US"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Get in touch today"
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Body text",
+      "default": "<p>String Ring is a small team, and we read every message. Whether you're stuck, curious, or just getting started, we'll point you in the right direction.</p>"
+    },
+    {
+      "type": "text",
+      "id": "bullet_1",
+      "label": "Bullet point 1",
+      "default": "Questions about your kit"
+    },
+    {
+      "type": "text",
+      "id": "bullet_2",
+      "label": "Bullet point 2",
+      "default": "Help getting started"
+    },
+    {
+      "type": "text",
+      "id": "bullet_3",
+      "label": "Bullet point 3",
+      "default": "Feedback or suggestions"
+    },
+    {
+      "type": "text",
+      "id": "email_label",
+      "label": "Email label",
+      "default": "Email us instead:"
+    },
+    {
+      "type": "text",
+      "id": "email_address",
+      "label": "Email address",
+      "default": "contact@company.com"
+    },
+    {
+      "type": "header",
+      "content": "Form card colors"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card background color",
+      "default": "#3B3B98"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Submit button color",
+      "default": "#E8622A"
+    },
+    {
+      "type": "header",
+      "content": "Form labels & placeholders"
+    },
+    {
+      "type": "text",
+      "id": "label_name",
+      "label": "Name label",
+      "default": "Name"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_name",
+      "label": "Name placeholder",
+      "default": "John Carter"
+    },
+    {
+      "type": "text",
+      "id": "label_email",
+      "label": "Email label",
+      "default": "Email"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_email",
+      "label": "Email placeholder",
+      "default": "example@email.com"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_phone",
+      "label": "Show phone field",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "label_phone",
+      "label": "Phone label",
+      "default": "Phone"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_phone",
+      "label": "Phone placeholder",
+      "default": "(123) 456 – 789"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_company",
+      "label": "Show company field",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "label_company",
+      "label": "Company label",
+      "default": "Company"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_company",
+      "label": "Company placeholder",
+      "default": "Company name"
+    },
+    {
+      "type": "text",
+      "id": "label_message",
+      "label": "Message label",
+      "default": "Message"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_message",
+      "label": "Message placeholder",
+      "default": "Please type your message here…"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Submit button label",
+      "default": "Submit"
+    },
+    {
+      "type": "header",
+      "content": "Desktop layout"
+    },
+    {
+      "type": "range",
+      "id": "md_padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "md_padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact Split",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

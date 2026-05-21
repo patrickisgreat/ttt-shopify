@@ -1,0 +1,142 @@
+/* ==================
+   Media Hero Section
+   ================== */
+
+.media-hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Background: CSS gradient (default, no bg image) ── */
+.media-hero__bg-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 55% 65% at 0%   100%, rgba(249, 115,  22, 0.45) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 55% at 100% 100%, rgba( 34, 197,  94, 0.40) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 50% at 100%   0%, rgba( 99, 102, 241, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse 30% 35% at   0%   0%, rgba(236,  72, 153, 0.28) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 40% at  50%  50%, rgba(234, 179,   8, 0.15) 0%, transparent 60%);
+  filter: blur(0px);
+  pointer-events: none;
+}
+
+/* ── Background: uploaded image ── */
+.media-hero__bg-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.media-hero__bg-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Optional darkening overlay on bg image */
+.media-hero__bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }});
+  pointer-events: none;
+}
+
+/* ── Inner content ── */
+.media-hero__inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Header ── */
+.media-hero__header {
+  max-width: 740px;
+  margin: 0 auto 40px;
+}
+
+.media-hero__title {
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
+  font-style: var(--font-heading-style);
+  font-size: 3.2rem;
+  line-height: var(--font-heading-line-height);
+  letter-spacing: var(--font-heading-letter-spacing);
+  text-transform: var(--font-heading-text-transform);
+  color: var(--color-foreground);
+  margin: 0 0 14px;
+}
+
+.media-hero__subheading {
+  font-family: var(--font-body-family);
+  font-size: 1.6rem;
+  line-height: var(--font-body-line-height);
+  color: var(--color-foreground);
+  opacity: 0.75;
+  margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .media-hero__title      { font-size: 4.8rem; }
+  .media-hero__subheading { font-size: 1.8rem; }
+}
+
+/* ── Foreground floating image ── */
+.media-hero__media-wrapper {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Glow only shows when using gradient background (no bg image) */
+.media-hero__glow {
+  position: absolute;
+  inset: -18% -14%;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 50% 60% at 0%   100%, rgba(249, 115,  22, 0.55) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 100% 100%, rgba( 34, 197,  94, 0.50) 0%, transparent 55%),
+    radial-gradient(ellipse 35% 45% at 100%   0%, rgba( 99, 102, 241, 0.45) 0%, transparent 55%),
+    radial-gradient(ellipse 30% 35% at   0%   0%, rgba(236,  72, 153, 0.35) 0%, transparent 50%);
+  filter: blur(52px);
+  pointer-events: none;
+}
+
+/* Hide glow when a background image is used — it's not needed */
+.media-hero-section--has-bg .media-hero__glow {
+  display: none;
+}
+
+.media-hero__media {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.media-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Caption ── */
+.media-hero__caption {
+  font-family: var(--font-body-family);
+  font-size: 1.5rem;
+  line-height: var(--font-body-line-height);
+  color: var(--color-foreground);
+  opacity: 0.55;
+  margin: 28px auto 0;
+  max-width: 600px;
+}
+
+@media only screen and (min-width: 768px) {
+  .media-hero__caption { font-size: 1.6rem; }
+}

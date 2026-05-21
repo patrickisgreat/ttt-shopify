@@ -1,0 +1,130 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:section_groups.header",
+  "type": "header",
+  "sections": {
+    "announcements-bar": {
+      "type": "announcements-bar",
+      "blocks": {
+        "announcement-1": {
+          "type": "announcement",
+          "settings": {
+            "title": "Bottles: Buy 5 Get 1 free!"
+          }
+        },
+        "announcement-4": {
+          "type": "announcement",
+          "settings": {
+            "title": "Free shipping to orders above $99"
+          }
+        },
+        "announcement-2": {
+          "type": "announcement",
+          "settings": {
+            "title": "Bubbly - Now available in cans!"
+          }
+        },
+        "announcement-3": {
+          "type": "announcement",
+          "settings": {
+            "title": "Fast next day delivery available!"
+          }
+        },
+        "announcement-5": {
+          "type": "announcement",
+          "settings": {
+            "title": "Packed with healthy benefits!"
+          }
+        },
+        "announcement-6": {
+          "type": "announcement",
+          "settings": {
+            "title": "No added nonsense!"
+          }
+        }
+      },
+      "block_order": [
+        "announcement-1",
+        "announcement-4",
+        "announcement-2",
+        "announcement-3",
+        "announcement-5",
+        "announcement-6"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "overlay-scheme",
+        "announcement_font": "header",
+        "announcement_font_scaling_property": 12,
+        "announcement_letter_spacing": 10,
+        "announcement_uppercase": true,
+        "autoplay_speed": 4,
+        "sliding_behavior": "single"
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "menu_collection_FaPQQL": {
+          "type": "menu-collection",
+          "settings": {
+            "menu_parent": "Full Nav",
+            "products_per_row_desktop": 3,
+            "collection": "",
+            "product_list": [],
+            "product_limit": 12
+          }
+        },
+        "menu_collection_7wC6z9": {
+          "type": "menu-collection",
+          "settings": {
+            "menu_parent": "",
+            "products_per_row_desktop": 3,
+            "collection": "",
+            "product_list": [],
+            "product_limit": 12
+          }
+        }
+      },
+      "block_order": [
+        "menu_collection_FaPQQL",
+        "menu_collection_7wC6z9"
+      ],
+      "settings": {
+        "color_scheme": "scheme-be8ef671-53c2-4895-89a6-144af711f198",
+        "drawer_menu": "main-menu",
+        "drawer_secondary_menu": "full-menu",
+        "enable_full_width": false,
+        "header_layout": "logo-center__menu-left",
+        "desktop_submenu_type": "drawer",
+        "dropdown_menu_cols": "",
+        "header_sticky_behavior": "fixed",
+        "shortcut_limit": 3,
+        "header_uses_icons": true,
+        "region_menu": "country_flag",
+        "header_shadow": true,
+        "logo_default": "shopify://shop_images/hillsch-_FO72285DD5983-REV3_WHITE.png",
+        "logo_max_width_desktop": 120,
+        "logo_padding_desktop": 30,
+        "logo_max_width": 80,
+        "logo_padding": 12,
+        "overlay_index": false,
+        "overlay_collection": false,
+        "overlay_handles": "",
+        "overlay_text_color": "use-foreground"
+      }
+    }
+  },
+  "order": [
+    "announcements-bar",
+    "header"
+  ]
+}

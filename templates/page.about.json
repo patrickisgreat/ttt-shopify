@@ -1,0 +1,227 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "heading_text_align": "text-align-left",
+        "page_pixel_width_desktop": 650,
+        "sm_size_multiplier": "sm-size--default",
+        "md_padding_top": 40,
+        "md_padding_bottom": 40,
+        "size_multiplier": "size--default",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "rich_text_nBt9an": {
+      "type": "rich-text",
+      "blocks": {
+        "title_JxgFAh": {
+          "type": "title",
+          "settings": {
+            "title": "About Threaditate",
+            "heading_tag": "h2",
+            "sm_size_multiplier": "sm-size--default",
+            "sm_margin_top": 0,
+            "size_multiplier": "size--default",
+            "margin_top": 0
+          }
+        },
+        "text_c6bnt8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Threaditate was created for people who love the idea of making something by hand, but don't want another overwhelming project that gets left unfinished.</p>",
+            "read_more": false,
+            "sm_size_multiplier": "sm-size--default",
+            "sm_margin_top": 0,
+            "size_multiplier": "size--default",
+            "margin_top": 0
+          }
+        }
+      },
+      "block_order": [
+        "title_JxgFAh",
+        "text_c6bnt8"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "color_scheme": "",
+        "text_gradient_color": "",
+        "content_width": 50,
+        "desktop_content_alignment": "center",
+        "desktop_alignment": "sm-text-align-center",
+        "md_padding_top": 40,
+        "md_padding_bottom": 40,
+        "mobile_alignment": "text-align-left",
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "text_image_dark_twPNRB": {
+      "type": "text-image-dark",
+      "name": "Text & Image Dark",
+      "settings": {
+        "heading": "The Problem We Set Out to Solve",
+        "text": "<p>So many DIY kits promise creativity, but end up feeling complicated, time-consuming, or intimidating. We wanted to create something different, a process that feels calming, guided, and genuinely enjoyable from start to finish.</p><p>After years of prototyping loom shapes, refining the guided software, and testing with makers of every experience level, we built a kit where finishing isn't the ambitious outcome; it's just what happens when you follow the process.</p>",
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/about-image.jpg",
+        "image_position": "right",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "how_it_works_FzhhPQ": {
+      "type": "how-it-works",
+      "blocks": {
+        "step_6Kz7DL": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/step-2.jpg",
+            "title": "Guided, Not Guessy",
+            "description": "Clear steps remove the pressure of figuring things out on your own."
+          }
+        },
+        "step_Vjtq4m": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/setp-1.jpg",
+            "title": "Mistake-Friendly by Design",
+            "description": "If you lose your place, you don’t have to start over."
+          }
+        },
+        "step_AdAfHk": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/finished-image.jpg",
+            "title": "Made to Be Finished",
+            "description": "The process is broken into manageable, satisfying moments."
+          }
+        },
+        "step_zDd3QF": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/calming-image.jpg",
+            "title": "Calming & Hands-On",
+            "description": "It’s about slowing down, focusing, and enjoying the act of making."
+          }
+        }
+      },
+      "block_order": [
+        "step_6Kz7DL",
+        "step_Vjtq4m",
+        "step_AdAfHk",
+        "step_zDd3QF"
+      ],
+      "name": "How It Works",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Designed for the Way People Actually Create",
+        "subheading": "From photo to finished art in a few simple, guided steps.",
+        "button_label": "Get Started →",
+        "button_link": "shopify://products/string-ring-custom-string-art-kit",
+        "button_style": "primary",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "cta_banner_4HbMwK": {
+      "type": "cta-banner",
+      "name": "CTA Banner",
+      "settings": {
+        "heading": "Create Your Threaditate",
+        "subheading": "Turn a meaningful photo into custom string art: guided, calming, and designed to be finished.",
+        "button_label": "Start Your Thearditate →",
+        "button_link": "shopify://products/string-ring-custom-string-art-kit",
+        "caption": "No experience needed. Everything included.",
+        "md_padding_top": 120,
+        "md_padding_bottom": 120,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "faq_with_image_GcpAJR": {
+      "type": "faq-with-image",
+      "blocks": {
+        "faq_item_FL3eBG": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will my photo actually turn out good?",
+            "answer": "<p>Yes, as long as your photo is clear and the subject stands out, you’ll get a strong result. Faces, pets, and simple compositions work best.</p>"
+          }
+        },
+        "faq_item_wxXUYV": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does this actually work?",
+            "answer": "<p>Upload your photo, and we turn it into a custom string pattern. You’ll get a kit with everything you need, just follow the guide and connect the thread to bring your image to life.</p>"
+          }
+        },
+        "faq_item_gwa6eK": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Be honest…is Threaditate hard?",
+            "answer": "<p>Not really. It might look intimidating at first, but it’s designed for beginners. If you can follow a step-by-step guide, you can definitely do this. Most people get the hang of it pretty quickly.</p>"
+          }
+        },
+        "faq_item_CCBHGf": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does it take to make?",
+            "answer": "<p>Most pieces take around 4–8 hours, depending on size and detail. Some people finish it in one sitting, others spread it out over a few nights.</p>"
+          }
+        },
+        "faq_item_fF8WnA": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What exactly do I get?",
+            "answer": "<p>Everything you need: a pre-nailed board, thread, your custom pattern, and the tools to complete it. No extra trips to the store required.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_FL3eBG",
+        "faq_item_wxXUYV",
+        "faq_item_gwa6eK",
+        "faq_item_CCBHGf",
+        "faq_item_fF8WnA"
+      ],
+      "name": "FAQ with Image",
+      "settings": {
+        "color_scheme": "scheme-bf7917d8-f156-4251-bf4f-deaadfdc3234",
+        "heading": "Frequently Asked Questions",
+        "subheading": "If you're wondering it, someone else already asked it. Here's what we told them.",
+        "image": "shopify://shop_images/faq-image.jpg",
+        "button_label": "View more FAQ's",
+        "button_link": "shopify://pages/faq",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_nBt9an",
+    "text_image_dark_twPNRB",
+    "how_it_works_FzhhPQ",
+    "cta_banner_4HbMwK",
+    "faq_with_image_GcpAJR"
+  ]
+}

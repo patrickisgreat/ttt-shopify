@@ -1,0 +1,87 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:section_groups.footer",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-image": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/hillsch-_FO72285DD5983-REV3_WHITE.png",
+            "image_width": 150,
+            "text": "",
+            "text_alignment": "left",
+            "column_width_tablet": "col-sm-6",
+            "column_width": "col-md-3"
+          }
+        },
+        "footer-linklist": {
+          "type": "link_list",
+          "settings": {
+            "title": "Product",
+            "menu": "footer",
+            "column_width_tablet": "col-sm-6",
+            "column_width": "col-md-3"
+          }
+        },
+        "link_list_BEyXWG": {
+          "type": "link_list",
+          "settings": {
+            "title": "Company",
+            "menu": "footer-company-menu",
+            "column_width_tablet": "col-sm-6",
+            "column_width": "col-md-3"
+          }
+        },
+        "footer-newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "title": "Signup",
+            "richtext": "<p>Subscribe our newsletter to get the latest updates on our products.</p>",
+            "column_width_tablet": "col-sm-6",
+            "column_width": "col-md-3"
+          }
+        }
+      },
+      "block_order": [
+        "footer-image",
+        "footer-linklist",
+        "link_list_BEyXWG",
+        "footer-newsletter"
+      ],
+      "settings": {
+        "color_scheme": "scheme-be8ef671-53c2-4895-89a6-144af711f198",
+        "show_top_border": true,
+        "show_bottom_border": true,
+        "show_back_to_top": true,
+        "payment_enable": true,
+        "show_copyright": false,
+        "copyright_text": "",
+        "show_social": true,
+        "enable_language_selector": true,
+        "enable_country_selector": true,
+        "enable_follow_on_shop": true,
+        "sm_size_multiplier": "sm-size--default",
+        "md_padding_top": 64,
+        "md_padding_bottom": 80,
+        "size_multiplier": "size--default",
+        "padding_top": 40,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

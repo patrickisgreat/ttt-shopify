@@ -1,0 +1,158 @@
+{{ 'section-text-image-dark.css' | asset_url | stylesheet_tag }}
+
+<div
+  id="{{ section.id }}"
+  class="text-image-dark pt pb sm-pt sm-pb{% if section.settings.image_position == 'left' %} text-image-dark--image-left{% endif %}"
+  style="
+    --pt: {{ section.settings.padding_top | append: 'px' }};
+    --pb: {{ section.settings.padding_bottom | append: 'px' }};
+    --sm-pt: {{ section.settings.md_padding_top | append: 'px' }};
+    --sm-pb: {{ section.settings.md_padding_bottom | append: 'px' }};
+  "
+>
+  <div class="text-image-dark__bg" aria-hidden="true"></div>
+
+  <div class="text-image-dark__inner container">
+    <div class="text-image-dark__grid">
+
+      <div class="text-image-dark__text-col">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="text-image-dark__title">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+          <div class="text-image-dark__body rte">{{ section.settings.text }}</div>
+        {%- endif -%}
+        {%- if section.settings.button_label != blank -%}
+          <div>
+            
+              href="{{ section.settings.button_link | default: '#' }}"
+              class="text-image-dark__btn"
+            >
+              {{ section.settings.button_label }}
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="text-image-dark__image-col">
+        {%- if section.settings.image != blank -%}
+          <div class="text-image-dark__image">
+            {%- render 'img',
+              lazyload: true,
+              wrapped: false,
+              src: section.settings.image
+            -%}
+          </div>
+        {%- else -%}
+          <div class="text-image-dark__image text-image-dark__image--placeholder">
+            {{ 'lifestyle-1' | placeholder_svg_tag }}
+          </div>
+        {%- endif -%}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Text & Image Dark",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why String Ring Exists"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Body text",
+      "default": "<p>So many DIY kits promise creativity, but end up feeling complicated, time-consuming, or intimidating. We wanted to create something different — a process that feels calming, guided, and genuinely enjoyable from start to finish.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Recommended 4:3 landscape."
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position (desktop)",
+      "options": [
+        { "value": "right", "label": "Right" },
+        { "value": "left",  "label": "Left"  }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "header",
+      "content": "Desktop layout"
+    },
+    {
+      "type": "range",
+      "id": "md_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "md_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text & Image Dark",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
