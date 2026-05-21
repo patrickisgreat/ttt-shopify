@@ -24,7 +24,7 @@
         {%- endif -%}
         {%- if section.settings.button_label != blank -%}
           <div>
-            
+            <a
               href="{{ section.settings.button_link | default: '#' }}"
               class="text-image-dark__btn"
             >
