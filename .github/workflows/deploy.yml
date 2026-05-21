@@ -29,7 +29,9 @@ jobs:
         with:
           node-version: 20
       - name: Install Shopify CLI
-        run: npm install -g @shopify/cli@latest
+        # Pinned for reproducible CI (theme check verified on this version).
+        # Bump deliberately and re-run `shopify theme check` locally first.
+        run: npm install -g @shopify/cli@3.94.3
       - name: Run Theme Check
         # Only fail the build on real errors, not warnings/suggestions.
         run: shopify theme check --fail-level error
@@ -46,7 +48,9 @@ jobs:
         with:
           node-version: 20
       - name: Install Shopify CLI
-        run: npm install -g @shopify/cli@latest
+        # Pinned for reproducible CI (theme check verified on this version).
+        # Bump deliberately and re-run `shopify theme check` locally first.
+        run: npm install -g @shopify/cli@3.94.3
       - name: Push theme to Shopify
         env:
           SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}
