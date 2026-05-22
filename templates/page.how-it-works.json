@@ -24,22 +24,6 @@
         "padding_bottom": 32
       }
     },
-    "media_hero_pWfKnK": {
-      "type": "media-hero",
-      "name": "Media Hero",
-      "settings": {
-        "color_scheme": "",
-        "heading": "Set Up Your String Ring",
-        "subheading": "Everything you need to go from box to first string — step by step.",
-        "caption": "No experience needed • Take it at your own pace",
-        "overlay_opacity": 0,
-        "foreground_image": "shopify://shop_images/setup-ring.jpg",
-        "md_padding_top": 80,
-        "md_padding_bottom": 80,
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
-    },
     "icon_row_d3kQV7": {
       "type": "icon-row",
       "blocks": {
@@ -147,14 +131,85 @@
       "settings": {
         "color_scheme": "",
         "video_url": "https://youtu.be/4ScK3RsoMSk",
-        "title": "Instructional Video",
-        "text": "<p>Prefer to watch? Here's a quick walkthrough of the full process. </p>",
+        "title": "See how it works",
+        "text": "<p>A quick walkthrough of the whole process, from your photo to a finished piece.</p>",
         "align_content": "text-align-center",
         "position_content": "above",
         "md_padding_top": 0,
         "md_padding_bottom": 40,
         "padding_top": 0,
         "padding_bottom": 24
+      }
+    },
+    "rich_text_care": {
+      "type": "rich-text",
+      "blocks": {
+        "subtitle_care": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "Before you begin",
+            "heading_tag": "h3",
+            "sm_size_multiplier": "sm-size--default",
+            "sm_margin_top": 0,
+            "size_multiplier": "size--default",
+            "margin_top": 0
+          }
+        },
+        "title_care": {
+          "type": "title",
+          "settings": {
+            "title": "Keep a light touch on the thread",
+            "heading_tag": "h2",
+            "sm_size_multiplier": "sm-size--default",
+            "sm_margin_top": 0,
+            "size_multiplier": "size--default",
+            "margin_top": 0
+          }
+        },
+        "text_care": {
+          "type": "text",
+          "settings": {
+            "text": "<p>As you wind each thread, let it stay loose and relaxed instead of pulling it tight. The loom likes a gentle, even hand. Too much tension, held across a whole piece, can leave it slightly warped. Go easy, and your 20-inch loom stays flat and true, piece after piece.</p>",
+            "read_more": false,
+            "sm_size_multiplier": "sm-size--default",
+            "sm_margin_top": 0,
+            "size_multiplier": "size--default",
+            "margin_top": 0
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_care",
+        "title_care",
+        "text_care"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "color_scheme": "",
+        "text_gradient_color": "",
+        "content_width": 60,
+        "desktop_content_alignment": "center",
+        "desktop_alignment": "sm-text-align-center",
+        "md_padding_top": 24,
+        "md_padding_bottom": 24,
+        "mobile_alignment": "text-align-center",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "cta_banner_learn": {
+      "type": "cta-banner",
+      "name": "CTA Banner",
+      "settings": {
+        "heading": "Want the full guide?",
+        "subheading": "Read the step-by-step, helpful tips, and answers to common questions.",
+        "button_label": "Read the FAQ →",
+        "button_link": "shopify://pages/faq",
+        "caption": "",
+        "md_padding_top": 64,
+        "md_padding_bottom": 64,
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
     "cta_banner_HAWR4j": {
@@ -280,10 +335,11 @@
   },
   "order": [
     "main",
-    "media_hero_pWfKnK",
+    "video_AHgbbw",
+    "rich_text_care",
+    "cta_banner_learn",
     "icon_row_d3kQV7",
     "steps_with_images_WMKPeF",
-    "video_AHgbbw",
     "cta_banner_HAWR4j",
     "faq_with_image_TKFwQq",
     "tips_grid_zVTVpN"

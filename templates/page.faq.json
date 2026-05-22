@@ -115,6 +115,13 @@
             "answer": "<p>It rarely happens, but if it does, tie the two ends together in a small knot and keep going. The knot tucks behind the pins and won't show in your finished piece.</p>"
           }
         },
+        "q_warping": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will the loom warp?",
+            "answer": "<p>Only if the thread is wound too tight. Keep a light, even tension as you go and your 20-inch loom stays flat. If you've been pulling hard and notice a slight bow, ease off and it usually settles back. A relaxed hand is all it takes.</p>"
+          }
+        },
         "q_pause": {
           "type": "faq_item",
           "settings": {
@@ -204,6 +211,7 @@
         "q_lose_place",
         "q_mistake",
         "q_thread_breaks",
+        "q_warping",
         "q_pause",
         "topic_after_finish",
         "q_display",
