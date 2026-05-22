@@ -83,8 +83,8 @@ CI lives in [.github/workflows/deploy.yml](.github/workflows/deploy.yml):
 
 **Required GitHub repo secrets** (Settings → Secrets and variables → Actions):
 
-- `SHOPIFY_FLAG_STORE` = `string-ring-2.myshopify.com`
-- `SHOPIFY_CLI_THEME_TOKEN` = a password from Shopify's **Theme Access** app (`apps.shopify.com/theme-access`).
+- `SHOPIFY_FLAG_STORE` = `iy8zdq-5h.myshopify.com` — the store's **canonical** myshopify domain. The Theme Access token is bound to it, so CI must use this exact value. (The `string-ring-2.myshopify.com` alias works for interactive `shopify theme dev` / browser login, but token auth in CI is rejected with a 401 against the alias.)
+- `SHOPIFY_CLI_THEME_TOKEN` = a password from Shopify's **Theme Access** app (`apps.shopify.com/theme-access`). It starts with `shptka_` — not a custom-app Admin API token (`shpat_`).
 
 **Source-of-truth rule — important:** for any file CI pushes, **code wins.** Editing those same pages in the Shopify Theme Editor will be overwritten on the next deploy. The one exception is `config/settings_data.json`, which the workflow `--ignore`s so merchant Theme-Editor settings aren't clobbered. If you change a page's content, do it **in code**, not in the editor.
 
