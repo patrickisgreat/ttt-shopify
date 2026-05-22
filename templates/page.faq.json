@@ -37,21 +37,21 @@
           "type": "faq_item",
           "settings": {
             "question": "What is Threaditate?",
-            "answer": "<p>Threaditate turns a photo you love into string art you make by hand. You upload the photo to the app, it creates a numbered pattern, and you follow that pattern thread by thread on a 20-inch loom until your picture appears. No experience needed, and everything you need comes in the kit.</p>"
+            "answer": "<p>Threaditate turns a photo you love into string art you make by hand. You upload the photo to the app, it converts it into a numbered pattern, and you follow that pattern thread by thread on a 20-inch loom until your picture appears. No experience needed. Everything — the loom, the thread, and the app — ships in one box.</p>"
           }
         },
         "q_any_photo": {
           "type": "faq_item",
           "settings": {
             "question": "Can I use any photo?",
-            "answer": "<p>Almost any photo works. Portraits and close-ups with clear contrast tend to come out best, since the loom reads light and shadow rather than fine detail. A favorite person, a pet, a place that means something to you. Upload it, and the app does the rest.</p>"
+            "answer": "<p>Almost any photo works. Portraits and close-ups with clear contrast tend to come out best — the app reads light and shadow rather than fine detail. A favorite person, a pet, a place that means something to you. Upload it, and the app does the rest.</p>"
           }
         },
         "q_experience": {
           "type": "faq_item",
           "settings": {
             "question": "Do I need any experience?",
-            "answer": "<p>None at all. The app walks you through every step, one thread at a time, so there's nothing to figure out on your own. If you can follow numbers, you can make a Threaditate.</p>"
+            "answer": "<p>None. The app walks you through every step, one thread at a time. There's nothing to figure out on your own, and nothing to memorize. The first step is the same for everyone — the app accounts for the rest.</p>"
           }
         },
         "topic_the_kit": {
@@ -71,7 +71,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Do I need the app?",
-            "answer": "<p>Yes, and it's free. The app is what turns your photo into a pattern and guides you through each thread in order. It works on iPhone and Android, and access is included with every kit.</p>"
+            "answer": "<p>Yes — and it's free. The app is what makes Threaditate guided. Without it, you have string art. With it, you have a session: real-time instructions, one step at a time, on iPhone and Android. Access is included with every kit.</p>"
           }
         },
         "q_other_tools": {
@@ -91,7 +91,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How long does it take?",
-            "answer": "<p>Most pieces take about four to eight hours, depending on the photo. There's no clock, and you don't have to finish in one sitting. The app saves your place after every thread, so you can take it at your own pace.</p>"
+            "answer": "<p>Most pieces take between 45 minutes and three hours, depending on the photo. There's no clock, and you don't have to finish in one sitting. The app saves your place after every thread, so you can take it at your own pace.</p>"
           }
         },
         "q_lose_place": {
@@ -105,7 +105,7 @@
           "type": "faq_item",
           "settings": {
             "question": "What if I make a mistake?",
-            "answer": "<p>There's nothing to undo. If a thread goes in the wrong spot or you lose track, you simply carry on from your last confirmed step. Small slips tend to disappear into the finished piece, and that's part of the charm.</p>"
+            "answer": "<p>Carry on from your last confirmed step. Small slips disappear into the finished piece — the overall image is what your eye sees, not the individual threads. That's part of what makes it forgiving.</p>"
           }
         },
         "q_thread_breaks": {
@@ -132,7 +132,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How do I display my finished piece?",
-            "answer": "<p>Your finished piece is made to be seen. The 20-inch loom looks at home on a wall, a shelf, or an easel. Find a spot with good light and let it become the conversation piece it is.</p>"
+            "answer": "<p>Your finished piece is made to be seen. The 20-inch loom sits naturally on a wall, a shelf, or an easel. Find a spot with good light and let the work speak for itself.</p>"
           }
         },
         "q_reuse": {
@@ -152,21 +152,21 @@
           "type": "faq_item",
           "settings": {
             "question": "How long does shipping take?",
-            "answer": "<p>Orders ship within [confirm] business days, and standard delivery takes another [confirm] business days from there. You'll get a tracking link as soon as your kit is on its way.</p>"
+            "answer": "<p>⚠️ PLACEHOLDER — confirm fulfillment window and carrier transit time before publishing. Orders ship within [confirm] business days, and standard delivery takes another [confirm] business days from there. You'll get a tracking link as soon as your kit is on its way.</p>"
           }
         },
         "q_returns": {
           "type": "faq_item",
           "settings": {
             "question": "What's your return policy?",
-            "answer": "<p>[Add your return policy here.]</p>"
+            "answer": "<p>⚠️ PLACEHOLDER — add return policy before publishing. [Add your return policy here.]</p>"
           }
         },
         "q_missing": {
           "type": "faq_item",
           "settings": {
             "question": "What if something is missing from my kit?",
-            "answer": "<p>We'll make it right. Email us at [support email] with your order number and what you're missing, and we'll send a replacement.</p>"
+            "answer": "<p>We'll make it right. Email us at ⚠️[support email — confirm before publishing] with your order number and what you're missing, and we'll send a replacement.</p>"
           }
         },
         "topic_good_to_know": {
@@ -179,7 +179,7 @@
           "type": "faq_item",
           "settings": {
             "question": "What happens to my photo?",
-            "answer": "<p>Your photo is used only to create your pattern, and we never share it. [Confirm your retention or deletion policy here.]</p>"
+            "answer": "<p>Your photo is used only to create your pattern. We never share it. ⚠️ [Confirm data retention or deletion policy before publishing.]</p>"
           }
         },
         "q_buy_finished": {
@@ -219,8 +219,8 @@
       "name": "FAQ Full Page",
       "settings": {
         "color_scheme": "",
-        "heading": "Frequently asked questions",
-        "subheading": "Quick answers to help you feel confident before you begin.",
+        "heading": "Every question worth asking.",
+        "subheading": "Everything you need to know before your first thread.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
@@ -231,8 +231,8 @@
       "type": "cta-banner",
       "name": "CTA Banner",
       "settings": {
-        "heading": "Still have questions?",
-        "subheading": "If you didn't find what you were looking for, we're happy to help.",
+        "heading": "Not finding what you need?",
+        "subheading": "We're here — reach out and we'll get back to you.",
         "button_label": "Get in touch →",
         "button_link": "shopify://pages/contact",
         "caption": "",
