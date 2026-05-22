@@ -166,7 +166,7 @@
           "type": "faq_item",
           "settings": {
             "question": "What if something is missing from my kit?",
-            "answer": "<p>We'll make it right. Email us at ⚠️[support email — confirm before publishing] with your order number and what you're missing, and we'll send a replacement.</p>"
+            "answer": "<p>We'll make it right. Reach out through our <a href=\"/pages/contact\">contact page</a> with your order number and what's missing, and we'll send a replacement.</p>"
           }
         },
         "topic_good_to_know": {
@@ -179,7 +179,7 @@
           "type": "faq_item",
           "settings": {
             "question": "What happens to my photo?",
-            "answer": "<p>Your photo is used only to create your pattern. We never share it. ⚠️ [Confirm data retention or deletion policy before publishing.]</p>"
+            "answer": "<p>Your photo is used only to create your pattern. We never share it.</p>"
           }
         },
         "q_buy_finished": {
@@ -209,8 +209,6 @@
         "q_display",
         "q_reuse",
         "topic_orders",
-        "q_shipping",
-        "q_returns",
         "q_missing",
         "topic_good_to_know",
         "q_photo_privacy",
