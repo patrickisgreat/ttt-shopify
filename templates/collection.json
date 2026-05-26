@@ -37,7 +37,7 @@
         "text_3cmaUq": {
           "type": "text",
           "settings": {
-            "text": "<h1>{{ collection.title }}</h1>{{ collection.description }}",
+            "text": "<h1>Something beautiful. Made by you.</h1><p>Your hands make it. The app walks you through every step — one string at a time. No experience needed.</p>",
             "sm_size_multiplier": "sm-size--huge",
             "sm_margin_top": 0,
             "size_multiplier": "size--default",
@@ -51,7 +51,7 @@
       ],
       "settings": {
         "color_scheme": "default",
-        "overlay_opacity": 20,
+        "overlay_opacity": 0,
         "media_link": "",
         "enable_full_width": true,
         "section_height_desktop": "by_pixels",
@@ -157,14 +157,10 @@
           }
         }
       },
-      "block_order": [
-        "banner_YdDt7L",
-        "banner_fYgFGq",
-        "banner_wfAnLR"
-      ],
+      "block_order": [],
       "settings": {
         "color_scheme": "color-main",
-        "products_per_page": 9,
+        "products_per_page": 12,
         "show_count": true,
         "enable_sorting": true,
         "enable_filtering": true,

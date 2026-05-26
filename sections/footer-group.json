@@ -29,7 +29,7 @@
         "footer-linklist": {
           "type": "link_list",
           "settings": {
-            "title": "Product",
+            "title": "The Kit",
             "menu": "footer",
             "column_width_tablet": "col-sm-6",
             "column_width": "col-md-3"
@@ -47,8 +47,8 @@
         "footer-newsletter": {
           "type": "newsletter",
           "settings": {
-            "title": "Signup",
-            "richtext": "<p>Subscribe our newsletter to get the latest updates on our products.</p>",
+            "title": "Stay in the loop",
+            "richtext": "<p>New kits, guided sessions, and early access — straight to your inbox.</p>",
             "column_width_tablet": "col-sm-6",
             "column_width": "col-md-3"
           }

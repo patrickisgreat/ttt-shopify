@@ -71,9 +71,9 @@
           "type": "step",
           "settings": {
             "image": "shopify://shop_images/setp-1.jpg",
-            "title": "Assemble Your Loom",
+            "title": "Assemble & Mount Your Loom",
             "description": "Snap the interlocking pieces together to form your loom.",
-            "tip": "No tools required — everything clicks into place."
+            "tip": "Mount to wall for stability or turn the box into an easel for ergonomics."
           }
         },
         "step_xQfen7": {
@@ -81,8 +81,8 @@
           "settings": {
             "image": "shopify://shop_images/step-2.jpg",
             "title": "Prepare Your Workspace",
-            "description": "Set up a comfortable space with good lighting and room to move.",
-            "tip": "Use the box easel or phone stand to keep your guide visible."
+            "description": "Attach the paper number guide, aligning the tall pin at the top with pin 0",
+            "tip": "Slide together phone and spool holders. Feed thread through the spool holder's eye hole, then through the wide end of the wand, then insert foam plug and tie thread to loom."
           }
         },
         "step_Xm4zYR": {
@@ -91,7 +91,7 @@
             "image": "shopify://shop_images/step-3.jpg",
             "title": "Upload Your Photo",
             "description": "Upload your image in the app to generate a custom stringing guide.",
-            "tip": "High-contrast photos work best."
+            "tip": "Follow the photo guide and try lots of photos. Move slider around the circle to choose line count / time commitment. Every 500 lines takes about an hour. 3000-4000 lines looks best."
           }
         },
         "step_AaEBpH": {
@@ -99,8 +99,8 @@
           "settings": {
             "image": "shopify://shop_images/step-4.jpg",
             "title": "Start Stringing",
-            "description": "Follow the numbered guide at your own pace.",
-            "tip": "There's no wrong order — just keep going."
+            "description": "The pace begins at 10 second intervals. As your skill improves, speed up. Once your speed has plateaued, turn it down a few clicks for a relaxed experience.",
+            "tip": "It's fine to mess up dozens of steps, they'll go unnoticed, just keep going."
           }
         }
       },
@@ -131,7 +131,7 @@
       "settings": {
         "color_scheme": "",
         "video_url": "https://youtu.be/4ScK3RsoMSk",
-        "title": "See how it works",
+        "title": "How to Threaditate",
         "text": "<p>A quick walkthrough of the whole process, from your photo to a finished piece.</p>",
         "align_content": "text-align-center",
         "position_content": "above",
@@ -147,7 +147,7 @@
         "subtitle_care": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "Before you begin",
+            "subtitle": "Remember:",
             "heading_tag": "h3",
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 0,
@@ -158,7 +158,7 @@
         "title_care": {
           "type": "title",
           "settings": {
-            "title": "Keep a light touch on the thread",
+            "title": "Thread loosely, every step",
             "heading_tag": "h2",
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 0,
@@ -169,7 +169,7 @@
         "text_care": {
           "type": "text",
           "settings": {
-            "text": "<p>As you wind each thread, let it stay loose and relaxed instead of pulling it tight. The loom likes a gentle, even hand. Too much tension, held across a whole piece, can leave it slightly warped. Go easy, and your 20-inch loom stays flat and true, piece after piece.</p>",
+            "text": "<p>IMPORTANT: As you loop each step, let the thread lay loose across, making sure not to pull it tight. A gentle drape, not a tug. Tension adds up and can leave the loom slightly warped for an alternative shadow effect. A good rule is, if it can be plucked, it's too tight. For the best experience, find a pace that lets you casually enjoy the rhythm and forget any mistakes- they'll disappear amidst the rest. You want a calm cadence to relax into.</p><p>This is a mindful activity. Slow down. Loosen up. Breathe. Repeat.</p>",
             "read_more": false,
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 0,
@@ -234,28 +234,28 @@
           "type": "faq_item",
           "settings": {
             "question": "Do I need any experience?",
-            "answer": "<p>None at all. The app guides you through every step, one thread at a time. If you can follow numbers, you can make a Threaditate.</p>"
+            "answer": "<p>None at all. The app guides you through every step, one line at a time. If you can follow numbers, you can make a Threaditate.</p>"
           }
         },
         "faq_item_D8zJqt": {
           "type": "faq_item",
           "settings": {
             "question": "Can I use any photo?",
-            "answer": "<p>Almost any photo works. Portraits and close-ups with clear contrast come out best, since the loom reads light and shadow. Upload a person, a pet, or a place that matters to you.</p>"
+            "answer": "<p>Yes, although some photos look better than others. Try lots! Crisp portraits and close-ups with clear contrast and plain backgrounds come out best, since the app reads light and shadow. We built a menu stacked with editing features to fine tune your masterpiece. Make it just right, then begin</p>"
           }
         },
         "faq_item_JTeLJB": {
           "type": "faq_item",
           "settings": {
             "question": "How long does it take?",
-            "answer": "<p>Most pieces take about four to eight hours, depending on the photo. The app saves your place after every thread, so you can take it at your own pace.</p>"
+            "answer": "<p>Most pieces take about six hours, depending on the line count. The app saves your place after every line, so you can take breaks and go at your own pace.</p>"
           }
         },
         "faq_item_FBchyJ": {
           "type": "faq_item",
           "settings": {
             "question": "What if I make a mistake?",
-            "answer": "<p>There's nothing to undo. If you lose your place, just continue from your last confirmed step. Small slips tend to blend right into the finished piece.</p>"
+            "answer": "<p>Forget it and just keep going. If you lose your place, just continue with the next step. Countless mistakes blend right into the finished piece, so there is no need to hit the back button ever.</p>"
           }
         }
       },
@@ -286,8 +286,8 @@
           "type": "tip_card",
           "settings": {
             "badge_label": "",
-            "title": "Take Your Time",
-            "description": "There's no rush. Pause, step away, and come back whenever you want."
+            "title": "Choose a relaxing pace",
+            "description": "Take a break from hurry. Slow it down to get hypnotized."
           }
         },
         "tip_card_waGgg8": {
@@ -295,23 +295,23 @@
           "settings": {
             "badge_label": "",
             "title": "Mistakes Are Okay",
-            "description": "If you lose your place, just keep going — no undoing required."
+            "description": "If you lose your place, just keep going - no undoing required."
           }
         },
         "tip_card_xewCbr": {
           "type": "tip_card",
           "settings": {
             "badge_label": "",
-            "title": "No \"Right\" Result",
-            "description": "Every finished piece is unique, and that's part of the process."
+            "title": "Thread Loosely",
+            "description": "A relaxed mind and hand make the best creative escape."
           }
         },
         "tip_card_EzwCKR": {
           "type": "tip_card",
           "settings": {
             "badge_label": "",
-            "title": "Trust the Guide",
-            "description": "Following the numbered steps will get you where you need to go."
+            "title": "Listen to the screen-optional app",
+            "description": "Your choice of calming voice leads you through each step."
           }
         }
       },
@@ -335,13 +335,13 @@
   },
   "order": [
     "main",
-    "video_AHgbbw",
-    "rich_text_care",
-    "cta_banner_learn",
     "icon_row_d3kQV7",
     "steps_with_images_WMKPeF",
-    "cta_banner_HAWR4j",
+    "video_AHgbbw",
+    "tips_grid_zVTVpN",
+    "rich_text_care",
     "faq_with_image_TKFwQq",
-    "tips_grid_zVTVpN"
+    "cta_banner_learn",
+    "cta_banner_HAWR4j"
   ]
 }

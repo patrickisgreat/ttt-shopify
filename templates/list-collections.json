@@ -15,11 +15,11 @@
         "header": {
           "type": "section_header",
           "settings": {
-            "subtitle": "",
+            "subtitle": "Everything you need to start making",
             "subtitle_tag": "h3",
-            "title": "Collection",
+            "title": "Shop by Collection",
             "title_tag": "h1",
-            "text": "<p>Explore our extensive range of product categories for endless possibilities.<\/p>",
+            "text": "<p>Kits, thread, accessories, and gifts — each one designed to guide your hands and quiet your mind.<\/p>",
             "text_alignment": "text-align-center",
             "sm_size_multiplier": "sm-size--default",
             "size_multiplier": "size--default"

@@ -19,16 +19,16 @@
             "margin_top": 0
           }
         },
-        "rating_Ccm9zT": {
-          "type": "rating",
-          "settings": {
-            "margin_top": 0
-          }
-        },
         "the-title": {
           "type": "title",
           "settings": {
             "margin_top": 12
+          }
+        },
+        "rating_Ccm9zT": {
+          "type": "rating",
+          "settings": {
+            "margin_top": 4
           }
         },
         "the-price": {
@@ -51,7 +51,7 @@
         "2ad218b6-4cf8-49f8-a948-4ca131ed654a": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Volume:</strong> 350mL / bottle</p>",
+            "text": "<p><strong>Kit includes:</strong> Loom · String · Stringing tool · Phone stand · Box easel · App access</p>",
             "read_more": false,
             "margin_top": 24
           }
@@ -88,8 +88,8 @@
             "inventory_threshold": 12,
             "show_available_quantity": true,
             "inventory_transfers_enable": true,
-            "additional__in_stock": "– 24h express shipping",
-            "additional__few_on_stock": "",
+            "additional__in_stock": "· Ships within 24 hours",
+            "additional__few_on_stock": "· Order now — limited stock",
             "additional__out_of_stock": "",
             "additional__out_of_stock_continue_selling": "",
             "margin_top": 20
@@ -112,8 +112,8 @@
         "75b14a74-c1c5-4fcc-932f-e2bfa017fba2": {
           "type": "collapsible_tab",
           "settings": {
-            "title": "Ingredient list",
-            "content": "<p>Kombucha (filtered water, beet sugar*, green tea*, black tea*, kombucha culture* ), ginger*, Bacillus Coagulans probiotic, carbon dioxide. *Certified organic</p>",
+            "title": "What's in the box",
+            "content": "<ul><li>Interlocking circular peg loom</li><li>Pre-cut string &amp; spool holder</li><li>Precision stringing tool</li><li>Numbered paper template</li><li>Wooden phone stand</li><li>Convertible box easel</li><li>Zip ties for assembly</li><li>App access for custom guides</li></ul>",
             "page": "",
             "open_as_drawer": false,
             "icon": "icon-caret__right",
@@ -123,8 +123,8 @@
         "cb99c690-44cf-4273-8519-6e54272edcba": {
           "type": "collapsible_tab",
           "settings": {
-            "title": "Nutrition labeling / 100mL",
-            "content": "<ul><li>Calories 22</li><li>Fat &lt;0.1g of which saturated fat &lt;0.1g</li><li>Carbohydrate 5.5g of which sugars 5.5g</li><li>Protein 0g</li><li>Salt 0g</li><li>Caffeine &lt;8,6mg</li></ul>",
+            "title": "How long does it take?",
+            "content": "<p>Most first-time makers finish in under two hours. Complex photos with fine detail can take up to three hours. You set the pace — the app saves your progress so you can step away and pick up exactly where you left off.</p>",
             "page": "",
             "open_as_drawer": false,
             "icon": "icon-caret__right",
@@ -142,8 +142,8 @@
       },
       "block_order": [
         "2cb069aa-470f-47b0-97d9-b6a2c86aa996",
-        "rating_Ccm9zT",
         "the-title",
+        "rating_Ccm9zT",
         "the-price",
         "the-description",
         "2ad218b6-4cf8-49f8-a948-4ca131ed654a",
@@ -192,7 +192,7 @@
           "settings": {
             "subtitle": "",
             "subtitle_tag": "h3",
-            "title": "You might also like",
+            "title": "Complete Your Session",
             "title_tag": "h2",
             "text": "",
             "text_alignment": "text-align-center",
@@ -234,24 +234,24 @@
           "type": "feature_card",
           "settings": {
             "icon_svg": "",
-            "title": "Mistake-Friendly",
-            "description": "Keep going even if you lose your place — no undoing required."
+            "title": "No Wrong Moves",
+            "description": "The app confirms each step before you move on. You can't get lost, and you don't need to undo anything."
           }
         },
         "feature_card_jMkMTj": {
           "type": "feature_card",
           "settings": {
             "icon_svg": "",
-            "title": "Beginner-Friendly",
-            "description": "No crafting experience needed. Just follow the guided steps."
+            "title": "No Experience Needed",
+            "description": "First time making anything? The app accounts for that. Every step is the same for everyone."
           }
         },
         "feature_card_JkAaLp": {
           "type": "feature_card",
           "settings": {
             "icon_svg": "",
-            "title": "Custom from Any Photo",
-            "description": "Turn any meaningful image into one-of-a-kind string art."
+            "title": "Start With Any Photo",
+            "description": "Upload a face, a pet, a skyline — anything. The app converts it into a real-time instruction sequence, step by step."
           }
         }
       },
@@ -263,8 +263,8 @@
       "name": "Features Grid",
       "settings": {
         "color_scheme": "",
-        "heading": "Meet String Ring",
-        "subheading": "A hands-on, guided art kit designed to help you unplug, create, and actually finish something meaningful.",
+        "heading": "Why Threaditate Works",
+        "subheading": "Your hands make it. The app walks you through every step — no experience, no guesswork, no unfinished projects.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
@@ -295,7 +295,7 @@
         "image": "shopify://shop_images/everything-you-need.jpg",
         "image_position": "left",
         "heading": "Everything You Need, In One Box",
-        "intro": "No extra tools. No guesswork. Everything you need to get started is included.",
+        "intro": "Open the box and start. Every physical component is already inside — nothing to source, nothing to buy separately.",
         "bullet_1": "Interlocking Loom Pieces",
         "bullet_2": "Pre-Cut String & Spool Holder",
         "bullet_3": "Precision Stringing Tool",
@@ -306,7 +306,7 @@
         "bullet_8": "App Access for Custom Guides",
         "bullet_9": "",
         "bullet_10": "",
-        "button_label": "Add to Cart",
+        "button_label": "Get My Kit",
         "product": "",
         "button_link": "",
         "button_color": "#E8622A",
@@ -332,7 +332,7 @@
         "title_Mhnqb6": {
           "type": "title",
           "settings": {
-            "title": "Comparison Section",
+            "title": "One Hour Without a Screen. One Hour With a Thread.",
             "heading_tag": "h2",
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 4,
@@ -343,7 +343,7 @@
         "text_VFiFGN": {
           "type": "text",
           "settings": {
-            "text": "<p>Use this section to compare before-and-after images. Useful for showcasing results before and after using a product or service.</p>",
+            "text": "<p>The same hands. The same hour. One with a screen. One with a thread. You already know which one leaves you feeling like yourself.</p>",
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 12,
             "size_multiplier": "size--default",
@@ -353,7 +353,7 @@
         "button_MgLy7Q": {
           "type": "button",
           "settings": {
-            "button_label": "Button label",
+            "button_label": "Get My Kit",
             "button_link": "",
             "button_style": "",
             "sm_size_multiplier": "sm-size--default",
@@ -392,37 +392,37 @@
         "slide_HWKJ8i": {
           "type": "slide",
           "settings": {
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "caption": "Open the app and upload any photo — a face, a pet, a skyline. It converts instantly into your personal string art guide."
           }
         },
         "slide_XUMeEJ": {
           "type": "slide",
           "settings": {
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "caption": "A voice prompt tells you exactly where to place the next string. No diagram to squint at. No losing your place."
           }
         },
         "slide_njUDNd": {
           "type": "slide",
           "settings": {
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "caption": "Confirm each step on screen before moving on. The app keeps you in sync — no missed strings, no backtracking."
           }
         },
         "slide_QKEPLP": {
           "type": "slide",
           "settings": {
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "caption": "Your mind goes quiet. Your hands keep moving. Most first-time makers finish in under two hours."
           }
         },
         "slide_B6FX6q": {
           "type": "slide",
           "settings": {
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "caption": "Watch your piece take shape — string by string, step by step. Every move is intentional. Nothing is random."
           }
         },
         "slide_PMEMT9": {
           "type": "slide",
           "settings": {
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "caption": "When you place the last string, you'll have something you actually made. Frame it, gift it, or start the next one."
           }
         }
       },
@@ -436,8 +436,8 @@
       ],
       "name": "App Carousel",
       "settings": {
-        "heading": "How The App Works",
-        "subheading": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan.",
+        "heading": "Follow the App. Finish Something Real.",
+        "subheading": "Upload any photo. Follow voice-guided steps in real time. Finish something you'll actually want to display.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
@@ -450,29 +450,29 @@
         "slide_DjKFWA": {
           "type": "slide",
           "settings": {
-            "title": "Header",
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "title": "Real-Time Voice Guidance",
+            "caption": "You'll never wonder what comes next. The app tells you, as you go — one string at a time, confirmed before you move on."
           }
         },
         "slide_ENz4BQ": {
           "type": "slide",
           "settings": {
-            "title": "Header",
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "title": "Start With Anything Meaningful",
+            "caption": "Upload any photo — a face, a pet, a skyline. The app converts it into a personal, step-by-step instruction sequence."
           }
         },
         "slide_pRbLiy": {
           "type": "slide",
           "settings": {
-            "title": "Header",
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "title": "Built to Last Hours",
+            "caption": "The precision circular peg loom handles hours of making without slipping, shifting, or quitting on you."
           }
         },
         "slide_GDPB8K": {
           "type": "slide",
           "settings": {
-            "title": "Header",
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "title": "Something You'll Want to Display",
+            "caption": "This isn't a craft project. It's a finished piece. Frame it, hang it, or give it to someone who'll understand what it took."
           }
         }
       },
@@ -485,8 +485,8 @@
       "name": "Features Carousel",
       "settings": {
         "color_scheme": "",
-        "heading": "Features Section",
-        "subheading": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan.",
+        "heading": "Not a Pattern. A Guide.",
+        "subheading": "Every other string art kit gives you a pattern. Threaditate gives you a guide. The difference is whether you finish — and whether it looks like yours.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
@@ -496,12 +496,12 @@
   },
   "order": [
     "main",
-    "the-product-recommendations",
     "features_grid_aiQeMA",
-    "video_HFaPVc",
+    "app_carousel_ehEbit",
+    "feature_carousel_6FG3qV",
     "split_image_content_3xrpVG",
     "before_after_JDmxdx",
-    "app_carousel_ehEbit",
-    "feature_carousel_6FG3qV"
+    "video_HFaPVc",
+    "the-product-recommendations"
   ]
 }

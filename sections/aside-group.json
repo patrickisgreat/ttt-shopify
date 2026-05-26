@@ -17,7 +17,7 @@
         "the-title": {
           "type": "title",
           "settings": {
-            "title": "Limited time only!"
+            "title": "Get a free bottle — today only."
           }
         },
         "the-image": {
@@ -31,7 +31,7 @@
         "text_cQRGV8": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>🍹 Buy 5 Kombuchas, Get 1 FREE! </strong>Stock up on your favorites — your 6th bottle is on us.</p>",
+            "text": "<p>Buy any 5 Kombuchas and we'll add a 6th to your order, free. Mix and match flavors — no code needed.</p>",
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 24,
             "size_multiplier": "size--default",
@@ -41,7 +41,7 @@
         "button_Hrhdem": {
           "type": "button",
           "settings": {
-            "btn_text": "Browse products",
+            "btn_text": "Claim my free bottle",
             "btn_style": "btn btn--primary",
             "btn_link": "shopify://collections/all",
             "margin_top": 12
