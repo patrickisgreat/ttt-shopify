@@ -30,7 +30,7 @@
         "title_JxgFAh": {
           "type": "title",
           "settings": {
-            "title": "About Threaditate",
+            "title": "We Built the Kit We Couldn't Find",
             "heading_tag": "h2",
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 0,
@@ -41,7 +41,7 @@
         "text_c6bnt8": {
           "type": "text",
           "settings": {
-            "text": "<p>Threaditate was created for people who love the idea of making something by hand, but don't want another overwhelming project that gets left unfinished.</p>",
+            "text": "<p>You want to make something real with your hands — something that slows your mind down instead of filling it up. You just haven't found a kit that gets out of your way long enough to let you finish it. That's exactly what we built.</p>",
             "read_more": false,
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 0,
@@ -72,8 +72,8 @@
       "type": "text-image-dark",
       "name": "Text & Image Dark",
       "settings": {
-        "heading": "The Problem We Set Out to Solve",
-        "text": "<p>So many DIY kits promise creativity, but end up feeling complicated, time-consuming, or intimidating. We wanted to create something different, a process that feels calming, guided, and genuinely enjoyable from start to finish.</p><p>After years of prototyping loom shapes, refining the guided software, and testing with makers of every experience level, we built a kit where finishing isn't the ambitious outcome; it's just what happens when you follow the process.</p>",
+        "heading": "Why Every Other Kit Falls Short",
+        "text": "<p>Most DIY kits hand you a diagram and leave you to figure the rest out. You lose your place. You second-guess every move. The project ends up in a drawer, half-done.</p><p>Threaditate is different because the guidance doesn't stop when the box opens. After years of prototyping loom shapes, refining the app, and testing with makers of every experience level, we built a process where finishing isn't the ambitious outcome — it's just what happens when you follow the next step.</p>",
         "button_label": "",
         "button_link": "",
         "image": "shopify://shop_images/about-image.jpg",
@@ -91,8 +91,8 @@
           "type": "step",
           "settings": {
             "image": "shopify://shop_images/step-2.jpg",
-            "title": "Guided, Not Guessy",
-            "description": "Clear steps remove the pressure of figuring things out on your own."
+            "title": "The App Tells You What's Next",
+            "description": "Voice instructions and on-screen markers walk you through every string, one step at a time. No diagram. No guessing."
           }
         },
         "step_Vjtq4m": {
@@ -107,8 +107,8 @@
           "type": "step",
           "settings": {
             "image": "shopify://shop_images/finished-image.jpg",
-            "title": "Made to Be Finished",
-            "description": "The process is broken into manageable, satisfying moments."
+            "title": "You Will Finish It.",
+            "description": "The process is broken into short, satisfying steps. You confirm each one before moving on. No missed strings. No backtracking."
           }
         },
         "step_zDd3QF": {
@@ -130,8 +130,8 @@
       "settings": {
         "color_scheme": "",
         "heading": "Designed for the Way People Actually Create",
-        "subheading": "From photo to finished art in a few simple, guided steps.",
-        "button_label": "Get Started →",
+        "subheading": "Upload a photo. Follow the app. Walk away with something you made.",
+        "button_label": "Get My Kit →",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
         "button_style": "primary",
         "md_padding_top": 80,
@@ -146,7 +146,7 @@
       "settings": {
         "heading": "Create Your Threaditate",
         "subheading": "Turn a meaningful photo into custom string art: guided, calming, and designed to be finished.",
-        "button_label": "Start Your Thearditate →",
+        "button_label": "Start Your Threaditate →",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
         "caption": "No experience needed. Everything included.",
         "md_padding_top": 120,
@@ -204,7 +204,7 @@
       "name": "FAQ with Image",
       "settings": {
         "color_scheme": "scheme-bf7917d8-f156-4251-bf4f-deaadfdc3234",
-        "heading": "Frequently Asked Questions",
+        "heading": "Everything You're Wondering About",
         "subheading": "If you're wondering it, someone else already asked it. Here's what we told them.",
         "image": "shopify://shop_images/faq-image.jpg",
         "button_label": "View more FAQ's",
