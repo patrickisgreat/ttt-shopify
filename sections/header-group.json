@@ -59,7 +59,7 @@
         "announcement-5",
         "announcement-6"
       ],
-      "disabled": false,
+      "disabled": true,
       "settings": {
         "color_scheme": "overlay-scheme",
         "announcement_font": "header",
@@ -112,9 +112,9 @@
         "region_menu": "country_flag",
         "header_shadow": true,
         "logo_default": "shopify://shop_images/hillsch-_FO72285DD5983-REV3_WHITE.png",
-        "logo_max_width_desktop": 120,
+        "logo_max_width_desktop": 420,
         "logo_padding_desktop": 30,
-        "logo_max_width": 80,
+        "logo_max_width": 240,
         "logo_padding": 12,
         "overlay_index": false,
         "overlay_collection": false,
