@@ -57,7 +57,7 @@
       "name": "Icon Row",
       "settings": {
         "color_scheme": "scheme-be8ef671-53c2-4895-89a6-144af711f198",
-        "heading": "What You'll Do",
+        "heading": "Three Steps. One Finished Piece.",
         "md_padding_top": 64,
         "md_padding_bottom": 64,
         "padding_top": 48,
@@ -72,8 +72,8 @@
           "settings": {
             "image": "shopify://shop_images/setp-1.jpg",
             "title": "Assemble Your Loom",
-            "description": "Snap the interlocking pieces together to form your loom.",
-            "tip": "No tools required — everything clicks into place."
+            "description": "Snap the interlocking pieces together — no tools, no hardware. Everything clicks into place.",
+            "tip": "Takes about two minutes. If it snaps, it's right."
           }
         },
         "step_xQfen7": {
@@ -81,8 +81,8 @@
           "settings": {
             "image": "shopify://shop_images/step-2.jpg",
             "title": "Prepare Your Workspace",
-            "description": "Set up a comfortable space with good lighting and room to move.",
-            "tip": "Use the box easel or phone stand to keep your guide visible."
+            "description": "Prop up your phone or tablet where you can see it while your hands work. The box doubles as a stand.",
+            "tip": "Good lighting makes the peg numbers easier to read."
           }
         },
         "step_Xm4zYR": {
@@ -90,8 +90,8 @@
           "settings": {
             "image": "shopify://shop_images/step-3.jpg",
             "title": "Upload Your Photo",
-            "description": "Upload your image in the app to generate a custom stringing guide.",
-            "tip": "High-contrast photos work best."
+            "description": "Open the app, upload your photo, and watch it convert into a numbered stringing sequence built for your loom.",
+            "tip": "High-contrast photos — faces, pets, skylines — produce the sharpest results."
           }
         },
         "step_AaEBpH": {
@@ -99,8 +99,8 @@
           "settings": {
             "image": "shopify://shop_images/step-4.jpg",
             "title": "Start Stringing",
-            "description": "Follow the numbered guide at your own pace.",
-            "tip": "There's no wrong order — just keep going."
+            "description": "The app shows you exactly where each string goes. Confirm each step, then move to the next.",
+            "tip": "The app saves your place after every string — pick it back up whenever you're ready."
           }
         }
       },
@@ -113,10 +113,10 @@
       "name": "Steps with Images",
       "settings": {
         "color_scheme": "",
-        "heading": "Getting Started",
-        "subheading": "Follow these steps in order, or jump ahead at your own pace.",
+        "heading": "How It Works",
+        "subheading": "The app walks you through every string. Your job is to follow along.",
         "number_color": "#2563eb",
-        "button_label": "Start Your String Ring →",
+        "button_label": "Get Your Kit →",
         "button_link": "",
         "button_style": "primary",
         "md_padding_top": 80,
@@ -131,7 +131,7 @@
       "settings": {
         "color_scheme": "",
         "video_url": "https://youtu.be/4ScK3RsoMSk",
-        "title": "See how it works",
+        "title": "Your photo, from start to finished piece",
         "text": "<p>A quick walkthrough of the whole process, from your photo to a finished piece.</p>",
         "align_content": "text-align-center",
         "position_content": "above",
@@ -201,8 +201,8 @@
       "type": "cta-banner",
       "name": "CTA Banner",
       "settings": {
-        "heading": "Want the full guide?",
-        "subheading": "Read the step-by-step, helpful tips, and answers to common questions.",
+        "heading": "Still have questions?",
+        "subheading": "The full FAQ covers everything from photo tips to finishing and display.",
         "button_label": "Read the FAQ →",
         "button_link": "shopify://pages/faq",
         "caption": "",
@@ -217,7 +217,7 @@
       "name": "CTA Banner",
       "settings": {
         "heading": "Create Your String Ring",
-        "subheading": "Turn a meaningful photo into custom string art — guided, calming, and designed to be finished.",
+        "subheading": "Turn a meaningful photo into string art — every string guided, every step confirmed.",
         "button_label": "Start Your String Ring →",
         "button_link": "",
         "caption": "No experience needed. Everything included.",
@@ -248,7 +248,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How long does it take?",
-            "answer": "<p>Most pieces take about four to eight hours, depending on the photo. The app saves your place after every thread, so you can take it at your own pace.</p>"
+            "answer": "<p>Most pieces take between 45 minutes and three hours, depending on the design and your pace. The app saves your place after every thread, so you can take as many breaks as you need.</p>"
           }
         },
         "faq_item_FBchyJ": {
@@ -286,32 +286,32 @@
           "type": "tip_card",
           "settings": {
             "badge_label": "",
-            "title": "Take Your Time",
-            "description": "There's no rush. Pause, step away, and come back whenever you want."
+            "title": "Your Pace Is the Right Pace",
+            "description": "Put it down, come back later. The app saves your place after every confirmed string."
           }
         },
         "tip_card_waGgg8": {
           "type": "tip_card",
           "settings": {
             "badge_label": "",
-            "title": "Mistakes Are Okay",
-            "description": "If you lose your place, just keep going — no undoing required."
+            "title": "Small Slips Disappear",
+            "description": "If you lose your place, continue from your last confirmed step. Variations blend into the finished piece."
           }
         },
         "tip_card_xewCbr": {
           "type": "tip_card",
           "settings": {
             "badge_label": "",
-            "title": "No \"Right\" Result",
-            "description": "Every finished piece is unique, and that's part of the process."
+            "title": "Every Piece Is One of a Kind",
+            "description": "Your photo, your hands. No two Threaditates look the same."
           }
         },
         "tip_card_EzwCKR": {
           "type": "tip_card",
           "settings": {
             "badge_label": "",
-            "title": "Trust the Guide",
-            "description": "Following the numbered steps will get you where you need to go."
+            "title": "The App Has You Covered",
+            "description": "Follow the numbered steps and confirm as you go. No guessing, no backtracking."
           }
         }
       },
@@ -324,8 +324,8 @@
       "name": "Tips Grid",
       "settings": {
         "color_scheme": "",
-        "heading": "Helpful Tips for a Smooth Experience",
-        "subheading": "You don't need to rush — this is meant to be enjoyed.",
+        "heading": "A Few Things Worth Knowing",
+        "subheading": "Most people finish their first piece without any issues. These tips help.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
@@ -335,13 +335,13 @@
   },
   "order": [
     "main",
-    "video_AHgbbw",
-    "rich_text_care",
-    "cta_banner_learn",
     "icon_row_d3kQV7",
     "steps_with_images_WMKPeF",
-    "cta_banner_HAWR4j",
+    "video_AHgbbw",
+    "tips_grid_zVTVpN",
+    "rich_text_care",
     "faq_with_image_TKFwQq",
-    "tips_grid_zVTVpN"
+    "cta_banner_learn",
+    "cta_banner_HAWR4j"
   ]
 }
