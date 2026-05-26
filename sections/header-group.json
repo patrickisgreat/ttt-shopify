@@ -17,37 +17,37 @@
         "announcement-1": {
           "type": "announcement",
           "settings": {
-            "title": "Bottles: Buy 5 Get 1 free!"
+            "title": "Buy 5 bottles, get 1 free — no code needed"
           }
         },
         "announcement-4": {
           "type": "announcement",
           "settings": {
-            "title": "Free shipping to orders above $99"
+            "title": "Free shipping on orders $99+"
           }
         },
         "announcement-2": {
           "type": "announcement",
           "settings": {
-            "title": "Bubbly - Now available in cans!"
+            "title": "Bubbly sparkling water — now in cans"
           }
         },
         "announcement-3": {
           "type": "announcement",
           "settings": {
-            "title": "Fast next day delivery available!"
+            "title": "Order before 2 pm — delivered tomorrow"
           }
         },
         "announcement-5": {
           "type": "announcement",
           "settings": {
-            "title": "Packed with healthy benefits!"
+            "title": "Zero sugar. Zero artificial sweeteners. Just water done right."
           }
         },
         "announcement-6": {
           "type": "announcement",
           "settings": {
-            "title": "No added nonsense!"
+            "title": "No artificial anything — ever"
           }
         }
       },
@@ -59,7 +59,7 @@
         "announcement-5",
         "announcement-6"
       ],
-      "disabled": true,
+      "disabled": false,
       "settings": {
         "color_scheme": "overlay-scheme",
         "announcement_font": "header",
