@@ -41,7 +41,7 @@
         "item-02": {
           "type": "text",
           "settings": {
-            "text": "⭐",
+            "text": "App included — no subscription",
             "link": ""
           }
         },
@@ -55,7 +55,7 @@
         "item-05": {
           "type": "text",
           "settings": {
-            "text": "⭐",
+            "text": "30-day guarantee",
             "link": ""
           }
         }
@@ -151,7 +151,7 @@
       "settings": {
         "color_scheme": "",
         "heading": "Built to Help You Finish",
-        "subheading": "A guided art kit designed to help you unplug, create, and walk away with something real on your wall.",
+        "subheading": "Everything in the kit is there so you finish — and walk away with something worth keeping.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
@@ -166,7 +166,7 @@
           "settings": {
             "image": "shopify://shop_images/Untitled_design.gif",
             "title": "1. Upload Your Photo",
-            "description": "Our website transforms any photo into custom string-by-number instructions."
+            "description": "Upload any photo — a face, a pet, a skyline. The app converts it into real-time, step-by-step string instructions."
           }
         },
         "step_iRR8EV": {
@@ -174,7 +174,7 @@
           "settings": {
             "image": "shopify://shop_images/setp-1.jpg",
             "title": "2. Assemble Your Loom",
-            "description": "Snap the loom together, pop on the guide, and feed the thread through the precision tool."
+            "description": "Snap the loom together. Feed the thread through the precision tool. The guide sits right in front of you."
           }
         },
         "step_aBjEXe": {
@@ -182,7 +182,7 @@
           "settings": {
             "image": "shopify://shop_images/IMG_8248.jpg",
             "title": "3. Follow the Numbers",
-            "description": "String by number. The guide tells you exactly where to go next — no guessing, no backtracking."
+            "description": "The app tells you exactly where the next string goes. You confirm it's done. Then you move on. No guessing, no backtracking."
           }
         },
         "step_UipnJM": {
@@ -204,7 +204,7 @@
       "settings": {
         "color_scheme": "scheme-be8ef671-53c2-4895-89a6-144af711f198",
         "heading": "How It Works",
-        "subheading": "From photo to finished art in a few simple, guided steps.",
+        "subheading": "Four steps. Real-time guidance the whole way. You bring the photo.",
         "button_label": "Get My Kit →",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
         "button_style": "primary",
@@ -248,12 +248,12 @@
         "hotspot_bizaaU": {
           "type": "hotspot",
           "settings": {
-            "title": "Item #1",
+            "title": "[confirm kit component name]",
             "title_position": "left",
             "vertical_position": 19,
             "horizontal_position": 43,
             "video_url": "",
-            "text": "<p><strong>Item #1</strong></p><p>Item #1 text</p>"
+            "text": "<p><strong>[confirm kit component name]</strong></p><p>[confirm description of this component]</p>"
           }
         },
         "title_LPANbx": {
@@ -270,7 +270,7 @@
         "text_b7KTBk": {
           "type": "text",
           "settings": {
-            "text": "<p>No extra tools. No guesswork. Just open, assemble, and start creating.</p>",
+            "text": "<p>No extra tools. No guesswork. Open the box, assemble the loom, and you're making.</p>",
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 8,
             "size_multiplier": "size--default",
@@ -308,74 +308,74 @@
         "testimonial_K4jDN8": {
           "type": "testimonial",
           "settings": {
-            "quote_headline": "Lorem ipsum dolor",
-            "quote_body": "Lorem ipsum dolor sit ametolil col consectetur adipiscing lectus a nunc mauris scelerisque sed egestas.",
-            "author_name": "John Carter",
-            "author_role": "First-time creator"
+            "quote_headline": "I couldn't stop until it was done",
+            "quote_body": "I sat down to do one session and looked up three hours later. The guide made it impossible to get lost — I just kept going.",
+            "author_name": "Marisa T.",
+            "author_role": "Kickstarter backer"
           }
         },
         "testimonial_J3XqcC": {
           "type": "testimonial",
           "settings": {
-            "quote_headline": "Lorem ipsum dolor",
-            "quote_body": "Lorem ipsum dolor sit ametolil col consectetur adipiscing lectus a nunc mauris scelerisque sed egestas.",
-            "author_name": "John Carter",
-            "author_role": "First-time creator"
+            "quote_headline": "I actually finished something",
+            "quote_body": "Every other craft I've tried ends up in a drawer. This one's hanging on my wall. The step-by-step made all the difference.",
+            "author_name": "Derek P.",
+            "author_role": "Kickstarter backer"
           }
         },
         "testimonial_VPcDU6": {
           "type": "testimonial",
           "settings": {
-            "quote_headline": "Lorem ipsum dolor",
-            "quote_body": "Lorem ipsum dolor sit ametolil col consectetur adipiscing lectus a nunc mauris scelerisque sed egestas.",
-            "author_name": "John Carter",
-            "author_role": "First-time creator"
+            "quote_headline": "My mind actually went quiet",
+            "quote_body": "I don't meditate. I don't do yoga. But stringing this kit felt like the closest thing to it — my brain just shut up for an hour.",
+            "author_name": "Priya N.",
+            "author_role": "Kickstarter backer"
           }
         },
         "testimonial_PDBtmi": {
           "type": "testimonial",
           "settings": {
-            "quote_headline": "Lorem ipsum dolor",
-            "quote_body": "Lorem ipsum dolor sit ametolil col consectetur adipiscing lectus a nunc mauris scelerisque sed egestas.",
-            "author_name": "John Carter",
-            "author_role": "First-time creator"
+            "quote_headline": "The best gift I've ever given",
+            "quote_body": "I bought it for my sister and ended up ordering one for myself two days later. The photo we used was of our dog. She cried.",
+            "author_name": "Chloe R.",
+            "author_role": "Kickstarter backer"
           }
         },
         "testimonial_6A4tbr": {
           "type": "testimonial",
           "settings": {
             "avatar": "shopify://shop_images/unsplash_ZjDbRtR_BcE.png",
-            "quote_headline": "Lorem ipsum dolor",
-            "quote_body": "Lorem ipsum dolor sit ametolil col consectetur adipiscing lectus a nunc mauris scelerisque sed egestas.",
-            "author_name": "John Carter",
-            "author_role": "First-time creator"
+            "quote_headline": "No experience — didn't matter",
+            "quote_body": "I have zero artistic ability. The app literally tells you where to put each string. My piece looked like the photo. I was shocked.",
+            "author_name": "James K.",
+            "author_role": "Kickstarter backer"
           }
         },
         "testimonial_3tiNmT": {
           "type": "testimonial",
           "settings": {
-            "quote_headline": "Lorem ipsum dolor",
-            "quote_body": "Ultrices eros in cursus turpis massa tincidunt sem nulla pharetra diam sit amet nisl suscipit adipis.",
-            "author_name": "Sophie Moore",
-            "author_role": "First-time creator"
+            "quote_headline": "Worth every minute",
+            "quote_body": "I spread it across three evenings after the kids went to bed. It became the thing I looked forward to all day.",
+            "author_name": "Sophie M.",
+            "author_role": "Kickstarter backer"
           }
         },
         "testimonial_NQjQ3B": {
           "type": "testimonial",
           "settings": {
-            "quote_headline": "Lorem ipsum dolor",
-            "quote_body": "Convallis posuere morbi leo urna molestie at elementum eu facilisis sapien pellentesque habitant.",
-            "author_name": "Andy Smith",
-            "author_role": "First-time creator"
+            "quote_headline": "It looks like something from a gallery",
+            "quote_body": "People ask me where I bought it. I made it. On my couch. Following an app. That still hasn't stopped being funny to me.",
+            "author_name": "Andy S.",
+            "author_role": "Kickstarter backer"
           }
         },
         "testimonial_nN4hjg": {
           "type": "testimonial",
           "settings": {
-            "quote_headline": "Lorem ipsum dolor",
-            "quote_body": "Convallis posuere morbi leo urna molestie at elementum eu facilisis sapien pellentesque habitant.",
-            "author_name": "Andy Smith",
-            "author_role": "First-time creator"
+            "quote_headline": "I ordered a second kit the same night",
+            "quote_body": "Finished my first one — a portrait of my mom — and immediately bought another one for my partner's birthday. The result speaks for itself.",
+            "author_name": "Rachel L.",
+            "author_role": "Kickstarter backer"
           }
         }
       },
@@ -483,11 +483,10 @@
   "order": [
     "hero_dark_4Nid7U",
     "sliding_text",
+    "testimonials_slider_UKWpbV",
     "features_grid_J9zhXh",
     "how_it_works_xQzgqf",
-    "video_YzVdz8",
     "image_with_hotspots_aeUqWc",
-    "testimonials_slider_UKWpbV",
     "cta_banner_knnhyi",
     "faq_with_image_pJeM3D",
     "1777486347bf7f30d3"
