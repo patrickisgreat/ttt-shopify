@@ -105,7 +105,7 @@
           "type": "faq_item",
           "settings": {
             "question": "What if I make a mistake?",
-            "answer": "<p>Carry on from your last confirmed step. Small slips disappear into the finished piece — the overall image is what your eye sees, not the individual threads. That's part of what makes it forgiving.</p>"
+            "answer": "<p>Pick up from your last confirmed step and keep going. Small slips vanish in the finished piece — your eye reads the whole image, not individual threads. The design is more forgiving than you think.</p>"
           }
         },
         "q_thread_breaks": {
@@ -139,7 +139,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How do I display my finished piece?",
-            "answer": "<p>Your finished piece is made to be seen. The 20-inch loom sits naturally on a wall, a shelf, or an easel. Find a spot with good light and let the work speak for itself.</p>"
+            "answer": "<p>Your finished piece is made to be seen. The 20-inch loom hangs flat on a standard picture nail, sits on a shelf, or rests on an easel — no frame needed. Find a spot with good light and it will stop people in their tracks.</p>"
           }
         },
         "q_reuse": {
@@ -159,14 +159,14 @@
           "type": "faq_item",
           "settings": {
             "question": "How long does shipping take?",
-            "answer": "<p>⚠️ PLACEHOLDER — confirm fulfillment window and carrier transit time before publishing. Orders ship within [confirm] business days, and standard delivery takes another [confirm] business days from there. You'll get a tracking link as soon as your kit is on its way.</p>"
+            "answer": "<p>⚠️ DO NOT PUBLISH — fulfillment window and carrier transit time must be confirmed before this goes live. Orders ship within [X] business days. Standard delivery takes [X]–[X] business days from there. You'll get a tracking link as soon as your kit leaves our hands.</p>"
           }
         },
         "q_returns": {
           "type": "faq_item",
           "settings": {
             "question": "What's your return policy?",
-            "answer": "<p>⚠️ PLACEHOLDER — add return policy before publishing. [Add your return policy here.]</p>"
+            "answer": "<p>⚠️ DO NOT PUBLISH — return policy must be confirmed before this goes live. [Insert return window, condition requirements, and refund or exchange terms here.]</p>"
           }
         },
         "q_missing": {
@@ -186,14 +186,14 @@
           "type": "faq_item",
           "settings": {
             "question": "What happens to my photo?",
-            "answer": "<p>Your photo is used only to create your pattern. We never share it.</p>"
+            "answer": "<p>Your photo is processed only to generate your personal pattern — it's never stored, sold, or shared. Once your pattern is created, the photo's job is done.</p>"
           }
         },
         "q_buy_finished": {
           "type": "faq_item",
           "settings": {
             "question": "Can I buy a finished piece instead of making it myself?",
-            "answer": "<p>Threaditate is about the making. The quiet hours you spend creating something by hand are the whole point, so we don't sell finished pieces. We give you the kit and the guidance to make your own.</p>"
+            "answer": "<p>What you make with your own hands is the point. The quiet hours you spend finishing something real — that's what the kit is for. We don't sell finished pieces. We give you everything you need to make your own.</p>"
           }
         }
       },
@@ -217,6 +217,8 @@
         "q_display",
         "q_reuse",
         "topic_orders",
+        "q_shipping",
+        "q_returns",
         "q_missing",
         "topic_good_to_know",
         "q_photo_privacy",
@@ -225,8 +227,8 @@
       "name": "FAQ Full Page",
       "settings": {
         "color_scheme": "",
-        "heading": "Every question worth asking.",
-        "subheading": "Everything you need to know before your first thread.",
+        "heading": "You have questions. Here are the answers.",
+        "subheading": "Everything you need to start your first piece with confidence.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
@@ -237,8 +239,8 @@
       "type": "cta-banner",
       "name": "CTA Banner",
       "settings": {
-        "heading": "Not finding what you need?",
-        "subheading": "We're here — reach out and we'll get back to you.",
+        "heading": "Still have a question?",
+        "subheading": "We read every message and get back to you quickly.",
         "button_label": "Get in touch →",
         "button_link": "shopify://pages/contact",
         "caption": "",
