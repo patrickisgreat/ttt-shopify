@@ -23,15 +23,15 @@
         "details": {
           "type": "details",
           "settings": {
-            "show_author": false,
+            "show_author": true,
             "show_date": true,
-            "margin_top": 36
+            "margin_top": 16
           }
         },
         "title": {
           "type": "title",
           "settings": {
-            "margin_top": 8
+            "margin_top": 24
           }
         },
         "hr_1": {
@@ -61,8 +61,8 @@
       },
       "block_order": [
         "featured_image",
-        "details",
         "title",
+        "details",
         "hr_1",
         "content",
         "hr_2",
