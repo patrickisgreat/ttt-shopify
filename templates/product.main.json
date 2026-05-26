@@ -19,16 +19,16 @@
             "margin_top": 0
           }
         },
-        "rating_Ccm9zT": {
-          "type": "rating",
-          "settings": {
-            "margin_top": 0
-          }
-        },
         "the-title": {
           "type": "title",
           "settings": {
             "margin_top": 12
+          }
+        },
+        "rating_Ccm9zT": {
+          "type": "rating",
+          "settings": {
+            "margin_top": 4
           }
         },
         "the-price": {
@@ -51,7 +51,7 @@
         "2ad218b6-4cf8-49f8-a948-4ca131ed654a": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Volume:</strong> 350mL / bottle</p>",
+            "text": "<p><strong>Kit includes:</strong> Loom · String · Stringing tool · Phone stand · Box easel · App access</p>",
             "read_more": false,
             "margin_top": 24
           }
@@ -88,8 +88,8 @@
             "inventory_threshold": 12,
             "show_available_quantity": true,
             "inventory_transfers_enable": true,
-            "additional__in_stock": "– 24h express shipping",
-            "additional__few_on_stock": "",
+            "additional__in_stock": "· Ships within 24 hours",
+            "additional__few_on_stock": "· Order now — limited stock",
             "additional__out_of_stock": "",
             "additional__out_of_stock_continue_selling": "",
             "margin_top": 20
@@ -112,8 +112,8 @@
         "75b14a74-c1c5-4fcc-932f-e2bfa017fba2": {
           "type": "collapsible_tab",
           "settings": {
-            "title": "Ingredient list",
-            "content": "<p>Kombucha (filtered water, beet sugar*, green tea*, black tea*, kombucha culture* ), ginger*, Bacillus Coagulans probiotic, carbon dioxide. *Certified organic</p>",
+            "title": "What's in the box",
+            "content": "<ul><li>Interlocking circular peg loom</li><li>Pre-cut string &amp; spool holder</li><li>Precision stringing tool</li><li>Numbered paper template</li><li>Wooden phone stand</li><li>Convertible box easel</li><li>Zip ties for assembly</li><li>App access for custom guides</li></ul>",
             "page": "",
             "open_as_drawer": false,
             "icon": "icon-caret__right",
@@ -123,8 +123,8 @@
         "cb99c690-44cf-4273-8519-6e54272edcba": {
           "type": "collapsible_tab",
           "settings": {
-            "title": "Nutrition Facts per 100mL",
-            "content": "<ul><li>Calories 22</li><li>Fat &lt;0.1g of which saturated fat &lt;0.1g</li><li>Carbohydrate 5.5g of which sugars 5.5g</li><li>Protein 0g</li><li>Salt 0g</li><li>Caffeine &lt;8.6mg</li></ul>",
+            "title": "How long does it take?",
+            "content": "<p>Most first-time makers finish in under two hours. Complex photos with fine detail can take up to three hours. You set the pace — the app saves your progress so you can step away and pick up exactly where you left off.</p>",
             "page": "",
             "open_as_drawer": false,
             "icon": "icon-caret__right",
@@ -142,8 +142,8 @@
       },
       "block_order": [
         "2cb069aa-470f-47b0-97d9-b6a2c86aa996",
-        "rating_Ccm9zT",
         "the-title",
+        "rating_Ccm9zT",
         "the-price",
         "the-description",
         "2ad218b6-4cf8-49f8-a948-4ca131ed654a",
@@ -306,7 +306,7 @@
         "bullet_8": "App Access for Custom Guides",
         "bullet_9": "",
         "bullet_10": "",
-        "button_label": "Add to Cart",
+        "button_label": "Get My Kit",
         "product": "",
         "button_link": "",
         "button_color": "#E8622A",
@@ -332,7 +332,7 @@
         "title_Mhnqb6": {
           "type": "title",
           "settings": {
-            "title": "Before Your Kit Arrives. After You Finish.",
+            "title": "One Hour Without a Screen. One Hour With a Thread.",
             "heading_tag": "h2",
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 4,
@@ -436,7 +436,7 @@
       ],
       "name": "App Carousel",
       "settings": {
-        "heading": "How The App Works",
+        "heading": "Follow the App. Finish Something Real.",
         "subheading": "Upload any photo. Follow voice-guided steps in real time. Finish something you'll actually want to display.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
@@ -485,7 +485,7 @@
       "name": "Features Carousel",
       "settings": {
         "color_scheme": "",
-        "heading": "Built Different",
+        "heading": "Not a Pattern. A Guide.",
         "subheading": "Every other string art kit gives you a pattern. Threaditate gives you a guide. The difference is whether you finish — and whether it looks like yours.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
@@ -497,9 +497,9 @@
   "order": [
     "main",
     "features_grid_aiQeMA",
-    "split_image_content_3xrpVG",
     "app_carousel_ehEbit",
     "feature_carousel_6FG3qV",
+    "split_image_content_3xrpVG",
     "before_after_JDmxdx",
     "video_HFaPVc",
     "the-product-recommendations"
