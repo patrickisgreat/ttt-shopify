@@ -63,24 +63,24 @@
           "type": "feature_card",
           "settings": {
             "icon_svg": "",
-            "title": "Mistake-Friendly",
-            "description": "Keep going even if you lose your place — no undoing required."
+            "title": "You Can't Get It Wrong",
+            "description": "Lose your place? Keep going. The app accounts for it — no undoing, no starting over."
           }
         },
         "feature_card_jMkMTj": {
           "type": "feature_card",
           "settings": {
             "icon_svg": "",
-            "title": "Beginner-Friendly",
-            "description": "No crafting experience needed. Just follow the guided steps."
+            "title": "No Experience Needed",
+            "description": "First time making anything? The first step is the same for everyone. The app walks you through each one."
           }
         },
         "feature_card_JkAaLp": {
           "type": "feature_card",
           "settings": {
             "icon_svg": "",
-            "title": "Custom from Any Photo",
-            "description": "Turn any meaningful image into one-of-a-kind string art."
+            "title": "Start With Any Photo",
+            "description": "A face, a skyline, your dog — the app converts it into a real-time instruction sequence built around your image."
           }
         }
       },
@@ -92,8 +92,8 @@
       "name": "Features Grid",
       "settings": {
         "color_scheme": "",
-        "heading": "Meet String Ring",
-        "subheading": "A hands-on, guided art kit designed to help you unplug, create, and actually finish something meaningful.",
+        "heading": "Your hands make it. The app walks you through every step.",
+        "subheading": "String Ring is a guided art kit — not just supplies. Upload a photo, follow the real-time instructions, and finish something you'll actually want to display.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
@@ -124,7 +124,7 @@
         "image": "shopify://shop_images/everything-you-need.jpg",
         "image_position": "left",
         "heading": "Everything You Need, In One Box",
-        "intro": "No extra tools. No guesswork. Everything you need to get started is included.",
+        "intro": "No extra tools. No trips to the craft store. Open the box, open the app, and you're already started.",
         "bullet_1": "Interlocking Loom Pieces",
         "bullet_2": "Pre-Cut String & Spool Holder",
         "bullet_3": "Precision Stringing Tool",
@@ -161,7 +161,7 @@
         "title_Mhnqb6": {
           "type": "title",
           "settings": {
-            "title": "Comparison Section",
+            "title": "From Photo to Finished Piece",
             "heading_tag": "h2",
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 4,
@@ -172,7 +172,7 @@
         "text_VFiFGN": {
           "type": "text",
           "settings": {
-            "text": "<p>Use this section to compare before-and-after images. Useful for showcasing results before and after using a product or service.</p>",
+            "text": "<p>Start with any image that means something to you. The app converts it into a guided session — string by string — and you end up with a piece that's entirely yours.</p>",
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 12,
             "size_multiplier": "size--default",
@@ -182,7 +182,7 @@
         "button_MgLy7Q": {
           "type": "button",
           "settings": {
-            "button_label": "Button label",
+            "button_label": "Get Your String Ring Kit",
             "button_link": "",
             "button_style": "",
             "sm_size_multiplier": "sm-size--default",
@@ -221,37 +221,37 @@
         "slide_HWKJ8i": {
           "type": "slide",
           "settings": {
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "caption": "Open the app and upload any photo — a face, a pet, a skyline, anything that matters to you."
           }
         },
         "slide_XUMeEJ": {
           "type": "slide",
           "settings": {
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "caption": "The app converts your photo into a custom string placement sequence — every step mapped to your image."
           }
         },
         "slide_njUDNd": {
           "type": "slide",
           "settings": {
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "caption": "Voice instructions and on-screen markers tell you exactly where the next string goes. No diagrams to decode."
           }
         },
         "slide_QKEPLP": {
           "type": "slide",
           "settings": {
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "caption": "Confirm each step before moving on. No missed strings. No need to backtrack."
           }
         },
         "slide_B6FX6q": {
           "type": "slide",
           "settings": {
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "caption": "Watch your image come together string by string. Most first-time makers finish in under two hours."
           }
         },
         "slide_PMEMT9": {
           "type": "slide",
           "settings": {
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "caption": "When you're done, you've got something real — ready to frame, display, or give as a gift that actually means something."
           }
         }
       },
@@ -266,7 +266,7 @@
       "name": "App Carousel",
       "settings": {
         "heading": "How The App Works",
-        "subheading": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan.",
+        "subheading": "Upload any photo. The app converts it into step-by-step voice instructions — one string at a time. You confirm each step. No guessing. No backtracking.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
@@ -280,32 +280,32 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/step-2.jpg",
-            "title": "Header",
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "title": "Follow the Thread",
+            "caption": "On-screen markers show exactly where each string lands. One step at a time — nothing to figure out on your own."
           }
         },
         "slide_ENz4BQ": {
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/features-image.jpg",
-            "title": "Header",
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "title": "Built to Last Hours",
+            "caption": "The interlocking loom holds steady through every session. No slipping. No shifting. Just the work in your hands."
           }
         },
         "slide_pRbLiy": {
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/finished-image.jpg",
-            "title": "Header",
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "title": "Something Worth Displaying",
+            "caption": "Every finished piece is frame-ready. Give it as a gift or hang it — it will look like you made it. Because you did."
           }
         },
         "slide_GDPB8K": {
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/everything-you-need.jpg",
-            "title": "Header",
-            "caption": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan."
+            "title": "Everything in One Box",
+            "caption": "Loom, thread, tool, stand, easel, and app access — all included. Open it, open the app, and start making."
           }
         }
       },
@@ -318,8 +318,8 @@
       "name": "Features Carousel",
       "settings": {
         "color_scheme": "",
-        "heading": "Features Section",
-        "subheading": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan.",
+        "heading": "Made to Make You Finish",
+        "subheading": "Every part of String Ring — the loom, the app, the instructions — is designed so that finishing is the most natural thing to do.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
@@ -344,13 +344,13 @@
   },
   "order": [
     "product-hero",
-    "the-product-recommendations",
     "features_grid_aiQeMA",
     "video_HFaPVc",
     "split_image_content_3xrpVG",
-    "before_after_JDmxdx",
     "app_carousel_ehEbit",
     "feature_carousel_6FG3qV",
+    "before_after_JDmxdx",
+    "the-product-recommendations",
     "cta_banner_GTHMPG"
   ]
 }
