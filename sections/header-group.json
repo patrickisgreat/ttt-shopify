@@ -11,65 +11,6 @@
   "name": "t:section_groups.header",
   "type": "header",
   "sections": {
-    "announcements-bar": {
-      "type": "announcements-bar",
-      "blocks": {
-        "announcement-1": {
-          "type": "announcement",
-          "settings": {
-            "title": "Buy 5 bottles, get 1 free — no code needed"
-          }
-        },
-        "announcement-4": {
-          "type": "announcement",
-          "settings": {
-            "title": "Free shipping on orders $99+"
-          }
-        },
-        "announcement-2": {
-          "type": "announcement",
-          "settings": {
-            "title": "Bubbly sparkling water — now in cans"
-          }
-        },
-        "announcement-3": {
-          "type": "announcement",
-          "settings": {
-            "title": "Order before 2 pm — delivered tomorrow"
-          }
-        },
-        "announcement-5": {
-          "type": "announcement",
-          "settings": {
-            "title": "Zero sugar. Zero artificial sweeteners. Just water done right."
-          }
-        },
-        "announcement-6": {
-          "type": "announcement",
-          "settings": {
-            "title": "No artificial anything — ever"
-          }
-        }
-      },
-      "block_order": [
-        "announcement-1",
-        "announcement-4",
-        "announcement-2",
-        "announcement-3",
-        "announcement-5",
-        "announcement-6"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "overlay-scheme",
-        "announcement_font": "header",
-        "announcement_font_scaling_property": 12,
-        "announcement_letter_spacing": 10,
-        "announcement_uppercase": true,
-        "autoplay_speed": 4,
-        "sliding_behavior": "single"
-      }
-    },
     "header": {
       "type": "header",
       "blocks": {
