@@ -135,10 +135,10 @@
         "text": "<p>A quick walkthrough of the whole process, from your photo to a finished piece.</p>",
         "align_content": "text-align-center",
         "position_content": "above",
-        "md_padding_top": 0,
-        "md_padding_bottom": 40,
-        "padding_top": 0,
-        "padding_bottom": 24
+        "md_padding_top": 24,
+        "md_padding_bottom": 56,
+        "padding_top": 16,
+        "padding_bottom": 40
       }
     },
     "rich_text_care": {
