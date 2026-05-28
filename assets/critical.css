@@ -922,6 +922,19 @@ header.header[data-use-icons="true"] .header-item__link.has-blip-visible .header
 .header-main-menu-link.--with-submenu svg {
   margin-right: -6px;
 }
+.header-main-menu-link.--active {
+  position: relative;
+  font-weight: 600;
+}
+.header-main-menu-link.--active::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 0;
+  height: 2px;
+  background: var(--color-foreground);
+}
 
 /* Header: Sub-menu */
 .header-dropdown.--single {

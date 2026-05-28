@@ -109,7 +109,7 @@
         "feature_card_QVJVwt": {
           "type": "feature_card",
           "settings": {
-            "icon_svg": "<svg width=\"45\" height=\"45\" viewbox=\"0 0 45 45\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M27.5554 9.62044C30.3064 9.61868 32.535 11.8476 32.535 14.5971C32.535 17.3465 30.3061 19.5748 27.5554 19.5748C24.8062 19.5748 22.5776 17.3459 22.5776 14.5971C22.5776 11.848 24.8066 9.62044 27.5554 9.62044ZM16.5638 19.1407C17.2704 19.1407 17.9876 19.4114 18.529 19.9528L25.5306 26.9544L27.9142 24.5691C28.4556 24.0294 29.1693 23.757 29.8742 23.757H29.8777C30.5826 23.757 31.2945 24.0242 31.8394 24.5673L37.5206 30.2504C37.7087 30.4385 37.8142 30.6951 37.8142 30.9606L37.8107 34.5764C37.7843 36.4116 36.2972 37.8899 34.462 37.9075L10.5014 37.9057C8.68911 37.8723 7.2266 36.4116 7.18618 34.6028V27.7894C7.18618 27.5222 7.29165 27.2673 7.47973 27.0792L14.604 19.9512C15.1384 19.4186 15.8362 19.1497 16.5323 19.1409L16.5638 19.1407ZM7.60801 3.64343H7.59219C5.35978 3.66277 3.55794 5.47332 3.54744 7.70768C3.54568 7.98541 3.54744 37.2161 3.54744 37.2914C3.55799 39.5256 5.36151 41.3362 7.59219 41.3557H37.4084C39.6391 41.3363 41.4427 39.5258 41.4532 37.2914C41.4532 37.2158 41.455 7.98518 41.4532 7.70768C41.4426 5.47351 39.6391 3.66293 37.4084 3.64343H7.60801Z\" fill=\"black\"></path>\n</svg>",
+            "icon_svg": "<svg width=\"38\" height=\"45\" viewbox=\"0 0 38 45\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect x=\"2\" y=\"2\" width=\"34\" height=\"41\" rx=\"4\" stroke=\"black\" stroke-width=\"3\"></rect>\n<circle cx=\"19\" cy=\"17\" r=\"6\" fill=\"black\"></circle>\n<path d=\"M9 38c0-5.523 4.477-10 10-10s10 4.477 10 10\" fill=\"black\"></path>\n</svg>",
             "title": "Custom from Any Photo",
             "description": "Turn any meaningful image into one-of-a-kind string art."
           }
@@ -219,15 +219,15 @@
       "name": "t:sections.blocks.video.name",
       "settings": {
         "color_scheme": "",
-        "video_url": "",
-        "title": "",
+        "video_url": "https://www.youtube.com/watch?v=4ScK3RsoMSk",
+        "title": "See how it works",
         "text": "",
-        "align_content": "text-align-left",
+        "align_content": "text-align-center",
         "position_content": "above",
-        "md_padding_top": 0,
-        "md_padding_bottom": 0,
-        "padding_top": 0,
-        "padding_bottom": 0
+        "md_padding_top": 48,
+        "md_padding_bottom": 48,
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     },
     "image_with_hotspots_aeUqWc": {
@@ -482,9 +482,10 @@
   },
   "order": [
     "hero_dark_4Nid7U",
+    "video_YzVdz8",
+    "features_grid_J9zhXh",
     "sliding_text",
     "testimonials_slider_UKWpbV",
-    "features_grid_J9zhXh",
     "how_it_works_xQzgqf",
     "image_with_hotspots_aeUqWc",
     "cta_banner_knnhyi",
