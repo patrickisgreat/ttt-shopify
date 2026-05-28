@@ -93,7 +93,7 @@
         "custom_liquid_6FiWtW": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<a href=\"/pages/faq\" class=\"try-photo-button btn btn--secondary\">\n  <span class=\"try-photo-icon\" aria-hidden=\"true\">\n    <!-- Simple image icon (SVG, no external assets) -->\n    <svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\">\n      <rect x=\"2\" y=\"3\" width=\"20\" height=\"18\" rx=\"4\" fill=\"black\"/>\n      <circle cx=\"9\" cy=\"9\" r=\"2\" fill=\"white\"/>\n      <path d=\"M5 17l4-4 3 3 4-5 3 6H5z\" fill=\"white\"/>\n    </svg>\n  </span>\n  <span class=\"try-photo-text\">Try it with your photo</span>\n</a>",
+            "custom_liquid": "<a href=\"/pages/faq\" class=\"try-photo-button btn btn--secondary\">\n  <span class=\"try-photo-icon\" aria-hidden=\"true\">\n    <!-- Simple image icon (SVG, no external assets) -->\n    <svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\">\n      <rect x=\"2\" y=\"3\" width=\"20\" height=\"18\" rx=\"4\" fill=\"black\"/>\n      <circle cx=\"9\" cy=\"9\" r=\"2\" fill=\"white\"/>\n      <path d=\"M5 17l4-4 3 3 4-5 3 6H5z\" fill=\"white\"/>\n    </svg>\n  </span>\n  <span class=\"try-photo-text\">Read the FAQ</span>\n</a>",
             "margin_top": 20
           }
         },
