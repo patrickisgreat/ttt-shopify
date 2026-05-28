@@ -93,7 +93,7 @@
         "custom_liquid_6FiWtW": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<a href=\"/pages/faq\" class=\"try-photo-button btn btn--secondary\">\n  <span class=\"try-photo-icon\" aria-hidden=\"true\">\n    <!-- Simple image icon (SVG, no external assets) -->\n    <svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\">\n      <rect x=\"2\" y=\"3\" width=\"20\" height=\"18\" rx=\"4\" fill=\"black\"/>\n      <circle cx=\"9\" cy=\"9\" r=\"2\" fill=\"white\"/>\n      <path d=\"M5 17l4-4 3 3 4-5 3 6H5z\" fill=\"white\"/>\n    </svg>\n  </span>\n  <span class=\"try-photo-text\">Try it with your photo</span>\n</a>",
+            "custom_liquid": "<a href=\"/pages/faq\" class=\"try-photo-button btn btn--secondary\">\n  <span class=\"try-photo-icon\" aria-hidden=\"true\">\n    <!-- FAQ / question-mark icon -->\n    <svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\">\n      <circle cx=\"12\" cy=\"12\" r=\"10\" fill=\"black\"/>\n      <path d=\"M9.3 9.3a2.8 2.8 0 1 1 4.1 2.6c-.9.5-1.5 1.1-1.5 2.1v.3\" stroke=\"white\" stroke-width=\"1.7\" fill=\"none\" stroke-linecap=\"round\"/>\n      <circle cx=\"12\" cy=\"17.3\" r=\"1.15\" fill=\"white\"/>\n    </svg>\n  </span>\n  <span class=\"try-photo-text\">Read the FAQ</span>\n</a>",
             "margin_top": 20
           }
         },
@@ -469,6 +469,8 @@
           "type": "before_after",
           "settings": {
             "media_aspect_ratio": "landscape_alt",
+            "image_before": "shopify://shop_images/aphrodite-half-shell.jpg",
+            "image_after": "shopify://shop_images/girl-pearl-earring.webp",
             "label_colors": "#000000",
             "before_label": "Before",
             "after_label": "After",
