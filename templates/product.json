@@ -469,6 +469,8 @@
           "type": "before_after",
           "settings": {
             "media_aspect_ratio": "landscape_alt",
+            "image_before": "shopify://shop_images/aphrodite-half-shell.jpg",
+            "image_after": "shopify://shop_images/girl-pearl-earring.webp",
             "label_colors": "#000000",
             "before_label": "Before",
             "after_label": "After",
