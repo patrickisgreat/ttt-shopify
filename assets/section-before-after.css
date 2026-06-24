@@ -40,9 +40,9 @@
 .label-text {
   position: absolute;
   color: var(--color-foreground);
-  background-color: transparent;
-  padding: 4px 8px;
-  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 4px 10px;
+  border-radius: 999px;
 }
 
 .label-position-top .label-text {
