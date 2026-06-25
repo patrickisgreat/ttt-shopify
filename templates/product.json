@@ -51,7 +51,7 @@
         "2ad218b6-4cf8-49f8-a948-4ca131ed654a": {
           "type": "text",
           "settings": {
-            "text": "<p>Your hands make it. The app walks you through every step.</p><p>Upload any photo — a face, a pet, a skyline — and the app converts it into a real-time, voice-guided string placement sequence. You confirm each step before the next one appears. No diagrams to decode, no wrong moves to undo. Just you, the thread, and what the app tells you next. Walk away with a finished piece made entirely by your own hands.</p>",
+            "text": "<p>Your hands make it. The app walks you through every step.</p><p>Upload any photo and the app turns it into a real-time, voice-guided sequence that flows at your pace — no diagrams to decode, no wrong moves to undo, no buttons to tap between lines. You, the thread, and the next number.</p>",
             "read_more": false,
             "margin_top": 24
           }
@@ -59,7 +59,7 @@
         "text_tRMRrA": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>What's Included: </strong></p><ul><li>20\" Interlocking Loom Pieces</li><li>Pre-Cut String & Spool Holder</li><li>Precision Stringing Tool</li><li>Numbered Paper Template</li><li>Wooden Phone Stand</li><li>Convertible Box Easel</li><li>Zip Ties for Assembly</li><li>App Access for Custom Guides</li></ul>",
+            "text": "<p><strong>What's included:</strong></p><ul><li>20-inch interlocking loom</li><li>Pre-cut thread and spool holder</li><li>Precision threading tool</li><li>Numbered paper guide</li><li>Wooden phone stand</li><li>Convertible box easel</li><li>App access for personalized guides — no subscription</li></ul>",
             "read_more": true,
             "margin_top": 8
           }
@@ -100,7 +100,7 @@
         "text_ytmJky": {
           "type": "text",
           "settings": {
-            "text": "<p>No experience needed. The app accounts for that.</p>",
+            "text": "<p>No experience needed. Ships from Huntsville, AL within one business day. 30-day guarantee.</p>",
             "read_more": false,
             "margin_top": 16
           }
@@ -138,7 +138,7 @@
           "type": "collapsible_tab",
           "settings": {
             "title": "Features",
-            "content": "<ul><li><strong>Real-Time Guided App</strong> — Free download (iOS &amp; Android). Converts any photo into a numbered, confirmed-step session.</li><li><strong>Photo-to-Pattern Conversion</strong> — Any image, personalized guide generated in seconds. Live preview before you start.</li><li><strong>20\" Interlocking Loom</strong> — Tool-free assembly. Mounts to easel box or wall.</li><li><strong>Step Confirmation Loop</strong> — Each placement is confirmed before the guide advances. No missed strings.</li><li><strong>Convertible Easel Box</strong> — Packaging that becomes your work surface.</li><li><strong>Wooden Phone Stand</strong> — Holds your guide hands-free while you string.</li><li><strong>Full Thread Set with Spool Holder</strong> — Pre-cut, organized, and ready to use.</li><li><strong>Precision Stringing Tool</strong> — Designed for clean, accurate string placement.</li><li><strong>Numbered Paper Template</strong> — Physical reference guide included alongside the app.</li><li><strong>Patent-Pending Software &amp; Loom Design</strong> — An original system you won't find anywhere else.</li></ul>",
+            "content": "<ul><li><strong>Real-time voice-guided app</strong> — speaks and shows each step, then flows to the next at your pace. No lost lines, no buttons between them.</li><li><strong>Convertible easel-box</strong> — packaging that becomes your work surface.</li><li><strong>Wooden phone stand</strong> — holds your guide hands-free while you thread.</li><li><strong>Thread and spool holder</strong> — pre-cut, organized, ready to use.</li><li><strong>Precision threading wand</strong> — designed for clean, accurate placement.</li><li><strong>Numbered paper guide</strong> — a physical reference for using the loom with our app.</li><li><strong>Patented software and loom design</strong> — U.S. Patent 12,423,349. An original system you won't find anywhere else.</li></ul>",
             "page": "",
             "open_as_drawer": false,
             "icon": "icon-caret__right",
@@ -149,7 +149,7 @@
           "type": "collapsible_tab",
           "settings": {
             "title": "Benefits",
-            "content": "<ul><li><strong>Your hands know what to do next</strong> — the app provides real-time confirmed guidance from first string to last.</li><li><strong>The finished piece is yours</strong> — every Threaditate starts from a photo you uploaded. It can't exist anywhere else.</li><li><strong>You will finish this</strong> — the process is designed around completion. Every confirmed step is progress.</li><li><strong>No experience needed — the app accounts for that</strong> — zero crafting background required.</li><li><strong>Nothing missing from the box</strong> — the kit ships complete with the loom, thread, tools, phone stand, easel box, and app access.</li><li><strong>The hour resets you</strong> — your hands are occupied, your mind goes quiet. The kind of focus screens don't provide.</li><li><strong>It makes a real gift</strong> — a completed Threaditate made from a meaningful photo says more than anything off a shelf.</li></ul>",
+            "content": "<ul><li><strong>Your hands know what to do next</strong> — the app speaks each step in real time, from the first line to the last.</li><li><strong>It keeps your pace</strong> — the guide flows on a rhythm you set. Speed up as your hands learn; slow down to sink in.</li><li><strong>The finished piece is yours</strong> — every Threaditate starts from a photo you uploaded. It can't exist anywhere else.</li><li><strong>You will finish this</strong> — the process is designed around completion. The app saves your place, and every session picks up exactly where you left off.</li><li><strong>No experience needed</strong> — the app accounts for that; zero crafting background required.</li><li><strong>Nothing missing from the box</strong> — the kit ships complete: loom, thread, tools, phone stand, easel box, and app access.</li><li><strong>Hands busy, mind quiet</strong> — the kind of focus screens don't provide.</li><li><strong>It makes a real gift</strong> — a completed Threaditate made from a meaningful photo says more than anything off a shelf.</li></ul>",
             "page": "",
             "open_as_drawer": false,
             "icon": "icon-caret__right",
@@ -160,7 +160,7 @@
           "type": "collapsible_tab",
           "settings": {
             "title": "Specs",
-            "content": "<p><strong>Loom</strong></p><ul><li>Diameter: 20\"</li><li>Interlocking modular pieces</li><li>Tool-free</li><li>Mounting: Easel box or wall compatible</li><li>U.S. patent pending</li></ul><p><strong>Thread</strong></p><ul><li>Pre-cut string set</li><li>Integrated spool holder included</li></ul><p><strong>Tools Included</strong></p><ul><li>Precision stringing tool</li><li>Numbered paper template</li><li>Wooden phone stand</li><li>Zip ties for assembly</li></ul><p><strong>Packaging</strong></p><ul><li>Mailbox-sized box converts to easel work surface</li><li>No additional stand required</li></ul><p><strong>App</strong></p><ul><li>iOS and Android</li><li>Cost: Free (included with kit)</li><li>Features: Photo upload, real-time guided session, step confirmation loop, design preview</li><li>U.S. patent pending</li></ul><p><strong>Project Duration</strong></p><ul><li>Estimated completion: 3–6 hours depending on design complexity</li><li>Session flexibility: Pause and resume, the app saves progress</li></ul>",
+            "content": "<p><strong>Loom</strong></p><ul><li>Diameter: 20\"</li><li>Patent-pending loom design</li><li>Interlocking modular pieces</li><li>Tool-free</li><li>Easel- or wall-mounted</li></ul><p><strong>Thread</strong></p><ul><li>Pre-cut thread set</li><li>Integrated spool holder included</li></ul><p><strong>Tools included</strong></p><ul><li>Precision threading wand</li><li>Numbered paper guide</li><li>Wooden phone stand</li></ul><p><strong>Packaging</strong></p><ul><li>Mailbox-sized box converts to easel work surface</li><li>No additional stand required</li></ul><p><strong>App</strong></p><ul><li>iOS and Android</li><li>Cost: Free (included with kit)</li><li>Features: photo upload, real-time voice-guided session, adjustable pacing, design preview</li><li>U.S. Patent 12,423,349</li></ul><p><strong>Project duration</strong></p><ul><li>Estimated completion: 5–8 hours depending on design complexity</li><li>Session flexibility: pause and resume — the app saves your progress</li></ul>",
             "page": "",
             "open_as_drawer": false,
             "icon": "icon-caret__right",
@@ -171,7 +171,7 @@
           "type": "collapsible_tab",
           "settings": {
             "title": "Shipping & Returns",
-            "content": "",
+            "content": "<p>Ships from Huntsville, AL within one business day.</p><p>30-day guarantee — if it's not for you, send it back in new condition. Pieces warped by over-tight threading can't be returned, so thread loosely — a drape, not a tug.</p>",
             "page": "",
             "open_as_drawer": false,
             "icon": "icon-caret__right",
@@ -253,7 +253,7 @@
         "text_caxCW4": {
           "type": "text",
           "settings": {
-            "text": "2,013 Backers",
+            "text": "2,035 backers",
             "link": ""
           }
         },
@@ -267,21 +267,7 @@
         "text_w6yp7R": {
           "type": "text",
           "settings": {
-            "text": "$172,797 Raised",
-            "link": ""
-          }
-        },
-        "text_xkBnEe": {
-          "type": "text",
-          "settings": {
-            "text": "⭐",
-            "link": ""
-          }
-        },
-        "text_M4KAGR": {
-          "type": "text",
-          "settings": {
-            "text": "5-Star Reviews",
+            "text": "$172,797 raised",
             "link": ""
           }
         },
@@ -305,8 +291,6 @@
         "text_caxCW4",
         "text_DkifYx",
         "text_w6yp7R",
-        "text_xkBnEe",
-        "text_M4KAGR",
         "text_gjb7wp",
         "text_3jVyPi"
       ],
@@ -380,24 +364,24 @@
           "type": "feature_card",
           "settings": {
             "icon_svg": "",
-            "title": "Mistake-Friendly",
-            "description": "Lose your place? Keep going. The step-confirmed process means there's nothing to undo."
+            "title": "Forgiving by design",
+            "description": "Lose your place? Keep going. With thousands of lines, missed steps disappear into the whole — there's nothing to undo."
           }
         },
         "feature_card_jMkMTj": {
           "type": "feature_card",
           "settings": {
             "icon_svg": "",
-            "title": "You Won't Get Lost",
-            "description": "The app walks you through every string placement, one confirmed step at a time. No experience needed."
+            "title": "You won't get lost",
+            "description": "The app speaks and shows every step, flowing line by line at your pace. No experience needed."
           }
         },
         "feature_card_JkAaLp": {
           "type": "feature_card",
           "settings": {
             "icon_svg": "",
-            "title": "Custom from Any Photo",
-            "description": "Turn any meaningful image into one-of-a-kind string art. No two Threaditates will ever look the same."
+            "title": "Your photo, your art",
+            "description": "Any meaningful image becomes one-of-a-kind string art. No two pieces will ever match."
           }
         }
       },
@@ -410,7 +394,7 @@
       "settings": {
         "color_scheme": "",
         "heading": "So, What Is Threaditate?",
-        "subheading": "A hands-on, guided art kit. Your hands make something real. Your mind goes quiet while they do it.",
+        "subheading": "A hands-on, guided art kit. Your hands make something real. Your mind goes quiet while they do.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
@@ -440,16 +424,16 @@
         "color_scheme": "",
         "image": "shopify://shop_images/everything-you-need.jpg",
         "image_position": "left",
-        "heading": "Everything You Need, In One Box",
+        "heading": "Everything you need, in one box",
         "intro": "Open the box and you're ready to start. Nothing to source, nothing missing — every tool you'll need is already inside.",
-        "bullet_1": "Interlocking Loom Pieces",
-        "bullet_2": "Pre-Cut String & Spool Holder",
-        "bullet_3": "Precision Stringing Tool",
-        "bullet_4": "Numbered Paper Template",
-        "bullet_5": "Wooden Phone Stand",
-        "bullet_6": "Convertible Box Easel",
-        "bullet_7": "Zip Ties for Assembly",
-        "bullet_8": "App Access for Custom Guides",
+        "bullet_1": "20-inch interlocking loom",
+        "bullet_2": "Pre-cut thread & spool holder",
+        "bullet_3": "Precision threading tool",
+        "bullet_4": "Numbered paper guide",
+        "bullet_5": "Wooden phone stand",
+        "bullet_6": "Convertible box easel",
+        "bullet_7": "App access for personalized guides",
+        "bullet_8": "",
         "bullet_9": "",
         "bullet_10": "",
         "button_label": "Add to Cart",
@@ -470,10 +454,10 @@
           "settings": {
             "media_aspect_ratio": "landscape_alt",
             "image_before": "shopify://shop_images/aphrodite-half-shell.jpg",
-            "image_after": "shopify://shop_images/girl-pearl-earring.webp",
-            "label_colors": "#000000",
-            "before_label": "Before",
-            "after_label": "After",
+            "image_after": "shopify://shop_images/aphrodite-string.png",
+            "label_colors": "#ffffff",
+            "before_label": "Your photo",
+            "after_label": "Your string art",
             "label_position": "top"
           }
         },
@@ -527,38 +511,31 @@
         "slide_HWKJ8i": {
           "type": "slide",
           "settings": {
-            "caption": "Start with Any Photo — Open the app, upload an image, and your personalized guide is ready in seconds."
+            "caption": "Start with any photo — Open the app, upload an image, and your personalized guide is ready in seconds."
           }
         },
         "slide_XUMeEJ": {
           "type": "slide",
           "settings": {
-            "caption": "Get Your Guide — The app converts your photo into a numbered, step-by-step instruction sequence in seconds."
+            "caption": "Settle into the rhythm — The app speaks and shows each placement, then moves to the next at the pace you choose."
           }
         },
         "slide_njUDNd": {
           "type": "slide",
           "settings": {
-            "caption": "Follow the Steps — The guide walks you through every string placement, confirming each one before moving to the next."
-          }
-        },
-        "slide_QKEPLP": {
-          "type": "slide",
-          "settings": {
-            "caption": "Display What You Made — When the final step is confirmed, you have a finished piece made entirely by your own hands."
+            "caption": "Display what you made — The last line lands, and you're holding a finished piece — handmade by you."
           }
         }
       },
       "block_order": [
         "slide_HWKJ8i",
         "slide_XUMeEJ",
-        "slide_njUDNd",
-        "slide_QKEPLP"
+        "slide_njUDNd"
       ],
       "name": "App Carousel",
       "settings": {
-        "heading": "How The App Works",
-        "subheading": "Upload a photo. Get your personalized guide. String by string, the app walks you to the finish.",
+        "heading": "How the app works",
+        "subheading": "Upload a photo. Get your personalized guide. The app walks you to the finish, line by line.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
@@ -572,40 +549,40 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/step-2.jpg",
-            "title": "Custom from Any Photo",
-            "caption": "Every Threaditate starts from a photo you already have. Upload it to the app, and it generates a step-by-step numbered guide built specifically around that image."
+            "title": "Your photo, your art",
+            "caption": "Every Threaditate starts from a photo you already have. Upload it and the app builds a numbered guide around that exact image."
           }
         },
         "slide_ENz4BQ": {
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/features-image.jpg",
-            "title": "Everything You Need, In One Box",
-            "caption": "The loom arrives with pins pre-placed. The thread is pre-cut and loaded onto the spool holder. The easel box holds the loom; the phone stand holds your guide."
+            "title": "Everything you need, in one box",
+            "caption": "The loom arrives with every pin in place; the thread arrives cut and loaded. The easel box holds the loom; the stand holds your guide."
           }
         },
         "slide_pRbLiy": {
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/finished-image.jpg",
-            "title": "Your Mind Goes Quiet",
-            "caption": "There's something about placing one string at a time that turns the noise down. Threaditate is screen-light by design — the app is there when you need it, out of the way when you don't. Your hands stay busy. Your mind goes somewhere quieter."
+            "title": "Your mind goes quiet",
+            "caption": "Placing one line at a time turns the noise down. Threaditate is screen-optional by design — the app reads each step aloud, there when you need it, out of the way when you don't."
           }
         },
         "slide_GDPB8K": {
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/everything-you-need.jpg",
-            "title": "Any Skill Level, Any Age",
-            "caption": "The forgiving design, clear numbered guides, and precision stringing tool make it work for first-time makers, casual creatives, and anyone who's ever wanted to make something but didn't know where to start."
+            "title": "Made for every maker",
+            "caption": "Forgiving design, clear numbered guides, and a precision threading tool welcome first-time makers, casual creatives, and hands that appreciate a gentler grip."
           }
         },
         "slide_aCGwWy": {
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/everything-you-need.jpg",
-            "title": "Built to Be Finished",
-            "caption": "Most craft kits get abandoned halfway through. Threaditate is designed around completion. The step-confirmed process gets you to the last string. What you're left with is art you made with your own hands."
+            "title": "Built to be finished",
+            "caption": "The guide flows with you to the last line. What's left is art you made with your own hands."
           }
         }
       },
@@ -620,7 +597,7 @@
       "settings": {
         "color_scheme": "",
         "heading": "What Makes Threaditate Different",
-        "subheading": "From the guided app to the convertible easel box, every detail was built to get you to the last string — and leave you with something worth displaying.",
+        "subheading": "From the guided app to the convertible easel box, every detail was built to get you to the last line — and leave you with something worth displaying.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
@@ -631,9 +608,9 @@
       "type": "cta-banner",
       "name": "CTA Banner",
       "settings": {
-        "heading": "Create Your Threaditate",
-        "subheading": "Turn a meaningful photo into custom string art. Every step guided, every string placed by your own hands.",
-        "button_label": "Start Your Threaditate →",
+        "heading": "Create your Threaditate",
+        "subheading": "A meaningful photo, a guided evening or three, and a piece on your wall that you made.",
+        "button_label": "Make yours",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
         "caption": "No experience needed. Everything included.",
         "md_padding_top": 120,

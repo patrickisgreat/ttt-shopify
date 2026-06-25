@@ -98,9 +98,9 @@
           "type": "step",
           "settings": {
             "image": "shopify://shop_images/step-4.jpg",
-            "title": "Start Stringing",
-            "description": "The pace begins at 10 second intervals. As your skill improves, speed up. Once your speed has plateaued, turn it down a few clicks for a relaxed experience.",
-            "tip": "It's fine to mess up dozens of steps, they'll go unnoticed, just keep going."
+            "title": "Begin",
+            "description": "The app speaks and shows the next step, then continues at your pace — it starts at 10-second intervals. Speed up as your rhythm builds, then turn it down a few clicks. The relaxed pace is the one you came for.",
+            "tip": "Miss dozens of steps? Keep going. They vanish into the rest."
           }
         }
       },
@@ -116,8 +116,8 @@
         "heading": "Getting Started",
         "subheading": "Follow these steps in order, or jump ahead at your own pace.",
         "number_color": "#2563eb",
-        "button_label": "Start Your String Ring →",
-        "button_link": "",
+        "button_label": "Start your piece",
+        "button_link": "shopify://products/string-ring-custom-string-art-kit",
         "button_style": "primary",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
@@ -216,10 +216,10 @@
       "type": "cta-banner",
       "name": "CTA Banner",
       "settings": {
-        "heading": "Create Your String Ring",
+        "heading": "Create your Threaditate",
         "subheading": "Turn a meaningful photo into custom string art — guided, calming, and designed to be finished.",
-        "button_label": "Start Your String Ring →",
-        "button_link": "",
+        "button_label": "Make yours",
+        "button_link": "shopify://products/string-ring-custom-string-art-kit",
         "caption": "No experience needed. Everything included.",
         "md_padding_top": 120,
         "md_padding_bottom": 120,
