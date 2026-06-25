@@ -1,0 +1,70 @@
+name: Sync theme copy from live
+
+# Pulls editor-made content changes from the LIVE theme back into git, so the
+# Theme Editor stays the source of truth for copy while git keeps a versioned
+# backup/history of it. Runs nightly and on demand.
+#
+# Only content files are synced — page templates + header/footer/aside groups.
+# config/settings_data.json is intentionally NOT pulled: it can hold app/API
+# keys and must never be committed (see CLAUDE.md > Security).
+#
+# Uses the same repo secrets as deploy.yml:
+#   SHOPIFY_FLAG_STORE        your-store.myshopify.com (canonical)
+#   SHOPIFY_CLI_THEME_TOKEN   a Theme Access password (shptka_…)
+
+on:
+  schedule:
+    # 08:00 UTC ≈ 02:00–03:00 America/Chicago (Huntsville). Low-activity window.
+    - cron: "0 8 * * *"
+  workflow_dispatch: {}
+
+# Don't overlap with a deploy or another sync run.
+concurrency:
+  group: content-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    name: Pull live content into git
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Shopify CLI
+        # Pinned to match deploy.yml.
+        run: npm install -g @shopify/cli@3.94.3
+
+      - name: Pull content files from the live theme
+        env:
+          SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}
+          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+        # --only restricts the pull to the editor-owned content files. Patterns
+        # are quoted so the shell doesn't expand them before the CLI sees them.
+        # --nodelete: never remove local files based on the remote.
+        run: |
+          shopify theme pull \
+            --live \
+            --path . \
+            --nodelete \
+            --only 'templates/*.json' \
+            --only 'templates/customers/*.json' \
+            --only 'sections/*.json'
+
+      - name: Commit & push if content changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Stage only the editor-owned content paths (never config/).
+          git add templates sections
+          if git diff --cached --quiet; then
+            echo "No content changes to sync."
+          else
+            # [skip ci] so this sync commit doesn't trigger a redeploy.
+            git commit -m "chore(content): sync Theme Editor copy from live [skip ci]"
+            git push
+          fi
