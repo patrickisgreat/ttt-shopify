@@ -56,8 +56,24 @@ jobs:
           SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}
           SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
         # --live --allow-live pushes to the PUBLISHED theme without a prompt.
-        # --ignore config/settings_data.json keeps CI from overwriting settings
-        #   a merchant changed in the Theme Editor (theme-editor data lives there).
+        #
+        # Content is owned by the Theme Editor, not code. We --ignore the files a
+        # merchant edits in the admin so deploys never clobber their work:
+        #   config/settings_data.json   - theme settings (colors/fonts/app keys)
+        #   templates/*.json            - page content/layout (home, product, pages…)
+        #   templates/customers/*.json  - account page content
+        #   sections/*.json             - header/footer/aside group content
+        # Those edits flow back into git via .github/workflows/sync-content.yml.
+        # Everything else (sections/*.liquid, snippets, assets, locales) is code:
+        # code wins and deploys normally.
+        #
+        # NOTE: the glob patterns are single-quoted so the SHELL doesn't expand
+        # them — the Shopify CLI must receive the literal pattern.
+        #
+        # To intentionally ship a content change FROM git, pull first then push
+        # only that file:
+        #   shopify theme pull --live                     # get the editor's latest
+        #   shopify theme push --live --allow-live --only templates/index.json
         #
         # SAFER ALTERNATIVE: push to a dedicated, unpublished theme instead of
         # live, by replacing "--live --allow-live" with "--theme <THEME_ID>".
@@ -66,4 +82,7 @@ jobs:
           shopify theme push \
             --live --allow-live \
             --ignore config/settings_data.json \
+            --ignore 'templates/*.json' \
+            --ignore 'templates/customers/*.json' \
+            --ignore 'sections/*.json' \
             --json
