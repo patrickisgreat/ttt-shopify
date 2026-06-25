@@ -86,7 +86,17 @@ CI lives in [.github/workflows/deploy.yml](.github/workflows/deploy.yml):
 - `SHOPIFY_FLAG_STORE` = `iy8zdq-5h.myshopify.com` — the store's **canonical** myshopify domain. The Theme Access token is bound to it, so CI must use this exact value. (The `string-ring-2.myshopify.com` alias works for interactive `shopify theme dev` / browser login, but token auth in CI is rejected with a 401 against the alias.)
 - `SHOPIFY_CLI_THEME_TOKEN` = a password from Shopify's **Theme Access** app (`apps.shopify.com/theme-access`). It starts with `shptka_` — not a custom-app Admin API token (`shpat_`).
 
-**Source-of-truth rule — important:** for any file CI pushes, **code wins.** Editing those same pages in the Shopify Theme Editor will be overwritten on the next deploy. The one exception is `config/settings_data.json`, which the workflow `--ignore`s so merchant Theme-Editor settings aren't clobbered. If you change a page's content, do it **in code**, not in the editor.
+**Source-of-truth rule — important:** **code owns code; the Theme Editor owns content.** CI `--ignore`s the files a merchant edits in the admin so deploys never overwrite their work: `config/settings_data.json`, `templates/*.json`, `templates/customers/*.json`, and `sections/*.json` (the header/footer/aside groups). Those editor edits are synced back into git nightly by [.github/workflows/sync-content.yml](.github/workflows/sync-content.yml), so git keeps a versioned backup of the live copy. **Code wins for everything else** — `sections/*.liquid`, `snippets/`, `assets/`, `locales/` — and deploys normally.
+
+To intentionally ship a content change *from* git (e.g. a bulk copy pass), **pull the live theme first** to grab the editor's latest, then push just that file so you build on top of the co-founder's edits instead of clobbering them:
+
+```bash
+shopify theme pull --store string-ring-2.myshopify.com --live   # get latest editor copy
+# …edit the file in git…
+shopify theme push --store string-ring-2.myshopify.com --live --allow-live --only templates/index.json
+```
+
+Never blind-push the ignored JSON — you'd wipe whatever was edited in the admin since.
 
 Before a large change, `shopify theme pull` the live theme into `/tmp/live-theme` and diff it against this repo, so you know exactly what a push will change.
 
@@ -153,7 +163,7 @@ This is a Liquid theme — there is **no unit-test framework here**, so don't pr
 ## Things to know before making changes
 
 - **`main` is live.** A merged PR (or any push to `main`) deploys to the `Bubbly` theme on the production store. There is no staging theme wired into CI yet — if you want one, push to a specific unpublished theme by ID (`shopify theme list` for IDs) instead of `--live`.
-- **JSON templates are auto-generated.** Files like [templates/page.faq.json](templates/page.faq.json) carry an "auto-generated" banner because the Theme Editor can rewrite them. Editing them in code is fine **as long as the team treats code as the source of truth** for those pages and doesn't also edit them in the editor (the next deploy would overwrite editor changes).
+- **JSON templates are editor-owned.** Files like [templates/page.faq.json](templates/page.faq.json) carry an "auto-generated" banner because the Theme Editor rewrites them. CI now `--ignore`s `templates/*.json` and `sections/*.json`, so the **Theme Editor is the source of truth** for page content — the non-technical team edits copy in the admin (see [EDITING-COPY.md](EDITING-COPY.md)), and the nightly content-sync workflow commits those edits back into git. To change content from code, follow the pull-first rule under [Deployment](#deployment).
 - **`settings_data.json` drifts.** The repo's copy lags what merchants set in the editor. CI ignores it on purpose. Don't "fix" the drift by force-pushing it unless you mean to reset merchant settings.
 - **Navigation menus and Pages are NOT in this repo.** They live in the Shopify admin (Online Store → Navigation / Pages). A nav link pointing at the wrong page, or a missing page behind a `shopify://pages/<handle>` link, is fixed in admin, not here.
 - **`assets/section-product-hero.css` is an intentional empty placeholder** — the original was lost (it's missing from live too). Restore real styles there if recovered; don't delete the file (it prevents a `MissingAsset` error and a 404).
