@@ -63,7 +63,6 @@
 
   # OVERLAY HEADER
   assign overlay_header = false
-  assign overlay_text_color = section.settings.overlay_text_color
   assign overlay_handles = section.settings.overlay_handles | newline_to_br | strip_newlines | split: '<br />'
 
   if template.name == 'index' and section.settings.overlay_index
@@ -76,28 +75,19 @@
 
   # LOGO SETTINGS
   assign logo_image = section.settings.logo_default
-  assign alt_logo_image = section.settings.logo_with_background_color
   assign logo_width = section.settings.logo_max_width
   assign logo_width_desktop = section.settings.logo_max_width_desktop
-
-  if overlay_header and alt_logo_image and overlay_text_color == 'use-background'
-    assign use_alt_logo_on_overlay = true
-  else
-    assign use_alt_logo_on_overlay = false
-  endif
 
 -%}
 
 {%- capture logo_element -%}
-  <a class="header-logo{% if use_alt_logo_on_overlay %} --alt-on-overlay{% endif %}" href="{{ routes.root_url }}" style=" --logo-width: {{ logo_width | append: 'px' }}; --sm-logo-width: {{ logo_width_desktop | append: 'px' }};">
-    {% if logo_image %}
-      <img class="site-logo --default" width="{{ logo_image.width }}" height="{{ logo_image.height }}" src="{{ logo_image | image_url: width: 600 }}" alt="{{ shop.name }}"/>
-      {% if use_alt_logo_on_overlay %}
-      <img class="site-logo --alt" width="{{ alt_logo_image.width }}" height="{{ alt_logo_image.height }}" src="{{ alt_logo_image | image_url: width: 600 }}" alt="{{ shop.name }}"/>
-      {% endif %}
-    {% else %}
-      <h1 class="site-logo h6 --text">{{ shop.name }}</h1>
-    {% endif %}
+  <a class="header-logo" href="{{ routes.root_url }}" style=" --logo-width: {{ logo_width | append: 'px' }}; --sm-logo-width: {{ logo_width_desktop | append: 'px' }};">
+    {%- comment -%}
+      Brand logo is a theme-asset SVG. The image_url filter can't resize SVGs,
+      so reference the asset directly. Width controlled by --logo-width in CSS;
+      the width/height attributes carry the intrinsic ratio to avoid layout shift.
+    {%- endcomment -%}
+    <img class="site-logo --default" src="{{ 'logo-horizontal-white.svg' | asset_url }}" alt="{{ shop.name }}" width="6934" height="1931">
   </a>
 {%- endcapture -%}
 
