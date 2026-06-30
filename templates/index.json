@@ -14,8 +14,8 @@
       "name": "Hero Dark",
       "settings": {
         "heading": "Your photo in thread, calmly made by hand.",
-        "subheading": "Threaditate is a personalized string art kit — upload a photo you love and the app's voice guides you line by line, in real time. No experience needed.",
-        "caption": "No skills to learn. Everything included. Takes about 6 hours. Ships within one business day.",
+        "subheading": "Threaditate is a personalized string art kit - upload a photo you love and the app's voice guides you line by line, in real time. No experience needed.",
+        "caption": "No skills to learn. Everything included. Ships in one business day.",
         "primary_button_label": "Get my kit",
         "primary_button_link": "shopify://products/string-ring-custom-string-art-kit",
         "primary_button_color": "#e8622a",
@@ -93,9 +93,9 @@
         "ba_home_pair": {
           "type": "before_after",
           "settings": {
-            "media_aspect_ratio": "landscape_alt",
-            "image_before": "shopify://shop_images/girl-pearl-earring.webp",
-            "image_after": "shopify://shop_images/girl-pearl-string.png",
+            "media_aspect_ratio": "square",
+            "image_before": "shopify://shop_images/aphrodite-half-shell.jpg",
+            "image_after": "shopify://shop_images/aphrodite-string.png",
             "label_colors": "#ffffff",
             "before_label": "Your photo",
             "after_label": "Your string art",
@@ -133,7 +133,7 @@
       "settings": {
         "color_scheme": "scheme-be8ef671-53c2-4895-89a6-144af711f198",
         "media_position_desktop": "top",
-        "media_width": "wide",
+        "media_width": "narrow",
         "content_width": "col-sm-max-5",
         "desktop_alignment": "center",
         "sm_full_width_buttons": false,
@@ -146,6 +146,22 @@
         "padding_bottom": 24
       }
     },
+    "video_YzVdz8": {
+      "type": "video",
+      "name": "t:sections.blocks.video.name",
+      "settings": {
+        "color_scheme": "",
+        "video_url": "https://www.youtube.com/watch?v=uqd7Kh_kwQs",
+        "title": "How to Threaditate",
+        "text": "",
+        "align_content": "text-align-center",
+        "position_content": "above",
+        "md_padding_top": 48,
+        "md_padding_bottom": 48,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
     "features_grid_J9zhXh": {
       "type": "features-grid",
       "blocks": {
@@ -154,7 +170,7 @@
           "settings": {
             "icon_svg": "<svg width=\"55\" height=\"45\" viewbox=\"0 0 55 45\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M42.2177 32.0564L54.4355 19.8387H44.8185C43.488 8.70968 33.9919 0 22.5 0C10.1008 0.000196875 0 10.1008 0 22.5C0 34.8992 10.1008 45 22.5 45C27.0363 45 31.3911 43.6695 35.0806 41.129L31.9356 36.5323C29.1532 38.4074 25.8872 39.4356 22.5001 39.4356C13.1856 39.4356 5.56462 31.8146 5.56462 22.5001C5.56462 13.1856 13.1856 5.56462 22.5001 5.56462C30.9074 5.56462 37.9235 11.734 39.1936 19.8388H30.0001L42.2177 32.0564Z\" fill=\"black\"></path>\n</svg>",
             "title": "Forgiving by design",
-            "description": "Lose your place? Keep going. Even hundreds of missed steps vanish into thousands of lines — nothing to undo, ever."
+            "description": "Lose your place? Keep going. Even hundreds of missed steps vanish as you continue, nothing to undo, ever."
           }
         },
         "feature_card_PKcGRp": {
@@ -170,7 +186,7 @@
           "settings": {
             "icon_svg": "<svg width=\"38\" height=\"45\" viewbox=\"0 0 38 45\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect x=\"2\" y=\"2\" width=\"34\" height=\"41\" rx=\"4\" stroke=\"black\" stroke-width=\"3\"></rect>\n<circle cx=\"19\" cy=\"17\" r=\"6\" fill=\"black\"></circle>\n<path d=\"M9 38c0-5.523 4.477-10 10-10s10 4.477 10 10\" fill=\"black\"></path>\n</svg>",
             "title": "Your photo, your art",
-            "description": "Upload any meaningful image and the app reads you a guide built from it. No two pieces are alike."
+            "description": "Upload any meaningful image and the app reads the numbers to loop.  Every piece is unique."
           }
         },
         "feature_card_xnamzR": {
@@ -178,7 +194,7 @@
           "settings": {
             "icon_svg": "<svg width=\"35\" height=\"45\" viewbox=\"0 0 35 45\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M32.2974 6.31582H28.4211V6.01977C28.4211 4.44082 27.1382 3.15791 25.5592 3.15791H21.8329C21.1816 1.3184 19.425 0 17.3684 0C15.3119 0 13.5553 1.3184 12.904 3.15791H9.17768C7.59872 3.15791 6.31581 4.44082 6.31581 6.01977V6.31582H2.4395C1.09344 6.31582 0 7.40926 0 8.75532V42.5605C0 43.9066 1.09344 45 2.4395 45H32.2977C33.6438 45 34.7372 43.9066 34.7372 42.5605V8.75532C34.7372 7.40926 33.6438 6.31582 32.2977 6.31582H32.2974ZM9.47372 6.31582H14.2106C15.083 6.31582 15.7895 5.60925 15.7895 4.73687C15.7895 3.86449 16.4961 3.15791 17.3685 3.15791C18.2409 3.15791 18.9474 3.86449 18.9474 4.73687C18.9474 5.60925 19.654 6.31582 20.5264 6.31582H25.2633V9.47373H9.47372V6.31582ZM11.8895 35.5736L7.94213 39.521C7.71319 39.7539 7.40925 39.8684 7.10529 39.8684C6.80133 39.8684 6.49737 39.7539 6.26844 39.521L4.68949 37.942C4.22764 37.4802 4.22764 36.7302 4.68949 36.2683C5.15135 35.8065 5.90133 35.8065 6.36318 36.2683L7.10529 37.0105L10.2158 33.8999C10.6777 33.4381 11.4277 33.4381 11.8895 33.8999C12.3514 34.3618 12.3514 35.1118 11.8895 35.5736ZM11.8895 26.0999L7.94213 30.0473C7.71319 30.2802 7.40925 30.3946 7.10529 30.3946C6.80133 30.3946 6.49737 30.2802 6.26844 30.0473L4.68949 28.4683C4.22764 28.0065 4.22764 27.2565 4.68949 26.7946C5.15135 26.3328 5.90133 26.3328 6.36318 26.7946L7.10529 27.5367L10.2158 24.4262C10.6777 23.9643 11.4277 23.9643 11.8895 24.4262C12.3514 24.8881 12.3514 25.638 11.8895 26.0999ZM11.8895 16.6262L7.94213 20.5736C7.71319 20.8064 7.40925 20.9209 7.10529 20.9209C6.80133 20.9209 6.49737 20.8064 6.26844 20.5736L4.68949 18.9946C4.22764 18.5327 4.22764 17.7828 4.68949 17.3209C5.15135 16.8591 5.90133 16.8591 6.36318 17.3209L7.10529 18.063L10.2158 14.9525C10.6777 14.4906 11.4277 14.4906 11.8895 14.9525C12.3514 15.4143 12.3514 16.1643 11.8895 16.6262ZM28.4214 38.2894H16.5788C15.9236 38.2894 15.3946 37.7605 15.3946 37.1052C15.3946 36.4499 15.9235 35.921 16.5788 35.921H28.4214C29.0766 35.921 29.6056 36.4499 29.6056 37.1052C29.6056 37.7605 29.0767 38.2894 28.4214 38.2894ZM28.4214 28.8157H16.5788C15.9236 28.8157 15.3946 28.2868 15.3946 27.6315C15.3946 26.9762 15.9235 26.4473 16.5788 26.4473H28.4214C29.0766 26.4473 29.6056 26.9762 29.6056 27.6315C29.6056 28.2868 29.0767 28.8157 28.4214 28.8157ZM28.4214 19.342H16.5788C15.9236 19.342 15.3946 18.813 15.3946 18.1578C15.3946 17.5025 15.9235 16.9735 16.5788 16.9735H28.4214C29.0766 16.9735 29.6056 17.5025 29.6056 18.1578C29.6056 18.813 29.0767 19.342 28.4214 19.342Z\" fill=\"black\"></path>\n</svg>",
             "title": "Everything in the box",
-            "description": "Loom, thread, accessories, app access. Mount it and start making."
+            "description": "Loom, thread, accessories, app access. Mount it to the wall or easel and start making."
           }
         },
         "feature_card_c3zLtM": {
@@ -194,7 +210,7 @@
           "settings": {
             "icon_svg": "<svg width=\"34\" height=\"45\" viewbox=\"0 0 34 45\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M15.1579 14.0211V10.137C13.5947 10.3265 12.8368 10.3738 11.2738 10.3738V14.2579C12.8369 14.3053 13.5947 14.2106 15.1579 14.0211Z\" fill=\"black\"></path>\n<path d=\"M15.158 14.0211V17.9053C16.7212 17.7158 17.4791 17.5738 19.0421 17.2894V13.4053C17.5264 13.6896 16.721 13.8316 15.158 14.0211Z\" fill=\"black\"></path>\n<path d=\"M22.9737 12.7422V8.85803C21.4105 9.09487 20.6526 9.23704 19.0896 9.52123V13.4054C20.6526 13.121 21.4105 12.979 22.9737 12.7422Z\" fill=\"black\"></path>\n<path d=\"M26.9053 12.3633C25.3421 12.4106 24.5842 12.5054 23.0212 12.7423V16.6264C24.5844 16.3896 25.3423 16.2949 26.9053 16.2474V12.3633Z\" fill=\"black\"></path>\n<path d=\"M32.3053 2.60527C27.0474 1.23155 23.1158 2.13158 19.3264 3.03162C15.6791 3.88433 12.2685 4.64219 7.67375 3.45798L7.53158 3.41064L7.53173 1.32639C7.53173 0.568539 6.91586 0 6.20534 0C5.49481 0 4.87894 0.615868 4.87894 1.32639V40.4527C2.03684 40.8317 0 42.3947 0 44.3368C0 44.7158 0.284179 45 0.663197 45H11.7948C12.1738 45 12.458 44.7158 12.458 44.3368C12.458 42.3947 10.3737 40.8315 7.57902 40.4527L7.57917 24.1106C9.33173 24.5369 10.895 24.6789 12.4107 24.6789C15.2055 24.6789 17.6213 24.1106 19.9897 23.5894C23.637 22.7367 27.0476 21.9788 31.6423 23.163C32.0687 23.2577 32.495 23.163 32.8265 22.9262C33.158 22.6893 33.3475 22.263 33.3475 21.8841L33.3477 3.93154C33.3002 3.31567 32.874 2.74733 32.3055 2.60514L32.3053 2.60527ZM22.9737 20.1789V16.6263C21.4105 16.8631 20.6526 17.0053 19.0896 17.2895V20.9843C17.8107 21.2685 16.4843 21.5527 15.2055 21.7422V17.9054C13.6422 18.0949 12.8844 18.1422 11.3213 18.1422V21.9317C10.1845 21.8843 9.04759 21.6948 7.76872 21.3633L7.62655 21.316V17.6212C9.0476 18.0002 9.85279 18.0475 11.3214 18.0949V14.2107C9.85298 14.1634 9.0476 14.0686 7.62655 13.7371V9.85294C9.0476 10.2319 9.85279 10.2793 11.3214 10.3266V6.67934C12.6951 6.77401 13.974 6.67934 15.2055 6.53717V10.0898C16.7687 9.90029 17.5266 9.75828 19.0896 9.47393V5.82664C19.3738 5.7793 19.658 5.68447 19.9897 5.63714C20.9844 5.40029 22.0266 5.16345 23.0213 4.97394V8.81074C24.5845 8.5739 25.3424 8.47922 26.9054 8.43173V4.59493C28.0896 4.59493 29.2738 4.6896 30.6002 4.97394V8.66875C29.1792 8.43191 28.374 8.38457 26.9054 8.43191V12.316C28.3738 12.2687 29.1792 12.316 30.6002 12.5529V16.437C29.1792 16.2002 28.374 16.1528 26.9054 16.2002V19.8001C25.5317 19.8475 24.2053 19.9895 22.9737 20.179L22.9737 20.1789Z\" fill=\"black\"></path>\n</svg>",
             "title": "Made to be displayed",
-            "description": "Frame it, hang it, gift it. Something you made, start to finish."
+            "description": "Frame it, hang it, gift it. Something you made, soothing from start to finish."
           }
         }
       },
@@ -217,6 +233,94 @@
         "padding_bottom": 48
       }
     },
+    "testimonials_slider_UKWpbV": {
+      "type": "testimonials-slider",
+      "blocks": {
+        "testimonial_NQjQ3B": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "It looks like something from a gallery",
+            "quote_body": "People ask me where I bought it. I made it. On my couch. Following an app. That still hasn't stopped being funny to me.",
+            "author_name": "Andy S.",
+            "author_role": "Kickstarter backer"
+          }
+        },
+        "testimonial_6A4tbr": {
+          "type": "testimonial",
+          "settings": {
+            "avatar": "shopify://shop_images/unsplash_ZjDbRtR_BcE.png",
+            "quote_headline": "No experience — didn't matter",
+            "quote_body": "I have zero artistic ability. The app literally tells you where to put each string. My piece looked like the photo. I was shocked.",
+            "author_name": "James K.",
+            "author_role": "Kickstarter backer"
+          }
+        },
+        "testimonial_nN4hjg": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "I ordered a second kit the same night",
+            "quote_body": "Finished my first one — a portrait of my mom — and immediately bought another one for my partner's birthday. The result speaks for itself.",
+            "author_name": "Rachel L.",
+            "author_role": "Kickstarter backer"
+          }
+        },
+        "testimonial_J3XqcC": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "I actually finished something",
+            "quote_body": "Every other craft I've tried ends up in a drawer. This one's hanging on my wall. The step-by-step made all the difference.",
+            "author_name": "Derek P.",
+            "author_role": "Kickstarter backer"
+          }
+        },
+        "testimonial_K4jDN8": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "I couldn't stop until it was done",
+            "quote_body": "I sat down to do one session and looked up three hours later. The guide made it impossible to get lost — I just kept going.",
+            "author_name": "Marisa T.",
+            "author_role": "Kickstarter backer"
+          }
+        },
+        "testimonial_VPcDU6": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "My mind actually went quiet",
+            "quote_body": "I don't meditate. I don't do yoga. But stringing this kit felt like the closest thing to it — my brain just shut up for an hour.",
+            "author_name": "Priya N.",
+            "author_role": "Kickstarter backer"
+          }
+        },
+        "testimonial_3tiNmT": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "Worth every minute",
+            "quote_body": "I spread it across three evenings after the kids went to bed. It became the thing I looked forward to all day.",
+            "author_name": "Sophie M.",
+            "author_role": "Kickstarter backer"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_NQjQ3B",
+        "testimonial_6A4tbr",
+        "testimonial_nN4hjg",
+        "testimonial_J3XqcC",
+        "testimonial_K4jDN8",
+        "testimonial_VPcDU6",
+        "testimonial_3tiNmT"
+      ],
+      "name": "Testimonials Slider",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Made by people like you",
+        "subheading": "2,035 backers made the first pieces. Here's what they said when they finished.",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
     "how_it_works_xQzgqf": {
       "type": "how-it-works",
       "blocks": {
@@ -225,7 +329,7 @@
           "settings": {
             "image": "shopify://shop_images/Untitled_design.gif",
             "title": "1. Upload your photo",
-            "description": "A face, a pet, a skyline. Your personalized guide is ready in seconds."
+            "description": "A person, a pet, a pattern. Your personalized guide is ready in seconds."
           }
         },
         "step_iRR8EV": {
@@ -233,7 +337,7 @@
           "settings": {
             "image": "shopify://shop_images/setp-1.jpg",
             "title": "2. Mount your loom",
-            "description": "Snap the pieces together. Place thread in the spool holder. Tie on."
+            "description": "Snap the pieces together. Place thread in the spool holder. Attach number guide. Tie on. Go."
           }
         },
         "step_aBjEXe": {
@@ -241,7 +345,7 @@
           "settings": {
             "image": "shopify://shop_images/IMG_8248.jpg",
             "title": "3. Follow line by line",
-            "description": "The app speaks and shows the next step, then continues at your pace. Slow it down, speed it up — the rhythm is yours."
+            "description": "The app speaks and shows the next step, then continues at your pace. Pause, advance. Slow it down, speed it up - the rhythm is up to you."
           }
         },
         "step_UipnJM": {
@@ -273,22 +377,6 @@
         "padding_bottom": 48
       }
     },
-    "video_YzVdz8": {
-      "type": "video",
-      "name": "t:sections.blocks.video.name",
-      "settings": {
-        "color_scheme": "",
-        "video_url": "https://www.youtube.com/watch?v=4ScK3RsoMSk",
-        "title": "How to Threaditate",
-        "text": "",
-        "align_content": "text-align-center",
-        "position_content": "above",
-        "md_padding_top": 48,
-        "md_padding_bottom": 48,
-        "padding_top": 32,
-        "padding_bottom": 32
-      }
-    },
     "image_with_hotspots_aeUqWc": {
       "type": "image-with-hotspots",
       "blocks": {
@@ -302,17 +390,6 @@
             "md_padding_bottom": 32,
             "padding_top": 0,
             "padding_bottom": 0
-          }
-        },
-        "hotspot_bizaaU": {
-          "type": "hotspot",
-          "settings": {
-            "title": "[confirm kit component name]",
-            "title_position": "left",
-            "vertical_position": 19,
-            "horizontal_position": 43,
-            "video_url": "",
-            "text": "<p><strong>[confirm kit component name]</strong></p><p>[confirm description of this component]</p>"
           }
         },
         "title_LPANbx": {
@@ -329,7 +406,7 @@
         "text_b7KTBk": {
           "type": "text",
           "settings": {
-            "text": "<p>No extra tools, no guesswork. Open the box, snap the loom together, and you're making.</p>",
+            "text": "<p>No extra tools, no guesswork. Open the box, snap the loom together, mount, and you're making.</p>",
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 8,
             "size_multiplier": "size--default",
@@ -339,7 +416,6 @@
       },
       "block_order": [
         "image_ipK7Fh",
-        "hotspot_bizaaU",
         "title_LPANbx",
         "text_b7KTBk"
       ],
@@ -359,94 +435,6 @@
         "sm_down_hide_hotspot_titles": true,
         "padding_top": 0,
         "padding_bottom": 24
-      }
-    },
-    "testimonials_slider_UKWpbV": {
-      "type": "testimonials-slider",
-      "blocks": {
-        "testimonial_K4jDN8": {
-          "type": "testimonial",
-          "settings": {
-            "quote_headline": "I couldn't stop until it was done",
-            "quote_body": "I sat down to do one session and looked up three hours later. The guide made it impossible to get lost — I just kept going.",
-            "author_name": "Marisa T.",
-            "author_role": "Kickstarter backer"
-          }
-        },
-        "testimonial_J3XqcC": {
-          "type": "testimonial",
-          "settings": {
-            "quote_headline": "I actually finished something",
-            "quote_body": "Every other craft I've tried ends up in a drawer. This one's hanging on my wall. The step-by-step made all the difference.",
-            "author_name": "Derek P.",
-            "author_role": "Kickstarter backer"
-          }
-        },
-        "testimonial_VPcDU6": {
-          "type": "testimonial",
-          "settings": {
-            "quote_headline": "My mind actually went quiet",
-            "quote_body": "I don't meditate. I don't do yoga. But stringing this kit felt like the closest thing to it — my brain just shut up for an hour.",
-            "author_name": "Priya N.",
-            "author_role": "Kickstarter backer"
-          }
-        },
-        "testimonial_6A4tbr": {
-          "type": "testimonial",
-          "settings": {
-            "avatar": "shopify://shop_images/unsplash_ZjDbRtR_BcE.png",
-            "quote_headline": "No experience — didn't matter",
-            "quote_body": "I have zero artistic ability. The app literally tells you where to put each string. My piece looked like the photo. I was shocked.",
-            "author_name": "James K.",
-            "author_role": "Kickstarter backer"
-          }
-        },
-        "testimonial_3tiNmT": {
-          "type": "testimonial",
-          "settings": {
-            "quote_headline": "Worth every minute",
-            "quote_body": "I spread it across three evenings after the kids went to bed. It became the thing I looked forward to all day.",
-            "author_name": "Sophie M.",
-            "author_role": "Kickstarter backer"
-          }
-        },
-        "testimonial_NQjQ3B": {
-          "type": "testimonial",
-          "settings": {
-            "quote_headline": "It looks like something from a gallery",
-            "quote_body": "People ask me where I bought it. I made it. On my couch. Following an app. That still hasn't stopped being funny to me.",
-            "author_name": "Andy S.",
-            "author_role": "Kickstarter backer"
-          }
-        },
-        "testimonial_nN4hjg": {
-          "type": "testimonial",
-          "settings": {
-            "quote_headline": "I ordered a second kit the same night",
-            "quote_body": "Finished my first one — a portrait of my mom — and immediately bought another one for my partner's birthday. The result speaks for itself.",
-            "author_name": "Rachel L.",
-            "author_role": "Kickstarter backer"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_NQjQ3B",
-        "testimonial_6A4tbr",
-        "testimonial_nN4hjg",
-        "testimonial_J3XqcC",
-        "testimonial_K4jDN8",
-        "testimonial_VPcDU6",
-        "testimonial_3tiNmT"
-      ],
-      "name": "Testimonials Slider",
-      "settings": {
-        "color_scheme": "",
-        "heading": "Made by people like you",
-        "subheading": "2,035 backers made the first pieces. Here's what they said when they finished.",
-        "md_padding_top": 80,
-        "md_padding_bottom": 80,
-        "padding_top": 48,
-        "padding_bottom": 48
       }
     },
     "cta_banner_knnhyi": {
@@ -471,14 +459,14 @@
           "type": "faq_item",
           "settings": {
             "question": "Will my photo actually turn out good?",
-            "answer": "<p>Yes — a clear photo with a close-up subject in good contrast makes a strong piece. Faces, pets, and simple compositions work beautifully.</p>"
+            "answer": "<p>Yes - a clear photo with a close-up subject in good contrast makes a strong piece. Faces, pets, and simple compositions work beautifully.</p>"
           }
         },
         "faq_item_jPDegj": {
           "type": "faq_item",
           "settings": {
             "question": "How does this actually work?",
-            "answer": "<p>Upload a photo and the app turns it into a numbered guide. It speaks and shows each step, then flows to the next at whatever pace you set — line by line until you're done.</p>"
+            "answer": "<p>Upload a photo and the app turns it into a numbered sequence. It speaks aloud and shows each step, then flows to the next at whatever pace you set - line by line until you're done. You can tap to advance, or autoplay.</p>"
           }
         },
         "faq_item_3wGpVc": {
@@ -492,14 +480,14 @@
           "type": "faq_item",
           "settings": {
             "question": "How long does it take to make?",
-            "answer": "<p>Most pieces take 6 hours, but can be finished in 5 or take 8, depending on detail. Plenty of makers spread that across a few evenings. The app saves your place — it's ready whenever you are. You deserve moments of calm.</p>"
+            "answer": "<p>Most pieces take 6 hours, but can be finished in 5 or take 8, depending on detail. Plenty of makers spread that across a few evenings. The app saves your place - it's ready whenever you are. You deserve moments of calm, take as many as often as you'd like.</p>"
           }
         },
         "faq_item_fThdwz": {
           "type": "faq_item",
           "settings": {
             "question": "What exactly do I get?",
-            "answer": "<p>The loom, thread with spool holder, precision wand, numbered paper guide, wooden phone stand, mounting accessories, the easel-box, and app access — no subscription.</p>"
+            "answer": "<p>The loom, thread, spool holder, precision wand, numbered paper guide, wooden phone stand, mounting accessories, the easel-box, and app access - no subscription ever.</p>"
           }
         }
       },

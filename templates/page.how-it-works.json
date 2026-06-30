@@ -38,7 +38,7 @@
           "type": "icon_item",
           "settings": {
             "icon_svg": "<svg width=\"65\" height=\"72\" viewbox=\"0 0 65 72\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M0.000337791 1.05946V67.3394C0.000337791 67.8689 0.441617 68.3984 1.05926 68.3984H36.6263C36.9794 68.3984 37.244 67.9571 37.0676 67.604C33.4492 61.7792 33.7137 54.1009 38.3914 48.4525C39.3621 47.2169 40.5096 46.2461 41.7453 45.3636C42.1865 45.0987 41.9216 44.481 41.4804 44.481H4.94254C4.85434 44.481 4.76614 44.3928 4.76614 44.3046L4.76586 4.50133C4.76586 4.41313 4.85405 4.32493 4.94225 4.32493H53.0416C53.1298 4.32493 53.218 4.41313 53.218 4.50133L53.2183 42.1865C53.2183 42.4514 53.3946 42.6278 53.6595 42.6278C54.8952 42.8042 56.1308 43.1572 57.3661 43.6867C57.7192 43.8631 58.0723 43.5985 58.0723 43.2454V1.05921C58.0723 0.529733 57.631 0.000287291 57.0134 0.000287291L0.971033 0C0.441271 0 0 0.441278 0 1.05921L0.000337791 1.05946Z\" fill=\"white\"></path>\n<path d=\"M7.94305 40.5097H49.9527C50.7471 40.5097 51.1884 39.539 50.7471 38.921L36.4497 17.6514C36.0084 17.0337 35.214 17.0337 34.861 17.6514L22.9464 35.2142C22.5934 35.8319 21.7108 35.8319 21.3577 35.2142L16.3273 27.7125C15.9742 27.0948 15.0916 27.0948 14.7385 27.7125L7.23679 38.8327C6.7076 39.5389 7.14888 40.5096 7.94295 40.5096L7.94305 40.5097Z\" fill=\"white\"></path>\n<path d=\"M16.5924 17.2102C16.5924 15.2687 15.0037 13.6799 13.0622 13.6799C11.1207 13.6799 9.53198 15.2687 9.53198 17.2102C9.53198 19.1516 11.1207 20.7404 13.0622 20.7404C15.0037 20.8289 16.5924 19.2402 16.5924 17.2102Z\" fill=\"white\"></path>\n<path d=\"M61.073 67.2511C65.6622 61.6909 64.8682 53.395 59.3079 48.8057C53.7476 44.2166 45.4518 45.0106 40.8625 50.5708C36.2733 56.1311 37.0673 64.427 42.6276 69.0163C48.276 73.6054 56.4837 72.8111 61.073 67.2511ZM56.1308 57.7195H53.3067C53.1303 57.7195 53.0419 57.8959 53.0419 57.9844V66.81C53.0419 67.0749 52.777 67.3395 52.6006 67.3395H49.4234C49.1586 67.3395 48.894 67.0746 48.894 66.81V57.9844C48.894 57.808 48.8058 57.7195 48.6291 57.7195H45.8051C45.3638 57.7195 45.1874 57.2782 45.452 56.9252L50.5709 50.6591C50.7473 50.3942 51.1886 50.3942 51.3653 50.6591L56.4843 56.9252C56.8368 57.2782 56.5722 57.7195 56.1309 57.7195H56.1308Z\" fill=\"white\"></path>\n</svg>",
-            "label": "Upload a photo and generate your guide"
+            "label": "Upload a photo to generate your guide"
           }
         },
         "icon_item_cymWwb": {
@@ -81,8 +81,8 @@
           "settings": {
             "image": "shopify://shop_images/step-2.jpg",
             "title": "Prepare Your Workspace",
-            "description": "Attach the paper number guide, aligning the tall pin at the top with pin 0",
-            "tip": "Slide together phone and spool holders. Feed thread through the spool holder's eye hole, then through the wide end of the wand, then insert foam plug and tie thread to loom."
+            "description": "Attach the paper number guide, aligning the tall pin at the top with pin 0, then attaching the rest.",
+            "tip": "Assemble the phone and spool holders. Feed thread through the spool holder's eye hole, then through the wide end of the wand, then insert foam plug and tie thread to loom anywehre."
           }
         },
         "step_Xm4zYR": {
@@ -90,8 +90,8 @@
           "settings": {
             "image": "shopify://shop_images/step-3.jpg",
             "title": "Upload Your Photo",
-            "description": "Upload your image in the app to generate a custom stringing guide.",
-            "tip": "Follow the photo guide and try lots of photos. Move slider around the circle to choose line count / time commitment. Every 500 lines takes about an hour. 3000-4000 lines looks best."
+            "description": "Upload your image in the app to generate a custom threading guide.",
+            "tip": "Follow the photo guide and try lots of photos. Move sliders to optimize and choose line count. Every 500 lines takes about an hour. 3000-4000 lines look best."
           }
         },
         "step_AaEBpH": {
@@ -99,8 +99,8 @@
           "settings": {
             "image": "shopify://shop_images/step-4.jpg",
             "title": "Begin",
-            "description": "The app speaks and shows the next step, then continues at your pace — it starts at 10-second intervals. Speed up as your rhythm builds, then turn it down a few clicks. The relaxed pace is the one you came for.",
-            "tip": "Miss dozens of steps? Keep going. They vanish into the rest."
+            "description": "The app speaks and shows the next step, then continues at your pace. It starts at 10-second intervals. Speed up as your skill improves, then slow it down a few clicks to switch from focus mode to relax mode.",
+            "tip": "Mistakes don't matter, they all disappear behind the other steps.  Line after line, this craft is forgiving.  No craftsmanship needed."
           }
         }
       },
@@ -132,13 +132,66 @@
         "color_scheme": "",
         "video_url": "https://youtu.be/4ScK3RsoMSk",
         "title": "How to Threaditate",
-        "text": "<p>A quick walkthrough of the whole process, from your photo to a finished piece.</p>",
+        "text": "<p>A quick walkthrough of the whole process, from your photo to a finished masterpiece.</p>",
         "align_content": "text-align-center",
         "position_content": "above",
         "md_padding_top": 24,
         "md_padding_bottom": 56,
         "padding_top": 16,
         "padding_bottom": 40
+      }
+    },
+    "tips_grid_zVTVpN": {
+      "type": "tips-grid",
+      "blocks": {
+        "tip_card_XARwRN": {
+          "type": "tip_card",
+          "settings": {
+            "badge_label": "",
+            "title": "Relaxing pace",
+            "description": "Slow it down to enter a calming flow state, or go fast for focus mode.  Stim at your own rhythm."
+          }
+        },
+        "tip_card_waGgg8": {
+          "type": "tip_card",
+          "settings": {
+            "badge_label": "",
+            "title": "Mistakes Are Okay",
+            "description": "Zero craftsmanship needed.  If you lose your place or mess up, just keep going - no undoing required.  All errors vanish."
+          }
+        },
+        "tip_card_xewCbr": {
+          "type": "tip_card",
+          "settings": {
+            "badge_label": "",
+            "title": "Stay Loose",
+            "description": "A relaxed mind and hand make the best experience.  Take a break from all tension."
+          }
+        },
+        "tip_card_EzwCKR": {
+          "type": "tip_card",
+          "settings": {
+            "badge_label": "",
+            "title": "Screen-optional",
+            "description": "Set your device down for a while and follow your ears for a satisfying break from scrolling."
+          }
+        }
+      },
+      "block_order": [
+        "tip_card_XARwRN",
+        "tip_card_waGgg8",
+        "tip_card_xewCbr",
+        "tip_card_EzwCKR"
+      ],
+      "name": "Tips Grid",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Helpful Tips for a Smooth Experience",
+        "subheading": "You don't need to rush — this is meant to be enjoyed.",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
     "rich_text_care": {
@@ -169,7 +222,7 @@
         "text_care": {
           "type": "text",
           "settings": {
-            "text": "<p>IMPORTANT: As you loop each step, let the thread lay loose across, making sure not to pull it tight. A gentle drape, not a tug. Tension adds up and can leave the loom slightly warped for an alternative shadow effect. A good rule is, if it can be plucked, it's too tight. For the best experience, find a pace that lets you casually enjoy the rhythm and forget any mistakes- they'll disappear amidst the rest. You want a calm cadence to relax into.</p><p>This is a mindful activity. Slow down. Loosen up. Breathe. Repeat.</p>",
+            "text": "<p>IMPORTANT: As you loop each step, lay the thread loosely across, making sure not to pull. A gentle drape, not a tug. Tension adds up, and will cause warp, which has a cool effect.  A good rule is, if it can be plucked, it's too tight.  If unhappy with the first results, remove and repeat.  There is enough thread for multiple artworks.  <br/>This is a mindful activity. Slow down. Loosen up. Breathe. Smile.</p>",
             "read_more": false,
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 0,
@@ -195,6 +248,58 @@
         "mobile_alignment": "text-align-center",
         "padding_top": 16,
         "padding_bottom": 16
+      }
+    },
+    "faq_with_image_TKFwQq": {
+      "type": "faq-with-image",
+      "blocks": {
+        "faq_item_kw7Xec": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I need any experience?",
+            "answer": "<p>None at all. The app guides you through every step, one line at a time. If you can follow numbers, you can make a Threaditate.</p>"
+          }
+        },
+        "faq_item_D8zJqt": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I use any photo?",
+            "answer": "<p>Yes, although some photos look better than others. Try lots to learn what makes for the best thread art! Crisp portraits and close-ups with clear contrast and plain backgrounds come out best, since the app reads light and shadow. We built a menu stacked with editing features to fine tune your masterpiece. Make it just how you want the finished piece, then begin!</p>"
+          }
+        },
+        "faq_item_JTeLJB": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does it take?",
+            "answer": "<p>Most pieces take about six hours, depending on the line count. The app saves your place after every line, so you can take breaks and go at your own pace.</p>"
+          }
+        },
+        "faq_item_FBchyJ": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if I make a mistake?",
+            "answer": "<p>Forget it and just keep going. They will disappear as you keep going. If you lose your place, just continue with the next step. Countless mistakes blend right into the finished piece, so there is no need to hit the back button ever.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_kw7Xec",
+        "faq_item_D8zJqt",
+        "faq_item_JTeLJB",
+        "faq_item_FBchyJ"
+      ],
+      "name": "FAQ with Image",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Frequently asked questions",
+        "subheading": "A few quick answers before you begin. The full list is just a tap away.",
+        "image": "shopify://shop_images/faq-image.jpg",
+        "button_label": "See all FAQs",
+        "button_link": "shopify://pages/faq",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
     "cta_banner_learn": {
@@ -225,111 +330,6 @@
         "md_padding_bottom": 120,
         "padding_top": 80,
         "padding_bottom": 80
-      }
-    },
-    "faq_with_image_TKFwQq": {
-      "type": "faq-with-image",
-      "blocks": {
-        "faq_item_kw7Xec": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Do I need any experience?",
-            "answer": "<p>None at all. The app guides you through every step, one line at a time. If you can follow numbers, you can make a Threaditate.</p>"
-          }
-        },
-        "faq_item_D8zJqt": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Can I use any photo?",
-            "answer": "<p>Yes, although some photos look better than others. Try lots! Crisp portraits and close-ups with clear contrast and plain backgrounds come out best, since the app reads light and shadow. We built a menu stacked with editing features to fine tune your masterpiece. Make it just right, then begin</p>"
-          }
-        },
-        "faq_item_JTeLJB": {
-          "type": "faq_item",
-          "settings": {
-            "question": "How long does it take?",
-            "answer": "<p>Most pieces take about six hours, depending on the line count. The app saves your place after every line, so you can take breaks and go at your own pace.</p>"
-          }
-        },
-        "faq_item_FBchyJ": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What if I make a mistake?",
-            "answer": "<p>Forget it and just keep going. If you lose your place, just continue with the next step. Countless mistakes blend right into the finished piece, so there is no need to hit the back button ever.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "faq_item_kw7Xec",
-        "faq_item_D8zJqt",
-        "faq_item_JTeLJB",
-        "faq_item_FBchyJ"
-      ],
-      "name": "FAQ with Image",
-      "settings": {
-        "color_scheme": "",
-        "heading": "Frequently asked questions",
-        "subheading": "A few quick answers before you begin. The full list is just a tap away.",
-        "image": "shopify://shop_images/faq-image.jpg",
-        "button_label": "See all FAQs",
-        "button_link": "shopify://pages/faq",
-        "md_padding_top": 80,
-        "md_padding_bottom": 80,
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
-    },
-    "tips_grid_zVTVpN": {
-      "type": "tips-grid",
-      "blocks": {
-        "tip_card_XARwRN": {
-          "type": "tip_card",
-          "settings": {
-            "badge_label": "",
-            "title": "Choose a relaxing pace",
-            "description": "Take a break from hurry. Slow it down to get hypnotized."
-          }
-        },
-        "tip_card_waGgg8": {
-          "type": "tip_card",
-          "settings": {
-            "badge_label": "",
-            "title": "Mistakes Are Okay",
-            "description": "If you lose your place, just keep going - no undoing required."
-          }
-        },
-        "tip_card_xewCbr": {
-          "type": "tip_card",
-          "settings": {
-            "badge_label": "",
-            "title": "Thread Loosely",
-            "description": "A relaxed mind and hand make the best creative escape."
-          }
-        },
-        "tip_card_EzwCKR": {
-          "type": "tip_card",
-          "settings": {
-            "badge_label": "",
-            "title": "Listen to the screen-optional app",
-            "description": "Your choice of calming voice leads you through each step."
-          }
-        }
-      },
-      "block_order": [
-        "tip_card_XARwRN",
-        "tip_card_waGgg8",
-        "tip_card_xewCbr",
-        "tip_card_EzwCKR"
-      ],
-      "name": "Tips Grid",
-      "settings": {
-        "color_scheme": "",
-        "heading": "Helpful Tips for a Smooth Experience",
-        "subheading": "You don't need to rush — this is meant to be enjoyed.",
-        "md_padding_top": 80,
-        "md_padding_bottom": 80,
-        "padding_top": 48,
-        "padding_bottom": 48
       }
     }
   },

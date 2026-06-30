@@ -44,7 +44,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Can I use any photo?",
-            "answer": "<p>Yes! Although, some photos work better than others- try many! Crisp portraits and close-ups with clear contrast tend to come out best - the app reads light and shadow rather than fine detail. A favorite person, a pet, a pastime that means something to you. Upload it, and the app does the rest.</p>"
+            "answer": "<p>Yes! Although, some photos work better than others- try many! Crisp portraits and close-ups with clear contrast tend to come out best - the app reads light and shadow rather than fine detail. A favorite person, a pet, a pastime that means something to you. Upload it, and your hands and the app do the rest.</p>"
           }
         },
         "q_experience": {
@@ -64,13 +64,13 @@
           "type": "faq_item",
           "settings": {
             "question": "What's in the kit?",
-            "answer": "<p>Your kit comes with a 20-inch loom with 240 pins, a number guide, thread, spool holder, phone holder, detail wand, foam resistance plug, mounts, thread, and access to the Threaditate app. Open the box and you have everything you need to start in five minutes.</p>"
+            "answer": "<p>Your kit comes with a 20-inch loom with 240 attached pins, a number guide, thread, spool holder, phone holder, precision wand, foam resistance plug, mounts, thread, and access to the Threaditate app. Open the box and you have everything you need to start in five minutes.</p>"
           }
         },
         "q_need_app": {
           "type": "faq_item",
           "settings": {
-            "question": "Do I need the app?",
+            "question": "Do I need to use the app?",
             "answer": "<p>Yes, the app is what makes Threaditate tick. Without it, you have string art. With it, you have a thread art session: image editing and real-time instructions, one step at a time, on iPhone and Android. Access is included with every kit.</p>"
           }
         },
@@ -78,7 +78,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Do I need any other tools or supplies?",
-            "answer": "<p>Nothing extra. The loom, the pins, the thread, and the app are all you need. Find a comfortable spot with good light, and you're ready to begin. Choice of tea, aromas, and background music are up to you though.</p>"
+            "answer": "<p>Nothing extra. The loom, the pins, the thread, and the app are all you need. Find a comfortable spot with good light, and you're ready to begin. Choice of tea, aromatherapy, and background music are up to you though.</p>"
           }
         },
         "topic_the_process": {
@@ -91,21 +91,21 @@
           "type": "faq_item",
           "settings": {
             "question": "How long does it take?",
-            "answer": "<p>Most pieces take six to eight hours, depending on the line count- each 500 lines takes about an hour, and we recommend 3000-4000 lines. Pause whenever, you don't have to finish in one sitting. The app saves your place after every step, so you can take it at your own pace.</p>"
+            "answer": "<p>Most pieces take six to eight hours, depending on the line count- each 500 lines takes under an hour, and we recommend 3000-4000 lines. Pause whenever, you don't have to finish in one sitting. The app saves your place after every step, so you can take it easy at your own pace.</p>"
           }
         },
         "q_lose_place": {
           "type": "faq_item",
           "settings": {
             "question": "What if I lose my place?",
-            "answer": "<p>The app remembers exactly where you stopped, down to the last thread you confirmed. Step away for an hour or a week, then pick up right where you left off.</p>"
+            "answer": "<p>Mistakes do not matter at all, there is no need to go back.  Each missed step will get covered by the thousands of others.  Dozens and dozens go unnoticed. The app remembers exactly where you stopped, down to the last thread you confirmed. Step away for an hour or a week, then pick up right where you left off.  </p>"
           }
         },
         "q_mistake": {
           "type": "faq_item",
           "settings": {
             "question": "What if I make a mistake?",
-            "answer": "<p>Carry on from your last confirmed step. Mistakes disappear into the finished piece — the overall image is what your eye sees, not the individual threads. Carry on with grace.</p>"
+            "answer": "<p>Carry on from your last confirmed step. Mistakes disappear into the finished piece - the overall image is what your eye sees, not the individual threads. Carry on with grace and gentleness.</p>"
           }
         },
         "q_thread_breaks": {
@@ -119,7 +119,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Will the loom warp?",
-            "answer": "<p>Only if the thread is under tension. Relax and drape loosely, as tightness adds up and may cause some bend, which looks cool too. The tension used is the only factor, thread mindfully for a flat finale or weave wildly for a slight warp. Both have different shadow effects.</p>"
+            "answer": "<p>Only if the thread is under tension. Relax and drape loosely, as tightness adds up and may cause some bend, which looks cool too. The tension used is the only factor, thread mindfully for a flat finale or weave wildly for a slight warp. Both have different shadow effects.  If you are unhappy with your results, just cut the thread off and rethread it, theres enough for multiple pieces.</p>"
           }
         },
         "q_pause": {
@@ -139,34 +139,20 @@
           "type": "faq_item",
           "settings": {
             "question": "How do I display my finished piece?",
-            "answer": "<p>Your finished piece is made to be seen. The 20-inch loom sits naturally on a wall, a shelf, or a window sill. Find a spot with good light and let the work speak for itself.</p>"
+            "answer": "<p>Your finished piece is made to be seen. The 20-inch loom sits naturally on a wall, a shelf,  a window sill, or hangs like a dreamcatcher. Find a spot with good light and let the art speak for itself.</p>"
           }
         },
         "q_reuse": {
           "type": "faq_item",
           "settings": {
             "question": "Can I make a new piece with the same loom?",
-            "answer": "<p>Yes. When you're ready for a new picture, remove the thread and start fresh with a new pattern on the same loom. There is enough thread for multiple pieces per kit. Each loom holds one piece at a time, so to display several at once, simply add more kits.</p>"
+            "answer": "<p>Yes. When you're ready for a new picture, remove the thread and start fresh with a new pattern on the same loom. There is enough thread for multiple pieces per kit. Each loom holds one piece at a time.</p>"
           }
         },
         "topic_orders": {
           "type": "topic_header",
           "settings": {
             "topic_title": "Orders and shipping"
-          }
-        },
-        "q_shipping": {
-          "type": "faq_item",
-          "settings": {
-            "question": "How long does shipping take?",
-            "answer": "<p>Orders ship within 24 hours, and standard delivery takes another [confirm] business days from there. You'll get a tracking link as soon as your kit is on its way.</p>"
-          }
-        },
-        "q_returns": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What's your return policy?",
-            "answer": "<p>[Add return policy here before publishing.]</p>"
           }
         },
         "q_missing": {
@@ -186,14 +172,14 @@
           "type": "faq_item",
           "settings": {
             "question": "What happens to my photo?",
-            "answer": "<p>Your photo is used only to create your pattern. We never share it.</p>"
+            "answer": "<p>Your photo is used only to create your pattern. We never share it.  It self-deletes after 90 days since last opened.</p>"
           }
         },
         "q_buy_finished": {
           "type": "faq_item",
           "settings": {
             "question": "Can I buy a finished piece instead of making it myself?",
-            "answer": "<p>Threaditate is about the making. The quiet hours you spend creating something by hand are the whole point, so we don't sell finished pieces. We give you the means to make your own.</p>"
+            "answer": "<p>Threaditate is about the making. The quiet hours you spend creating something by hand are the whole point, so we don't sell finished pieces. We give you the means to make your own. Or you can gift it to a friend and request a custom!</p>"
           }
         }
       },

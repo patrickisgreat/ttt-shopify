@@ -314,49 +314,6 @@
         "padding_bottom": 32
       }
     },
-    "the-product-recommendations": {
-      "type": "product-recommendations",
-      "blocks": {
-        "9929005a-ce0f-4c79-aec7-6480a85f6eee": {
-          "type": "section_header",
-          "settings": {
-            "subtitle": "",
-            "subtitle_tag": "h3",
-            "title": "You might also like",
-            "title_tag": "h2",
-            "text": "",
-            "text_alignment": "text-align-center",
-            "sm_size_multiplier": "sm-size--default",
-            "size_multiplier": "size--default"
-          }
-        }
-      },
-      "block_order": [
-        "9929005a-ce0f-4c79-aec7-6480a85f6eee"
-      ],
-      "disabled": true,
-      "settings": {
-        "product_limit": 10,
-        "color_scheme": "",
-        "enable_full_width": false,
-        "sm_enable_card_thumbnail": false,
-        "layout_desktop": "slide",
-        "products_per_row_desktop": 4,
-        "sm_custom_gap": -1,
-        "md_padding_top": 40,
-        "md_padding_bottom": 40,
-        "products_per_row_tablet": 3,
-        "sm_down_enable_card_thumbnail": false,
-        "layout_mobile": "slide",
-        "products_per_row_mobile": 1,
-        "custom_gap": -1,
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "autoplay": false,
-        "autoplay_speed": 5,
-        "sliding_behavior": "all"
-      }
-    },
     "features_grid_aiQeMA": {
       "type": "features-grid",
       "blocks": {
@@ -401,22 +358,6 @@
         "padding_bottom": 48
       }
     },
-    "video_HFaPVc": {
-      "type": "video",
-      "name": "t:sections.blocks.video.name",
-      "settings": {
-        "color_scheme": "",
-        "video_url": "https://www.youtube.com/watch?v=u_hnI-tE4is",
-        "title": "",
-        "text": "",
-        "align_content": "text-align-center",
-        "position_content": "above",
-        "md_padding_top": 48,
-        "md_padding_bottom": 48,
-        "padding_top": 32,
-        "padding_bottom": 32
-      }
-    },
     "split_image_content_3xrpVG": {
       "type": "split-image-content",
       "name": "Split Image & Content",
@@ -452,7 +393,7 @@
         "before_after_Uktgrm": {
           "type": "before_after",
           "settings": {
-            "media_aspect_ratio": "landscape_alt",
+            "media_aspect_ratio": "square",
             "image_before": "shopify://shop_images/aphrodite-half-shell.jpg",
             "image_after": "shopify://shop_images/aphrodite-string.png",
             "label_colors": "#ffffff",
@@ -492,7 +433,7 @@
       "settings": {
         "color_scheme": "scheme-be8ef671-53c2-4895-89a6-144af711f198",
         "media_position_desktop": "top",
-        "media_width": "wide",
+        "media_width": "narrow",
         "content_width": "col-sm-max-5",
         "desktop_alignment": "center",
         "sm_full_width_buttons": false,
@@ -532,6 +473,7 @@
         "slide_XUMeEJ",
         "slide_njUDNd"
       ],
+      "disabled": true,
       "name": "App Carousel",
       "settings": {
         "heading": "How the app works",
@@ -602,6 +544,65 @@
         "md_padding_bottom": 80,
         "padding_top": 48,
         "padding_bottom": 48
+      }
+    },
+    "the-product-recommendations": {
+      "type": "product-recommendations",
+      "blocks": {
+        "9929005a-ce0f-4c79-aec7-6480a85f6eee": {
+          "type": "section_header",
+          "settings": {
+            "subtitle": "",
+            "subtitle_tag": "h3",
+            "title": "You might also like",
+            "title_tag": "h2",
+            "text": "",
+            "text_alignment": "text-align-center",
+            "sm_size_multiplier": "sm-size--default",
+            "size_multiplier": "size--default"
+          }
+        }
+      },
+      "block_order": [
+        "9929005a-ce0f-4c79-aec7-6480a85f6eee"
+      ],
+      "disabled": true,
+      "settings": {
+        "product_limit": 10,
+        "color_scheme": "",
+        "enable_full_width": false,
+        "sm_enable_card_thumbnail": false,
+        "layout_desktop": "slide",
+        "products_per_row_desktop": 4,
+        "sm_custom_gap": -1,
+        "md_padding_top": 40,
+        "md_padding_bottom": 40,
+        "products_per_row_tablet": 3,
+        "sm_down_enable_card_thumbnail": false,
+        "layout_mobile": "slide",
+        "products_per_row_mobile": 1,
+        "custom_gap": -1,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "sliding_behavior": "all"
+      }
+    },
+    "video_HFaPVc": {
+      "type": "video",
+      "name": "t:sections.blocks.video.name",
+      "settings": {
+        "color_scheme": "",
+        "video_url": "https://www.youtube.com/watch?v=uqd7Kh_kwQs",
+        "title": "",
+        "text": "",
+        "align_content": "text-align-center",
+        "position_content": "above",
+        "md_padding_top": 48,
+        "md_padding_bottom": 48,
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     },
     "cta_banner_GTHMPG": {
