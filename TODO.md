@@ -8,7 +8,7 @@ Working punch-list. Created 2026-05-28. In progress on branch `feat/home-pdp-set
 
 - [ ] **Reorder:** move the **How-It-Works video** to just below the hero.
 - [ ] **Reorder:** put **"Built to Help You Finish"** (features-grid) right below that video.
-- [ ] **Video:** set the How-It-Works video to YouTube `4ScK3RsoMSk`.
+- [ ] **Video:** set the How-It-Works video to YouTube `uqd7Kh_kwQs`.
 - [ ] **Icon:** "Built to Help You Finish" → change the *Custom from Any Photo* icon to a **portrait** icon.
 - [ ] **Remove** the "Try it with your photo" button on the home page.
       ⚠️ **Not found in code** — `index.json` and its sections have no such button (only the PDP does).

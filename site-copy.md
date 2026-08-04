@@ -158,7 +158,7 @@ _Auto-generated from the theme's JSON templates and section groups, in reading o
 > ⚙️ Build request: shrink the video section so the text block is visible above the fold.
 - **title:** How to Threaditate
 - **text:** A quick walkthrough of the whole process, from your photo to a finished piece.
-- **video_url:** https://youtu.be/4ScK3RsoMSk
+- **video_url:** https://www.youtube.com/watch?v=uqd7Kh_kwQs
 
 ### rich-text — "Before you begin"
 > ⚙️ Build request: keep all of this above the fold with the video, or put it behind a "check to agree" box.
