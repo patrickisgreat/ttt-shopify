@@ -239,65 +239,46 @@
         "testimonial_NQjQ3B": {
           "type": "testimonial",
           "settings": {
-            "quote_headline": "It looks like something from a gallery",
-            "quote_body": "People ask me where I bought it. I made it. On my couch. Following an app. That still hasn't stopped being funny to me.",
-            "author_name": "Andy S.",
-            "author_role": "Kickstarter backer"
+            "quote_headline": "I would 100% recommend this",
+            "quote_body": "I had a great time creating this portrait. It's a different type of meditative art that I can actually see as a hobby.",
+            "author_name": "Jaiden T.",
+            "author_role": "Age 24"
           }
         },
         "testimonial_6A4tbr": {
           "type": "testimonial",
           "settings": {
-            "avatar": "shopify://shop_images/unsplash_ZjDbRtR_BcE.png",
-            "quote_headline": "No experience — didn't matter",
-            "quote_body": "I have zero artistic ability. The app literally tells you where to put each string. My piece looked like the photo. I was shocked.",
-            "author_name": "James K.",
-            "author_role": "Kickstarter backer"
+            "quote_headline": "It was my favorite part of this week",
+            "quote_body": "I had so much fun with my kit. It just calmed me down after my stressful work days, and now I have this beautiful piece of art. Now I'm obsessed and I want something to look forward to after work again.",
+            "author_name": "Kendal J.",
+            "author_role": "Age 35"
           }
         },
         "testimonial_nN4hjg": {
           "type": "testimonial",
           "settings": {
-            "quote_headline": "I ordered a second kit the same night",
-            "quote_body": "Finished my first one — a portrait of my mom — and immediately bought another one for my partner's birthday. The result speaks for itself.",
-            "author_name": "Rachel L.",
-            "author_role": "Kickstarter backer"
+            "quote_headline": "The whole world around you seems to disappear",
+            "quote_body": "This is really quite relaxing. I did a portrait of my grandfather, so now I can feel his presence whenever I look at the artwork. Makes a very unique and thoughtful gift for anyone at any age. I look forward to my next one.",
+            "author_name": "Roy P.",
+            "author_role": "Age 65"
           }
         },
         "testimonial_J3XqcC": {
           "type": "testimonial",
           "settings": {
-            "quote_headline": "I actually finished something",
-            "quote_body": "Every other craft I've tried ends up in a drawer. This one's hanging on my wall. The step-by-step made all the difference.",
-            "author_name": "Derek P.",
-            "author_role": "Kickstarter backer"
+            "quote_headline": "I can finally just chill",
+            "quote_body": "It's amazing. I go into a deep sense of calm and relaxation. It feels like nothing's going on outside in the world or in my mind, and thoughts clear up as I loop. I want to give my mom one.",
+            "author_name": "Sean O.",
+            "author_role": "Age 8"
           }
         },
         "testimonial_K4jDN8": {
           "type": "testimonial",
           "settings": {
-            "quote_headline": "I couldn't stop until it was done",
-            "quote_body": "I sat down to do one session and looked up three hours later. The guide made it impossible to get lost — I just kept going.",
-            "author_name": "Marisa T.",
-            "author_role": "Kickstarter backer"
-          }
-        },
-        "testimonial_VPcDU6": {
-          "type": "testimonial",
-          "settings": {
-            "quote_headline": "My mind actually went quiet",
-            "quote_body": "I don't meditate. I don't do yoga. But stringing this kit felt like the closest thing to it — my brain just shut up for an hour.",
-            "author_name": "Priya N.",
-            "author_role": "Kickstarter backer"
-          }
-        },
-        "testimonial_3tiNmT": {
-          "type": "testimonial",
-          "settings": {
-            "quote_headline": "Worth every minute",
-            "quote_body": "I spread it across three evenings after the kids went to bed. It became the thing I looked forward to all day.",
-            "author_name": "Sophie M.",
-            "author_role": "Kickstarter backer"
+            "quote_headline": "It's really calming",
+            "quote_body": "It is a lot of fun. It's really cool, it's not hard at all to do. I really liked it. You get to focus on one thing. Get it if you like art.",
+            "author_name": "Grace A.",
+            "author_role": "Age 14"
           }
         }
       },
@@ -306,16 +287,13 @@
         "testimonial_6A4tbr",
         "testimonial_nN4hjg",
         "testimonial_J3XqcC",
-        "testimonial_K4jDN8",
-        "testimonial_VPcDU6",
-        "testimonial_3tiNmT"
+        "testimonial_K4jDN8"
       ],
-      "disabled": true,
       "name": "Testimonials Slider",
       "settings": {
         "color_scheme": "",
         "heading": "Made by people like you",
-        "subheading": "2,035 backers made the first pieces. Here's what they said when they finished.",
+        "subheading": "Five makers, ages 8 to 65, on what it feels like to thread a piece.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
