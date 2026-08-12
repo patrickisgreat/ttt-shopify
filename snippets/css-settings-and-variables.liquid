@@ -45,6 +45,17 @@
       {% else -%}
         --color-background-alt: {{ scheme.settings.background | color_lighten: 6 }};
       {% endif -%}
+
+      {%- comment -%}
+        Focus ring must clear WCAG 3:1 against the scheme background.
+        Cobalt scores 6.31 on ivory but only 2.78 on true-black, so dark
+        schemes take the lighter cobalt text tint (9.13) instead.
+      {%- endcomment -%}
+      {% if background_lightness > 50 -%}
+        --focus-ring: #1450C4;
+      {% else -%}
+        --focus-ring: #8FB2ED;
+      {% endif -%}
   }
   {% endfor %}
 
@@ -57,11 +68,53 @@
     --ideal-width: {{ settings.content_ideal_width | append: 'px' }};
     --container-inner-width: min(100vw - var(--container-margin)*2  , var(--ideal-width));
 
+    /* ---------------------------------------------------------------- */
+    /* Colors - Threaditate brand palette                                */
+    /* Source of truth: brand_colors.json (Figma "THD_Colors").          */
+    /* These are the only raw brand hexes in the theme — everything else */
+    /* references them. Never hardcode a brand hex in a section again.   */
+    /* ---------------------------------------------------------------- */
+    --brand-cobalt-blue: #1450C4;
+    --brand-blue-violet: #3D3DB0;
+    --brand-vermillion-red: #C43D2E;
+    --brand-true-black: #0B0B0F;
+    --brand-ivory-white: #F4F2ED;
+
+    /* Text tints — legible on true-black; do not use on light surfaces */
+    --brand-cobalt-text-tint: #8FB2ED;
+    --brand-violet-text-tint: #7C7CD6;
+    --brand-vermillion-text-tint: #F5C2B5;
+
+    /* RGB triplets for rgba() composition (glows, overlays, borders) */
+    --brand-cobalt-blue-rgb: 20 80 196;
+    --brand-blue-violet-rgb: 61 61 176;
+    --brand-vermillion-red-rgb: 196 61 46;
+    --brand-true-black-rgb: 11 11 15;
+    --brand-ivory-white-rgb: 244 242 237;
+
+    /* Roles — the semantic layer sections should reach for */
+    --brand-surface-dark: var(--brand-true-black);
+    --brand-surface-light: var(--brand-ivory-white);
+    --brand-on-dark: var(--brand-ivory-white);
+    --brand-on-light: var(--brand-true-black);
+    --brand-primary: var(--brand-cobalt-blue);
+    --brand-secondary: var(--brand-blue-violet);
+    --brand-accent: var(--brand-vermillion-red);
+    --brand-hairline-dark: var(--brand-cobalt-text-tint);
+
+    /* The one brand gradient — cobalt → violet → vermillion */
+    --brand-gradient: linear-gradient(
+      90deg,
+      var(--brand-cobalt-blue) 0%,
+      var(--brand-blue-violet) 50%,
+      var(--brand-vermillion-red) 100%
+    );
+
      /* Colors - Status indicator */
     --success: #31862D;
-    --success-foreground: #FFFFFF;
-    --error: #DD4242;
-    --error-foreground: #FFFFFF;
+    --success-foreground: var(--brand-ivory-white);
+    --error: var(--brand-vermillion-red);
+    --error-foreground: var(--brand-ivory-white);
 
     /* Colors - Special colors */
     {%- assign cart_dot_contrast = settings.cart_dot | color_contrast: '#fff' -%}
@@ -213,10 +266,10 @@
     {%- endif -%}
 
     /* Forms and inputs */
-    --input-background: #FFFFFF;
-    --input-foreground: #111111;
+    --input-background: var(--brand-ivory-white);
+    --input-foreground: var(--brand-true-black);
     --input-border-width: 0px;
-    --input-border-color: #DDDDDD;
+    --input-border-color: rgb(var(--brand-true-black-rgb) / 0.16);
     --input-border-radius: 6px;
     --input-box-shadow: inset 2px 2px 8px rgba(0,0,0,.25);
     --input-letter-spacing: 0;
