@@ -20,8 +20,8 @@
   width: auto;
   height: auto;
   clip: auto;
-  color: #000000;
-  background-color: #ffffff;
+  color: var(--brand-true-black, #0B0B0F);
+  background-color: var(--brand-ivory-white, #F4F2ED);
   font-weight: 600;
   padding: 20px;
 }
@@ -46,7 +46,7 @@
 
   *:not(.card-media):focus-visible,
   input:focus-visible + label:not(.field__label)  {
-    outline: 3pt solid #2158ee !important;
+    outline: 3pt solid var(--focus-ring, #1450C4) !important;
   }
 
   *:focus-visible > figure::before {
@@ -54,7 +54,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    box-shadow: inset 0 0 0 2pt #2158ee;
+    box-shadow: inset 0 0 0 2pt var(--focus-ring, #1450C4);
     position: absolute;
     inset: 0;
     z-index: 1;
