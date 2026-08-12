@@ -210,7 +210,7 @@
         "type": "color",
         "id": "cart_dot",
         "label": "t:settings_schema.colors.settings.cart_dot.label",
-        "default": "#CC1122"
+        "default": "#C43D2E"
       },
       {
         "type": "color",
@@ -897,49 +897,49 @@
         "type": "color",
         "id": "badge_sale_foreground",
         "label": "t:settings_schema.badges.settings.badge_sale_foreground.label",
-        "default": "#ffffff"
+        "default": "#F4F2ED"
       },
       {
         "type": "color",
         "id": "badge_sale_background",
         "label": "t:settings_schema.badges.settings.badge_sale_background.label",
-        "default": "#dd4242"
+        "default": "#C43D2E"
       },
       {
         "type": "color",
         "id": "badge_new_foreground",
         "label": "t:settings_schema.badges.settings.badge_new_foreground.label",
-        "default": "#ffffff"
+        "default": "#F4F2ED"
       },
       {
         "type": "color",
         "id": "badge_new_background",
         "label": "t:settings_schema.badges.settings.badge_new_background.label",
-        "default": "#41d6a2"
+        "default": "#1450C4"
       },
       {
         "type": "color",
         "id": "badge_preorder_foreground",
         "label": "t:settings_schema.badges.settings.badge_preorder_foreground.label",
-        "default": "#ffffff"
+        "default": "#F4F2ED"
       },
       {
         "type": "color",
         "id": "badge_preorder_background",
         "label": "t:settings_schema.badges.settings.badge_preorder_background.label",
-        "default": "#111111"
+        "default": "#0B0B0F"
       },
       {
         "type": "color",
         "id": "badge_sold_out_foreground",
         "label": "t:settings_schema.badges.settings.badge_sold_out_foreground.label",
-        "default": "#ffffff"
+        "default": "#F4F2ED"
       },
       {
         "type": "color",
         "id": "badge_sold_out_background",
         "label": "t:settings_schema.badges.settings.badge_sold_out_background.label",
-        "default": "#777777"
+        "default": "#6B6A67"
       },
       {
         "type": "header",
