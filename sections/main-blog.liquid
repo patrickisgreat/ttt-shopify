@@ -53,15 +53,23 @@
     </header>
     {%- endif -%}
 
-    {%- paginate blog.articles by section.settings.posts_per_page -%}
-      <div style="--gap: {{ section.settings.grid_gap | append: 'px'}};" data-id="{{ section.id }}" class="grid grid-cols-1 sm-grid-cols-{{ ipr_tablet }} md-grid-cols-{{ ipr_desktop }}">
-        {%- render 'blog-items', paginate:paginate, section:section, ipr_array:ipr_array -%}
-        {%- render 'loading' -%}
-      </div>
-      {%- if paginate.pages > 1 -%}
-        {% render 'pagination', paginate: paginate, anchor: '' %}
+    {%- if blog.articles.size == 0 -%}
+      {%- if section.settings.empty_text != blank -%}
+        <div class="text-align-center mt-40 mb-40">
+          <p>{{ section.settings.empty_text | escape }}</p>
+        </div>
       {%- endif -%}
-    {%- endpaginate -%}
+    {%- else -%}
+      {%- paginate blog.articles by section.settings.posts_per_page -%}
+        <div style="--gap: {{ section.settings.grid_gap | append: 'px'}};" data-id="{{ section.id }}" class="grid grid-cols-1 sm-grid-cols-{{ ipr_tablet }} md-grid-cols-{{ ipr_desktop }}">
+          {%- render 'blog-items', paginate:paginate, section:section, ipr_array:ipr_array -%}
+          {%- render 'loading' -%}
+        </div>
+        {%- if paginate.pages > 1 -%}
+          {% render 'pagination', paginate: paginate, anchor: '' %}
+        {%- endif -%}
+      {%- endpaginate -%}
+    {%- endif -%}
   </div>
 </div>
 
@@ -101,6 +109,13 @@
         "id": "center_text",
         "label": "t:sections.main-blog.settings.center_text.label",
         "default": false
+      },
+      {
+        "type": "text",
+        "id": "empty_text",
+        "label": "Empty blog message",
+        "info": "Shown when the blog has no posts yet.",
+        "default": "Nothing here yet — we're threading together our first posts. Check back soon."
       },
       {
         "type": "range",
