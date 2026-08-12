@@ -115,7 +115,7 @@
         "color_scheme": "",
         "heading": "Getting Started",
         "subheading": "Follow these steps in order, or jump ahead at your own pace.",
-        "number_color": "#2563eb",
+        "number_color": "#1450C4",
         "button_label": "Start your piece",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
         "button_style": "primary",
@@ -130,7 +130,7 @@
       "name": "t:sections.blocks.video.name",
       "settings": {
         "color_scheme": "",
-        "video_url": "https://youtu.be/4ScK3RsoMSk",
+        "video_url": "https://www.youtube.com/watch?v=uqd7Kh_kwQs",
         "title": "How to Threaditate",
         "text": "<p>A quick walkthrough of the whole process, from your photo to a finished masterpiece.</p>",
         "align_content": "text-align-center",
