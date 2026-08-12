@@ -74,7 +74,7 @@
   font-weight: var(--font-heading-weight);
   font-size: 5.6rem;
   line-height: 1;
-  color: #2563eb; /* overridden by inline style below if color picker used */
+  color: var(--brand-cobalt-blue, #1450C4); /* overridden by inline style below if color picker used */
   letter-spacing: -0.02em;
   display: block;
   margin-bottom: 4px;
