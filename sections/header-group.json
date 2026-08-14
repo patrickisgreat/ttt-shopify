@@ -11,6 +11,29 @@
   "name": "t:section_groups.header",
   "type": "header",
   "sections": {
+    "announcements_bar_gwp": {
+      "type": "announcements-bar",
+      "blocks": {
+        "announcement_gwp_tote": {
+          "type": "announcement",
+          "settings": {
+            "title": "Every kit ships in a Threaditate tote, free through August 21."
+          }
+        }
+      },
+      "block_order": [
+        "announcement_gwp_tote"
+      ],
+      "settings": {
+        "color_scheme": "overlay-scheme",
+        "announcement_font": "header",
+        "announcement_font_scaling_property": 12,
+        "announcement_letter_spacing": 0,
+        "announcement_uppercase": false,
+        "autoplay_speed": 3,
+        "sliding_behavior": "single"
+      }
+    },
     "header": {
       "type": "header",
       "blocks": {
@@ -65,6 +88,7 @@
     }
   },
   "order": [
+    "announcements_bar_gwp",
     "header"
   ]
 }
