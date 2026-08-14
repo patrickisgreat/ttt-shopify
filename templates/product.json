@@ -80,6 +80,14 @@
             "margin_top": 12
           }
         },
+        "text_gwp_tote": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Through August 21, your kit arrives inside a free Threaditate tote—yours to keep.</p>",
+            "read_more": false,
+            "margin_top": 16
+          }
+        },
         "the-buy-buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -197,6 +205,7 @@
         "text_tRMRrA",
         "557a3a73-80c5-47b2-abb8-a78027516c90",
         "6fc29670-ecc3-4bbf-bc13-6d7232b75085",
+        "text_gwp_tote",
         "the-buy-buttons",
         "custom_liquid_6FiWtW",
         "text_ytmJky",

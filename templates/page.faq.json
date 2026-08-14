@@ -155,6 +155,13 @@
             "topic_title": "Orders and shipping"
           }
         },
+        "q_free_tote": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I really get a free tote?",
+            "answer": "<p>Yes. Through August 21, every kit ships inside a Threaditate tote. There's no code to enter and nothing to add to your cart - the tote is the packaging, so it's the first thing you'll hold when your order lands. Yours to keep.</p>"
+          }
+        },
         "q_missing": {
           "type": "faq_item",
           "settings": {
@@ -203,6 +210,7 @@
         "q_display",
         "q_reuse",
         "topic_orders",
+        "q_free_tote",
         "q_missing",
         "topic_good_to_know",
         "q_photo_privacy",
