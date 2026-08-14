@@ -27,7 +27,7 @@
       "settings": {
         "color_scheme": "overlay-scheme",
         "announcement_font": "header",
-        "announcement_font_scaling_property": 16,
+        "announcement_font_scaling_property": 22,
         "announcement_letter_spacing": 0,
         "announcement_uppercase": false,
         "autoplay_speed": 3,
