@@ -16,9 +16,16 @@
       text-transform: {% if section.settings.announcement_uppercase %}uppercase{% else %}none{% endif %};
       letter-spacing: {{ section.settings.announcement_letter_spacing | times: 0.01 | append: 'em' }};
     }
+    {% comment %} Large desktop sizes would dominate a phone screen, so cap the mobile size. {% endcomment %}
+    @media only screen and (max-width: 767px) {
+      .announcements-bar {
+        font-size: min({{ section.settings.announcement_font_scaling_property | append: 'px' }}, 16px);
+      }
+    }
     .announcement {
       max-width: none;
-      padding: 8px;
+      {% comment %} em-based so the bar keeps breathing room at any font size. {% endcomment %}
+      padding: 0.6em 0.75em;
     }
     .announcement a {
       text-decoration: underline;
@@ -91,7 +98,7 @@
       "id": "announcement_font_scaling_property",
       "default": 12,
       "min": 8,
-      "max": 20,
+      "max": 32,
       "step": 1,
       "unit": "px",
       "label": "t:sections.typography.font_size"

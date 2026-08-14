@@ -15,7 +15,7 @@
       "settings": {
         "heading": "Your photo in thread, calmly made by hand.",
         "subheading": "Threaditate is a personalized string art kit - upload a photo you love and the app's voice guides you line by line, in real time. No experience needed.",
-        "caption": "No skills to learn. Everything included. Ships in one business day.",
+        "caption": "No skills to learn. Everything included. Free tote through August 21.",
         "primary_button_label": "Get my kit",
         "primary_button_link": "shopify://products/string-ring-custom-string-art-kit",
         "primary_button_color": "#C43D2E",
@@ -58,13 +58,21 @@
             "text": "30-day returns",
             "link": ""
           }
+        },
+        "item-gwp-tote": {
+          "type": "text",
+          "settings": {
+            "text": "Free tote through August 21",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "item-03",
         "item-02",
         "item-01",
-        "item-05"
+        "item-05",
+        "item-gwp-tote"
       ],
       "custom_css": [],
       "settings": {
@@ -424,7 +432,7 @@
         "subheading": "Upload it. Let the voice guide you, line by line. Walk away with something you love on your wall.",
         "button_label": "Get my kit →",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
-        "caption": "No experience needed. Everything included.",
+        "caption": "No experience needed. Everything included. Free tote through August 21.",
         "md_padding_top": 120,
         "md_padding_bottom": 120,
         "padding_top": 80,
