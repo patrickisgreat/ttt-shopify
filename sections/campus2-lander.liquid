@@ -1,0 +1,2179 @@
+{% comment %}
+  Threaditate — CAMPUS20 Landing Page
+  Reusable ad-to-lander message matching.
+
+  URL examples:
+  /pages/campus20?hook=study-break
+  /pages/campus20?hook=actually-finish
+  /pages/campus20?utm_content=camera-roll
+
+  Hook priority:
+  1. ?hook=
+  2. ?utm_content=
+  3. Default hero copy
+
+  Create CAMPUS20 in Shopify Admin > Discounts.
+{% endcomment %}
+
+{% liquid
+  assign promo_code = section.settings.discount_code | strip
+
+  if section.settings.product != blank
+    assign cta_path = section.settings.product.url
+  else
+    assign cta_path = routes.all_products_collection_url
+  endif
+
+  assign cta_url = cta_path
+
+  if promo_code != blank
+    assign cta_url = '/discount/' | append: promo_code | append: '?redirect=' | append: cta_path
+  endif
+%}
+
+<section
+  id="Campus20-{{ section.id }}"
+  class="campus20"
+  data-campus20-section
+>
+
+  {% if section.settings.hide_theme_chrome %}
+    <script>
+      document.documentElement.classList.add('threaditate-lander-active');
+    </script>
+  {% endif %}
+
+  {%- comment -%}
+    ============================================================
+    ANNOUNCEMENT
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="campus20__announcement">
+    <div class="campus20__shell campus20__announcement-inner">
+      <span>{{ section.settings.announcement }}</span>
+
+      {% if promo_code != blank %}
+        <button
+          class="campus20__code-button"
+          type="button"
+          data-copy-code="{{ promo_code | escape }}"
+          aria-label="Copy discount code {{ promo_code }}"
+        >
+          {{ promo_code }}
+          <span class="campus20__copy-label" data-copy-label>copy</span>
+        </button>
+      {% endif %}
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    HERO
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="campus20__hero">
+    <div class="campus20__hero-grid campus20__shell">
+
+      <div class="campus20__hero-copy">
+        <p class="campus20__eyebrow" data-hook-eyebrow>
+          {{ section.settings.hero_eyebrow }}
+        </p>
+
+        <h1 class="campus20__h1" data-hook-headline>
+          {{ section.settings.hero_headline }}
+        </h1>
+
+        <p class="campus20__hero-subhead" data-hook-subhead>
+          {{ section.settings.hero_subhead }}
+        </p>
+
+        <div class="campus20__hero-actions">
+          <a
+            class="campus20__button campus20__button--primary"
+            href="{{ cta_url }}"
+            data-campus-cta
+          >
+            {{ section.settings.cta_label }}
+            <span aria-hidden="true">→</span>
+          </a>
+
+          {% if promo_code != blank %}
+            <p class="campus20__offer-note">
+              Use code <strong>{{ promo_code }}</strong> for
+              {{ section.settings.discount_amount }} at checkout.
+            </p>
+          {% endif %}
+        </div>
+
+        <div class="campus20__micro-proof">
+          <span>App included</span>
+          <span aria-hidden="true">·</span>
+          <span>No subscription</span>
+          <span aria-hidden="true">·</span>
+          <span>No experience needed</span>
+        </div>
+      </div>
+
+
+      <div class="campus20__hero-media">
+        {% if section.settings.hero_image != blank %}
+          {{
+            section.settings.hero_image
+            | image_url: width: 1800
+            | image_tag:
+              class: 'campus20__hero-image',
+              loading: 'eager',
+              fetchpriority: 'high',
+              widths: '600, 900, 1200, 1500, 1800',
+              sizes: '(min-width: 990px) 50vw, 100vw',
+              alt: section.settings.hero_image.alt
+          }}
+        {% else %}
+          <div class="campus20__placeholder campus20__placeholder--hero">
+            {{ 'lifestyle-1' | placeholder_svg_tag }}
+            <span>Select your campus hero image</span>
+          </div>
+        {% endif %}
+
+        <div class="campus20__hero-card">
+          <span>Campus gets</span>
+          <strong>20% off</strong>
+          <small>{{ promo_code }}</small>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    Hidden hook data.
+    JS below message-matches hero to ?hook= or ?utm_content=
+  {%- endcomment -%}
+
+  <div hidden data-hook-library>
+    {% for block in section.blocks %}
+      {% if block.type == 'hook' %}
+        <span
+          data-hook-record
+          data-key="{{ block.settings.key | handleize }}"
+          data-eyebrow="{{ block.settings.eyebrow | escape }}"
+          data-headline="{{ block.settings.headline | escape }}"
+          data-subhead="{{ block.settings.subhead | escape }}"
+          {{ block.shopify_attributes }}
+        ></span>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    PROOF STRIP
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="campus20__proof">
+    <div class="campus20__proof-grid campus20__shell">
+
+      <div class="campus20__proof-item">
+        <strong>2,035</strong>
+        <span>Kickstarter backers</span>
+      </div>
+
+      <div class="campus20__proof-item">
+        <strong>$172,797</strong>
+        <span>raised</span>
+      </div>
+
+      <div class="campus20__proof-item">
+        <strong>Voice-guided</strong>
+        <span>app included</span>
+      </div>
+
+      <div class="campus20__proof-item">
+        <strong>Built</strong>
+        <span>to be finished</span>
+      </div>
+
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    SOCIAL PROOF
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="campus20__section campus20__section--ivory">
+    <div class="campus20__shell campus20__narrow">
+
+      <p class="campus20__eyebrow">Made by people like you</p>
+
+      <div class="campus20__quotes">
+
+        <figure class="campus20__quote campus20__quote--featured">
+          <blockquote>
+            “I actually finished something. Every other craft I’ve tried
+            ends up in a drawer. This one’s hanging on my wall.”
+          </blockquote>
+          <figcaption>Derek P. · Kickstarter backer</figcaption>
+        </figure>
+
+        <figure class="campus20__quote">
+          <blockquote>
+            “I sat down to do one session and looked up three hours later.”
+          </blockquote>
+          <figcaption>Marisa T. · Kickstarter backer</figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    EXPERIENCE
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="campus20__section campus20__section--blue">
+
+    <div class="campus20__shell campus20__split">
+
+      <div class="campus20__media-card">
+        {% if section.settings.process_image != blank %}
+          {{
+            section.settings.process_image
+            | image_url: width: 1500
+            | image_tag:
+              class: 'campus20__process-image',
+              loading: 'lazy',
+              widths: '500, 800, 1100, 1500',
+              sizes: '(min-width: 990px) 48vw, 100vw',
+              alt: section.settings.process_image.alt
+          }}
+        {% else %}
+          <div class="campus20__placeholder">
+            {{ 'lifestyle-2' | placeholder_svg_tag }}
+            <span>Select a close-up threading image</span>
+          </div>
+        {% endif %}
+      </div>
+
+
+      <div class="campus20__section-copy campus20__section-copy--light">
+
+        <p class="campus20__eyebrow campus20__eyebrow--light">
+          A different kind of break
+        </p>
+
+        <h2 class="campus20__h2">
+          Give your brain something else to do.
+        </h2>
+
+        <p class="campus20__lead">
+          Put on music. Start an audiobook. Let the app read the next
+          number aloud.
+        </p>
+
+        <p>
+          Your hands find the rhythm while a photo you care about slowly
+          becomes art.
+        </p>
+
+        <div class="campus20__mini-grid">
+
+          <div>
+            <span class="campus20__mini-number">01</span>
+            <h3>Screen-optional</h3>
+            <p>
+              The app speaks each step aloud, so your eyes can stay on
+              the loom.
+            </p>
+          </div>
+
+          <div>
+            <span class="campus20__mini-number">02</span>
+            <h3>Made to finish</h3>
+            <p>
+              Pause whenever you want. Your place is saved for the next
+              session.
+            </p>
+          </div>
+
+          <div>
+            <span class="campus20__mini-number">03</span>
+            <h3>Personal from the start</h3>
+            <p>
+              Upload a photo that matters to you. Your piece begins there.
+            </p>
+          </div>
+
+        </div>
+
+        <a
+          class="campus20__button campus20__button--ivory"
+          href="{{ cta_url }}"
+          data-campus-cta
+        >
+          {{ section.settings.cta_label }}
+          <span aria-hidden="true">→</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    ANY PHOTO / GALLERY
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="campus20__section campus20__section--ivory">
+
+    <div class="campus20__shell">
+
+      <div class="campus20__section-heading campus20__section-heading--center">
+        <p class="campus20__eyebrow">Any meaningful photo</p>
+
+        <h2 class="campus20__h2">
+          Your roommate. Your dog. Your person.
+        </h2>
+
+        <p>
+          Your hometown. Your family. The trip you still talk about.
+          The photo that's been sitting in your camera roll for three years.
+        </p>
+      </div>
+
+
+      <div class="campus20__gallery">
+
+        <figure class="campus20__gallery-card">
+          {% if section.settings.gallery_image_1 != blank %}
+            {{
+              section.settings.gallery_image_1
+              | image_url: width: 1000
+              | image_tag:
+                loading: 'lazy',
+                widths: '400, 700, 1000',
+                sizes: '(min-width: 750px) 33vw, 100vw',
+                alt: section.settings.gallery_image_1.alt
+            }}
+          {% else %}
+            {{ 'lifestyle-1' | placeholder_svg_tag }}
+          {% endif %}
+          <figcaption>the people you found here</figcaption>
+        </figure>
+
+
+        <figure class="campus20__gallery-card">
+          {% if section.settings.gallery_image_2 != blank %}
+            {{
+              section.settings.gallery_image_2
+              | image_url: width: 1000
+              | image_tag:
+                loading: 'lazy',
+                widths: '400, 700, 1000',
+                sizes: '(min-width: 750px) 33vw, 100vw',
+                alt: section.settings.gallery_image_2.alt
+            }}
+          {% else %}
+            {{ 'lifestyle-2' | placeholder_svg_tag }}
+          {% endif %}
+          <figcaption>the ones you miss</figcaption>
+        </figure>
+
+
+        <figure class="campus20__gallery-card">
+          {% if section.settings.gallery_image_3 != blank %}
+            {{
+              section.settings.gallery_image_3
+              | image_url: width: 1000
+              | image_tag:
+                loading: 'lazy',
+                widths: '400, 700, 1000',
+                sizes: '(min-width: 750px) 33vw, 100vw',
+                alt: section.settings.gallery_image_3.alt
+            }}
+          {% else %}
+            {{ 'lifestyle-1' | placeholder_svg_tag }}
+          {% endif %}
+          <figcaption>the picture that means something</figcaption>
+        </figure>
+
+      </div>
+
+
+      <div class="campus20__center-action">
+        <a
+          class="campus20__button campus20__button--primary"
+          href="{{ cta_url }}"
+          data-campus-cta
+        >
+          Turn my photo into art
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    HOW IT WORKS
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="campus20__section campus20__section--black">
+
+    <div class="campus20__shell">
+
+      <div class="campus20__section-heading">
+        <p class="campus20__eyebrow campus20__eyebrow--blue">
+          How it works
+        </p>
+
+        <h2 class="campus20__h2 campus20__h2--light">
+          From camera roll to wall.
+        </h2>
+      </div>
+
+
+      <div class="campus20__steps">
+
+        <article class="campus20__step">
+          <span>01</span>
+          <h3>Upload your photo</h3>
+          <p>Choose the image you actually care about.</p>
+        </article>
+
+        <article class="campus20__step">
+          <span>02</span>
+          <h3>Set up your loom</h3>
+          <p>Snap it together, mount it to the easel, and get comfortable.</p>
+        </article>
+
+        <article class="campus20__step">
+          <span>03</span>
+          <h3>Follow along</h3>
+          <p>
+            The app speaks and shows the sequence line by line at your pace.
+          </p>
+        </article>
+
+        <article class="campus20__step">
+          <span>04</span>
+          <h3>Hang what you made</h3>
+          <p>Finish with a one-of-a-kind piece made by your own hands.</p>
+        </article>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    COMPLETION
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="campus20__section campus20__section--completion">
+
+    <div class="campus20__shell campus20__split campus20__split--reverse">
+
+      <div class="campus20__section-copy">
+
+        <p class="campus20__eyebrow">
+          Forgiving by design
+        </p>
+
+        <h2 class="campus20__h2">
+          Built to reach the last line.
+        </h2>
+
+        <p class="campus20__lead">
+          Lost your place for a second? Keep going.
+        </p>
+
+        <p>
+          Thousands of lines create the finished image, so small missed
+          steps disappear into the whole. There’s nothing to rip out and redo.
+        </p>
+
+        <p>
+          When you want to stop, stop. The app saves your progress so the
+          next session begins where you left it.
+        </p>
+
+        <figure class="campus20__inline-quote">
+          <blockquote>
+            “I have zero artistic ability. My piece looked like the photo.
+            I was shocked.”
+          </blockquote>
+          <figcaption>James K. · Kickstarter backer</figcaption>
+        </figure>
+
+      </div>
+
+
+      <div class="campus20__media-card">
+        {% if section.settings.completion_image != blank %}
+          {{
+            section.settings.completion_image
+            | image_url: width: 1500
+            | image_tag:
+              class: 'campus20__process-image',
+              loading: 'lazy',
+              widths: '500, 800, 1100, 1500',
+              sizes: '(min-width: 990px) 48vw, 100vw',
+              alt: section.settings.completion_image.alt
+          }}
+        {% else %}
+          <div class="campus20__placeholder">
+            {{ 'lifestyle-2' | placeholder_svg_tag }}
+            <span>Select a detailed threading image</span>
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    WALL / DORM PAYOFF
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="campus20__section campus20__section--wall">
+
+    <div class="campus20__wall-overlay"></div>
+
+    {% if section.settings.wall_image != blank %}
+      {{
+        section.settings.wall_image
+        | image_url: width: 2000
+        | image_tag:
+          class: 'campus20__wall-image',
+          loading: 'lazy',
+          widths: '700, 1100, 1500, 2000',
+          sizes: '100vw',
+          alt: section.settings.wall_image.alt
+      }}
+    {% endif %}
+
+    <div class="campus20__shell campus20__wall-content">
+
+      <p class="campus20__eyebrow campus20__eyebrow--light">
+        Handmade by you
+      </p>
+
+      <h2 class="campus20__h2 campus20__h2--wall">
+        Make the wall feel more like yours.
+      </h2>
+
+      <p>
+        It started as your photo, passed through your hands, and became
+        something nobody else has.
+      </p>
+
+      <strong class="campus20__you-made-that">You made that.</strong>
+
+      <a
+        class="campus20__button campus20__button--ivory"
+        href="{{ cta_url }}"
+        data-campus-cta
+      >
+        {{ section.settings.cta_label }}
+        <span aria-hidden="true">→</span>
+      </a>
+
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    OFFER
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="campus20__offer">
+
+    <div class="campus20__shell campus20__offer-inner">
+
+      <p class="campus20__eyebrow campus20__eyebrow--light">
+        Campus gets 20% off
+      </p>
+
+      <h2 class="campus20__h2 campus20__h2--light">
+        Make something between everything else.
+      </h2>
+
+      <p class="campus20__offer-copy">
+        Your photo. Your hands. A few quiet sessions.
+        Something real at the end.
+      </p>
+
+
+      {% if promo_code != blank %}
+        <button
+          type="button"
+          class="campus20__big-code"
+          data-copy-code="{{ promo_code | escape }}"
+        >
+          <span>20% off with</span>
+          <strong>{{ promo_code }}</strong>
+          <small data-copy-label>tap to copy</small>
+        </button>
+      {% endif %}
+
+
+      <a
+        class="campus20__button campus20__button--vermillion"
+        href="{{ cta_url }}"
+        data-campus-cta
+      >
+        {{ section.settings.cta_label }}
+        <span aria-hidden="true">→</span>
+      </a>
+
+      <p class="campus20__offer-fine">
+        App included. No subscription. Ships within one business day.
+        30-day returns.
+      </p>
+
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    FAQ
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="campus20__section campus20__section--ivory">
+
+    <div class="campus20__shell campus20__faq-shell">
+
+      <div class="campus20__section-heading">
+        <p class="campus20__eyebrow">Good questions</p>
+        <h2 class="campus20__h2">Clear answers.</h2>
+      </div>
+
+
+      <div class="campus20__faq">
+
+        <details>
+          <summary>Do I need to know how to make string art?</summary>
+          <div>
+            <p>
+              No experience needed. The app tells you where to go next
+              and moves line by line at your pace.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can I really use my own photo?</summary>
+          <div>
+            <p>
+              Yes. Upload a person, pet, place, or another meaningful image.
+              Clear photos with a close subject and good contrast tend to
+              make the strongest pieces.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How long does one take?</summary>
+          <div>
+            <p>
+              Most pieces take about 5–8 hours depending on your image and
+              pace. Spread that across as many sessions as you want.
+              The app saves your progress.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What if I mess up?</summary>
+          <div>
+            <p>
+              Keep going. Threaditate is forgiving by design. Small missed
+              steps disappear among the thousands of lines that create
+              the finished image.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Is the app extra?</summary>
+          <div>
+            <p>
+              No. App access comes with the kit, with no subscription.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What comes with the kit?</summary>
+          <div>
+            <p>
+              Your loom, thread, spool holder, precision threading tool,
+              numbered guide, wooden phone stand, convertible easel box,
+              mounting accessories, and app access.
+            </p>
+          </div>
+        </details>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    FINAL CTA
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="campus20__final">
+
+    <div class="campus20__shell campus20__final-inner">
+
+      <p>Your camera roll has the picture.</p>
+
+      <h2>Your hands make the art.</h2>
+
+      {% if promo_code != blank %}
+        <span>20% off with code {{ promo_code }}</span>
+      {% endif %}
+
+      <a
+        class="campus20__button campus20__button--primary"
+        href="{{ cta_url }}"
+        data-campus-cta
+      >
+        {{ section.settings.cta_label }}
+        <span aria-hidden="true">→</span>
+      </a>
+
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    MOBILE STICKY CTA
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="campus20__sticky" data-campus-sticky>
+    <div>
+      <strong>20% off</strong>
+      <span>{{ promo_code }}</span>
+    </div>
+
+    <a href="{{ cta_url }}" data-campus-cta>
+      {{ section.settings.cta_label }}
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+
+</section>
+
+
+<style>
+  #Campus20-{{ section.id }} {
+    --tt-cobalt: #1450C4;
+    --tt-violet: #3D3DB0;
+    --tt-red: #C43D2E;
+    --tt-black: #0B0B0F;
+    --tt-ivory: #F4F2ED;
+    --tt-blue-tint: #8FB2ED;
+    --tt-violet-tint: #7C7CD6;
+    --tt-red-tint: #F5C2B5;
+
+    --tt-heading:
+      var(--font-heading-family, "Space Grotesk", sans-serif);
+
+    --tt-body:
+      var(--font-body-family, "DM Sans", sans-serif);
+
+    background: var(--tt-ivory);
+    color: var(--tt-black);
+    font-family: var(--tt-body);
+    font-size: 18px;
+    line-height: 1.6;
+    overflow: clip;
+  }
+
+  #Campus20-{{ section.id }} *,
+  #Campus20-{{ section.id }} *::before,
+  #Campus20-{{ section.id }} *::after {
+    box-sizing: border-box;
+  }
+
+  #Campus20-{{ section.id }} img {
+    display: block;
+    width: 100%;
+  }
+
+  #Campus20-{{ section.id }} a {
+    text-decoration: none;
+  }
+
+  #Campus20-{{ section.id }} .campus20__shell {
+    width: min(1180px, calc(100% - 48px));
+    margin-inline: auto;
+  }
+
+  #Campus20-{{ section.id }} .campus20__narrow {
+    width: min(920px, calc(100% - 48px));
+  }
+
+
+  /* ---------- announcement ---------- */
+
+  #Campus20-{{ section.id }} .campus20__announcement {
+    position: relative;
+    z-index: 20;
+    background: var(--tt-black);
+    color: var(--tt-ivory);
+    font-family: var(--tt-heading);
+  }
+
+  #Campus20-{{ section.id }} .campus20__announcement-inner {
+    min-height: 44px;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    letter-spacing: .08em;
+  }
+
+  #Campus20-{{ section.id }} .campus20__code-button {
+    appearance: none;
+    border: 1px solid rgba(255,255,255,.35);
+    background: transparent;
+    color: inherit;
+    border-radius: 999px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font: inherit;
+  }
+
+  #Campus20-{{ section.id }} .campus20__copy-label {
+    opacity: .65;
+    font-family: var(--tt-body);
+    font-size: 10px;
+    margin-left: 4px;
+  }
+
+
+  /* ---------- type ---------- */
+
+  #Campus20-{{ section.id }} .campus20__eyebrow {
+    margin: 0 0 14px;
+    color: var(--tt-red);
+    font-family: var(--tt-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+
+  #Campus20-{{ section.id }} .campus20__eyebrow--light {
+    color: var(--tt-blue-tint);
+  }
+
+  #Campus20-{{ section.id }} .campus20__eyebrow--blue {
+    color: var(--tt-blue-tint);
+  }
+
+  #Campus20-{{ section.id }} .campus20__h1,
+  #Campus20-{{ section.id }} .campus20__h2,
+  #Campus20-{{ section.id }} .campus20__h2--wall {
+    font-family: var(--tt-heading);
+    font-weight: 600;
+    letter-spacing: -.035em;
+    text-wrap: balance;
+  }
+
+  #Campus20-{{ section.id }} .campus20__h1 {
+    margin: 0;
+    font-size: clamp(42px, 5.7vw, 78px);
+    line-height: .98;
+    max-width: 750px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__h2 {
+    margin: 0;
+    font-size: clamp(36px, 4.6vw, 62px);
+    line-height: 1.02;
+  }
+
+  #Campus20-{{ section.id }} .campus20__h2--light {
+    color: var(--tt-ivory);
+  }
+
+  #Campus20-{{ section.id }} .campus20__lead {
+    font-size: clamp(20px, 2vw, 25px);
+    line-height: 1.45;
+  }
+
+
+  /* ---------- buttons ---------- */
+
+  #Campus20-{{ section.id }} .campus20__button {
+    min-height: 54px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 999px;
+    padding: 14px 24px;
+    font-family: var(--tt-heading);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    transition:
+      transform .18s ease,
+      box-shadow .18s ease,
+      background-color .18s ease;
+  }
+
+  #Campus20-{{ section.id }} .campus20__button:hover {
+    transform: translateY(-2px);
+  }
+
+  #Campus20-{{ section.id }} .campus20__button--primary {
+    background: var(--tt-red);
+    color: #fff;
+    box-shadow: 0 12px 32px rgba(196, 61, 46, .22);
+  }
+
+  #Campus20-{{ section.id }} .campus20__button--ivory {
+    background: var(--tt-ivory);
+    color: var(--tt-black);
+  }
+
+  #Campus20-{{ section.id }} .campus20__button--vermillion {
+    background: var(--tt-red);
+    color: #fff;
+    min-width: 210px;
+  }
+
+
+  /* ---------- hero ---------- */
+
+  #Campus20-{{ section.id }} .campus20__hero {
+    background: var(--tt-ivory);
+  }
+
+  #Campus20-{{ section.id }} .campus20__hero-grid {
+    min-height: min(820px, calc(100vh - 44px));
+    display: grid;
+    grid-template-columns: 1fr .9fr;
+    gap: clamp(40px, 6vw, 90px);
+    align-items: center;
+    padding-block: 64px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__hero-copy {
+    position: relative;
+    z-index: 2;
+  }
+
+  #Campus20-{{ section.id }} .campus20__hero-subhead {
+    max-width: 620px;
+    margin: 26px 0 0;
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.5;
+  }
+
+  #Campus20-{{ section.id }} .campus20__hero-actions {
+    margin-top: 30px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__offer-note {
+    margin: 12px 0 0;
+    font-size: 14px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__micro-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+    color: rgba(11,11,15,.68);
+    font-size: 13px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__hero-media {
+    position: relative;
+    min-height: 650px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__hero-image,
+  #Campus20-{{ section.id }} .campus20__hero-media > .campus20__placeholder {
+    height: 650px;
+    object-fit: cover;
+    border-radius: 2px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__hero-card {
+    position: absolute;
+    left: -28px;
+    bottom: 36px;
+    width: 170px;
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 22px;
+    background: var(--tt-cobalt);
+    color: #fff;
+    box-shadow: 0 18px 50px rgba(20,80,196,.25);
+  }
+
+  #Campus20-{{ section.id }} .campus20__hero-card span {
+    font-size: 13px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__hero-card strong {
+    display: block;
+    margin: 3px 0;
+    font-family: var(--tt-heading);
+    font-size: 29px;
+    line-height: 1;
+  }
+
+  #Campus20-{{ section.id }} .campus20__hero-card small {
+    font-weight: 700;
+    letter-spacing: .12em;
+  }
+
+
+  /* ---------- proof ---------- */
+
+  #Campus20-{{ section.id }} .campus20__proof {
+    border-block: 1px solid rgba(11,11,15,.13);
+    background: #fff;
+  }
+
+  #Campus20-{{ section.id }} .campus20__proof-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #Campus20-{{ section.id }} .campus20__proof-item {
+    min-height: 112px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 22px;
+    border-right: 1px solid rgba(11,11,15,.13);
+  }
+
+  #Campus20-{{ section.id }} .campus20__proof-item:last-child {
+    border-right: 0;
+  }
+
+  #Campus20-{{ section.id }} .campus20__proof-item strong {
+    font-family: var(--tt-heading);
+    font-size: 21px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__proof-item span {
+    font-size: 13px;
+    color: rgba(11,11,15,.6);
+  }
+
+
+  /* ---------- sections ---------- */
+
+  #Campus20-{{ section.id }} .campus20__section {
+    position: relative;
+    padding-block: clamp(78px, 10vw, 145px);
+  }
+
+  #Campus20-{{ section.id }} .campus20__section--ivory {
+    background: var(--tt-ivory);
+  }
+
+  #Campus20-{{ section.id }} .campus20__section--blue {
+    background: var(--tt-cobalt);
+    color: var(--tt-ivory);
+  }
+
+  #Campus20-{{ section.id }} .campus20__section--black {
+    background: var(--tt-black);
+    color: var(--tt-ivory);
+  }
+
+  #Campus20-{{ section.id }} .campus20__section--completion {
+    background: #fff;
+  }
+
+  #Campus20-{{ section.id }} .campus20__split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(50px, 7vw, 100px);
+    align-items: center;
+  }
+
+  #Campus20-{{ section.id }} .campus20__split--reverse > :first-child {
+    order: 2;
+  }
+
+  #Campus20-{{ section.id }} .campus20__split--reverse > :last-child {
+    order: 1;
+  }
+
+  #Campus20-{{ section.id }} .campus20__section-copy > p {
+    max-width: 620px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__section-copy--light {
+    color: var(--tt-ivory);
+  }
+
+  #Campus20-{{ section.id }} .campus20__section-heading {
+    max-width: 720px;
+    margin-bottom: 55px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__section-heading--center {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  #Campus20-{{ section.id }} .campus20__section-heading > p:last-child {
+    max-width: 650px;
+    margin: 20px auto 0;
+  }
+
+
+  /* ---------- imagery ---------- */
+
+  #Campus20-{{ section.id }} .campus20__media-card {
+    overflow: hidden;
+  }
+
+  #Campus20-{{ section.id }} .campus20__process-image,
+  #Campus20-{{ section.id }} .campus20__media-card > .campus20__placeholder {
+    aspect-ratio: 4 / 5;
+    height: auto;
+    object-fit: cover;
+  }
+
+  #Campus20-{{ section.id }} .campus20__placeholder {
+    position: relative;
+    min-height: 450px;
+    display: grid;
+    place-items: center;
+    background: rgba(0,0,0,.08);
+    overflow: hidden;
+  }
+
+  #Campus20-{{ section.id }} .campus20__placeholder svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  #Campus20-{{ section.id }} .campus20__placeholder span {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    padding: 7px 10px;
+    background: var(--tt-black);
+    color: white;
+    font-size: 11px;
+  }
+
+
+  /* ---------- quotes ---------- */
+
+  #Campus20-{{ section.id }} .campus20__quotes {
+    display: grid;
+    grid-template-columns: 1.3fr .7fr;
+    gap: 22px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__quote {
+    margin: 0;
+    padding: clamp(28px, 5vw, 58px);
+    background: #fff;
+    border: 1px solid rgba(11,11,15,.12);
+  }
+
+  #Campus20-{{ section.id }} .campus20__quote--featured {
+    background: var(--tt-cobalt);
+    color: #fff;
+    border-color: var(--tt-cobalt);
+  }
+
+  #Campus20-{{ section.id }} .campus20__quote blockquote {
+    margin: 0;
+    font-family: var(--tt-heading);
+    font-size: clamp(23px, 3vw, 38px);
+    font-weight: 600;
+    line-height: 1.18;
+    letter-spacing: -.025em;
+  }
+
+  #Campus20-{{ section.id }} .campus20__quote figcaption,
+  #Campus20-{{ section.id }} .campus20__inline-quote figcaption {
+    margin-top: 24px;
+    font-size: 13px;
+    opacity: .68;
+  }
+
+  #Campus20-{{ section.id }} .campus20__inline-quote {
+    margin: 38px 0 0;
+    padding-top: 30px;
+    border-top: 1px solid rgba(11,11,15,.15);
+  }
+
+  #Campus20-{{ section.id }} .campus20__inline-quote blockquote {
+    margin: 0;
+    color: var(--tt-cobalt);
+    font-family: var(--tt-heading);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+
+  /* ---------- benefits ---------- */
+
+  #Campus20-{{ section.id }} .campus20__mini-grid {
+    margin: 38px 0;
+    border-top: 1px solid rgba(255,255,255,.25);
+  }
+
+  #Campus20-{{ section.id }} .campus20__mini-grid > div {
+    display: grid;
+    grid-template-columns: 45px 180px 1fr;
+    gap: 18px;
+    padding-block: 22px;
+    border-bottom: 1px solid rgba(255,255,255,.25);
+  }
+
+  #Campus20-{{ section.id }} .campus20__mini-number {
+    color: var(--tt-blue-tint);
+    font-family: var(--tt-heading);
+    font-size: 12px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__mini-grid h3 {
+    margin: 0;
+    font-family: var(--tt-heading);
+    font-size: 17px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__mini-grid p {
+    margin: 0;
+    font-size: 14px;
+    opacity: .8;
+  }
+
+
+  /* ---------- gallery ---------- */
+
+  #Campus20-{{ section.id }} .campus20__gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__gallery-card {
+    margin: 0;
+  }
+
+  #Campus20-{{ section.id }} .campus20__gallery-card img,
+  #Campus20-{{ section.id }} .campus20__gallery-card svg {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    background: #e7e5df;
+  }
+
+  #Campus20-{{ section.id }} .campus20__gallery-card figcaption {
+    margin-top: 10px;
+    color: rgba(11,11,15,.62);
+    font-size: 13px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__center-action {
+    margin-top: 45px;
+    text-align: center;
+  }
+
+
+  /* ---------- steps ---------- */
+
+  #Campus20-{{ section.id }} .campus20__steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgba(255,255,255,.22);
+  }
+
+  #Campus20-{{ section.id }} .campus20__step {
+    padding: 32px 28px 20px 0;
+  }
+
+  #Campus20-{{ section.id }} .campus20__step + .campus20__step {
+    padding-left: 28px;
+    border-left: 1px solid rgba(255,255,255,.22);
+  }
+
+  #Campus20-{{ section.id }} .campus20__step > span {
+    color: var(--tt-blue-tint);
+    font-family: var(--tt-heading);
+    font-size: 12px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__step h3 {
+    margin: 60px 0 12px;
+    font-family: var(--tt-heading);
+    font-size: 22px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__step p {
+    margin: 0;
+    color: rgba(244,242,237,.7);
+    font-size: 14px;
+  }
+
+
+  /* ---------- wall ---------- */
+
+  #Campus20-{{ section.id }} .campus20__section--wall {
+    min-height: 760px;
+    display: flex;
+    align-items: center;
+    padding-block: 100px;
+    background: var(--tt-black);
+    color: #fff;
+    isolation: isolate;
+  }
+
+  #Campus20-{{ section.id }} .campus20__wall-image {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #Campus20-{{ section.id }} .campus20__wall-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(11,11,15,.9) 0%,
+        rgba(11,11,15,.67) 46%,
+        rgba(11,11,15,.17) 100%
+      );
+  }
+
+  #Campus20-{{ section.id }} .campus20__wall-content {
+    margin-left: max(24px, calc((100% - min(1180px, calc(100% - 48px))) / 2));
+    margin-right: auto;
+    width: min(600px, calc(100% - 48px));
+  }
+
+  #Campus20-{{ section.id }} .campus20__h2--wall {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(42px, 5vw, 70px);
+    line-height: 1;
+  }
+
+  #Campus20-{{ section.id }} .campus20__wall-content > p:not(.campus20__eyebrow) {
+    max-width: 520px;
+    font-size: 20px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__you-made-that {
+    display: block;
+    margin: 30px 0;
+    font-family: var(--tt-heading);
+    font-size: 28px;
+  }
+
+
+  /* ---------- offer ---------- */
+
+  #Campus20-{{ section.id }} .campus20__offer {
+    padding-block: clamp(80px, 11vw, 150px);
+    background: var(--tt-cobalt);
+    color: #fff;
+    text-align: center;
+  }
+
+  #Campus20-{{ section.id }} .campus20__offer-inner {
+    max-width: 800px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__offer-copy {
+    max-width: 550px;
+    margin: 24px auto 35px;
+    color: rgba(255,255,255,.8);
+    font-size: 20px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__big-code {
+    appearance: none;
+    width: min(460px, 100%);
+    display: grid;
+    gap: 3px;
+    margin: 0 auto 26px;
+    padding: 24px;
+    border: 1px solid rgba(255,255,255,.38);
+    background: rgba(0,0,0,.08);
+    color: #fff;
+    cursor: pointer;
+  }
+
+  #Campus20-{{ section.id }} .campus20__big-code span {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .18em;
+  }
+
+  #Campus20-{{ section.id }} .campus20__big-code strong {
+    font-family: var(--tt-heading);
+    font-size: clamp(33px, 5vw, 50px);
+    letter-spacing: .06em;
+  }
+
+  #Campus20-{{ section.id }} .campus20__big-code small {
+    opacity: .65;
+  }
+
+  #Campus20-{{ section.id }} .campus20__offer-fine {
+    margin: 20px 0 0;
+    font-size: 12px;
+    color: rgba(255,255,255,.65);
+  }
+
+
+  /* ---------- faq ---------- */
+
+  #Campus20-{{ section.id }} .campus20__faq-shell {
+    display: grid;
+    grid-template-columns: .7fr 1.3fr;
+    gap: 80px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__faq details {
+    border-top: 1px solid rgba(11,11,15,.18);
+  }
+
+  #Campus20-{{ section.id }} .campus20__faq details:last-child {
+    border-bottom: 1px solid rgba(11,11,15,.18);
+  }
+
+  #Campus20-{{ section.id }} .campus20__faq summary {
+    position: relative;
+    cursor: pointer;
+    padding: 24px 42px 24px 0;
+    list-style: none;
+    font-family: var(--tt-heading);
+    font-size: 19px;
+    font-weight: 600;
+  }
+
+  #Campus20-{{ section.id }} .campus20__faq summary::-webkit-details-marker {
+    display: none;
+  }
+
+  #Campus20-{{ section.id }} .campus20__faq summary::after {
+    content: "+";
+    position: absolute;
+    top: 22px;
+    right: 4px;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  #Campus20-{{ section.id }} .campus20__faq details[open] summary::after {
+    content: "–";
+  }
+
+  #Campus20-{{ section.id }} .campus20__faq details div {
+    padding: 0 50px 24px 0;
+    color: rgba(11,11,15,.68);
+  }
+
+  #Campus20-{{ section.id }} .campus20__faq details p {
+    margin: 0;
+  }
+
+
+  /* ---------- final ---------- */
+
+  #Campus20-{{ section.id }} .campus20__final {
+    padding-block: 110px;
+    background: #fff;
+    text-align: center;
+  }
+
+  #Campus20-{{ section.id }} .campus20__final-inner {
+    max-width: 850px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__final p {
+    margin: 0 0 3px;
+    font-size: 18px;
+  }
+
+  #Campus20-{{ section.id }} .campus20__final h2 {
+    margin: 0;
+    font-family: var(--tt-heading);
+    font-size: clamp(42px, 6vw, 80px);
+    line-height: 1;
+    letter-spacing: -.04em;
+  }
+
+  #Campus20-{{ section.id }} .campus20__final > div > span {
+    display: block;
+    margin: 24px 0;
+    color: var(--tt-cobalt);
+    font-weight: 700;
+  }
+
+
+  /* ---------- sticky mobile ---------- */
+
+  #Campus20-{{ section.id }} .campus20__sticky {
+    display: none;
+  }
+
+
+  /* ---------- hide header/footer option ---------- */
+
+  .threaditate-lander-active .shopify-section-group-header-group,
+  .threaditate-lander-active .shopify-section-group-footer-group {
+    display: none !important;
+  }
+
+
+  /* ---------- responsive ---------- */
+
+  @media screen and (max-width: 989px) {
+
+    #Campus20-{{ section.id }} {
+      font-size: 16px;
+    }
+
+    #Campus20-{{ section.id }} .campus20__hero-grid,
+    #Campus20-{{ section.id }} .campus20__split,
+    #Campus20-{{ section.id }} .campus20__faq-shell {
+      grid-template-columns: 1fr;
+    }
+
+    #Campus20-{{ section.id }} .campus20__hero-grid {
+      min-height: auto;
+      gap: 42px;
+      padding-block: 50px;
+    }
+
+    #Campus20-{{ section.id }} .campus20__hero-media,
+    #Campus20-{{ section.id }} .campus20__hero-image,
+    #Campus20-{{ section.id }} .campus20__hero-media > .campus20__placeholder {
+      min-height: 0;
+      height: auto;
+      aspect-ratio: 4 / 5;
+    }
+
+    #Campus20-{{ section.id }} .campus20__hero-card {
+      left: 16px;
+      bottom: 16px;
+    }
+
+    #Campus20-{{ section.id }} .campus20__quotes {
+      grid-template-columns: 1fr;
+    }
+
+    #Campus20-{{ section.id }} .campus20__proof-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    #Campus20-{{ section.id }} .campus20__proof-item:nth-child(2) {
+      border-right: 0;
+    }
+
+    #Campus20-{{ section.id }} .campus20__proof-item:nth-child(-n+2) {
+      border-bottom: 1px solid rgba(11,11,15,.13);
+    }
+
+    #Campus20-{{ section.id }} .campus20__split--reverse > :first-child,
+    #Campus20-{{ section.id }} .campus20__split--reverse > :last-child {
+      order: initial;
+    }
+
+    #Campus20-{{ section.id }} .campus20__gallery {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    #Campus20-{{ section.id }} .campus20__gallery-card:last-child {
+      grid-column: 1 / -1;
+      width: calc(50% - 7px);
+      margin-inline: auto;
+    }
+
+    #Campus20-{{ section.id }} .campus20__steps {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    #Campus20-{{ section.id }} .campus20__step:nth-child(3) {
+      border-left: 0;
+    }
+
+    #Campus20-{{ section.id }} .campus20__step h3 {
+      margin-top: 35px;
+    }
+
+    #Campus20-{{ section.id }} .campus20__faq-shell {
+      gap: 20px;
+    }
+
+    #Campus20-{{ section.id }} .campus20__section--wall {
+      min-height: 650px;
+    }
+
+    #Campus20-{{ section.id }} .campus20__wall-content {
+      margin-inline: auto;
+    }
+
+  }
+
+
+  @media screen and (max-width: 640px) {
+
+    #Campus20-{{ section.id }} {
+      padding-bottom: 74px;
+    }
+
+    #Campus20-{{ section.id }} .campus20__shell,
+    #Campus20-{{ section.id }} .campus20__narrow {
+      width: min(100% - 32px, 1180px);
+    }
+
+    #Campus20-{{ section.id }} .campus20__announcement-inner {
+      min-height: 42px;
+      justify-content: space-between;
+      font-size: 11px;
+    }
+
+    #Campus20-{{ section.id }} .campus20__h1 {
+      font-size: clamp(40px, 12vw, 56px);
+    }
+
+    #Campus20-{{ section.id }} .campus20__h2 {
+      font-size: clamp(34px, 10vw, 48px);
+    }
+
+    #Campus20-{{ section.id }} .campus20__hero-grid {
+      padding-top: 40px;
+    }
+
+    #Campus20-{{ section.id }} .campus20__hero-subhead {
+      margin-top: 20px;
+    }
+
+    #Campus20-{{ section.id }} .campus20__button {
+      width: 100%;
+    }
+
+    #Campus20-{{ section.id }} .campus20__micro-proof {
+      font-size: 11px;
+    }
+
+    #Campus20-{{ section.id }} .campus20__hero-card {
+      width: 145px;
+      min-height: 145px;
+      padding: 18px;
+    }
+
+    #Campus20-{{ section.id }} .campus20__hero-card strong {
+      font-size: 25px;
+    }
+
+    #Campus20-{{ section.id }} .campus20__proof-item {
+      min-height: 95px;
+      padding: 16px;
+    }
+
+    #Campus20-{{ section.id }} .campus20__proof-item strong {
+      font-size: 17px;
+    }
+
+    #Campus20-{{ section.id }} .campus20__mini-grid > div {
+      grid-template-columns: 35px 1fr;
+    }
+
+    #Campus20-{{ section.id }} .campus20__mini-grid p {
+      grid-column: 2;
+    }
+
+    #Campus20-{{ section.id }} .campus20__gallery {
+      grid-template-columns: 1fr;
+    }
+
+    #Campus20-{{ section.id }} .campus20__gallery-card:last-child {
+      grid-column: auto;
+      width: 100%;
+    }
+
+    #Campus20-{{ section.id }} .campus20__steps {
+      grid-template-columns: 1fr;
+    }
+
+    #Campus20-{{ section.id }} .campus20__step,
+    #Campus20-{{ section.id }} .campus20__step + .campus20__step,
+    #Campus20-{{ section.id }} .campus20__step:nth-child(3) {
+      padding: 26px 0;
+      border-left: 0;
+      border-bottom: 1px solid rgba(255,255,255,.22);
+    }
+
+    #Campus20-{{ section.id }} .campus20__step h3 {
+      margin-top: 20px;
+    }
+
+    #Campus20-{{ section.id }} .campus20__section--wall {
+      align-items: end;
+    }
+
+    #Campus20-{{ section.id }} .campus20__wall-overlay {
+      background:
+        linear-gradient(
+          0deg,
+          rgba(11,11,15,.95) 0%,
+          rgba(11,11,15,.58) 68%,
+          rgba(11,11,15,.18) 100%
+        );
+    }
+
+    #Campus20-{{ section.id }} .campus20__faq details div {
+      padding-right: 20px;
+    }
+
+    #Campus20-{{ section.id }} .campus20__sticky {
+      position: fixed;
+      z-index: 999;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 8px 8px 16px;
+      background: var(--tt-black);
+      color: #fff;
+      border-radius: 999px;
+      box-shadow: 0 12px 45px rgba(0,0,0,.28);
+      transform: translateY(120%);
+      transition: transform .3s ease;
+    }
+
+    #Campus20-{{ section.id }} .campus20__sticky.is-visible {
+      transform: translateY(0);
+    }
+
+    #Campus20-{{ section.id }} .campus20__sticky > div {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    #Campus20-{{ section.id }} .campus20__sticky strong {
+      font-family: var(--tt-heading);
+      font-size: 13px;
+    }
+
+    #Campus20-{{ section.id }} .campus20__sticky span {
+      font-size: 10px;
+      opacity: .7;
+    }
+
+    #Campus20-{{ section.id }} .campus20__sticky > a {
+      min-height: 46px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: var(--tt-red);
+      color: #fff;
+      font-family: var(--tt-heading);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #Campus20-{{ section.id }} *,
+    #Campus20-{{ section.id }} *::before,
+    #Campus20-{{ section.id }} *::after {
+      scroll-behavior: auto !important;
+      transition-duration: .01ms !important;
+      animation-duration: .01ms !important;
+    }
+  }
+</style>
+
+
+<script>
+  (() => {
+    const section = document.querySelector('#Campus20-{{ section.id }}');
+
+    if (!section) return;
+
+
+    /* ---------------------------------
+       Ad hook → hero message matching
+    --------------------------------- */
+
+    const params = new URLSearchParams(window.location.search);
+
+    const incomingHook =
+      params.get('hook') ||
+      params.get('utm_content') ||
+      '';
+
+    const normalize = (value) => {
+      return decodeURIComponent(value || '')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    };
+
+    const hookKey = normalize(incomingHook);
+
+    if (hookKey) {
+      const records = section.querySelectorAll('[data-hook-record]');
+
+      for (const record of records) {
+        if (normalize(record.dataset.key) === hookKey) {
+          const eyebrow = section.querySelector('[data-hook-eyebrow]');
+          const headline = section.querySelector('[data-hook-headline]');
+          const subhead = section.querySelector('[data-hook-subhead]');
+
+          if (eyebrow && record.dataset.eyebrow) {
+            eyebrow.textContent = record.dataset.eyebrow;
+          }
+
+          if (headline && record.dataset.headline) {
+            headline.textContent = record.dataset.headline;
+          }
+
+          if (subhead && record.dataset.subhead) {
+            subhead.textContent = record.dataset.subhead;
+          }
+
+          section.dataset.activeHook = hookKey;
+
+          window.dispatchEvent(
+            new CustomEvent('threaditate:hook-applied', {
+              detail: {
+                hook: hookKey
+              }
+            })
+          );
+
+          break;
+        }
+      }
+    }
+
+
+    /* ---------------------------------
+       Discount code copy
+    --------------------------------- */
+
+    section.querySelectorAll('[data-copy-code]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const code = button.dataset.copyCode;
+
+        if (!code) return;
+
+        try {
+          await navigator.clipboard.writeText(code);
+
+          const label = button.querySelector('[data-copy-label]');
+
+          if (label) {
+            const original = label.textContent;
+            label.textContent = 'copied';
+
+            window.setTimeout(() => {
+              label.textContent = original;
+            }, 1800);
+          }
+        } catch (error) {
+          console.warn('Could not copy discount code.', error);
+        }
+      });
+    });
+
+
+    /* ---------------------------------
+       Mobile sticky CTA
+    --------------------------------- */
+
+    const sticky = section.querySelector('[data-campus-sticky]');
+    const hero = section.querySelector('.campus20__hero');
+
+    if (sticky && hero && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          sticky.classList.toggle('is-visible', !entry.isIntersecting);
+        },
+        {
+          threshold: 0.05
+        }
+      );
+
+      observer.observe(hero);
+    }
+
+
+    /* ---------------------------------
+       CTA tracking event
+       Easy hook for GA4 / GTM / Elevar
+    --------------------------------- */
+
+    section.querySelectorAll('[data-campus-cta]').forEach((cta) => {
+      cta.addEventListener('click', () => {
+        window.dispatchEvent(
+          new CustomEvent('threaditate:campus-cta', {
+            detail: {
+              hook: section.dataset.activeHook || 'default',
+              promo: '{{ promo_code | escape }}'
+            }
+          })
+        );
+      });
+    });
+
+  })();
+</script>
+
+
+{% schema %}
+{
+  "name": "Campus20 landing page",
+  "tag": "section",
+  "class": "threaditate-campus20",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "CTA product"
+    },
+    {
+      "type": "text",
+      "id": "discount_code",
+      "label": "Discount code",
+      "default": "CAMPUS20"
+    },
+    {
+      "type": "text",
+      "id": "discount_amount",
+      "label": "Discount display text",
+      "default": "20% off"
+    },
+    {
+      "type": "text",
+      "id": "announcement",
+      "label": "Announcement",
+      "default": "Campus offer: 20% off with code CAMPUS20"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA label",
+      "default": "Make yours"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_theme_chrome",
+      "label": "Hide store header and footer",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Default hero"
+    },
+    {
+      "type": "text",
+      "id": "hero_eyebrow",
+      "label": "Eyebrow",
+      "default": "A different kind of study break"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_headline",
+      "label": "Headline",
+      "default": "Turn a photo you love into something you made."
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subhead",
+      "label": "Subheadline",
+      "default": "Upload a favorite photo. Threaditate turns it into a voice-guided string art sequence you make by hand, line by line. No experience needed."
+    },
+    {
+      "type": "header",
+      "content": "Photography"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image"
+    },
+    {
+      "type": "image_picker",
+      "id": "process_image",
+      "label": "Process image"
+    },
+    {
+      "type": "image_picker",
+      "id": "gallery_image_1",
+      "label": "Gallery image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "gallery_image_2",
+      "label": "Gallery image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "gallery_image_3",
+      "label": "Gallery image 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "completion_image",
+      "label": "Completion image"
+    },
+    {
+      "type": "image_picker",
+      "id": "wall_image",
+      "label": "Wall / room image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hook",
+      "name": "Ad hook",
+      "settings": [
+        {
+          "type": "text",
+          "id": "key",
+          "label": "Hook key",
+          "info": "Used in ?hook= or utm_content. Example: study-break"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow"
+        },
+        {
+          "type": "textarea",
+          "id": "headline",
+          "label": "Headline"
+        },
+        {
+          "type": "textarea",
+          "id": "subhead",
+          "label": "Subheadline"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Campus20 landing page",
+      "blocks": [
+        {
+          "type": "hook",
+          "settings": {
+            "key": "study-break",
+            "eyebrow": "A different kind of study break",
+            "headline": "Turn a photo you love into something you made.",
+            "subhead": "Upload a favorite photo. Follow the voice-guided sequence. Leave with art you made by hand."
+          }
+        },
+        {
+          "type": "hook",
+          "settings": {
+            "key": "actually-finish",
+            "eyebrow": "Built to reach the last line",
+            "headline": "The craft you'll actually finish.",
+            "subhead": "Pause when you want. Pick up exactly where you left off. Finish with something worth putting on the wall."
+          }
+        },
+        {
+          "type": "hook",
+          "settings": {
+            "key": "camera-roll",
+            "eyebrow": "Your photo, your art",
+            "headline": "Your camera roll has the picture. Your hands make the art.",
+            "subhead": "Upload any meaningful photo and turn it into one-of-a-kind string art, guided line by line."
+          }
+        },
+        {
+          "type": "hook",
+          "settings": {
+            "key": "doomscroll",
+            "eyebrow": "Hands busy. Mind quiet.",
+            "headline": "Give your brain something else to do.",
+            "subhead": "Trade another scroll for a few quiet sessions of making. The app speaks the sequence while your hands find the rhythm."
+          }
+        },
+        {
+          "type": "hook",
+          "settings": {
+            "key": "make-the-wall-yours",
+            "eyebrow": "Handmade by you",
+            "headline": "Make the wall feel more like yours.",
+            "subhead": "Start with a photo that matters. Finish with something nobody else has."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
