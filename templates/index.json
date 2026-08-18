@@ -18,9 +18,9 @@
         "caption": "No skills to learn. Everything included. Free tote through August 21.",
         "primary_button_label": "Get my kit",
         "primary_button_link": "shopify://products/string-ring-custom-string-art-kit",
-        "primary_button_color": "#C43D2E",
-        "secondary_button_label": "See how it works",
-        "secondary_button_link": "shopify://pages/setup-how-to",
+        "primary_button_color": "#c43d2e",
+        "secondary_button_label": "",
+        "secondary_button_link": "",
         "image": "shopify://shop_images/IMG_8337.jpg",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
@@ -34,7 +34,7 @@
         "item-03": {
           "type": "text",
           "settings": {
-            "text": "3500 kits presold",
+            "text": "3500 kits sold",
             "link": ""
           }
         },
@@ -95,72 +95,13 @@
         "padding_bottom": 32
       }
     },
-    "before_after_home": {
-      "type": "before-after",
-      "blocks": {
-        "ba_home_pair": {
-          "type": "before_after",
-          "settings": {
-            "media_aspect_ratio": "square",
-            "image_before": "shopify://shop_images/aphrodite-half-shell.jpg",
-            "image_after": "shopify://shop_images/aphrodite-string.png",
-            "label_colors": "#ffffff",
-            "before_label": "Your photo",
-            "after_label": "Your string art",
-            "label_position": "top"
-          }
-        },
-        "ba_home_title": {
-          "type": "title",
-          "settings": {
-            "title": "From your camera roll to your wall",
-            "heading_tag": "h2",
-            "sm_size_multiplier": "sm-size--default",
-            "sm_margin_top": 4,
-            "size_multiplier": "size--default",
-            "margin_top": 4
-          }
-        },
-        "ba_home_text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Drag the slider: the photo you upload becomes string art, line by line — made by your own hands.</p>",
-            "sm_size_multiplier": "sm-size--default",
-            "sm_margin_top": 12,
-            "size_multiplier": "size--default",
-            "margin_top": 12
-          }
-        }
-      },
-      "block_order": [
-        "ba_home_pair",
-        "ba_home_title",
-        "ba_home_text"
-      ],
-      "name": "t:sections.before_after.name",
-      "settings": {
-        "color_scheme": "scheme-be8ef671-53c2-4895-89a6-144af711f198",
-        "media_position_desktop": "top",
-        "media_width": "narrow",
-        "content_width": "col-sm-max-5",
-        "desktop_alignment": "center",
-        "sm_full_width_buttons": false,
-        "md_padding_top": 40,
-        "md_padding_bottom": 40,
-        "media_position": "top",
-        "mobile_alignment": "center",
-        "full_width_buttons": false,
-        "padding_top": 24,
-        "padding_bottom": 24
-      }
-    },
     "video_YzVdz8": {
       "type": "video",
       "name": "t:sections.blocks.video.name",
       "settings": {
         "color_scheme": "",
         "video_url": "https://youtu.be/nx8gGJW0ay4?si=f9CEV4tbISfkAqwq",
-        "title": "How to Threaditate",
+        "title": "Watch This First!",
         "text": "",
         "align_content": "text-align-center",
         "position_content": "above",
@@ -253,13 +194,13 @@
             "author_role": "Age 24"
           }
         },
-        "testimonial_6A4tbr": {
+        "testimonial_J3XqcC": {
           "type": "testimonial",
           "settings": {
-            "quote_headline": "It was my favorite part of this week",
-            "quote_body": "I had so much fun with my kit. It just calmed me down after my stressful work days, and now I have this beautiful piece of art. Now I'm obsessed and I want something to look forward to after work again.",
-            "author_name": "Kendal J.",
-            "author_role": "Age 35"
+            "quote_headline": "I can finally just chill",
+            "quote_body": "It's amazing. I go into a deep sense of calm and relaxation. It feels like nothing's going on outside in the world or in my mind, and thoughts clear up as I loop. I want to give my mom one.",
+            "author_name": "Sean O.",
+            "author_role": "Age 8"
           }
         },
         "testimonial_nN4hjg": {
@@ -271,15 +212,6 @@
             "author_role": "Age 65"
           }
         },
-        "testimonial_J3XqcC": {
-          "type": "testimonial",
-          "settings": {
-            "quote_headline": "I can finally just chill",
-            "quote_body": "It's amazing. I go into a deep sense of calm and relaxation. It feels like nothing's going on outside in the world or in my mind, and thoughts clear up as I loop. I want to give my mom one.",
-            "author_name": "Sean O.",
-            "author_role": "Age 8"
-          }
-        },
         "testimonial_K4jDN8": {
           "type": "testimonial",
           "settings": {
@@ -288,14 +220,23 @@
             "author_name": "Grace A.",
             "author_role": "Age 14"
           }
+        },
+        "testimonial_6A4tbr": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "It was my favorite part of this week",
+            "quote_body": "I had so much fun with my kit. It just calmed me down after my stressful work days, and now I have this beautiful piece of art. Now I'm obsessed and I want something to look forward to after work again.",
+            "author_name": "Kendal J.",
+            "author_role": "Age 35"
+          }
         }
       },
       "block_order": [
         "testimonial_NQjQ3B",
-        "testimonial_6A4tbr",
-        "testimonial_nN4hjg",
         "testimonial_J3XqcC",
-        "testimonial_K4jDN8"
+        "testimonial_nN4hjg",
+        "testimonial_K4jDN8",
+        "testimonial_6A4tbr"
       ],
       "name": "Testimonials Slider",
       "settings": {
@@ -382,7 +323,7 @@
         "title_LPANbx": {
           "type": "title",
           "settings": {
-            "title": "Everything you need, in one box",
+            "title": "Everything you need to wow, in one box",
             "heading_tag": "h2",
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 0,
@@ -428,8 +369,8 @@
       "type": "cta-banner",
       "name": "CTA Banner",
       "settings": {
-        "heading": "Turn a memory into a meditation",
-        "subheading": "Upload it. Let the voice guide you, line by line. Walk away with something you love on your wall.",
+        "heading": "Turn a memory into a meditation, Turn  meditation into a masterpiece.",
+        "subheading": "Upload it. Let the app's voice guide you, line by line. Walk away with something you love on your wall.",
         "button_label": "Get my kit →",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
         "caption": "No experience needed. Everything included. Free tote through August 21.",
@@ -437,6 +378,65 @@
         "md_padding_bottom": 120,
         "padding_top": 80,
         "padding_bottom": 80
+      }
+    },
+    "before_after_home": {
+      "type": "before-after",
+      "blocks": {
+        "ba_home_pair": {
+          "type": "before_after",
+          "settings": {
+            "media_aspect_ratio": "square",
+            "image_before": "shopify://shop_images/aphrodite-half-shell.jpg",
+            "image_after": "shopify://shop_images/aphrodite-string.png",
+            "label_colors": "#ffffff",
+            "before_label": "Your photo",
+            "after_label": "Your string art",
+            "label_position": "top"
+          }
+        },
+        "ba_home_title": {
+          "type": "title",
+          "settings": {
+            "title": "From your camera roll to your wall",
+            "heading_tag": "h2",
+            "sm_size_multiplier": "sm-size--default",
+            "sm_margin_top": 4,
+            "size_multiplier": "size--default",
+            "margin_top": 4
+          }
+        },
+        "ba_home_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Drag the slider: the photo you upload becomes string art, line by line — made by your own hands.</p>",
+            "sm_size_multiplier": "sm-size--default",
+            "sm_margin_top": 12,
+            "size_multiplier": "size--default",
+            "margin_top": 12
+          }
+        }
+      },
+      "block_order": [
+        "ba_home_pair",
+        "ba_home_title",
+        "ba_home_text"
+      ],
+      "name": "t:sections.before_after.name",
+      "settings": {
+        "color_scheme": "scheme-be8ef671-53c2-4895-89a6-144af711f198",
+        "media_position_desktop": "top",
+        "media_width": "narrow",
+        "content_width": "col-sm-max-5",
+        "desktop_alignment": "center",
+        "sm_full_width_buttons": false,
+        "md_padding_top": 40,
+        "md_padding_bottom": 40,
+        "media_position": "top",
+        "mobile_alignment": "center",
+        "full_width_buttons": false,
+        "padding_top": 24,
+        "padding_bottom": 24
       }
     },
     "faq_with_image_pJeM3D": {
@@ -460,7 +460,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Be honest… is Threaditate hard?",
-            "answer": "<p>No. If you can count to 240, you can Threaditate. The app accounts for everything else.</p>"
+            "answer": "<p>No, it's easy. If you can count to 240, you can Threaditate. The app accounts for everything else.</p>"
           }
         },
         "faq_item_3eyjFJ": {
@@ -507,13 +507,13 @@
   "order": [
     "hero_dark_4Nid7U",
     "sliding_text",
-    "before_after_home",
     "video_YzVdz8",
     "features_grid_J9zhXh",
     "testimonials_slider_UKWpbV",
     "how_it_works_xQzgqf",
     "image_with_hotspots_aeUqWc",
     "cta_banner_knnhyi",
+    "before_after_home",
     "faq_with_image_pJeM3D",
     "1777486347bf7f30d3"
   ]

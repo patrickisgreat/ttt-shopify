@@ -10,14 +10,11 @@
 {
   "sections": {
     "main": {
-      "type": "campus-lander",
-      "settings": {
-        "product_handle": "string-ring-custom-string-art-kit",
-        "discount_code": "CAMPUS20",
-        "discount_percent": 20,
-        "promo_end": "August 28"
-      }
+      "type": "main-page",
+      "settings": {}
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
