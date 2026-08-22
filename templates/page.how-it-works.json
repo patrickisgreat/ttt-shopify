@@ -73,7 +73,7 @@
             "image": "shopify://shop_images/setp-1.jpg",
             "title": "Assemble & Mount Your Loom",
             "description": "Snap the interlocking pieces together to form your loom.",
-            "tip": "Mount to wall for stability or turn the box into an easel for ergonomics."
+            "tip": "We recommend mounting to a wall just below eye level for the best stability, ergonomics, and ease of use.  You may also or turn the box into an easel for a seated experience."
           }
         },
         "step_xQfen7": {
@@ -82,7 +82,7 @@
             "image": "shopify://shop_images/step-2.jpg",
             "title": "Prepare Your Workspace",
             "description": "Attach the paper number guide, aligning the tall pin at the top with pin 0, then attaching the rest.",
-            "tip": "Assemble the phone and spool holders. Feed thread through the spool holder's eye hole, then through the wide end of the wand, then insert foam plug and tie thread to loom anywehre."
+            "tip": "Assemble the phone and spool holders. Feed thread through the spool holder's eye hole, then through the wide end of the wand, then insert foam plug. Tie thread to loom anywhere with a Fisherman's Knot."
           }
         },
         "step_Xm4zYR": {
@@ -91,16 +91,16 @@
             "image": "shopify://shop_images/step-3.jpg",
             "title": "Upload Your Photo",
             "description": "Upload your image in the app to generate a custom threading guide.",
-            "tip": "Follow the photo guide and try lots of photos. Move sliders to optimize and choose line count. Every 500 lines takes about an hour. 3000-4000 lines look best."
+            "tip": "Select photos to try by following the Tips Guide. Zoom in! Now zoom in more! After uploading many photos, you will develop an eye for what images make for great string art. Optimize and choose line count/ detail level. Every 500 lines takes under an hour. 3500-4000 lines look best in our opinion."
           }
         },
         "step_AaEBpH": {
           "type": "step",
           "settings": {
             "image": "shopify://shop_images/step-4.jpg",
-            "title": "Begin",
+            "title": "Set your phone down and begin",
             "description": "The app speaks and shows the next step, then continues at your pace. It starts at 10-second intervals. Speed up as your skill improves, then slow it down a few clicks to switch from focus mode to relax mode.",
-            "tip": "Mistakes don't matter, they all disappear behind the other steps.  Line after line, this craft is forgiving.  No craftsmanship needed."
+            "tip": "Mistakes don't matter, they all disappear behind the other steps.  Line after line, this craft is forgiving.  No craftsmanship needed.  Stress is impossible."
           }
         }
       },
@@ -114,8 +114,8 @@
       "settings": {
         "color_scheme": "",
         "heading": "Getting Started",
-        "subheading": "Follow these steps in order, or jump ahead at your own pace.",
-        "number_color": "#1450C4",
+        "subheading": "Follow these steps in order for the smoothest experience.",
+        "number_color": "#1450c4",
         "button_label": "Start your piece",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
         "button_style": "primary",
@@ -187,67 +187,11 @@
       "settings": {
         "color_scheme": "",
         "heading": "Helpful Tips for a Smooth Experience",
-        "subheading": "You don't need to rush — this is meant to be enjoyed.",
+        "subheading": "You don't need to rush - this is meant to be enjoyed.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
         "padding_bottom": 48
-      }
-    },
-    "rich_text_care": {
-      "type": "rich-text",
-      "blocks": {
-        "subtitle_care": {
-          "type": "subtitle",
-          "settings": {
-            "subtitle": "Remember:",
-            "heading_tag": "h3",
-            "sm_size_multiplier": "sm-size--default",
-            "sm_margin_top": 0,
-            "size_multiplier": "size--default",
-            "margin_top": 0
-          }
-        },
-        "title_care": {
-          "type": "title",
-          "settings": {
-            "title": "Thread loosely, every step",
-            "heading_tag": "h2",
-            "sm_size_multiplier": "sm-size--default",
-            "sm_margin_top": 0,
-            "size_multiplier": "size--default",
-            "margin_top": 0
-          }
-        },
-        "text_care": {
-          "type": "text",
-          "settings": {
-            "text": "<p>IMPORTANT: As you loop each step, lay the thread loosely across, making sure not to pull. A gentle drape, not a tug. Tension adds up, and will cause warp, which has a cool effect.  A good rule is, if it can be plucked, it's too tight.  If unhappy with the first results, remove and repeat.  There is enough thread for multiple artworks.  <br/>This is a mindful activity. Slow down. Loosen up. Breathe. Smile.</p>",
-            "read_more": false,
-            "sm_size_multiplier": "sm-size--default",
-            "sm_margin_top": 0,
-            "size_multiplier": "size--default",
-            "margin_top": 0
-          }
-        }
-      },
-      "block_order": [
-        "subtitle_care",
-        "title_care",
-        "text_care"
-      ],
-      "name": "t:sections.rich-text.name",
-      "settings": {
-        "color_scheme": "",
-        "text_gradient_color": "",
-        "content_width": 60,
-        "desktop_content_alignment": "center",
-        "desktop_alignment": "sm-text-align-center",
-        "md_padding_top": 24,
-        "md_padding_bottom": 24,
-        "mobile_alignment": "text-align-center",
-        "padding_top": 16,
-        "padding_bottom": 16
       }
     },
     "faq_with_image_TKFwQq": {
@@ -271,7 +215,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How long does it take?",
-            "answer": "<p>Most pieces take about six hours, depending on the line count. The app saves your place after every line, so you can take breaks and go at your own pace.</p>"
+            "answer": "<p>Pieces take an average of six hours, it all depends on the line count. The app saves your place after every line, so you can take breaks and go at your own pace.</p>"
           }
         },
         "faq_item_FBchyJ": {
@@ -339,7 +283,6 @@
     "steps_with_images_WMKPeF",
     "video_AHgbbw",
     "tips_grid_zVTVpN",
-    "rich_text_care",
     "faq_with_image_TKFwQq",
     "cta_banner_learn",
     "cta_banner_HAWR4j"
