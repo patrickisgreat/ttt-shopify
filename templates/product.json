@@ -85,7 +85,8 @@
           "settings": {
             "custom_liquid": "<style>\n  .gwp-note{padding:14px;border:1px solid rgb(var(--brand-cobalt-blue-rgb) / 0.25);border-radius:12px;background:rgb(var(--brand-cobalt-blue-rgb) / 0.05);}\n  .gwp-note__frame{width:100%;height:220px;overflow:hidden;border-radius:8px;margin-bottom:12px;}\n  .gwp-note__media{width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block;}\n  .gwp-note__text{margin:0;font-size:14px;line-height:1.45;text-align:center;}\n</style>\n<div class=\"gwp-note\">\n  <div class=\"gwp-note__frame\">\n    <img class=\"gwp-note__media\"\n      src=\"{{ 'TOTE.png' | file_img_url: '900x' }}\"\n      width=\"900\" height=\"942\" loading=\"lazy\" decoding=\"async\"\n      alt=\"The free Threaditate tote — cobalt blue, with the Threaditate logo in white\">\n  </div>\n  <p class=\"gwp-note__text\">Through August 21, your kit arrives inside a free Threaditate tote—yours to keep.</p>\n</div>",
             "margin_top": 16
-          }
+          },
+          "disabled": true
         },
         "the-buy-buttons": {
           "type": "buy_buttons",
@@ -178,7 +179,7 @@
           "type": "collapsible_tab",
           "settings": {
             "title": "Shipping & Returns",
-            "content": "<p>Ships from Huntsville, AL within one business day.</p><p>30-day guarantee — if it's not for you, send it back in new condition. Pieces warped by over-tight threading can't be returned, so thread loosely — a drape, not a tug.</p>",
+            "content": "<p>Ships from Huntsville, AL within 24 business hours.</p><p>30-day guarantee - if it's not for you, send it back in new condition. </p>",
             "page": "",
             "open_as_drawer": false,
             "icon": "icon-caret__right",
