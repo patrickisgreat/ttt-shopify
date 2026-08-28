@@ -175,3 +175,10 @@
     margin-top: 52px;
   }
 }
+/* Trust anchor beneath the section CTA. */
+.how-it-works__caption {
+  margin: 12px 0 0;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  opacity: 0.8;
+}

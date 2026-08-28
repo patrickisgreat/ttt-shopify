@@ -115,8 +115,8 @@
           "type": "step",
           "settings": {
             "image": "shopify://shop_images/calming-image.jpg",
-            "title": "Calming & Hands-On",
-            "description": "It’s about slowing down, focusing, and enjoying the act of making."
+            "title": "For 45 Minutes, Nothing Else Gets In",
+            "description": "Your hands move. Your mind goes quiet. You come out the other side with something you made."
           }
         }
       },
@@ -137,7 +137,8 @@
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
-        "padding_bottom": 48
+        "padding_bottom": 48,
+        "caption": "Ships in 48 hours · 30-day guarantee · Everything included from $89"
       }
     },
     "cta_banner_4HbMwK": {
@@ -145,7 +146,7 @@
       "name": "CTA Banner",
       "settings": {
         "heading": "Create Your Threaditate",
-        "subheading": "Turn a meaningful photo into custom string art: guided, calming, and designed to be finished.",
+        "subheading": "Turn a meaningful photo into custom string art: guided, hands-on, and designed to be finished.",
         "button_label": "Start Your Threaditate →",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
         "caption": "No experience needed. Everything included.",
@@ -183,7 +184,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How long does it take to make?",
-            "answer": "<p>Most pieces take around 4–8 hours, depending on size and detail. Some people finish it in one sitting, others spread it out over a few nights.</p>"
+            "answer": "<p>Most pieces take six to eight hours, depending on the line count — every 500 lines runs under an hour, and 3,500–4,000 lines looks best. Some people finish in one sitting, others spread it over a few nights. The app saves your place either way.</p>"
           }
         },
         "faq_item_fF8WnA": {
@@ -214,11 +215,44 @@
         "padding_top": 48,
         "padding_bottom": 48
       }
+    },
+    "rich_text_proof": {
+      "type": "rich-text",
+      "blocks": {
+        "text_proof": {
+          "type": "text",
+          "settings": {
+            "text": "<p>“It's amazing. I go into a deep sense of calm and relaxation. It feels like nothing's going on outside in the world or in my mind, and thoughts clear up as I loop.” — Kendal, 35</p><p><strong>2,035 Kickstarter backers · 30-day guarantee · Ships in 48 hours</strong></p>",
+            "read_more": false,
+            "sm_size_multiplier": "sm-size--default",
+            "sm_margin_top": 0,
+            "size_multiplier": "size--default",
+            "margin_top": 0
+          }
+        }
+      },
+      "block_order": [
+        "text_proof"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "color_scheme": "alternative-2",
+        "text_gradient_color": "",
+        "content_width": 60,
+        "desktop_content_alignment": "center",
+        "desktop_alignment": "sm-text-align-center",
+        "md_padding_top": 32,
+        "md_padding_bottom": 32,
+        "mobile_alignment": "text-align-center",
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
     }
   },
   "order": [
     "main",
     "rich_text_nBt9an",
+    "rich_text_proof",
     "text_image_dark_twPNRB",
     "how_it_works_FzhhPQ",
     "cta_banner_4HbMwK",
