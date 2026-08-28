@@ -30,6 +30,7 @@
         </label>
 
         <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe-{{ section.id }}" aria-label="{{ 'accessibility.newsletter_subscribe_btn' | t }}">
+          <span class="newsletter-form__button-text">{{ 'newsletter.button_label' | t }}</span>
           {% render 'icon-caret', direction: 'right' %}
         </button>
       </div>
