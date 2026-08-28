@@ -32,7 +32,8 @@
         "announcement_uppercase": false,
         "autoplay_speed": 3,
         "sliding_behavior": "single"
-      }
+      },
+      "disabled": true
     },
     "header": {
       "type": "header",

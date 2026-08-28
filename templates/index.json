@@ -15,7 +15,7 @@
       "settings": {
         "heading": "Turn your photos into relaxing thread art",
         "subheading": "Threaditate is a personalized string art kit - upload a photo you love, then the app's voice guides you line by line, at your pace. No skills or experience needed.",
-        "caption": "6 hours of screen-free calm and creativity. Free tote through August 21. Take a break from thoughts and worries. You deserve it.",
+        "caption": "6 hours of screen-free calm and creativity. Take a break from thoughts and worries. You deserve it.",
         "primary_button_label": "Get my kit",
         "primary_button_link": "shopify://products/string-ring-custom-string-art-kit",
         "primary_button_color": "#c43d2e",
@@ -64,7 +64,8 @@
           "settings": {
             "text": "Free tote through August 21",
             "link": ""
-          }
+          },
+          "disabled": true
         }
       },
       "block_order": [
@@ -373,7 +374,7 @@
         "subheading": "Upload it. Let the app's voice guide you, line by line. Walk away with something you love on your wall.",
         "button_label": "Get my kit →",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
-        "caption": "No experience needed. Everything included. Free tote through August 21.",
+        "caption": "No experience needed. Everything included.",
         "md_padding_top": 120,
         "md_padding_bottom": 120,
         "padding_top": 80,
