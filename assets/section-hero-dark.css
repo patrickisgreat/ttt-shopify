@@ -175,3 +175,18 @@
   object-position: center;
   display: block;
 }
+/* Social proof line, sits between the subheading and the CTA buttons. */
+.hero-dark__proof {
+  margin: 16px 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  opacity: 0.85;
+}
+
+@media only screen and (max-width: 767px) {
+  .hero-dark__proof {
+    margin-top: 12px;
+    font-size: 0.875rem;
+  }
+}

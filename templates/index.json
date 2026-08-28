@@ -15,7 +15,7 @@
       "settings": {
         "heading": "Turn your photos into relaxing thread art",
         "subheading": "Threaditate is a personalized string art kit - upload a photo you love, then the app's voice guides you line by line, at your pace. No skills or experience needed.",
-        "caption": "6 hours of screen-free calm and creativity. Free tote through August 21. Take a break from thoughts and worries. You deserve it.",
+        "caption": "Threaditate Kit — $89 · Ships in 48 hours · Everything included",
         "primary_button_label": "Get my kit",
         "primary_button_link": "shopify://products/string-ring-custom-string-art-kit",
         "primary_button_color": "#c43d2e",
@@ -25,7 +25,8 @@
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 56,
-        "padding_bottom": 56
+        "padding_bottom": 56,
+        "proof_line": "2,035 Kickstarter backers · 3,000+ kits made"
       }
     },
     "sliding_text": {
@@ -34,7 +35,7 @@
         "item-03": {
           "type": "text",
           "settings": {
-            "text": "3500 kits sold",
+            "text": "3,000+ kits made",
             "link": ""
           }
         },
@@ -48,7 +49,7 @@
         "item-01": {
           "type": "text",
           "settings": {
-            "text": "Ships in 24 hours",
+            "text": "Ships in 48 hours",
             "link": ""
           }
         },
@@ -64,7 +65,8 @@
           "settings": {
             "text": "Free tote through August 21",
             "link": ""
-          }
+          },
+          "disabled": true
         }
       },
       "block_order": [
@@ -101,7 +103,7 @@
       "settings": {
         "color_scheme": "",
         "video_url": "https://youtu.be/nx8gGJW0ay4?si=f9CEV4tbISfkAqwq",
-        "title": "👇👇👇  WATCH THIS VIDEO FIRST!!!  👇👇👇",
+        "title": "See how a single photo becomes something you'll hang on your wall.",
         "text": "",
         "align_content": "text-align-center",
         "position_content": "above",
@@ -199,8 +201,8 @@
           "settings": {
             "quote_headline": "I can finally just chill",
             "quote_body": "It's amazing. I go into a deep sense of calm and relaxation. It feels like nothing's going on outside in the world or in my mind, and thoughts clear up as I loop. I want to give my mom one.",
-            "author_name": "Sean O.",
-            "author_role": "Age 8"
+            "author_name": "Kendal",
+            "author_role": "35"
           }
         },
         "testimonial_nN4hjg": {
@@ -208,8 +210,8 @@
           "settings": {
             "quote_headline": "The whole world around you seems to disappear",
             "quote_body": "This is really quite relaxing. I did a portrait of my grandfather, so now I can feel his presence whenever I look at the artwork. Makes a very unique and thoughtful gift for anyone at any age. I look forward to my next one.",
-            "author_name": "Roy P.",
-            "author_role": "Age 65"
+            "author_name": "Roy",
+            "author_role": "65"
           }
         },
         "testimonial_K4jDN8": {
@@ -217,8 +219,8 @@
           "settings": {
             "quote_headline": "It's really calming",
             "quote_body": "It is a lot of fun. It's really cool, it's not hard at all to do. I really liked it. You get to focus on one thing. Get it if you like art.",
-            "author_name": "Grace A.",
-            "author_role": "Age 14"
+            "author_name": "Sean",
+            "author_role": "8"
           }
         },
         "testimonial_6A4tbr": {
@@ -373,7 +375,7 @@
         "subheading": "Upload it. Let the app's voice guide you, line by line. Walk away with something you love on your wall.",
         "button_label": "Get my kit →",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
-        "caption": "No experience needed. Everything included. Free tote through August 21.",
+        "caption": "No experience needed. Everything included.",
         "md_padding_top": 120,
         "md_padding_bottom": 120,
         "padding_top": 80,
@@ -398,7 +400,7 @@
         "ba_home_title": {
           "type": "title",
           "settings": {
-            "title": "From your camera roll to your wall",
+            "title": "This is what it looks like when you finish something.",
             "heading_tag": "h2",
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 4,
@@ -409,7 +411,7 @@
         "ba_home_text": {
           "type": "text",
           "settings": {
-            "text": "<p>Drag the slider: the photo you upload becomes string art, line by line — made by your own hands.</p>",
+            "text": "<p>Drag the slider.</p><p>“This is really quite relaxing. I did a portrait of my grandfather, so now I can feel his presence whenever I look at the artwork. Makes a very unique and thoughtful gift for anyone at any age. I look forward to my next one.” — Roy, 65</p>",
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 12,
             "size_multiplier": "size--default",
@@ -507,9 +509,9 @@
   "order": [
     "hero_dark_4Nid7U",
     "sliding_text",
+    "testimonials_slider_UKWpbV",
     "video_YzVdz8",
     "features_grid_J9zhXh",
-    "testimonials_slider_UKWpbV",
     "how_it_works_xQzgqf",
     "image_with_hotspots_aeUqWc",
     "cta_banner_knnhyi",

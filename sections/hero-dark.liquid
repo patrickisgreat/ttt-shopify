@@ -32,6 +32,11 @@
           <p class="hero-dark__subheading">{{ section.settings.subheading }}</p>
         {%- endif -%}
 
+        {%- comment -%} Social proof sits above the CTA, where it can still earn the click. {%- endcomment -%}
+        {%- if section.settings.proof_line != blank -%}
+          <p class="hero-dark__proof">{{ section.settings.proof_line }}</p>
+        {%- endif -%}
+
         <div class="hero-dark__buttons">
           {%- if section.settings.primary_button_label != blank -%}
             
@@ -97,6 +102,12 @@
       "id": "subheading",
       "label": "Subheading",
       "default": "A calming, hands-on art kit that turns meaningful photos into custom string art — no experience needed."
+    },
+    {
+      "type": "text",
+      "id": "proof_line",
+      "label": "Proof line (above buttons)",
+      "info": "Social proof shown between the subheading and the buttons."
     },
     {
       "type": "text",
