@@ -66,6 +66,11 @@
       </div>
     {%- endif -%}
 
+    {%- comment -%} Trust anchor directly beneath the CTA. {%- endcomment -%}
+    {%- if section.settings.caption != blank -%}
+      <p class="how-it-works__caption text-align-center">{{ section.settings.caption }}</p>
+    {%- endif -%}
+
   </div>
 </div>
 
@@ -108,6 +113,12 @@
       "type": "url",
       "id": "button_link",
       "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption under button",
+      "info": "Small trust line shown directly beneath the CTA."
     },
     {
       "type": "select",
