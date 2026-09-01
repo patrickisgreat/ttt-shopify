@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "labor-day-landing": {
+      "type": "labor-day-landing",
+      "settings": {}
+    }
+  },
+  "order": [
+    "labor-day-landing"
+  ]
+}
