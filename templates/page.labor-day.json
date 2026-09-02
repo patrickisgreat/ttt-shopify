@@ -1,8 +1,81 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "labor-day-landing": {
       "type": "labor-day-landing",
-      "settings": {}
+      "blocks": {
+        "hook-one-to-give": {
+          "type": "hook",
+          "settings": {
+            "key": "one-to-give",
+            "eyebrow": "Labor Day weekend · Sep 2–7",
+            "headline": "One to make. One to give.",
+            "subhead": "Buy one kit, get a second at half price. Any photo for each. The gift they didn't see coming."
+          }
+        },
+        "hook-quiet-weekend": {
+          "type": "hook",
+          "settings": {
+            "key": "quiet-weekend",
+            "eyebrow": "Labor Day, but relaxing",
+            "headline": "Two kits. Two photos. One quiet weekend.",
+            "subhead": "Put the phone down and follow a voice, line by line, until a photo you love is hanging on the wall. Second kit half off through Sunday."
+          }
+        },
+        "hook-actually-finish": {
+          "type": "hook",
+          "settings": {
+            "key": "actually-finish",
+            "eyebrow": "Built to reach the last line",
+            "headline": "The hobby you'll actually finish. Now two for $133.50.",
+            "subhead": "Pause whenever. Pick up exactly where you left off. Finish with something worth hanging. Second kit 50% off this weekend."
+          }
+        },
+        "hook-instead-of-scrolling": {
+          "type": "hook",
+          "settings": {
+            "key": "instead-of-scrolling",
+            "eyebrow": "A long weekend, two looms",
+            "headline": "Spend the long weekend making something instead of scrolling.",
+            "subhead": "Your photo, made in thread. This weekend, make two: buy one kit, get the second at half price."
+          }
+        }
+      },
+      "block_order": [
+        "hook-one-to-give",
+        "hook-quiet-weekend",
+        "hook-actually-finish",
+        "hook-instead-of-scrolling"
+      ],
+      "settings": {
+        "product": "",
+        "discount_code": "LABORDAY",
+        "sale_end": "2026-09-07T23:59:59-07:00",
+        "announcement": "Labor Day weekend · Buy one kit, get a second 50% off",
+        "cta_label": "Get two kits",
+        "hide_theme_chrome": false,
+        "kit_price": "$89.00",
+        "second_kit_price": "$44.50",
+        "bundle_price": "$133.50",
+        "savings": "$44.50",
+        "hero_eyebrow": "Labor Day weekend · Sep 2–7",
+        "hero_headline": "One to make. One to give.",
+        "hero_subhead": "Buy one Threaditate kit, get a second at half price. Choose any photo for each. Turn a long weekend into two pieces of thread art, made by hand.",
+        "hero_image": "shopify://shop_images/labor-day-hero-1.png",
+        "step_ratio": "1 / 1",
+        "step1_image": "shopify://shop_images/Screenshot_2026-09-01_at_4.19.51_PM-EDIT.jpg",
+        "step2_image": "shopify://shop_images/follow-the-voice.png",
+        "step3_image": "shopify://shop_images/threaditate-laborday-step3-hang-wall-mounted.png",
+        "product_image": "shopify://shop_images/kit-image-1.png"
+      }
     }
   },
   "order": [
