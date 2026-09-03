@@ -14,8 +14,9 @@
       "name": "Hero Dark",
       "settings": {
         "heading": "Turn your photos into relaxing thread art",
-        "subheading": "Threaditate is a personalized string art kit - upload a photo you love, then the app's voice guides you line by line, at your pace. No skills or experience needed.",
-        "caption": "Threaditate Kit — $89 · Ships in 48 hours · Everything included",
+        "subheading": "Threaditate is a personalized string art kit - upload a photo you love, then the app's voice guides you line by line, at your pace. No skills or experience needed. Enough thread for multiple calming sessions.  ⭐⭐⭐⭐½.  4.6/5 Star Reviews. 3500 kits sold.",
+        "proof_line": "2,035 Kickstarter backers · 3,500+ kits made",
+        "caption": "$89 🖼️ Ships in 24 hours 👩‍🎨    Everything included 🧵 5-7 hours of calm",
         "primary_button_label": "Get my kit",
         "primary_button_link": "shopify://products/string-ring-custom-string-art-kit",
         "primary_button_color": "#c43d2e",
@@ -25,8 +26,7 @@
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 56,
-        "padding_bottom": 56,
-        "proof_line": "2,035 Kickstarter backers · 3,000+ kits made"
+        "padding_bottom": 56
       }
     },
     "sliding_text": {
@@ -62,11 +62,11 @@
         },
         "item-gwp-tote": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "Free tote through August 21",
             "link": ""
-          },
-          "disabled": true
+          }
         }
       },
       "block_order": [
@@ -103,7 +103,7 @@
       "settings": {
         "color_scheme": "",
         "video_url": "https://youtu.be/nx8gGJW0ay4?si=f9CEV4tbISfkAqwq",
-        "title": "See how a single photo becomes something you'll hang on your wall.",
+        "title": "Watch how to make string art from your photos 🎨",
         "text": "",
         "align_content": "text-align-center",
         "position_content": "above",
@@ -111,6 +111,73 @@
         "md_padding_bottom": 48,
         "padding_top": 32,
         "padding_bottom": 32
+      }
+    },
+    "testimonials_slider_UKWpbV": {
+      "type": "testimonials-slider",
+      "blocks": {
+        "testimonial_NQjQ3B": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "I would 100% recommend this",
+            "quote_body": "I had a great time creating this portrait. It's a different type of meditative art that I can actually see as a hobby.",
+            "author_name": "Jaiden T.",
+            "author_role": "Age 24"
+          }
+        },
+        "testimonial_J3XqcC": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "I can finally just chill",
+            "quote_body": "It's amazing. I go into a deep sense of calm and relaxation. It feels like nothing's going on outside in the world or in my mind, and thoughts clear up as I loop. I want to give my mom one.",
+            "author_name": "Sean O.",
+            "author_role": "35"
+          }
+        },
+        "testimonial_nN4hjg": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "The whole world around you seems to disappear",
+            "quote_body": "This is really quite relaxing. I did a portrait of my grandfather, so now I can feel his presence whenever I look at the artwork. Makes a very unique and thoughtful gift for anyone at any age. I look forward to my next one.",
+            "author_name": "Roy P.",
+            "author_role": "65"
+          }
+        },
+        "testimonial_K4jDN8": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "It's really calming",
+            "quote_body": "It is a lot of fun. It's really cool, it's not hard at all to do. I really liked it. You get to focus on one thing. Get it if you like art.",
+            "author_name": "Grace J.",
+            "author_role": "14"
+          }
+        },
+        "testimonial_6A4tbr": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "It was my favorite part of this week",
+            "quote_body": "I had so much fun with my kit. It just calmed me down after my stressful work days, and now I have this beautiful piece of art. Now I'm obsessed and I want something to look forward to after work again.",
+            "author_name": "Kendal J.",
+            "author_role": "Age 35"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_NQjQ3B",
+        "testimonial_J3XqcC",
+        "testimonial_nN4hjg",
+        "testimonial_K4jDN8",
+        "testimonial_6A4tbr"
+      ],
+      "name": "Testimonials Slider",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Made by people like you",
+        "subheading": "Five makers, ages 8 to 65, on what it feels like to thread a piece.",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
     "features_grid_J9zhXh": {
@@ -184,73 +251,6 @@
         "padding_bottom": 48
       }
     },
-    "testimonials_slider_UKWpbV": {
-      "type": "testimonials-slider",
-      "blocks": {
-        "testimonial_NQjQ3B": {
-          "type": "testimonial",
-          "settings": {
-            "quote_headline": "I would 100% recommend this",
-            "quote_body": "I had a great time creating this portrait. It's a different type of meditative art that I can actually see as a hobby.",
-            "author_name": "Jaiden T.",
-            "author_role": "Age 24"
-          }
-        },
-        "testimonial_J3XqcC": {
-          "type": "testimonial",
-          "settings": {
-            "quote_headline": "I can finally just chill",
-            "quote_body": "It's amazing. I go into a deep sense of calm and relaxation. It feels like nothing's going on outside in the world or in my mind, and thoughts clear up as I loop. I want to give my mom one.",
-            "author_name": "Kendal",
-            "author_role": "35"
-          }
-        },
-        "testimonial_nN4hjg": {
-          "type": "testimonial",
-          "settings": {
-            "quote_headline": "The whole world around you seems to disappear",
-            "quote_body": "This is really quite relaxing. I did a portrait of my grandfather, so now I can feel his presence whenever I look at the artwork. Makes a very unique and thoughtful gift for anyone at any age. I look forward to my next one.",
-            "author_name": "Roy",
-            "author_role": "65"
-          }
-        },
-        "testimonial_K4jDN8": {
-          "type": "testimonial",
-          "settings": {
-            "quote_headline": "It's really calming",
-            "quote_body": "It is a lot of fun. It's really cool, it's not hard at all to do. I really liked it. You get to focus on one thing. Get it if you like art.",
-            "author_name": "Sean",
-            "author_role": "8"
-          }
-        },
-        "testimonial_6A4tbr": {
-          "type": "testimonial",
-          "settings": {
-            "quote_headline": "It was my favorite part of this week",
-            "quote_body": "I had so much fun with my kit. It just calmed me down after my stressful work days, and now I have this beautiful piece of art. Now I'm obsessed and I want something to look forward to after work again.",
-            "author_name": "Kendal J.",
-            "author_role": "Age 35"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_NQjQ3B",
-        "testimonial_J3XqcC",
-        "testimonial_nN4hjg",
-        "testimonial_K4jDN8",
-        "testimonial_6A4tbr"
-      ],
-      "name": "Testimonials Slider",
-      "settings": {
-        "color_scheme": "",
-        "heading": "Made by people like you",
-        "subheading": "Five makers, ages 8 to 65, on what it feels like to thread a piece.",
-        "md_padding_top": 80,
-        "md_padding_bottom": 80,
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
-    },
     "how_it_works_xQzgqf": {
       "type": "how-it-works",
       "blocks": {
@@ -300,6 +300,7 @@
         "subheading": "",
         "button_label": "Get my kit →",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
+        "caption": "",
         "button_style": "primary",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
@@ -509,8 +510,8 @@
   "order": [
     "hero_dark_4Nid7U",
     "sliding_text",
-    "testimonials_slider_UKWpbV",
     "video_YzVdz8",
+    "testimonials_slider_UKWpbV",
     "features_grid_J9zhXh",
     "how_it_works_xQzgqf",
     "image_with_hotspots_aeUqWc",
