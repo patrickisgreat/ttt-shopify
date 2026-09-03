@@ -92,6 +92,9 @@
   </div>
 </div>
 
+{%- assign faq_items = section.blocks | where: 'type', 'faq_item' -%}
+{%- render 'schema-faq', items: faq_items, context: 'faq_item' -%}
+
 <script>
   (function() {
     const accordion = document.getElementById('faq-accordion-{{ section.id }}');

@@ -240,30 +240,40 @@
   endif
 -%}
 
-{% capture same_as_json_string %}
-  {{- settings.social_twitter_link | json | append: ',' -}}
-  {{- settings.social_facebook_link | json | append: ',' -}}
-  {{- settings.social_pinterest_link | json | append: ',' -}}
-  {{- settings.social_instagram_link | json | append: ',' -}}
-  {{- settings.social_linkedin_link | json | append: ',' -}}
-  {{- settings.social_tiktok_link | json | append: ',' -}}
-  {{- settings.social_tumblr_link | json | append: ',' -}}
-  {{- settings.social_untappd_link | json | append: ',' -}}
-  {{- settings.social_snapchat_link | json | append: ',' -}}
-  {{- settings.social_youtube_link | json | append: ',' -}}
-  {{- settings.social_vimeo_link | json -}}
-{% endcapture %}
+{%- liquid
+  comment
+    Only non-blank profiles go into sameAs — an empty entry makes the whole
+    Organization block invalid to Google and to answer engines reading it.
+  endcomment
+  assign social_link_string = ''
+  assign social_settings = settings.social_twitter_link | append: '|' | append: settings.social_facebook_link | append: '|' | append: settings.social_pinterest_link | append: '|' | append: settings.social_instagram_link | append: '|' | append: settings.social_linkedin_link | append: '|' | append: settings.social_tiktok_link | append: '|' | append: settings.social_tumblr_link | append: '|' | append: settings.social_untappd_link | append: '|' | append: settings.social_snapchat_link | append: '|' | append: settings.social_youtube_link | append: '|' | append: settings.social_vimeo_link | split: '|'
+
+  for social_link in social_settings
+    assign social_link = social_link | strip
+    if social_link == blank
+      continue
+    endif
+    if social_link_string != blank
+      assign social_link_string = social_link_string | append: '|'
+    endif
+    assign social_link_string = social_link_string | append: social_link
+  endfor
+
+  assign social_links = social_link_string | split: '|'
+-%}
 
 <script type="application/ld+json">
   {
-    "@context": "http://schema.org",
+    "@context": "https://schema.org",
     "@type": "Organization",
     "name": {{ shop.name | json }},
     {% if logo_image -%}
       "logo": {{ logo_image | image_url: width: 500 | prepend: "https:" | json }},
     {% endif -%}
-    "sameAs": [{{ same_as_json_string | remove: '"",' | strip }}],
-    "url": {{ request.origin | append: page.url | json }}
+    {% if social_links.size > 0 -%}
+      "sameAs": [{% for social_link in social_links %}{{ social_link | json }}{% unless forloop.last %},{% endunless %}{% endfor %}],
+    {% endif -%}
+    "url": {{ request.origin | json }}
   }
 </script>
 
@@ -271,7 +281,7 @@
   {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
   <script type="application/ld+json">
     {
-      "@context": "http://schema.org",
+      "@context": "https://schema.org",
       "@type": "WebSite",
       "name": {{ shop.name | json }},
       "potentialAction": {
@@ -279,7 +289,7 @@
         "target": {{ potential_action_target | json }},
         "query-input": "required name=search_term_string"
       },
-      "url": {{ request.origin | append: page.url | json }}
+      "url": {{ request.origin | json }}
     }
   </script>
 {%- endif -%}
