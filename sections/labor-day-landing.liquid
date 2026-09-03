@@ -1,1164 +1,2297 @@
 {% comment %}
-  Threaditate — Labor Day Weekend Sale Landing Page (v2)
+  Threaditate — LABOR DAY Landing Page
   /pages/labor-day
-  September 2–7, 2026 | BOGO 50% off | Code: LABORDAY
+  September 2–7, 2026 · Buy one kit, get a second 50% off · Code: LABORDAY
 
-  Drop this file into your theme's sections/ folder.
-  Pair with templates/page.labor-day.json.
-  All images are editable via the theme editor (Customize).
+  Built on the same bones as campus2-lander:
+  - ID-scoped CSS (no !important, no fights with Bubbly)
+  - Theme font variables, so it matches the rest of the store
+  - Ad hook → hero message matching via ?hook= or ?utm_content=
+  - Copy-to-clipboard code, mobile sticky CTA, CTA tracking events
+
+  URL examples:
+  /pages/labor-day?hook=one-to-give
+  /pages/labor-day?hook=quiet-weekend
+  /pages/labor-day?utm_content=actually-finish
+
+  Create LABORDAY in Shopify Admin > Discounts (BOGO 50% off second kit).
 {% endcomment %}
 
-{{ 'section-labor-day.css' | asset_url | stylesheet_tag }}
-
-<style>
-  /* ========================================================
-     LABOR DAY LANDING PAGE v2 — Visual Redesign
-     Threaditate / Heartistry LLC
-     Dark hero, vermillion CTAs, full brand palette
-     ======================================================== */
-
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap');
-
-  :root {
-    --thd-cobalt: #1450C4;
-    --thd-violet: #3D3DB0;
-    --thd-vermillion: #C43D2E;
-    --thd-black: #0B0B0F;
-    --thd-ivory: #F4F2ED;
-    --thd-cobalt-light: #E8EEF9;
-    --thd-warm-gray: #D4D0CA;
-    --thd-violet-light: #EEEDF8;
-    --thd-vermillion-light: #FCEEED;
-    --thd-font-heading: 'Space Grotesk', system-ui, sans-serif;
-    --thd-font-body: 'DM Sans', system-ui, sans-serif;
-  }
-
-  .ld-page {
-    font-family: var(--thd-font-body);
-    color: var(--thd-black);
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  .ld-page *,
-  .ld-page *::before,
-  .ld-page *::after {
-    box-sizing: border-box;
-  }
-
-  .ld-page h1,
-  .ld-page h2,
-  .ld-page h3,
-  .ld-page h4 {
-    font-family: var(--thd-font-heading);
-    font-weight: 600;
-    line-height: 1.15;
-    margin: 0;
-  }
-
-  .ld-page p {
-    margin: 0;
-  }
-
-  .ld-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  /* ---- CTA Buttons ---- */
-
-  .ld-btn {
-    display: inline-block;
-    font-family: var(--thd-font-heading);
-    font-weight: 600;
-    font-size: 16px;
-    letter-spacing: 0.01em;
-    color: #fff;
-    background: var(--thd-vermillion);
-    border: none;
-    border-radius: 6px;
-    padding: 16px 36px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 8px rgba(196, 61, 46, 0.25);
-  }
-
-  .ld-btn:hover {
-    background: #A83325;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(196, 61, 46, 0.3);
-  }
-
-  .ld-btn--secondary {
-    background: var(--thd-cobalt);
-    box-shadow: 0 2px 8px rgba(20, 80, 196, 0.2);
-  }
-
-  .ld-btn--secondary:hover {
-    background: var(--thd-violet);
-    box-shadow: 0 4px 14px rgba(61, 61, 176, 0.25);
-  }
-
-  .ld-btn--violet {
-    background: var(--thd-violet);
-    box-shadow: 0 2px 8px rgba(61, 61, 176, 0.2);
-  }
-
-  .ld-btn--violet:hover {
-    background: #2E2E8F;
-  }
-
-  /* ---- Image placeholders ---- */
-
-  .ld-placeholder {
-    background: linear-gradient(135deg, var(--thd-cobalt-light) 0%, var(--thd-violet-light) 100%);
-    border: 2px dashed var(--thd-warm-gray);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #6B7280;
-    font-size: 13px;
-    font-family: var(--thd-font-body);
-    text-align: center;
-    padding: 20px;
-  }
-
-
-  /* ============================================================
-     SECTION 1: HERO — Dark gradient (black → violet)
-     ============================================================ */
-
-  .ld-hero {
-    background: linear-gradient(165deg, var(--thd-black) 0%, #161640 55%, var(--thd-violet) 100%);
-    padding: 96px 0 88px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* subtle thread-line texture */
-  .ld-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 59px,
-        rgba(255,255,255,0.03) 59px,
-        rgba(255,255,255,0.03) 60px
-      );
-    pointer-events: none;
-  }
-
-  .ld-hero__inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-  }
-
-  .ld-hero__badge {
-    display: inline-block;
-    font-family: var(--thd-font-heading);
-    font-weight: 600;
-    font-size: 13px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #fff;
-    background: var(--thd-vermillion);
-    border-radius: 100px;
-    padding: 7px 18px;
-    margin-bottom: 24px;
-  }
-
-  .ld-hero__headline {
-    font-size: clamp(38px, 5.5vw, 60px);
-    color: #fff;
-    margin-bottom: 20px;
-    letter-spacing: -0.01em;
-  }
-
-  .ld-hero__headline em {
-    font-style: normal;
-    color: var(--thd-ivory);
-    opacity: 0.7;
-  }
-
-  .ld-hero__subhead {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.75);
-    max-width: 460px;
-    margin-bottom: 16px;
-    line-height: 1.65;
-  }
-
-  .ld-hero__offer {
-    font-family: var(--thd-font-heading);
-    font-weight: 600;
-    font-size: 16px;
-    color: #FBBF24;
-    margin-bottom: 36px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .ld-hero__offer-line {
-    width: 32px;
-    height: 2px;
-    background: rgba(251, 191, 36, 0.4);
-    border-radius: 1px;
-  }
-
-  .ld-hero__image {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .ld-hero__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-
-  /* ============================================================
-     SECTION 2: SOCIAL PROOF BAR — Ivory background
-     ============================================================ */
-
-  .ld-proof-bar {
-    background: var(--thd-ivory);
-    color: var(--thd-black);
-    padding: 24px 0;
-    border-bottom: 1px solid var(--thd-warm-gray);
-  }
-
-  .ld-proof-bar__inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 36px;
-    flex-wrap: wrap;
-  }
-
-  .ld-proof-bar__stat {
-    font-family: var(--thd-font-heading);
-    font-weight: 600;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    white-space: nowrap;
-  }
-
-  .ld-proof-bar__stat svg {
-    flex-shrink: 0;
-  }
-
-  .ld-proof-bar__divider {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: var(--thd-warm-gray);
-  }
-
-  .ld-proof-bar__quote {
-    font-family: var(--thd-font-body);
-    font-style: italic;
-    font-size: 15px;
-    color: #6B7280;
-  }
-
-
-  /* ============================================================
-     SECTION 3: SPLIT CARDS — Differentiated backgrounds
-     ============================================================ */
-
-  .ld-split {
-    padding: 88px 0;
-    background: #fff;
-  }
-
-  .ld-split__heading {
-    text-align: center;
-    font-size: clamp(28px, 4vw, 42px);
-    color: var(--thd-black);
-    margin-bottom: 12px;
-  }
-
-  .ld-split__subtext {
-    text-align: center;
-    font-size: 17px;
-    color: #6B7280;
-    max-width: 520px;
-    margin: 0 auto 52px;
-  }
-
-  .ld-split__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-  }
-
-  .ld-split__card {
-    border-radius: 20px;
-    padding: 44px 36px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .ld-split__card--make {
-    background: linear-gradient(170deg, var(--thd-violet-light) 0%, #F8F7FF 100%);
-    border: 1px solid rgba(61, 61, 176, 0.1);
-  }
-
-  .ld-split__card--give {
-    background: linear-gradient(170deg, var(--thd-vermillion-light) 0%, #FFF9F8 100%);
-    border: 1px solid rgba(196, 61, 46, 0.08);
-  }
-
-  .ld-split__icon {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto 24px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .ld-split__card--make .ld-split__icon {
-    background: rgba(61, 61, 176, 0.1);
-    color: var(--thd-violet);
-  }
-
-  .ld-split__card--give .ld-split__icon {
-    background: rgba(196, 61, 46, 0.1);
-    color: var(--thd-vermillion);
-  }
-
-  .ld-split__card-title {
-    font-size: 24px;
-    color: var(--thd-black);
-    margin-bottom: 12px;
-  }
-
-  .ld-split__card-text {
-    font-size: 16px;
-    color: #4B5563;
-    margin-bottom: 32px;
-    line-height: 1.65;
-    max-width: 340px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .ld-split__card--make .ld-btn {
-    background: var(--thd-violet);
-    box-shadow: 0 2px 8px rgba(61, 61, 176, 0.2);
-  }
-
-  .ld-split__card--make .ld-btn:hover {
-    background: #2E2E8F;
-  }
-
-
-  /* ============================================================
-     SECTION 4: HOW IT WORKS — Dark background
-     ============================================================ */
-
-  .ld-how {
-    padding: 88px 0;
-    background: var(--thd-black);
-    color: #fff;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .ld-how::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse at 20% 50%, rgba(61, 61, 176, 0.15) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 50%, rgba(20, 80, 196, 0.1) 0%, transparent 60%);
-    pointer-events: none;
-  }
-
-  .ld-how__heading {
-    text-align: center;
-    font-size: clamp(28px, 4vw, 42px);
-    margin-bottom: 60px;
-    position: relative;
-  }
-
-  .ld-how__steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    max-width: 960px;
-    margin: 0 auto;
-    position: relative;
-  }
-
-  .ld-how__step {
-    text-align: center;
-    position: relative;
-  }
-
-  .ld-how__step-num {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--thd-vermillion);
-    color: #fff;
-    font-family: var(--thd-font-heading);
-    font-weight: 700;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    box-shadow: 0 4px 16px rgba(196, 61, 46, 0.35);
-  }
-
-  .ld-how__step-image {
-    width: 100%;
-    aspect-ratio: 1;
-    max-width: 200px;
-    margin: 0 auto 24px;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .ld-how__step-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .ld-how__step-title {
-    font-size: 20px;
-    margin-bottom: 8px;
-  }
-
-  .ld-how__step-text {
-    font-size: 15px;
-    color: rgba(255, 255, 255, 0.6);
-    max-width: 260px;
-    margin: 0 auto;
-  }
-
-  /* connector dots between steps */
-  .ld-how__step:not(:last-child)::after {
-    content: '\b7 \b7 \b7';
-    position: absolute;
-    top: 22px;
-    right: -18px;
-    font-size: 16px;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.2);
-  }
-
-
-  /* ============================================================
-     SECTION 5: PRODUCT / WHAT'S IN THE BOX
-     ============================================================ */
-
-  .ld-product {
-    padding: 88px 0;
-    background: #fff;
-  }
-
-  .ld-product__inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-    align-items: center;
-  }
-
-  .ld-product__image-wrap {
-    position: relative;
-  }
-
-  .ld-product__image-wrap::before {
-    content: '';
-    position: absolute;
-    inset: 12px -12px -12px 12px;
-    background: var(--thd-cobalt-light);
-    border-radius: 16px;
-    z-index: 0;
-  }
-
-  .ld-product__image {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    aspect-ratio: 1;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid #E5E7EB;
-  }
-
-  .ld-product__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .ld-product__heading {
-    font-size: clamp(26px, 3.5vw, 38px);
-    color: var(--thd-black);
-    margin-bottom: 20px;
-  }
-
-  .ld-product__text {
-    font-size: 16px;
-    color: #4B5563;
-    margin-bottom: 28px;
-    line-height: 1.7;
-  }
-
-  .ld-product__list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 36px 0;
-  }
-
-  .ld-product__list li {
-    font-size: 16px;
-    color: var(--thd-black);
-    padding: 11px 0;
-    border-bottom: 1px solid #F3F4F6;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .ld-product__list li:last-child {
-    border-bottom: none;
-  }
-
-  .ld-check-icon {
-    flex-shrink: 0;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: var(--thd-cobalt-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-
-  /* ============================================================
-     SECTION 6: BACKER TESTIMONIALS — Colored borders + stars
-     ============================================================ */
-
-  .ld-testimonials {
-    padding: 88px 0;
-    background: linear-gradient(175deg, var(--thd-ivory) 0%, #EBE8E2 100%);
-  }
-
-  .ld-testimonials__heading {
-    text-align: center;
-    font-size: clamp(28px, 4vw, 42px);
-    color: var(--thd-black);
-    margin-bottom: 48px;
-  }
-
-  .ld-testimonials__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-
-  .ld-tcard {
-    background: #fff;
-    border-radius: 16px;
-    padding: 32px 28px;
-    border-left: 4px solid transparent;
-    transition: transform 0.2s ease;
-  }
-
-  .ld-tcard:hover {
-    transform: translateY(-3px);
-  }
-
-  .ld-tcard:nth-child(1) { border-left-color: var(--thd-cobalt); }
-  .ld-tcard:nth-child(2) { border-left-color: var(--thd-violet); }
-  .ld-tcard:nth-child(3) { border-left-color: var(--thd-vermillion); }
-
-  .ld-tcard__stars {
-    display: flex;
-    gap: 2px;
-    margin-bottom: 16px;
-  }
-
-  .ld-tcard__text {
-    font-size: 16px;
-    color: #374151;
-    line-height: 1.65;
-    margin-bottom: 20px;
-  }
-
-  .ld-tcard__author {
-    font-family: var(--thd-font-heading);
-    font-weight: 600;
-    font-size: 14px;
-    color: var(--thd-black);
-  }
-
-  .ld-tcard__role {
-    font-size: 13px;
-    color: #9CA3AF;
-    margin-top: 2px;
-  }
-
-  .ld-testimonials__cta {
-    text-align: center;
-    margin-top: 52px;
-  }
-
-
-  /* ============================================================
-     SECTION 7: STICKY CTA BAR — Dark
-     ============================================================ */
-
-  .ld-sticky-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--thd-black);
-    padding: 14px 0;
-    z-index: 999;
-    transform: translateY(100%);
-    transition: transform 0.35s ease;
-    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.2);
-  }
-
-  .ld-sticky-bar.is-visible {
-    transform: translateY(0);
-  }
-
-  .ld-sticky-bar__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-  }
-
-  .ld-sticky-bar__text {
-    font-family: var(--thd-font-heading);
-    font-weight: 600;
-    font-size: 15px;
-    color: #fff;
-  }
-
-  .ld-sticky-bar__offer {
-    font-size: 14px;
-    color: rgba(255,255,255,0.5);
-    font-weight: 400;
-  }
-
-  .ld-sticky-bar .ld-btn {
-    padding: 12px 28px;
-    font-size: 14px;
-  }
-
-
-  /* ============================================================
-     RESPONSIVE
-     ============================================================ */
-
-  @media (max-width: 768px) {
-    .ld-hero {
-      padding: 56px 0 48px;
-    }
-
-    .ld-hero__inner {
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-
-    .ld-hero__image {
-      order: -1;
-      aspect-ratio: 16 / 9;
-    }
-
-    .ld-split__grid {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    .ld-split__card {
-      padding: 32px 24px;
-    }
-
-    .ld-how__steps {
-      grid-template-columns: 1fr;
-      gap: 36px;
-      max-width: 320px;
-    }
-
-    .ld-how__step:not(:last-child)::after {
-      display: none;
-    }
-
-    .ld-product__inner {
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-
-    .ld-product__image-wrap {
-      order: -1;
-    }
-
-    .ld-product__image {
-      aspect-ratio: 4 / 3;
-    }
-
-    .ld-testimonials__grid {
-      grid-template-columns: 1fr;
-    }
-
-    .ld-sticky-bar__inner {
-      flex-direction: column;
-      text-align: center;
-      gap: 10px;
-    }
-
-    .ld-proof-bar__inner {
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .ld-proof-bar__divider {
-      display: none;
-    }
-
-    .ld-split, .ld-how, .ld-product, .ld-testimonials {
-      padding: 60px 0;
-    }
-  }
-</style>
-
-{%- assign cta_link = section.settings.cta_url | default: routes.all_products_collection_url -%}
-
-<div class="ld-page">
-
-  <!-- ====================================
-       SECTION 1: HERO — Dark gradient
-       ==================================== -->
-  <section class="ld-hero">
-    <div class="ld-container">
-      <div class="ld-hero__inner">
-        <div class="ld-hero__content">
-          <span class="ld-hero__badge">Labor Day sale &middot; Sep 2 &ndash; 7</span>
-          <h1 class="ld-hero__headline">One to make.<br><em>One to give.</em></h1>
-          <p class="ld-hero__subhead">
-            Buy one Threaditate kit, get a second at half price.
-            Choose any photo for each.
-          </p>
-          <p class="ld-hero__offer">
-            <span class="ld-hero__offer-line"></span>
-            Two kits for $133.50 &middot; save $44.50
-          </p>
-          <a href="{{ cta_link }}" class="ld-btn">Make yours</a>
-        </div>
-        <div class="ld-hero__image">
-          {% if section.settings.hero_image != blank %}
-            {{ section.settings.hero_image | image_url: width: 1200 | image_tag:
-              loading: 'eager',
-              alt: 'Two Threaditate kits — one to make, one to give'
-            }}
-          {% else %}
-            <div class="ld-placeholder" style="width:100%;height:100%;background:linear-gradient(135deg, rgba(20,80,196,0.15), rgba(61,61,176,0.2));border-color:rgba(255,255,255,0.15);">
-              Hero image<br>1200 &times; 900px<br>Two people threading or finished piece next to photo
-            </div>
+{% liquid
+  assign promo_code = section.settings.discount_code | strip
+
+  assign default_kit = all_products['string-ring-custom-string-art-kit']
+
+  if section.settings.product != blank
+    assign cta_path = section.settings.product.url
+  elsif default_kit != blank
+    assign cta_path = default_kit.url
+  else
+    assign cta_path = routes.all_products_collection_url
+  endif
+
+  comment
+    Where the buttons go.
+    - checkout: two kits in the cart, code applied, straight to checkout
+    - cart:     two kits in the cart, code applied, cart page first
+    - product:  the PDP, code applied
+    Falls back to product if we can't find a variant.
+  endcomment
+
+  if section.settings.product != blank
+    assign kit = section.settings.product
+  else
+    assign kit = default_kit
+  endif
+
+  assign variant_id = nil
+  if kit != blank and kit.selected_or_first_available_variant != blank
+    assign variant_id = kit.selected_or_first_available_variant.id
+  endif
+
+  assign cta_mode = section.settings.cta_mode | default: 'checkout'
+
+  comment
+    Cart permalinks build a fresh checkout and ignore the /discount/ cookie,
+    so the code has to ride on the permalink itself as ?discount=CODE.
+    The PDP route still uses /discount/CODE?redirect= (cookie), which the
+    storefront cart honors on the way to checkout.
+  endcomment
+
+  assign cta_url = cta_path
+  assign single_url = cta_path
+
+  if promo_code != blank
+    assign single_url = '/discount/' | append: promo_code | append: '?redirect=' | append: cta_path
+  endif
+
+  if variant_id != nil and cta_mode == 'checkout'
+    assign cta_url = '/cart/' | append: variant_id | append: ':2'
+    if promo_code != blank
+      assign cta_url = cta_url | append: '?discount=' | append: promo_code
+    endif
+  elsif variant_id != nil and cta_mode == 'cart'
+    assign cta_url = '/cart/' | append: variant_id | append: ':2?storefront=true'
+    if promo_code != blank
+      assign cta_url = cta_url | append: '&discount=' | append: promo_code
+    endif
+  else
+    assign cta_url = single_url
+  endif
+
+  assign kit_price = section.settings.kit_price
+  assign second_price = section.settings.second_kit_price
+  assign bundle_price = section.settings.bundle_price
+  assign savings = section.settings.savings
+%}
+
+<section
+  id="LaborDay-{{ section.id }}"
+  class="laborday"
+  data-laborday-section
+  data-sale-end="{{ section.settings.sale_end | escape }}"
+>
+
+  {% if section.settings.hide_theme_chrome %}
+    <script>
+      document.documentElement.classList.add('threaditate-lander-active');
+    </script>
+  {% endif %}
+
+
+  {%- comment -%}
+    ============================================================
+    ANNOUNCEMENT
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="laborday__announcement">
+    <div class="laborday__shell laborday__announcement-inner">
+      <span class="laborday__announcement-text">{{ section.settings.announcement }}</span>
+
+      {% if promo_code != blank %}
+        <button
+          class="laborday__code-button"
+          type="button"
+          data-copy-code="{{ promo_code | escape }}"
+          aria-label="Copy discount code {{ promo_code }}"
+        >
+          {{ promo_code }}
+          <span class="laborday__copy-label" data-copy-label>copy</span>
+        </button>
+      {% endif %}
+
+      <span class="laborday__countdown" data-countdown hidden>
+        ends in <strong data-countdown-value></strong>
+      </span>
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    HERO
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="laborday__hero">
+    <div class="laborday__hero-grid laborday__shell">
+
+      <div class="laborday__hero-copy">
+        <p class="laborday__eyebrow" data-hook-eyebrow>
+          {{ section.settings.hero_eyebrow }}
+        </p>
+
+        <h1 class="laborday__h1" data-hook-headline>
+          {{ section.settings.hero_headline }}
+        </h1>
+
+        <p class="laborday__hero-subhead" data-hook-subhead>
+          {{ section.settings.hero_subhead }}
+        </p>
+
+        <div class="laborday__hero-actions">
+          <a
+            class="laborday__button laborday__button--primary"
+            href="{{ cta_url }}"
+            data-laborday-cta
+          >
+            {{ section.settings.cta_label }}
+            <span aria-hidden="true">→</span>
+          </a>
+
+          {% if promo_code != blank %}
+            <p class="laborday__offer-note">
+              {%- if cta_mode == 'product' -%}
+                Add two kits, use code <strong>{{ promo_code }}</strong>.
+                The second one rings up at half price.
+              {%- else -%}
+                Two kits go in your cart with <strong>{{ promo_code }}</strong> already applied.
+                <a class="laborday__single-link" href="{{ single_url }}">Just want one?</a>
+              {%- endif -%}
+            </p>
           {% endif %}
         </div>
-      </div>
-    </div>
-  </section>
 
-
-  <!-- ====================================
-       SECTION 2: SOCIAL PROOF BAR — Ivory
-       ==================================== -->
-  <section class="ld-proof-bar">
-    <div class="ld-container">
-      <div class="ld-proof-bar__inner">
-        <div class="ld-proof-bar__stat">
-          <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.57.94-5.5-4-3.9 5.53-.93L10 1z" fill="#FBBF24"/></svg>
-          2,013 Kickstarter backers
-        </div>
-        <div class="ld-proof-bar__divider"></div>
-        <div class="ld-proof-bar__stat">
-          <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.57.94-5.5-4-3.9 5.53-.93L10 1z" fill="#FBBF24"/></svg>
-          $158K raised
-        </div>
-        <div class="ld-proof-bar__divider"></div>
-        <div class="ld-proof-bar__quote">
-          &ldquo;I actually finished something. That never happens.&rdquo; &mdash; Priya N.
+        <div class="laborday__micro-proof">
+          <span>App included</span>
+          <span aria-hidden="true">·</span>
+          <span>No subscription</span>
+          <span aria-hidden="true">·</span>
+          <span>Any photo, any kit</span>
         </div>
       </div>
-    </div>
-  </section>
 
 
-  <!-- ====================================
-       SECTION 3: ONE TO MAKE. ONE TO GIVE.
-       ==================================== -->
-  <section class="ld-split">
-    <div class="ld-container">
-      <h2 class="ld-split__heading">Two kits. Two photos. One quiet weekend.</h2>
-      <p class="ld-split__subtext">
-        The BOGO is built for sharing. Keep one, give one &mdash; or make them side by side.
-      </p>
-      <div class="ld-split__grid">
-
-        <!-- Make yours — violet tint -->
-        <div class="ld-split__card ld-split__card--make">
-          <div class="ld-split__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M12 6v6l4 2"/>
-            </svg>
+      <div class="laborday__hero-media">
+        {% if section.settings.hero_image != blank %}
+          {{
+            section.settings.hero_image
+            | image_url: width: 1800
+            | image_tag:
+              class: 'laborday__hero-image',
+              loading: 'eager',
+              fetchpriority: 'high',
+              widths: '600, 900, 1200, 1500, 1800',
+              sizes: '(min-width: 990px) 50vw, 100vw',
+              alt: section.settings.hero_image.alt
+          }}
+        {% else %}
+          <div class="laborday__placeholder laborday__placeholder--hero">
+            {{ 'lifestyle-1' | placeholder_svg_tag }}
+            <span>Select your Labor Day hero image</span>
           </div>
-          <h3 class="ld-split__card-title">Make yours</h3>
-          <p class="ld-split__card-text">
-            A screen-free evening that ends with something on your wall.
-            Pick a photo that matters, follow the voice guide, and let your mind go quiet.
-          </p>
-          <a href="{{ cta_link }}" class="ld-btn">Start making</a>
-        </div>
+        {% endif %}
 
-        <!-- Give one — vermillion tint -->
-        <div class="ld-split__card ld-split__card--give">
-          <div class="ld-split__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2v-7"/>
-              <path d="M12 17V3"/>
-              <path d="M4 12h16"/>
-              <path d="M12 3l-4 4"/>
-              <path d="M12 3l4 4"/>
-            </svg>
-          </div>
-          <h3 class="ld-split__card-title">Give one</h3>
-          <p class="ld-split__card-text">
-            A personalized gift they won't expect. Choose their favorite photo &mdash;
-            a pet, a place, a person &mdash; and they'll make something they keep forever.
-          </p>
-          <a href="{{ cta_link }}" class="ld-btn">Gift a kit</a>
+        <div class="laborday__hero-card">
+          <span>Second kit</span>
+          <strong>50% off</strong>
+          <small>{{ promo_code }}</small>
         </div>
-
       </div>
+
     </div>
-  </section>
+  </div>
 
 
-  <!-- ====================================
-       SECTION 4: HOW IT WORKS — Dark
-       ==================================== -->
-  <section class="ld-how">
-    <div class="ld-container">
-      <h2 class="ld-how__heading">How it works</h2>
-      <div class="ld-how__steps">
+  {%- comment -%}
+    Hidden hook data. JS below message-matches the hero to ?hook= / ?utm_content=
+  {%- endcomment -%}
 
-        <!-- Step 1 -->
-        <div class="ld-how__step">
-          <div class="ld-how__step-num">1</div>
-          <div class="ld-how__step-image">
-            {% if section.settings.step1_image != blank %}
-              {{ section.settings.step1_image | image_url: width: 400 | image_tag:
-                loading: 'lazy',
-                alt: 'Upload a photo to the Threaditate app'
-              }}
-            {% else %}
-              <div class="ld-placeholder" style="width:100%;height:100%;background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.35);">
-                App upload screen<br>400 &times; 400px
-              </div>
-            {% endif %}
-          </div>
-          <h3 class="ld-how__step-title">Upload a photo</h3>
-          <p class="ld-how__step-text">
-            Any photo from your camera roll. The app converts it into a threading pattern.
-          </p>
-        </div>
+  <div hidden data-hook-library>
+    {% for block in section.blocks %}
+      {% if block.type == 'hook' %}
+        <span
+          data-hook-record
+          data-key="{{ block.settings.key | handleize }}"
+          data-eyebrow="{{ block.settings.eyebrow | escape }}"
+          data-headline="{{ block.settings.headline | escape }}"
+          data-subhead="{{ block.settings.subhead | escape }}"
+          {{ block.shopify_attributes }}
+        ></span>
+      {% endif %}
+    {% endfor %}
+  </div>
 
-        <!-- Step 2 -->
-        <div class="ld-how__step">
-          <div class="ld-how__step-num">2</div>
-          <div class="ld-how__step-image">
-            {% if section.settings.step2_image != blank %}
-              {{ section.settings.step2_image | image_url: width: 400 | image_tag:
-                loading: 'lazy',
-                alt: 'Follow the voice guide while threading'
-              }}
-            {% else %}
-              <div class="ld-placeholder" style="width:100%;height:100%;background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.35);">
-                Hands threading<br>400 &times; 400px
-              </div>
-            {% endif %}
-          </div>
-          <h3 class="ld-how__step-title">Follow the voice</h3>
-          <p class="ld-how__step-text">
-            The app tells you where to thread, line by line. No guessing, no counting.
-          </p>
-        </div>
 
-        <!-- Step 3 -->
-        <div class="ld-how__step">
-          <div class="ld-how__step-num">3</div>
-          <div class="ld-how__step-image">
-            {% if section.settings.step3_image != blank %}
-              {{ section.settings.step3_image | image_url: width: 400 | image_tag:
-                loading: 'lazy',
-                alt: 'Finished thread art piece hanging on a wall'
-              }}
-            {% else %}
-              <div class="ld-placeholder" style="width:100%;height:100%;background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.35);">
-                Finished piece on wall<br>400 &times; 400px
-              </div>
-            {% endif %}
-          </div>
-          <h3 class="ld-how__step-title">Hang your piece</h3>
-          <p class="ld-how__step-text">
-            Your photo, made in thread. On your wall in an evening or two.
-          </p>
-        </div>
+  {%- comment -%}
+    ============================================================
+    PROOF STRIP
+    ============================================================
+  {%- endcomment -%}
 
+  <div class="laborday__proof">
+    <div class="laborday__proof-grid laborday__shell">
+
+      <div class="laborday__proof-item">
+        <strong>2,013</strong>
+        <span>Kickstarter backers</span>
       </div>
+
+      <div class="laborday__proof-item">
+        <strong>$158K</strong>
+        <span>raised</span>
+      </div>
+
+      <div class="laborday__proof-item">
+        <strong>Voice-guided</strong>
+        <span>app included</span>
+      </div>
+
+      <div class="laborday__proof-item laborday__proof-item--quote">
+        <strong>“I actually finished something.”</strong>
+        <span>Priya N. · Kickstarter backer</span>
+      </div>
+
     </div>
-  </section>
+  </div>
 
 
-  <!-- ====================================
-       SECTION 5: PRODUCT / WHAT'S IN THE BOX
-       ==================================== -->
-  <section class="ld-product">
-    <div class="ld-container">
-      <div class="ld-product__inner">
-        <div class="ld-product__image-wrap">
-          <div class="ld-product__image">
-            {% if section.settings.product_image != blank %}
-              {{ section.settings.product_image | image_url: width: 800 | image_tag:
-                loading: 'lazy',
-                alt: 'Threaditate kit contents — loom, thread, and everything you need'
-              }}
-            {% else %}
-              <div class="ld-placeholder" style="width:100%;height:100%;">
-                Kit beauty shot<br>800 &times; 800px<br>Loom + thread + box flat lay
-              </div>
-            {% endif %}
-          </div>
-        </div>
-        <div class="ld-product__info">
-          <h2 class="ld-product__heading">Everything you need,<br>nothing you don't</h2>
-          <p class="ld-product__text">
-            Each kit arrives ready to go. No supply runs, no extra purchases,
-            no YouTube tutorials. Open the box, upload a photo, and start.
+  {%- comment -%}
+    ============================================================
+    ONE TO MAKE / ONE TO GIVE
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="laborday__section laborday__section--ivory">
+    <div class="laborday__shell">
+
+      <div class="laborday__section-heading">
+        <p class="laborday__eyebrow">Two kits, two photos</p>
+        <h2 class="laborday__h2">
+          Keep one. Hand one over.
+        </h2>
+        <p>
+          The long weekend is long enough for two. Pick a photo for each.
+          They don't have to match. They don't have to be for the same person.
+        </p>
+      </div>
+
+      <div class="laborday__pair">
+
+        <article class="laborday__pair-card laborday__pair-card--make">
+          <span class="laborday__pair-index">01</span>
+          <h3>One to make.</h3>
+          <p class="laborday__pair-lead">
+            Three evenings, no screen, a photo you care about slowly turning into thread.
           </p>
-          <ul class="ld-product__list">
-            <li>
-              <span class="ld-check-icon"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="#1450C4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              Precision-cut wooden loom
-            </li>
-            <li>
-              <span class="ld-check-icon"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="#1450C4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              Premium thread (enough for any photo)
-            </li>
-            <li>
-              <span class="ld-check-icon"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="#1450C4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              iOS companion app with voice guidance
-            </li>
-            <li>
-              <span class="ld-check-icon"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="#1450C4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              Wall-mount hardware included
-            </li>
-            <li>
-              <span class="ld-check-icon"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="#1450C4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              Ships within 24 hours
-            </li>
+          <ul>
+            <li>The app reads each line out loud. Your eyes stay on the loom.</li>
+            <li>Stop whenever. Your place is saved.</li>
+            <li>Five to eight hours, spread however you like.</li>
           </ul>
-          <a href="{{ cta_link }}" class="ld-btn ld-btn--secondary">Make yours &mdash; $89</a>
-        </div>
-      </div>
-    </div>
-  </section>
+          <a class="laborday__button laborday__button--ivory" href="{{ cta_url }}" data-laborday-cta>
+            Make yours
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
 
-
-  <!-- ====================================
-       SECTION 6: BACKER TESTIMONIALS
-       ==================================== -->
-  <section class="ld-testimonials">
-    <div class="ld-container">
-      <h2 class="ld-testimonials__heading">What backers are saying</h2>
-      <div class="ld-testimonials__grid">
-
-        <div class="ld-tcard">
-          <div class="ld-tcard__stars">
-            <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.57.94-5.5-4-3.9 5.53-.93L10 1z" fill="#FBBF24"/></svg>
-            <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.57.94-5.5-4-3.9 5.53-.93L10 1z" fill="#FBBF24"/></svg>
-            <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.57.94-5.5-4-3.9 5.53-.93L10 1z" fill="#FBBF24"/></svg>
-            <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.57.94-5.5-4-3.9 5.53-.93L10 1z" fill="#FBBF24"/></svg>
-            <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.57.94-5.5-4-3.9 5.53-.93L10 1z" fill="#FBBF24"/></svg>
-          </div>
-          <p class="ld-tcard__text">
-            &ldquo;I actually finished something. That never happens with craft kits. The voice
-            guide kept me going &mdash; I didn't have to think, I just threaded.&rdquo;
+        <article class="laborday__pair-card laborday__pair-card--give">
+          <span class="laborday__pair-index">02</span>
+          <h3>One to give.</h3>
+          <p class="laborday__pair-lead">
+            Their dog. Their grandmother. The two of you, ten years ago. A gift they make with their own hands.
           </p>
-          <div class="ld-tcard__author">Priya N.</div>
-          <div class="ld-tcard__role">Kickstarter backer</div>
-        </div>
+          <ul>
+            <li>Every kit works with any photo. Nothing to pre-order or customize.</li>
+            <li>Birthdays are coming. So is December.</li>
+            <li>Half price, this weekend only.</li>
+          </ul>
+          <a class="laborday__button laborday__button--black" href="{{ cta_url }}" data-laborday-cta>
+            Give one
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
 
-        <div class="ld-tcard">
-          <div class="ld-tcard__stars">
-            <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.57.94-5.5-4-3.9 5.53-.93L10 1z" fill="#FBBF24"/></svg>
-            <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.57.94-5.5-4-3.9 5.53-.93L10 1z" fill="#FBBF24"/></svg>
-            <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.57.94-5.5-4-3.9 5.53-.93L10 1z" fill="#FBBF24"/></svg>
-            <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.57.94-5.5-4-3.9 5.53-.93L10 1z" fill="#FBBF24"/></svg>
-            <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.57.94-5.5-4-3.9 5.53-.93L10 1z" fill="#FBBF24"/></svg>
-          </div>
-          <p class="ld-tcard__text">
-            &ldquo;My mind went quiet about ten minutes in. I wasn't thinking about work
-            or my phone or anything. Just the next line. I needed that.&rdquo;
-          </p>
-          <div class="ld-tcard__author">Derek P.</div>
-          <div class="ld-tcard__role">Kickstarter backer</div>
-        </div>
-
-        <div class="ld-tcard">
-          <div class="ld-tcard__stars">
-            <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.57.94-5.5-4-3.9 5.53-.93L10 1z" fill="#FBBF24"/></svg>
-            <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.57.94-5.5-4-3.9 5.53-.93L10 1z" fill="#FBBF24"/></svg>
-            <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.57.94-5.5-4-3.9 5.53-.93L10 1z" fill="#FBBF24"/></svg>
-            <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.57.94-5.5-4-3.9 5.53-.93L10 1z" fill="#FBBF24"/></svg>
-            <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.57.94-5.5-4-3.9 5.53-.93L10 1z" fill="#FBBF24"/></svg>
-          </div>
-          <p class="ld-tcard__text">
-            &ldquo;It looks like something from a gallery. People ask where I bought it.
-            I made it. On my couch. That's the whole pitch right there.&rdquo;
-          </p>
-          <div class="ld-tcard__author">Marisa T.</div>
-          <div class="ld-tcard__role">Kickstarter backer</div>
-        </div>
-
-      </div>
-      <div class="ld-testimonials__cta">
-        <a href="{{ cta_link }}" class="ld-btn">Make yours</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ====================================
-       SECTION 7: STICKY CTA BAR — Dark
-       ==================================== -->
-  <div class="ld-sticky-bar" id="ld-sticky-bar">
-    <div class="ld-container">
-      <div class="ld-sticky-bar__inner">
-        <div>
-          <div class="ld-sticky-bar__text">
-            Buy one, get one 50% off
-            <span class="ld-sticky-bar__offer">&middot; Code: LABORDAY &middot; Sep 2 &ndash; 7</span>
-          </div>
-        </div>
-        <a href="{{ cta_link }}" class="ld-btn">Make yours</a>
       </div>
     </div>
   </div>
 
-  <!-- Spacer so the sticky bar doesn't cover the last section -->
-  <div style="height: 72px;"></div>
 
-</div>
+  {%- comment -%}
+    ============================================================
+    HOW IT WORKS
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="laborday__section laborday__section--black">
+    <div class="laborday__shell">
+
+      <div class="laborday__section-heading">
+        <p class="laborday__eyebrow laborday__eyebrow--marigold">How it works</p>
+        <h2 class="laborday__h2 laborday__h2--light">
+          From camera roll to wall.
+        </h2>
+      </div>
+
+      <div class="laborday__steps">
+
+        <article class="laborday__step">
+          <div class="laborday__step-media">
+            {% if section.settings.step1_image != blank %}
+              {{
+                section.settings.step1_image
+                | image_url: width: 1000
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '400, 700, 1000',
+                  sizes: '(min-width: 750px) 33vw, 100vw',
+                  alt: section.settings.step1_image.alt
+              }}
+            {% else %}
+              <div class="laborday__placeholder">
+                {{ 'image' | placeholder_svg_tag }}
+                <span>App upload screen</span>
+              </div>
+            {% endif %}
+          </div>
+          <span>01</span>
+          <h3>Upload a photo</h3>
+          <p>Any photo from your camera roll. The app turns it into a threading sequence.</p>
+        </article>
+
+        <article class="laborday__step">
+          <div class="laborday__step-media">
+            {% if section.settings.step2_image != blank %}
+              {{
+                section.settings.step2_image
+                | image_url: width: 1000
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '400, 700, 1000',
+                  sizes: '(min-width: 750px) 33vw, 100vw',
+                  alt: section.settings.step2_image.alt
+              }}
+            {% else %}
+              <div class="laborday__placeholder">
+                {{ 'lifestyle-2' | placeholder_svg_tag }}
+                <span>Hands threading</span>
+              </div>
+            {% endif %}
+          </div>
+          <span>02</span>
+          <h3>Follow the voice</h3>
+          <p>It tells you where to go next, line by line, at your pace. No counting.</p>
+        </article>
+
+        <article class="laborday__step">
+          <div class="laborday__step-media">
+            {% if section.settings.step3_image != blank %}
+              {{
+                section.settings.step3_image
+                | image_url: width: 1000
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '400, 700, 1000',
+                  sizes: '(min-width: 750px) 33vw, 100vw',
+                  alt: section.settings.step3_image.alt
+              }}
+            {% else %}
+              <div class="laborday__placeholder">
+                {{ 'lifestyle-1' | placeholder_svg_tag }}
+                <span>Finished piece on a wall</span>
+              </div>
+            {% endif %}
+          </div>
+          <span>03</span>
+          <h3>Hang your piece</h3>
+          <p>Your photo, made in thread. On the wall by the end of the weekend, or whenever.</p>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    THE KIT + THE MATH
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="laborday__section laborday__section--sand">
+    <div class="laborday__shell laborday__split">
+
+      <div class="laborday__media-card">
+        {% if section.settings.product_image != blank %}
+          {{
+            section.settings.product_image
+            | image_url: width: 1500
+            | image_tag:
+              class: 'laborday__product-image',
+              loading: 'lazy',
+              widths: '500, 800, 1100, 1500',
+              sizes: '(min-width: 990px) 48vw, 100vw',
+              alt: section.settings.product_image.alt
+          }}
+        {% else %}
+          <div class="laborday__placeholder">
+            {{ 'product-1' | placeholder_svg_tag }}
+            <span>Kit contents flat lay</span>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="laborday__section-copy">
+        <p class="laborday__eyebrow">What's in the box</p>
+        <h2 class="laborday__h2">Everything. Twice.</h2>
+        <p class="laborday__lead">
+          Each kit is complete on its own. Two kits, two full sets, nothing shared.
+        </p>
+
+        <ul class="laborday__contents">
+          <li>Loom and mounting hardware</li>
+          <li>Thread, spool holder, threading tool</li>
+          <li>Numbered guide and wooden phone stand</li>
+          <li>Convertible easel box</li>
+          <li>Lifetime app access, no subscription</li>
+        </ul>
+
+        <div class="laborday__math">
+          <div class="laborday__math-row">
+            <span>First kit</span>
+            <strong>{{ kit_price }}</strong>
+          </div>
+          <div class="laborday__math-row laborday__math-row--deal">
+            <span>Second kit <em>with {{ promo_code }}</em></span>
+            <strong>{{ second_price }}</strong>
+          </div>
+          <div class="laborday__math-row laborday__math-row--total">
+            <span>Two kits</span>
+            <strong>{{ bundle_price }}</strong>
+          </div>
+          <p class="laborday__math-save">You save {{ savings }}.</p>
+        </div>
+
+        <a class="laborday__button laborday__button--primary" href="{{ cta_url }}" data-laborday-cta>
+          {{ section.settings.cta_label }}
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    BACKER QUOTES
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="laborday__section laborday__section--white">
+    <div class="laborday__shell">
+
+      <p class="laborday__eyebrow">From the first 2,013</p>
+
+      <div class="laborday__quotes">
+
+        <figure class="laborday__quote laborday__quote--featured">
+          <blockquote>
+            “My mind went quiet about ten minutes in. I wasn't thinking about work
+            or my phone or anything. Just the next line.”
+          </blockquote>
+          <figcaption>Derek P. · Kickstarter backer</figcaption>
+        </figure>
+
+        <figure class="laborday__quote">
+          <blockquote>
+            “I actually finished something. That never happens with craft kits.”
+          </blockquote>
+          <figcaption>Priya N. · Kickstarter backer</figcaption>
+        </figure>
+
+        <figure class="laborday__quote">
+          <blockquote>
+            “People ask where I bought it. I made it. On my couch.”
+          </blockquote>
+          <figcaption>Marisa T. · Kickstarter backer</figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    OFFER
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="laborday__offer">
+    <div class="laborday__shell laborday__offer-inner">
+
+      <p class="laborday__eyebrow laborday__eyebrow--light">
+        Labor Day weekend · September 2–7
+      </p>
+
+      <h2 class="laborday__h2 laborday__h2--light">
+        Buy one kit. The second is half off.
+      </h2>
+
+      <p class="laborday__offer-copy">
+        Two photos. Two looms. One quiet weekend.
+        After Sunday it's back to full price.
+      </p>
+
+      {% if promo_code != blank %}
+        <button
+          type="button"
+          class="laborday__big-code"
+          data-copy-code="{{ promo_code | escape }}"
+        >
+          <span>At checkout, use</span>
+          <strong>{{ promo_code }}</strong>
+          <small data-copy-label>tap to copy</small>
+        </button>
+      {% endif %}
+
+      <a class="laborday__button laborday__button--black" href="{{ cta_url }}" data-laborday-cta>
+        {{ section.settings.cta_label }}
+        <span aria-hidden="true">→</span>
+      </a>
+
+      <p class="laborday__offer-fine">
+        <span data-countdown-inline hidden>Ends in <strong data-countdown-value></strong>. </span>
+        Applies to the second kit in your cart. App included. Ships within one business day. 30-day returns.
+        {%- if cta_mode != 'product' %}
+          <a class="laborday__single-link laborday__single-link--light" href="{{ single_url }}">Only need one kit?</a>
+        {%- endif %}
+      </p>
+
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    FAQ
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="laborday__section laborday__section--ivory">
+    <div class="laborday__shell laborday__faq-shell">
+
+      <div class="laborday__section-heading">
+        <p class="laborday__eyebrow">Good questions</p>
+        <h2 class="laborday__h2">Clear answers.</h2>
+      </div>
+
+      <div class="laborday__faq">
+
+        <div class="laborday__faq-item" data-faq-item>
+          <h3 class="laborday__faq-q">
+            <button type="button" class="laborday__faq-toggle" aria-expanded="false" aria-controls="LaborDayFaq-{{ section.id }}-1" data-faq-toggle>
+              <span>How does the buy one, get one work?</span>
+              <span class="laborday__faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="laborday__faq-panel" id="LaborDayFaq-{{ section.id }}-1" data-faq-panel hidden>
+            <div class="laborday__faq-panel-inner">
+              <p>
+              Add two kits to your cart and enter {{ promo_code }} at checkout.
+              The second kit drops to half price. Want four? The discount applies to every second kit.
+            </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="laborday__faq-item" data-faq-item>
+          <h3 class="laborday__faq-q">
+            <button type="button" class="laborday__faq-toggle" aria-expanded="false" aria-controls="LaborDayFaq-{{ section.id }}-2" data-faq-toggle>
+              <span>Can each kit use a different photo?</span>
+              <span class="laborday__faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="laborday__faq-panel" id="LaborDayFaq-{{ section.id }}-2" data-faq-panel hidden>
+            <div class="laborday__faq-panel-inner">
+              <p>
+              Yes. The photo lives in the app, not the kit. Whoever ends up with the kit
+              picks their own photo when they start.
+            </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="laborday__faq-item" data-faq-item>
+          <h3 class="laborday__faq-q">
+            <button type="button" class="laborday__faq-toggle" aria-expanded="false" aria-controls="LaborDayFaq-{{ section.id }}-3" data-faq-toggle>
+              <span>Do I need to know how to make string art?</span>
+              <span class="laborday__faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="laborday__faq-panel" id="LaborDayFaq-{{ section.id }}-3" data-faq-panel hidden>
+            <div class="laborday__faq-panel-inner">
+              <p>
+              No. The app speaks each step out loud and moves line by line at your pace.
+              Most first-timers finish their first piece.
+            </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="laborday__faq-item" data-faq-item>
+          <h3 class="laborday__faq-q">
+            <button type="button" class="laborday__faq-toggle" aria-expanded="false" aria-controls="LaborDayFaq-{{ section.id }}-4" data-faq-toggle>
+              <span>How long does one take?</span>
+              <span class="laborday__faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="laborday__faq-panel" id="LaborDayFaq-{{ section.id }}-4" data-faq-panel hidden>
+            <div class="laborday__faq-panel-inner">
+              <p>
+              About 5–8 hours depending on the image. Spread it across as many sessions as
+              you want. The app saves your progress.
+            </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="laborday__faq-item" data-faq-item>
+          <h3 class="laborday__faq-q">
+            <button type="button" class="laborday__faq-toggle" aria-expanded="false" aria-controls="LaborDayFaq-{{ section.id }}-5" data-faq-toggle>
+              <span>What if I mess up?</span>
+              <span class="laborday__faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="laborday__faq-panel" id="LaborDayFaq-{{ section.id }}-5" data-faq-panel hidden>
+            <div class="laborday__faq-panel-inner">
+              <p>
+              Keep going. Thousands of lines make the image, so a missed step disappears
+              into the whole. Nothing to rip out.
+            </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="laborday__faq-item" data-faq-item>
+          <h3 class="laborday__faq-q">
+            <button type="button" class="laborday__faq-toggle" aria-expanded="false" aria-controls="LaborDayFaq-{{ section.id }}-6" data-faq-toggle>
+              <span>Is the app extra?</span>
+              <span class="laborday__faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="laborday__faq-panel" id="LaborDayFaq-{{ section.id }}-6" data-faq-panel hidden>
+            <div class="laborday__faq-panel-inner">
+              <p>No. App access comes with the kit. No subscription, ever.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    FINAL CTA
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="laborday__final">
+    <div class="laborday__shell laborday__final-inner">
+      <p>Three days off.</p>
+      <h2>Make something with them.</h2>
+      {% if promo_code != blank %}
+        <span>Second kit 50% off with code {{ promo_code }} · through September 7</span>
+      {% endif %}
+      <a class="laborday__button laborday__button--primary" href="{{ cta_url }}" data-laborday-cta>
+        {{ section.settings.cta_label }}
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    MOBILE STICKY CTA
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="laborday__sticky" data-laborday-sticky>
+    <div>
+      <strong>2nd kit 50% off</strong>
+      <span>{{ promo_code }}</span>
+    </div>
+    <a href="{{ cta_url }}" data-laborday-cta>
+      {{ section.settings.cta_label }}
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+
+</section>
+
+
+<style>
+  #LaborDay-{{ section.id }} {
+    --tt-cobalt: #1450C4;
+    --tt-violet: #3D3DB0;
+    --tt-red: #C43D2E;
+    --tt-black: #0B0B0F;
+    --tt-ivory: #F4F2ED;
+
+    /* late-summer additions */
+    --tt-marigold: #E9A23B;
+    --tt-marigold-deep: #C97A18;
+    --tt-sand: #EFE3CB;
+    --tt-sun-tint: #F7E7CB;
+    --tt-blue-tint: #8FB2ED;
+
+    --tt-heading: var(--font-heading-family, "Space Grotesk", sans-serif);
+    --tt-body: var(--font-body-family, "DM Sans", sans-serif);
+
+    background: var(--tt-ivory);
+    color: var(--tt-black);
+    font-family: var(--tt-body);
+    font-size: 18px;
+    line-height: 1.6;
+    overflow: clip;
+  }
+
+  #LaborDay-{{ section.id }} *,
+  #LaborDay-{{ section.id }} *::before,
+  #LaborDay-{{ section.id }} *::after {
+    box-sizing: border-box;
+  }
+
+  #LaborDay-{{ section.id }} img {
+    display: block;
+    width: 100%;
+  }
+
+  #LaborDay-{{ section.id }} a {
+    text-decoration: none;
+  }
+
+  #LaborDay-{{ section.id }} p {
+    margin: 0;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__shell {
+    width: min(1180px, calc(100% - 48px));
+    margin-inline: auto;
+  }
+
+
+  /* ---------- announcement ---------- */
+
+  #LaborDay-{{ section.id }} .laborday__announcement {
+    position: relative;
+    z-index: 20;
+    background: var(--tt-red);
+    color: #fff;
+    font-family: var(--tt-heading);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__announcement-inner {
+    min-height: 44px;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__code-button {
+    appearance: none;
+    border: 1px solid rgba(255,255,255,.5);
+    background: transparent;
+    color: inherit;
+    border-radius: 999px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font: inherit;
+    letter-spacing: .12em;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__copy-label {
+    opacity: .7;
+    font-family: var(--tt-body);
+    font-size: 10px;
+    margin-left: 4px;
+    text-transform: lowercase;
+    letter-spacing: 0;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__countdown {
+    opacity: .85;
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: var(--tt-body);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__countdown strong {
+    font-family: var(--tt-heading);
+    font-variant-numeric: tabular-nums;
+  }
+
+
+  /* ---------- type ---------- */
+
+  #LaborDay-{{ section.id }} .laborday__eyebrow {
+    margin: 0 0 14px;
+    color: var(--tt-red);
+    font-family: var(--tt-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__eyebrow--light {
+    color: rgba(255,255,255,.85);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__eyebrow--marigold {
+    color: var(--tt-marigold);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__h1,
+  #LaborDay-{{ section.id }} .laborday__h2 {
+    margin: 0;
+    font-family: var(--tt-heading);
+    font-weight: 600;
+    letter-spacing: -.035em;
+    text-wrap: balance;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__h1 {
+    font-size: clamp(44px, 6.2vw, 84px);
+    line-height: .96;
+    max-width: 720px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__h2 {
+    font-size: clamp(36px, 4.6vw, 62px);
+    line-height: 1.02;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__h2--light {
+    color: var(--tt-ivory);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__lead {
+    font-size: clamp(20px, 2vw, 25px);
+    line-height: 1.45;
+  }
+
+
+  /* ---------- buttons ---------- */
+
+  #LaborDay-{{ section.id }} .laborday__button {
+    min-height: 54px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 999px;
+    padding: 14px 26px;
+    font-family: var(--tt-heading);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__button:hover {
+    transform: translateY(-2px);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__button--primary {
+    background: var(--tt-red);
+    color: #fff;
+    box-shadow: 0 12px 32px rgba(196, 61, 46, .22);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__button--ivory {
+    background: var(--tt-ivory);
+    color: var(--tt-black);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__button--black {
+    background: var(--tt-black);
+    color: #fff;
+  }
+
+
+  /* ---------- hero ---------- */
+
+  #LaborDay-{{ section.id }} .laborday__hero {
+    position: relative;
+    background:
+      linear-gradient(180deg, var(--tt-sun-tint) 0%, var(--tt-ivory) 70%);
+  }
+
+  /* thread-line texture, barely there */
+  #LaborDay-{{ section.id }} .laborday__hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        -32deg,
+        rgba(11,11,15,.045) 0 1px,
+        transparent 1px 22px
+      );
+    pointer-events: none;
+    mask-image: linear-gradient(180deg, rgba(0,0,0,.9), transparent 75%);
+    -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,.9), transparent 75%);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__hero-grid {
+    position: relative;
+    min-height: min(820px, calc(100vh - 44px));
+    display: grid;
+    grid-template-columns: 1fr .9fr;
+    gap: clamp(40px, 6vw, 90px);
+    align-items: center;
+    padding-block: 64px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__hero-copy {
+    position: relative;
+    z-index: 2;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__hero-subhead {
+    max-width: 600px;
+    margin: 26px 0 0;
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.5;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__hero-actions {
+    margin-top: 30px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__offer-note {
+    margin: 14px 0 0;
+    font-size: 14px;
+    max-width: 420px;
+    color: rgba(11,11,15,.75);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__single-link {
+    color: var(--tt-cobalt);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    margin-left: 4px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__single-link--light {
+    color: #fff;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__micro-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+    color: rgba(11,11,15,.68);
+    font-size: 13px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__hero-media {
+    position: relative;
+    min-height: 650px;
+  }
+
+  /* marigold slab behind the photo — the one loud thing in the hero */
+  #LaborDay-{{ section.id }} .laborday__hero-media::before {
+    content: "";
+    position: absolute;
+    top: 28px;
+    right: -28px;
+    bottom: -28px;
+    left: 28px;
+    background: var(--tt-marigold);
+    z-index: 0;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__hero-image,
+  #LaborDay-{{ section.id }} .laborday__hero-media > .laborday__placeholder {
+    position: relative;
+    z-index: 1;
+    height: 650px;
+    object-fit: cover;
+    border-radius: 2px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__hero-card {
+    position: absolute;
+    z-index: 2;
+    left: -28px;
+    bottom: 36px;
+    width: 170px;
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 22px;
+    background: var(--tt-cobalt);
+    color: #fff;
+    box-shadow: 0 18px 50px rgba(20,80,196,.25);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__hero-card span {
+    font-size: 13px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__hero-card strong {
+    display: block;
+    margin: 3px 0;
+    font-family: var(--tt-heading);
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__hero-card small {
+    font-weight: 700;
+    letter-spacing: .12em;
+  }
+
+
+  /* ---------- proof ---------- */
+
+  #LaborDay-{{ section.id }} .laborday__proof {
+    border-block: 1px solid rgba(11,11,15,.13);
+    background: #fff;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__proof-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.6fr;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__proof-item {
+    min-height: 112px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 22px;
+    border-right: 1px solid rgba(11,11,15,.13);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__proof-item:last-child {
+    border-right: 0;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__proof-item strong {
+    font-family: var(--tt-heading);
+    font-size: 21px;
+    line-height: 1.2;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__proof-item--quote strong {
+    color: var(--tt-cobalt);
+    font-size: 18px;
+    letter-spacing: -.01em;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__proof-item span {
+    font-size: 13px;
+    color: rgba(11,11,15,.6);
+  }
+
+
+  /* ---------- sections ---------- */
+
+  #LaborDay-{{ section.id }} .laborday__section {
+    position: relative;
+    padding-block: clamp(78px, 10vw, 145px);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__section--ivory { background: var(--tt-ivory); }
+  #LaborDay-{{ section.id }} .laborday__section--white { background: #fff; }
+  #LaborDay-{{ section.id }} .laborday__section--sand  { background: var(--tt-sand); }
+
+  #LaborDay-{{ section.id }} .laborday__section--black {
+    background: var(--tt-black);
+    color: var(--tt-ivory);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__section-heading {
+    max-width: 720px;
+    margin-bottom: 55px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__section-heading > p:last-child {
+    max-width: 620px;
+    margin-top: 20px;
+    font-size: 19px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(50px, 7vw, 100px);
+    align-items: center;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__section-copy > p {
+    max-width: 620px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__section-copy .laborday__lead {
+    margin-top: 22px;
+  }
+
+
+  /* ---------- pair (make / give) ---------- */
+
+  #LaborDay-{{ section.id }} .laborday__pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__pair-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 520px;
+    padding: clamp(30px, 4vw, 52px);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__pair-card--make {
+    background: var(--tt-cobalt);
+    color: #fff;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__pair-card--give {
+    background: var(--tt-marigold);
+    color: var(--tt-black);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__pair-index {
+    font-family: var(--tt-heading);
+    font-size: 12px;
+    letter-spacing: .18em;
+    opacity: .75;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__pair-card h3 {
+    margin: 48px 0 16px;
+    font-family: var(--tt-heading);
+    font-size: clamp(34px, 3.8vw, 52px);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -.035em;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__pair-lead {
+    font-size: 19px;
+    line-height: 1.45;
+    max-width: 440px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__pair-card ul {
+    list-style: none;
+    margin: 30px 0 38px;
+    padding: 0;
+    border-top: 1px solid currentColor;
+    flex: 1;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__pair-card li {
+    padding: 14px 0;
+    border-bottom: 1px solid currentColor;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__pair-card--make ul,
+  #LaborDay-{{ section.id }} .laborday__pair-card--make li {
+    border-color: rgba(255,255,255,.28);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__pair-card--give ul,
+  #LaborDay-{{ section.id }} .laborday__pair-card--give li {
+    border-color: rgba(11,11,15,.22);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__pair-card .laborday__button {
+    align-self: flex-start;
+  }
+
+
+  /* ---------- steps ---------- */
+
+  #LaborDay-{{ section.id }} .laborday__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    border-top: 1px solid rgba(255,255,255,.22);
+    padding-top: 18px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__step-media {
+    overflow: hidden;
+    margin-bottom: 26px;
+    background: #17171d;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__step-media img,
+  #LaborDay-{{ section.id }} .laborday__step-media .laborday__placeholder {
+    aspect-ratio: {{ section.settings.step_ratio | default: '1 / 1' }};
+    height: auto;
+    min-height: 0;
+    object-fit: cover;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__step > span {
+    color: var(--tt-marigold);
+    font-family: var(--tt-heading);
+    font-size: 12px;
+    letter-spacing: .18em;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__step h3 {
+    margin: 10px 0 10px;
+    font-family: var(--tt-heading);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -.02em;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__step p {
+    color: rgba(244,242,237,.7);
+    font-size: 15px;
+    max-width: 340px;
+  }
+
+
+  /* ---------- imagery ---------- */
+
+  #LaborDay-{{ section.id }} .laborday__media-card {
+    overflow: hidden;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__product-image,
+  #LaborDay-{{ section.id }} .laborday__media-card > .laborday__placeholder {
+    aspect-ratio: 4 / 5;
+    height: auto;
+    object-fit: cover;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__placeholder {
+    position: relative;
+    min-height: 450px;
+    display: grid;
+    place-items: center;
+    background: rgba(0,0,0,.08);
+    overflow: hidden;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__placeholder svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__placeholder span {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    padding: 7px 10px;
+    background: var(--tt-black);
+    color: #fff;
+    font-size: 11px;
+  }
+
+
+  /* ---------- kit contents + math ---------- */
+
+  #LaborDay-{{ section.id }} .laborday__contents {
+    list-style: none;
+    margin: 30px 0 34px;
+    padding: 0;
+    border-top: 1px solid rgba(11,11,15,.18);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__contents li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(11,11,15,.18);
+    font-size: 16px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__math {
+    margin: 0 0 34px;
+    padding: 22px 26px;
+    background: #fff;
+    border: 1px solid rgba(11,11,15,.14);
+    max-width: 440px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__math-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 8px 0;
+    font-size: 16px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__math-row strong {
+    font-family: var(--tt-heading);
+    font-variant-numeric: tabular-nums;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__math-row em {
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--tt-red);
+    margin-left: 6px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__math-row--deal strong {
+    color: var(--tt-red);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__math-row--total {
+    margin-top: 6px;
+    padding-top: 14px;
+    border-top: 1px solid var(--tt-black);
+    font-size: 19px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__math-row--total strong {
+    font-size: 28px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__math-save {
+    margin-top: 6px;
+    font-size: 13px;
+    color: rgba(11,11,15,.6);
+  }
+
+
+  /* ---------- quotes ---------- */
+
+  #LaborDay-{{ section.id }} .laborday__quotes {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 18px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__quote {
+    margin: 0;
+    padding: clamp(28px, 4vw, 48px);
+    background: var(--tt-ivory);
+    border: 1px solid rgba(11,11,15,.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__quote--featured {
+    background: var(--tt-red);
+    color: #fff;
+    border-color: var(--tt-red);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__quote blockquote {
+    margin: 0;
+    font-family: var(--tt-heading);
+    font-size: clamp(21px, 2.2vw, 30px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -.025em;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__quote--featured blockquote {
+    font-size: clamp(26px, 3vw, 40px);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__quote figcaption {
+    margin-top: 28px;
+    font-size: 13px;
+    opacity: .68;
+  }
+
+
+  /* ---------- offer ---------- */
+
+  #LaborDay-{{ section.id }} .laborday__offer {
+    position: relative;
+    padding-block: clamp(80px, 11vw, 150px);
+    background:
+      linear-gradient(135deg, var(--tt-red) 0%, #D9612F 55%, var(--tt-marigold-deep) 100%);
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__offer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        -32deg,
+        rgba(255,255,255,.07) 0 1px,
+        transparent 1px 18px
+      );
+    pointer-events: none;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__offer-inner {
+    position: relative;
+    max-width: 800px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__offer-copy {
+    max-width: 520px;
+    margin: 24px auto 35px;
+    color: rgba(255,255,255,.85);
+    font-size: 20px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__big-code {
+    appearance: none;
+    width: min(460px, 100%);
+    display: grid;
+    gap: 3px;
+    margin: 0 auto 26px;
+    padding: 24px;
+    border: 1px solid rgba(255,255,255,.45);
+    background: rgba(11,11,15,.18);
+    color: #fff;
+    cursor: pointer;
+    font-family: var(--tt-body);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__big-code span {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .18em;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__big-code strong {
+    font-family: var(--tt-heading);
+    font-size: clamp(33px, 5vw, 50px);
+    letter-spacing: .06em;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__big-code small {
+    opacity: .7;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__offer-fine {
+    margin: 20px auto 0;
+    max-width: 520px;
+    font-size: 12px;
+    color: rgba(255,255,255,.72);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__offer-fine strong {
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+  }
+
+
+  /* ---------- faq ---------- */
+
+  #LaborDay-{{ section.id }} .laborday__faq-shell {
+    display: grid;
+    grid-template-columns: .7fr 1.3fr;
+    gap: 80px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__faq-item {
+    border-top: 1px solid rgba(11,11,15,.18);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__faq-item:last-child {
+    border-bottom: 1px solid rgba(11,11,15,.18);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__faq-q {
+    margin: 0;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__faq-toggle {
+    appearance: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+    padding: 24px 4px 24px 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--tt-heading);
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: normal;
+    text-transform: none;
+    box-shadow: none;
+    min-height: 0;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__faq-toggle:hover {
+    color: var(--tt-cobalt);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__faq-toggle:focus-visible {
+    outline: 2px solid var(--tt-cobalt);
+    outline-offset: 4px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__faq-icon {
+    position: relative;
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__faq-icon::before,
+  #LaborDay-{{ section.id }} .laborday__faq-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 16px;
+    height: 2px;
+    background: currentColor;
+    transition: transform .2s ease;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__faq-icon::after {
+    transform: rotate(90deg);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__faq-toggle[aria-expanded="true"] .laborday__faq-icon::after {
+    transform: rotate(0deg);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__faq-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .25s ease;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__faq-panel[hidden] {
+    display: grid;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__faq-panel.is-open {
+    grid-template-rows: 1fr;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__faq-panel-inner {
+    overflow: hidden;
+    color: rgba(11,11,15,.68);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__faq-panel-inner p {
+    padding: 0 50px 24px 0;
+  }
+
+
+  /* ---------- final ---------- */
+
+  #LaborDay-{{ section.id }} .laborday__final {
+    padding-block: 110px;
+    background: var(--tt-black);
+    color: var(--tt-ivory);
+    text-align: center;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__final-inner {
+    max-width: 850px;
+  }
+
+  #LaborDay-{{ section.id }} .laborday__final p {
+    margin: 0 0 6px;
+    font-size: 18px;
+    color: var(--tt-marigold);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__final h2 {
+    margin: 0;
+    font-family: var(--tt-heading);
+    font-size: clamp(42px, 6vw, 80px);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -.04em;
+    color: var(--tt-ivory);
+  }
+
+  #LaborDay-{{ section.id }} .laborday__final > div > span {
+    display: block;
+    margin: 24px 0;
+    color: rgba(244,242,237,.7);
+    font-size: 14px;
+  }
+
+
+  /* ---------- sticky mobile ---------- */
+
+  #LaborDay-{{ section.id }} .laborday__sticky {
+    display: none;
+  }
+
+
+  /* ---------- hide header/footer option ---------- */
+
+  .threaditate-lander-active .shopify-section-group-header-group,
+  .threaditate-lander-active .shopify-section-group-footer-group {
+    display: none !important;
+  }
+
+
+  /* ---------- responsive ---------- */
+
+  @media screen and (max-width: 989px) {
+
+    #LaborDay-{{ section.id }} {
+      font-size: 16px;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__hero-grid,
+    #LaborDay-{{ section.id }} .laborday__split,
+    #LaborDay-{{ section.id }} .laborday__pair,
+    #LaborDay-{{ section.id }} .laborday__faq-shell {
+      grid-template-columns: 1fr;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__hero-grid {
+      min-height: auto;
+      gap: 48px;
+      padding-block: 50px;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__hero-media,
+    #LaborDay-{{ section.id }} .laborday__hero-image,
+    #LaborDay-{{ section.id }} .laborday__hero-media > .laborday__placeholder {
+      min-height: 0;
+      height: auto;
+      aspect-ratio: 4 / 5;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__hero-media::before {
+      top: 16px; right: -16px; bottom: -16px; left: 16px;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__hero-card {
+      left: 16px;
+      bottom: 16px;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__proof-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    #LaborDay-{{ section.id }} .laborday__proof-item:nth-child(2) {
+      border-right: 0;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__proof-item:nth-child(-n+2) {
+      border-bottom: 1px solid rgba(11,11,15,.13);
+    }
+
+    #LaborDay-{{ section.id }} .laborday__proof-item--quote {
+      grid-column: 1 / -1;
+      border-right: 0;
+      border-top: 1px solid rgba(11,11,15,.13);
+    }
+
+    #LaborDay-{{ section.id }} .laborday__pair-card {
+      min-height: 0;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__steps {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__step-media {
+      max-width: 520px;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__quotes {
+      grid-template-columns: 1fr;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__faq-shell {
+      gap: 20px;
+    }
+
+  }
+
+
+  @media screen and (max-width: 640px) {
+
+    #LaborDay-{{ section.id }} {
+      padding-bottom: 74px;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__shell {
+      width: min(100% - 32px, 1180px);
+    }
+
+    #LaborDay-{{ section.id }} .laborday__announcement-inner {
+      min-height: 42px;
+      justify-content: space-between;
+      font-size: 11px;
+      gap: 10px;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__announcement-text {
+      display: none;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__h1 {
+      font-size: clamp(40px, 12vw, 56px);
+    }
+
+    #LaborDay-{{ section.id }} .laborday__h2 {
+      font-size: clamp(34px, 10vw, 48px);
+    }
+
+    #LaborDay-{{ section.id }} .laborday__hero-grid {
+      padding-top: 40px;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__hero-subhead {
+      margin-top: 20px;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__button {
+      width: 100%;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__pair-card .laborday__button {
+      align-self: stretch;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__micro-proof {
+      font-size: 11px;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__hero-card {
+      width: 145px;
+      min-height: 145px;
+      padding: 18px;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__hero-card strong {
+      font-size: 25px;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__proof-item {
+      min-height: 95px;
+      padding: 16px;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__proof-item strong {
+      font-size: 17px;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__pair-card h3 {
+      margin-top: 28px;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__math {
+      max-width: none;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__faq-panel-inner p {
+      padding-right: 20px;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__sticky {
+      position: fixed;
+      z-index: 999;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 8px 8px 16px;
+      background: var(--tt-black);
+      color: #fff;
+      border-radius: 999px;
+      box-shadow: 0 12px 45px rgba(0,0,0,.28);
+      transform: translateY(120%);
+      transition: transform .3s ease;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__sticky.is-visible {
+      transform: translateY(0);
+    }
+
+    #LaborDay-{{ section.id }} .laborday__sticky > div {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__sticky strong {
+      font-family: var(--tt-heading);
+      font-size: 13px;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__sticky span {
+      font-size: 10px;
+      opacity: .7;
+      letter-spacing: .1em;
+    }
+
+    #LaborDay-{{ section.id }} .laborday__sticky > a {
+      min-height: 46px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: var(--tt-red);
+      color: #fff;
+      font-family: var(--tt-heading);
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #LaborDay-{{ section.id }} *,
+    #LaborDay-{{ section.id }} *::before,
+    #LaborDay-{{ section.id }} *::after {
+      scroll-behavior: auto !important;
+      transition-duration: .01ms !important;
+      animation-duration: .01ms !important;
+    }
+  }
+</style>
+
 
 <script>
-  // Show sticky bar after scrolling past the hero
-  (function () {
-    var bar = document.getElementById('ld-sticky-bar');
-    if (!bar) return;
+  (() => {
+    const section = document.querySelector('#LaborDay-{{ section.id }}');
+    if (!section) return;
 
-    var hero = document.querySelector('.ld-hero');
-    if (!hero) { bar.classList.add('is-visible'); return; }
 
-    var threshold = hero.offsetTop + hero.offsetHeight;
-    var visible = false;
+    /* ---------------------------------
+       Ad hook → hero message matching
+    --------------------------------- */
 
-    function check() {
-      var shouldShow = window.scrollY > threshold;
-      if (shouldShow !== visible) {
-        visible = shouldShow;
-        bar.classList.toggle('is-visible', visible);
+    const params = new URLSearchParams(window.location.search);
+    const incomingHook = params.get('hook') || params.get('utm_content') || '';
+
+    const normalize = (value) =>
+      decodeURIComponent(value || '')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+
+    const hookKey = normalize(incomingHook);
+
+    if (hookKey) {
+      for (const record of section.querySelectorAll('[data-hook-record]')) {
+        if (normalize(record.dataset.key) !== hookKey) continue;
+
+        const eyebrow = section.querySelector('[data-hook-eyebrow]');
+        const headline = section.querySelector('[data-hook-headline]');
+        const subhead = section.querySelector('[data-hook-subhead]');
+
+        if (eyebrow && record.dataset.eyebrow) eyebrow.textContent = record.dataset.eyebrow;
+        if (headline && record.dataset.headline) headline.textContent = record.dataset.headline;
+        if (subhead && record.dataset.subhead) subhead.textContent = record.dataset.subhead;
+
+        section.dataset.activeHook = hookKey;
+        window.dispatchEvent(new CustomEvent('threaditate:hook-applied', { detail: { hook: hookKey } }));
+        break;
       }
     }
 
-    window.addEventListener('scroll', check, { passive: true });
-    check();
+
+    /* ---------------------------------
+       Countdown to sale end
+       Reads data-sale-end (ISO 8601 with offset)
+    --------------------------------- */
+
+    const saleEnd = Date.parse(section.dataset.saleEnd || '');
+    const countdownEls = section.querySelectorAll('[data-countdown], [data-countdown-inline]');
+
+    if (!Number.isNaN(saleEnd) && countdownEls.length) {
+      const render = () => {
+        const diff = saleEnd - Date.now();
+
+        if (diff <= 0) {
+          countdownEls.forEach((el) => { el.hidden = true; });
+          return false;
+        }
+
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+
+        const text = d > 0
+          ? `${d}d ${h}h ${String(m).padStart(2, '0')}m`
+          : `${h}h ${String(m).padStart(2, '0')}m`;
+
+        countdownEls.forEach((el) => {
+          const value = el.querySelector('[data-countdown-value]');
+          if (value) value.textContent = text;
+          el.hidden = false;
+        });
+
+        return true;
+      };
+
+      if (render()) window.setInterval(render, 30000);
+    }
+
+
+    /* ---------------------------------
+       FAQ accordion
+       Own toggle, so theme <details> hooks can't swallow clicks
+    --------------------------------- */
+
+    section.querySelectorAll('[data-faq-toggle]').forEach((toggle) => {
+      const panel = section.querySelector('#' + toggle.getAttribute('aria-controls'));
+      if (!panel) return;
+
+      toggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const open = toggle.getAttribute('aria-expanded') !== 'true';
+        toggle.setAttribute('aria-expanded', String(open));
+        panel.classList.toggle('is-open', open);
+
+        if (open) {
+          panel.hidden = false;
+        } else {
+          panel.addEventListener('transitionend', () => {
+            if (toggle.getAttribute('aria-expanded') !== 'true') panel.hidden = true;
+          }, { once: true });
+        }
+      });
+    });
+
+
+    /* ---------------------------------
+       Discount code copy
+    --------------------------------- */
+
+    section.querySelectorAll('[data-copy-code]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const code = button.dataset.copyCode;
+        if (!code) return;
+
+        try {
+          await navigator.clipboard.writeText(code);
+          const label = button.querySelector('[data-copy-label]');
+          if (label) {
+            const original = label.textContent;
+            label.textContent = 'copied';
+            window.setTimeout(() => { label.textContent = original; }, 1800);
+          }
+        } catch (error) {
+          console.warn('Could not copy discount code.', error);
+        }
+      });
+    });
+
+
+    /* ---------------------------------
+       Mobile sticky CTA
+    --------------------------------- */
+
+    const sticky = section.querySelector('[data-laborday-sticky]');
+    const hero = section.querySelector('.laborday__hero');
+
+    if (sticky && hero && 'IntersectionObserver' in window) {
+      new IntersectionObserver(
+        ([entry]) => sticky.classList.toggle('is-visible', !entry.isIntersecting),
+        { threshold: 0.05 }
+      ).observe(hero);
+    }
+
+
+    /* ---------------------------------
+       CTA tracking event (GA4 / GTM / Elevar hook)
+    --------------------------------- */
+
+    section.querySelectorAll('[data-laborday-cta]').forEach((cta) => {
+      cta.addEventListener('click', () => {
+        window.dispatchEvent(
+          new CustomEvent('threaditate:laborday-cta', {
+            detail: {
+              hook: section.dataset.activeHook || 'default',
+              promo: '{{ promo_code | escape }}'
+            }
+          })
+        );
+      });
+    });
+
   })();
 </script>
 
+
 {% schema %}
 {
-  "name": "Labor Day Landing",
+  "name": "Labor Day landing page",
   "tag": "section",
+  "class": "threaditate-laborday",
   "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "CTA product",
+      "info": "Defaults to the String Ring kit if empty."
+    },
+    {
+      "type": "select",
+      "id": "cta_mode",
+      "label": "Buttons go to",
+      "default": "checkout",
+      "info": "Checkout and Cart both pre-load two kits with the code applied. Product sends them to the PDP with the code applied but nothing in the cart.",
+      "options": [
+        { "value": "checkout", "label": "Checkout, two kits, code applied" },
+        { "value": "cart", "label": "Cart page, two kits, code applied" },
+        { "value": "product", "label": "Product page, code applied" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "discount_code",
+      "label": "Discount code",
+      "default": "LABORDAY"
+    },
+    {
+      "type": "text",
+      "id": "sale_end",
+      "label": "Sale end (ISO 8601)",
+      "default": "2026-09-07T23:59:59-07:00",
+      "info": "Drives the countdown. Include the timezone offset."
+    },
+    {
+      "type": "text",
+      "id": "announcement",
+      "label": "Announcement",
+      "default": "Labor Day weekend · Buy one kit, get a second 50% off"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA label",
+      "default": "Get two kits"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_theme_chrome",
+      "label": "Hide store header and footer",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Offer math"
+    },
+    {
+      "type": "text",
+      "id": "kit_price",
+      "label": "First kit price",
+      "default": "$89.00"
+    },
+    {
+      "type": "text",
+      "id": "second_kit_price",
+      "label": "Second kit price",
+      "default": "$44.50"
+    },
+    {
+      "type": "text",
+      "id": "bundle_price",
+      "label": "Two-kit total",
+      "default": "$133.50"
+    },
+    {
+      "type": "text",
+      "id": "savings",
+      "label": "Savings",
+      "default": "$44.50"
+    },
+    {
+      "type": "header",
+      "content": "Default hero"
+    },
+    {
+      "type": "text",
+      "id": "hero_eyebrow",
+      "label": "Eyebrow",
+      "default": "Labor Day weekend · Sep 2–7"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_headline",
+      "label": "Headline",
+      "default": "One to make. One to give."
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subhead",
+      "label": "Subheadline",
+      "default": "Buy one Threaditate kit, get a second at half price. Choose any photo for each. Turn a long weekend into two pieces of thread art, made by hand."
+    },
+    {
+      "type": "header",
+      "content": "Photography"
+    },
     {
       "type": "image_picker",
       "id": "hero_image",
       "label": "Hero image",
-      "info": "1200 x 900px. Two people threading, or a finished piece next to its source photo."
+      "info": "Portrait or 4:3. Someone holding a finished piece."
+    },
+    {
+      "type": "select",
+      "id": "step_ratio",
+      "label": "Step image shape",
+      "default": "1 / 1",
+      "info": "Square fits mixed landscape and portrait photos. Set a focal point on each image in Files if the crop still misses.",
+      "options": [
+        { "value": "1 / 1", "label": "Square" },
+        { "value": "4 / 3", "label": "Landscape (4:3)" },
+        { "value": "4 / 5", "label": "Portrait (4:5)" }
+      ]
     },
     {
       "type": "image_picker",
       "id": "step1_image",
-      "label": "Step 1 image — Upload",
-      "info": "400 x 400px. App upload screen or phone showing the app."
+      "label": "Step 1 — Upload"
     },
     {
       "type": "image_picker",
       "id": "step2_image",
-      "label": "Step 2 image — Thread",
-      "info": "400 x 400px. Overhead shot of hands threading."
+      "label": "Step 2 — Follow the voice"
     },
     {
       "type": "image_picker",
       "id": "step3_image",
-      "label": "Step 3 image — Hang",
-      "info": "400 x 400px. Finished piece hanging on a wall."
+      "label": "Step 3 — Hang",
+      "info": "Finished piece on a wall."
     },
     {
       "type": "image_picker",
       "id": "product_image",
-      "label": "Product / kit image",
-      "info": "800 x 800px. Kit contents flat lay — loom, thread, box."
-    },
+      "label": "Kit image",
+      "info": "4:5. Kit contents flat lay."
+    }
+  ],
+  "blocks": [
     {
-      "type": "url",
-      "id": "cta_url",
-      "label": "CTA button link",
-      "default": "/collections/all",
-      "info": "Where all 'Make yours' buttons point."
+      "type": "hook",
+      "name": "Ad hook",
+      "settings": [
+        {
+          "type": "text",
+          "id": "key",
+          "label": "Hook key",
+          "info": "Used in ?hook= or utm_content. Example: one-to-give"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow"
+        },
+        {
+          "type": "textarea",
+          "id": "headline",
+          "label": "Headline"
+        },
+        {
+          "type": "textarea",
+          "id": "subhead",
+          "label": "Subheadline"
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "Labor Day Landing"
+      "name": "Labor Day landing page",
+      "blocks": [
+        {
+          "type": "hook",
+          "settings": {
+            "key": "one-to-give",
+            "eyebrow": "Labor Day weekend · Sep 2–7",
+            "headline": "One to make. One to give.",
+            "subhead": "Buy one kit, get a second at half price. Any photo for each. The gift they didn't see coming."
+          }
+        },
+        {
+          "type": "hook",
+          "settings": {
+            "key": "quiet-weekend",
+            "eyebrow": "Labor Day, but relaxing",
+            "headline": "Two kits. Two photos. One quiet weekend.",
+            "subhead": "Put the phone down and follow a voice, line by line, until a photo you love is hanging on the wall. Second kit half off through Sunday."
+          }
+        },
+        {
+          "type": "hook",
+          "settings": {
+            "key": "actually-finish",
+            "eyebrow": "Built to reach the last line",
+            "headline": "The hobby you'll actually finish. Now two for $133.50.",
+            "subhead": "Pause whenever. Pick up exactly where you left off. Finish with something worth hanging. Second kit 50% off this weekend."
+          }
+        },
+        {
+          "type": "hook",
+          "settings": {
+            "key": "instead-of-scrolling",
+            "eyebrow": "A long weekend, two looms",
+            "headline": "Spend the long weekend making something instead of scrolling.",
+            "subhead": "Your photo, made in thread. This weekend, make two: buy one kit, get the second at half price."
+          }
+        }
+      ]
     }
   ]
 }
