@@ -69,6 +69,9 @@
 
 </div>
 
+{%- assign faq_items = section.blocks | where: 'type', 'faq_item' -%}
+{%- render 'schema-faq', items: faq_items, context: 'faq_item' -%}
+
 <script>
   (function() {
     const container = document.getElementById('faq-full-{{ section.id }}');

@@ -13,7 +13,7 @@
 --sm-pb: {{ section.settings.md_padding_bottom | append: 'px' }};
 ">
   <div class="section-header mb-gutter {{ section.settings.heading_text_align }}">
-    <h2 class="section-title {{ section.settings.size_multiplier }} {{ section.settings.sm_size_multiplier }}">{{ page.title }}</h2>
+    <{{ section.settings.heading_tag }} class="section-title {{ section.settings.size_multiplier }} {{ section.settings.sm_size_multiplier }}">{{ page.title }}</{{ section.settings.heading_tag }}>
   </div>
 
   <div class="rte rte--no-max">
@@ -30,6 +30,27 @@
         "id": "color_scheme",
         "default": "default",
         "label": "t:sections.colors.color_scheme.label"
+      },
+      {
+        "type": "select",
+        "id": "heading_tag",
+        "label": "t:sections.blocks.section_header.title_tag",
+        "info": "t:sections.typography.heading_tag.info",
+        "default": "h1",
+        "options": [
+          {
+            "value": "h1",
+            "label": "t:sections.typography.heading_tag.h1"
+          },
+          {
+            "value": "h2",
+            "label": "t:sections.typography.heading_tag.h2"
+          },
+          {
+            "value": "h3",
+            "label": "t:sections.typography.heading_tag.h3"
+          }
+        ]
       },
       {
         "type": "select",

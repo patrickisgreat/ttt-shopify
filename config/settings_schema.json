@@ -1529,6 +1529,27 @@
     ]
   },
   {
+    "name": "t:settings_schema.seo_social.name",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "t:settings_schema.seo_social.settings.paragraph__1.content"
+      },
+      {
+        "type": "image_picker",
+        "id": "share_image",
+        "label": "t:settings_schema.seo_social.settings.share_image.label",
+        "info": "t:settings_schema.seo_social.settings.share_image.info"
+      },
+      {
+        "type": "textarea",
+        "id": "share_description",
+        "label": "t:settings_schema.seo_social.settings.share_description.label",
+        "info": "t:settings_schema.seo_social.settings.share_description.info"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.favicon.name",
     "settings": [
       {
