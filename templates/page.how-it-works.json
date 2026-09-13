@@ -197,6 +197,13 @@
     "faq_with_image_TKFwQq": {
       "type": "faq-with-image",
       "blocks": {
+        "faq_item_cjCmEG": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I need to send in my photo?",
+            "answer": "<p>No, just upload to the Threaditate website and watch the string art generate in your own hands.  Edit the image and crop it just how you like, then click begin for your pattern to begin announcing.  It's all in your hands!</p>"
+          }
+        },
         "faq_item_kw7Xec": {
           "type": "faq_item",
           "settings": {
@@ -227,6 +234,7 @@
         }
       },
       "block_order": [
+        "faq_item_cjCmEG",
         "faq_item_kw7Xec",
         "faq_item_D8zJqt",
         "faq_item_JTeLJB",
