@@ -1,0 +1,86 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "offer_ended": {
+      "type": "rich-text",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "title": "This offer has ended",
+            "heading_tag": "h1",
+            "sm_size_multiplier": "sm-size--default",
+            "sm_margin_top": 0,
+            "size_multiplier": "size--default",
+            "margin_top": 0
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Campus20 promo wrapped up. The kit is still here, and the app still turns any photo into a pattern you can thread by hand.</p>",
+            "read_more": false,
+            "sm_size_multiplier": "sm-size--default",
+            "sm_margin_top": 16,
+            "size_multiplier": "size--default",
+            "margin_top": 16
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "See the kit",
+            "button_link_1": "shopify://products/string-ring-custom-string-art-kit",
+            "button_style_1": "",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_2": "secondary",
+            "button_label_3": "",
+            "button_link_3": "",
+            "button_style_3": "secondary",
+            "sm_full_width_buttons": false,
+            "sm_size_multiplier": "sm-size--default",
+            "sm_margin_top": 24,
+            "full_width_buttons": true,
+            "size_multiplier": "size--default",
+            "margin_top": 24
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "text",
+        "buttons"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "text_gradient_color": "",
+        "content_width": 50,
+        "desktop_content_alignment": "center",
+        "desktop_alignment": "sm-text-align-center",
+        "md_padding_top": 96,
+        "md_padding_bottom": 96,
+        "mobile_alignment": "text-align-center",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": [
+    "main",
+    "offer_ended"
+  ]
+}
