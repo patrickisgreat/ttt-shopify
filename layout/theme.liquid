@@ -16,7 +16,7 @@
 
     {%- comment -%} Preconnect links below here {% endcomment %}
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-    {% unless settings.type_header_font.system? and settings.base_font.system? -%}
+    {% unless settings.header_font.system? and settings.base_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {% endunless -%}
 

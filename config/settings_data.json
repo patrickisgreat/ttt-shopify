@@ -81,19 +81,24 @@
         "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
         "settings": {}
+      },
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
       "default": {
         "settings": {
           "foreground": "#0b0b0f",
-          "background": "#f4f2ed",
+          "background": "#F4EFED",
           "button_background": "#1450c4",
           "button_foreground": "#f4f2ed",
           "outlines": "#1450c4",
           "borders": "#d8d5cd",
           "card_foreground": "#0b0b0f",
-          "card_background": "#eceae4",
+          "card_background": "#ECE4E4",
           "card_background_gradient": "linear-gradient(127deg, rgba(20, 80, 196, 1), rgba(196, 61, 46, 1) 100%)",
           "overlay": "#ffffff"
         }

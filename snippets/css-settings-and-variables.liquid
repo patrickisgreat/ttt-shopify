@@ -2,6 +2,7 @@
   assign body_font_bold = settings.base_font | font_modify: 'weight', 'bold'
   assign body_font_italic = settings.base_font | font_modify: 'style', 'italic'
   assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
+  assign header_font_bold = settings.header_font | font_modify: 'weight', 'bolder'
 
   # Letter spacing values are given between -20 and 100 where 0 is default
   # We use em-units for letter spacing to keep the distance consistent
@@ -14,6 +15,7 @@
   {{ body_font_italic | font_face: font_display: 'swap' }}
   {{ body_font_bold_italic | font_face: font_display: 'swap' }}
   {{ settings.header_font | font_face: font_display: 'swap' }}
+  {%- if header_font_bold -%}{{ header_font_bold | font_face: font_display: 'swap' }}{%- endif -%}
 
   /* Colors - Schemes */
   {% for scheme in settings.color_schemes -%}
@@ -165,7 +167,7 @@
     {%- else -%}
     --font-button-family: var(--font-heading-family);
     --font-button-style: var(--font-heading-style);
-    --font-button-weight: var(--font-heading-weight);
+    --font-button-weight: {% if header_font_bold %}{{ header_font_bold.weight }}{% else %}var(--font-heading-weight){% endif %};
     {%- endif -%}
     --font-button-text-transform: {% if settings.button_uppercase %}uppercase{% else %}none{% endif %};
     --font-button-size: {{ settings.button_font_scaling_property | append: 'px' }};
