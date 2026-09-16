@@ -462,11 +462,17 @@
 
     /* Flip to the ended state at the exact end time, even on a cached page. */
     const endTs = Number(section.dataset.endTs || 0) * 1000;
+    const setBarState = (shown) => {
+      document.documentElement.classList.toggle('has-buy-bar', shown);
+      document.documentElement.style.setProperty('--buy-bar-height', shown && sticky ? `${sticky.offsetHeight}px` : '0px');
+      document.body.style.paddingBottom = shown && sticky ? `${sticky.offsetHeight}px` : '';
+    };
+
     const endOffer = () => {
       if (live) live.hidden = true;
       if (ended) ended.hidden = false;
       if (sticky) sticky.remove();
-      document.body.style.paddingBottom = '';
+      setBarState(false);
     };
 
     if (endTs > 0 && live) {
@@ -483,7 +489,7 @@
       new IntersectionObserver(([entry]) => {
         const passed = !entry.isIntersecting && entry.boundingClientRect.top < 0;
         sticky.classList.toggle('is-visible', passed);
-        document.body.style.paddingBottom = passed ? `${sticky.offsetHeight}px` : '';
+        setBarState(passed);
       }, { threshold: 0 }).observe(options);
     }
 
