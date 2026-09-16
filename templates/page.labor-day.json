@@ -306,7 +306,8 @@
         "md_padding_bottom": 40,
         "padding_top": 24,
         "padding_bottom": 24
-      }
+      },
+      "disabled": true
     }
   },
   "order": [
