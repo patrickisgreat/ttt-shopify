@@ -56,3 +56,11 @@
     width: 80px;
   }
 }
+
+/* Klaviyo's teaser (the "GET 10% OFF" tab) is fixed to the bottom edge with
+   inline styles and a huge z-index. Lift it above the buy bar while the bar
+   is showing so it never covers Add to cart. */
+html.has-buy-bar [class*="kl-teaser-"] {
+  bottom: var(--buy-bar-height, 0px) !important;
+  transition: bottom 0.3s ease-in-out;
+}
