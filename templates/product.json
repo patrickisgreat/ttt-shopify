@@ -231,7 +231,7 @@
       ],
       "settings": {
         "product_image_aspect_ratio": "square",
-        "media_fill_rule": "contain",
+        "media_fill_rule": "cover",
         "color_scheme": "scheme-d41b7294-aad9-4454-94d4-1e261262bb1f",
         "show_breadcrumb": false,
         "section_bg": "",
