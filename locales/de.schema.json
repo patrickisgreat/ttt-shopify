@@ -413,6 +413,22 @@
       }
     }
   },
+  "seo_social": {
+    "name": "Search & social sharing",
+    "settings": {
+      "paragraph__1": {
+        "content": "Controls the link preview card shown when a page is shared to Slack, iMessage, Facebook or X. Per-page titles and descriptions are set in Shopify admin under Online Store > Preferences and each page's own SEO section."
+      },
+      "share_image": {
+        "label": "Default sharing image",
+        "info": "Used on any page without its own image, including the homepage. Use a 1200 x 630px image."
+      },
+      "share_description": {
+        "label": "Default sharing description",
+        "info": "Fallback description for pages with no SEO description set. Aim for 110-160 characters."
+      }
+    }
+  },
   "favicon": {
     "name": "Favicon",
     "settings": {
