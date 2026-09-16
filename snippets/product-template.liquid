@@ -287,7 +287,14 @@
                   {%- else -%}
                     {{ the_price }}
                   {%- endif -%}
-                  {%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
+                  {%- if block.settings.shipping_note != blank -%}
+                    <div class="product__tax size--nano style--subdued">
+                      {%- if cart.taxes_included -%}
+                        {{ 'products.product.include_taxes' | t }}
+                      {%- endif -%}
+                      {{ block.settings.shipping_note | escape }}
+                    </div>
+                  {%- elsif cart.taxes_included or shop.shipping_policy.body != blank -%}
                     <div class="product__tax size--nano style--subdued">
                       {%- if cart.taxes_included -%}
                         {{ 'products.product.include_taxes' | t }}
@@ -543,7 +550,7 @@
                     <div class="product-form__buttons">
 
                       {% if has_quantity_selector and next_to_add_to_cart %}
-                        {% capture 'quantity_input' %}
+                        {% capture quantity_input %}
                           {% render 'quantity-input', input_min_value: 1, input_value: 1, input_form: product_form_id  %}
                         {% endcapture %}
                       {% elsif has_quantity_selector == false %}

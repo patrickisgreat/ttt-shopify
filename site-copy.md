@@ -572,9 +572,9 @@ _Auto-generated from the theme's JSON templates and section groups, in reading o
 - _text_
   - **text:** 5 Star Reviews
 - _text_
-  - **text:** 🇺🇸
+  - **text:** 📦
 - _text_
-  - **text:** Made in the USA
+  - **text:** Ships from Alabama
 
 ### product-recommendations
 
