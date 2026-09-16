@@ -30,6 +30,11 @@
   flex-wrap: wrap;
 }
 
+/* The floating label centres on the whole field; centre it on the input row now that the button sits below. */
+.newsletter-form__field-wrapper input + .field__label {
+  top: calc(var(--height) / 2 + var(--input-border-width));
+}
+
 .newsletter-form__message {
   justify-content: center;
   margin-bottom: 0;
