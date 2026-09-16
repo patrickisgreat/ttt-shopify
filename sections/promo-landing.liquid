@@ -1,0 +1,752 @@
+{% comment %}
+  Promo landing
+  Hero + two buy options + end date + sticky buy bar, all set from the editor.
+  Used by templates/page.promo.json (and page.labor-day.json).
+
+  - Prices are calculated in Liquid from the variant price, the quantity and
+    the discount percent, so the page can only promise what the maths says.
+    The percent must match the discount set up in Admin (code or automatic).
+  - Cart permalinks (/cart/VARIANT:QTY?discount=CODE) build a fresh checkout,
+    so the code has to ride on the link itself.
+  - After "Offer ends" passes, the buy options are replaced by the ended
+    message. Liquid renders the right state, and the script flips it at the
+    exact moment so a cached page still behaves.
+{% endcomment %}
+
+{%- liquid
+  assign s = section.settings
+
+  if s.product != blank
+    assign kit = s.product
+  else
+    assign kit = all_products['string-ring-custom-string-art-kit']
+  endif
+
+  assign variant = kit.selected_or_first_available_variant
+  assign unit_price = variant.price | default: 0
+  if kit != blank
+    assign kit_url = kit.url
+  else
+    assign kit_url = routes.all_products_collection_url
+  endif
+
+  assign end_ts = 0
+  if s.end_at != blank
+    assign end_ts = s.end_at | date: '%s' | plus: 0
+  endif
+  assign now_ts = 'now' | date: '%s' | plus: 0
+
+  assign ended = false
+  if end_ts > 0 and now_ts >= end_ts
+    assign ended = true
+  endif
+  if variant == blank or variant.available == false
+    assign ended = true
+  endif
+
+  assign primary_option = s.primary_option | default: '2'
+  assign proof_blocks = section.blocks | where: 'type', 'proof'
+-%}
+
+<div class="color-{{ s.color_scheme }}">
+  <section
+    id="Promo-{{ section.id }}"
+    class="promo container"
+    data-promo
+    data-end-at="{{ s.end_at | escape }}"
+    data-end-ts="{{ end_ts }}"
+  >
+    {%- unless ended -%}
+    <div class="promo__live" data-promo-live>
+      <div class="promo__hero">
+        <div class="promo__copy">
+          {%- if s.eyebrow != blank -%}
+            <p class="promo__eyebrow">{{ s.eyebrow | escape }}</p>
+          {%- endif -%}
+
+          <h1 class="promo__h1">{{ s.headline | escape | newline_to_br }}</h1>
+
+          {%- if s.subhead != blank -%}
+            <p class="promo__subhead">{{ s.subhead | escape | newline_to_br }}</p>
+          {%- endif -%}
+
+          <div class="promo__options" data-promo-options>
+            {%- for i in (1..2) -%}
+              {%- liquid
+                assign key_label = 'opt' | append: i | append: '_label'
+                assign key_qty = 'opt' | append: i | append: '_qty'
+                assign key_code = 'opt' | append: i | append: '_code'
+                assign key_note = 'opt' | append: i | append: '_note'
+                assign key_button = 'opt' | append: i | append: '_button'
+                assign is_primary = false
+                assign i_string = i | append: ''
+                if primary_option == i_string
+                  assign is_primary = true
+                endif
+              -%}
+              {%- render 'promo-buy-option',
+                index: i,
+                variant_id: variant.id,
+                unit_price: unit_price,
+                qty: s[key_qty],
+                label: s[key_label],
+                button_label: s[key_button],
+                code: s[key_code],
+                note: s[key_note],
+                pct: s.discount_percent,
+                scope: s.discount_scope,
+                auto: s.discount_automatic,
+                primary: is_primary,
+                flag: s.primary_flag
+              -%}
+            {%- endfor -%}
+          </div>
+
+          {%- if s.fine_print != blank or s.ends_text != blank -%}
+            <p class="promo__fine">
+              {{ s.ends_text | escape }} {{ s.fine_print | escape }}
+            </p>
+          {%- endif -%}
+
+          {%- if proof_blocks.size > 0 -%}
+            <ul class="promo__proof" role="list">
+              {%- for block in proof_blocks -%}
+                {%- if block.settings.text != blank -%}
+                  <li {{ block.shopify_attributes }}>{{ block.settings.text | escape }}</li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+        </div>
+
+        <div class="promo__media">
+          {%- if s.hero_image != blank -%}
+            {{
+              s.hero_image
+              | image_url: width: 1600
+              | image_tag:
+                class: 'promo__image',
+                loading: 'eager',
+                fetchpriority: 'high',
+                widths: '400, 600, 800, 1000, 1200, 1600',
+                sizes: '(min-width: 990px) 45vw, 100vw'
+            }}
+          {%- else -%}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'promo__image promo__image--placeholder' }}
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+    {%- endunless -%}
+
+    <div class="promo__ended" data-promo-ended {% unless ended %}hidden{% endunless %}>
+      <h1 class="promo__h1 promo__h1--ended">{{ s.ended_headline | escape }}</h1>
+      {%- if s.ended_text != blank -%}
+        <p class="promo__subhead">{{ s.ended_text | escape | newline_to_br }}</p>
+      {%- endif -%}
+      <a class="btn btn--primary promo__ended-btn" href="{{ kit_url }}">{{ s.ended_button | escape }}</a>
+    </div>
+  </section>
+
+  {%- if s.show_sticky and ended == false -%}
+    <div class="promo__sticky" data-promo-sticky aria-label="Buy options">
+      {%- for i in (1..2) -%}
+        {%- liquid
+          assign key_label = 'opt' | append: i | append: '_label'
+          assign key_qty = 'opt' | append: i | append: '_qty'
+          assign key_code = 'opt' | append: i | append: '_code'
+          assign is_primary = false
+          assign i_string = i | append: ''
+          if primary_option == i_string
+            assign is_primary = true
+          endif
+        -%}
+        {%- render 'promo-buy-option',
+          compact: true,
+          index: i,
+          variant_id: variant.id,
+          unit_price: unit_price,
+          qty: s[key_qty],
+          label: s[key_label],
+          button_label: s[key_label],
+          code: s[key_code],
+          pct: s.discount_percent,
+          scope: s.discount_scope,
+          auto: s.discount_automatic,
+          primary: is_primary
+        -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{% style %}
+  #Promo-{{ section.id }} {
+    --promo-cobalt: #1450c4;
+    --promo-red: #c43d2e;
+    --promo-ink: #0b0b0f;
+    padding-top: 20px;
+    padding-bottom: 32px;
+  }
+
+  #Promo-{{ section.id }} .promo__hero {
+    display: grid;
+    gap: 24px;
+  }
+
+  #Promo-{{ section.id }} .promo__eyebrow {
+    margin: 0;
+    font-family: var(--font-heading-family);
+    font-weight: var(--font-heading-weight);
+    font-size: 13px;
+    line-height: 1.3;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--promo-cobalt);
+  }
+
+  #Promo-{{ section.id }} .promo__h1 {
+    margin: 8px 0 0;
+    font-size: clamp(30px, 8.2vw, 54px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+
+  #Promo-{{ section.id }} .promo__subhead {
+    margin: 12px 0 0;
+    max-width: 560px;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  #Promo-{{ section.id }} .promo__options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  #Promo-{{ section.id }} .promo-option {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 12px 12px;
+    border: 1.5px solid rgba(11, 11, 15, 0.16);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  #Promo-{{ section.id }} .promo-option--primary {
+    border-color: var(--promo-cobalt);
+    box-shadow: 0 10px 28px rgba(20, 80, 196, 0.14);
+  }
+
+  #Promo-{{ section.id }} .promo-option__flag {
+    position: absolute;
+    top: -11px;
+    left: 12px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: var(--promo-cobalt);
+    color: #fff;
+    font-family: var(--font-heading-family);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  #Promo-{{ section.id }} .promo-option p {
+    margin: 0;
+  }
+
+  #Promo-{{ section.id }} .promo-option__label {
+    font-family: var(--font-heading-family);
+    font-weight: var(--font-heading-weight);
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  #Promo-{{ section.id }} .promo-option__price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  #Promo-{{ section.id }} .promo-option__price s {
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.55;
+  }
+
+  #Promo-{{ section.id }} .promo-option__save {
+    color: var(--promo-red);
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  #Promo-{{ section.id }} .promo-option__note {
+    font-size: 12.5px;
+    line-height: 1.35;
+    opacity: 0.78;
+  }
+
+  #Promo-{{ section.id }} .promo-option .btn {
+    margin-top: auto;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+    min-height: 46px;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  #Promo-{{ section.id }} .promo__fine {
+    margin: 10px 0 0;
+    font-size: 12.5px;
+    line-height: 1.4;
+    opacity: 0.72;
+  }
+
+  #Promo-{{ section.id }} .promo__proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 13.5px;
+    line-height: 1.4;
+  }
+
+  #Promo-{{ section.id }} .promo__proof li::before {
+    content: "✓";
+    margin-right: 6px;
+    color: var(--promo-cobalt);
+    font-weight: 700;
+  }
+
+  #Promo-{{ section.id }} .promo__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  #Promo-{{ section.id }} .promo__image--placeholder {
+    aspect-ratio: 4 / 3;
+    background: rgba(11, 11, 15, 0.06);
+  }
+
+  #Promo-{{ section.id }} .promo__ended {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 48px 0;
+    text-align: center;
+  }
+
+  #Promo-{{ section.id }} .promo__ended .promo__subhead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #Promo-{{ section.id }} .promo__ended-btn {
+    margin-top: 24px;
+    font-weight: 700;
+  }
+
+  .promo__sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: #fff;
+    border-top: 1px solid rgba(11, 11, 15, 0.12);
+    box-shadow: 0 -8px 24px rgba(11, 11, 15, 0.08);
+    transform: translateY(110%);
+    transition: transform 0.25s ease;
+  }
+
+  .promo__sticky.is-visible {
+    transform: none;
+  }
+
+  .promo__sticky .btn {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    min-height: 44px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  @media screen and (min-width: 768px) {
+    #Promo-{{ section.id }} {
+      padding-top: 40px;
+      padding-bottom: 48px;
+    }
+
+    #Promo-{{ section.id }} .promo__options {
+      gap: 14px;
+      max-width: 520px;
+    }
+
+    #Promo-{{ section.id }} .promo-option {
+      padding: 18px 16px 16px;
+    }
+
+    #Promo-{{ section.id }} .promo-option__price {
+      font-size: 28px;
+    }
+
+    #Promo-{{ section.id }} .promo-option .btn {
+      font-size: 16px;
+    }
+
+    .promo__sticky {
+      grid-template-columns: repeat(2, minmax(220px, 300px));
+      justify-content: center;
+      gap: 12px;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    #Promo-{{ section.id }} .promo__hero {
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 56px;
+      min-height: 560px;
+    }
+
+    #Promo-{{ section.id }} .promo__media {
+      order: 2;
+    }
+
+    #Promo-{{ section.id }} .promo__ended {
+      padding: 96px 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .promo__sticky {
+      transition: none;
+    }
+  }
+{% endstyle %}
+
+<script>
+  (() => {
+    const section = document.querySelector('#Promo-{{ section.id }}');
+    if (!section) return;
+
+    const live = section.querySelector('[data-promo-live]');
+    const ended = section.querySelector('[data-promo-ended]');
+    const sticky = section.parentElement.querySelector('[data-promo-sticky]');
+    const options = section.querySelector('[data-promo-options]');
+
+    /* Flip to the ended state at the exact end time, even on a cached page. */
+    const endTs = Number(section.dataset.endTs || 0) * 1000;
+    const endOffer = () => {
+      if (live) live.hidden = true;
+      if (ended) ended.hidden = false;
+      if (sticky) sticky.remove();
+      document.body.style.paddingBottom = '';
+    };
+
+    if (endTs > 0 && live) {
+      const remaining = endTs - Date.now();
+      if (remaining <= 0) {
+        endOffer();
+      } else if (remaining < 2147483647) {
+        window.setTimeout(endOffer, remaining);
+      }
+    }
+
+    /* Sticky buy bar: show once the buy options have scrolled out of view. */
+    if (sticky && options && 'IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        const passed = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+        sticky.classList.toggle('is-visible', passed);
+        document.body.style.paddingBottom = passed ? `${sticky.offsetHeight}px` : '';
+      }, { threshold: 0 }).observe(options);
+    }
+
+    /* CTA tracking hook (GA4 / GTM / Elevar can listen for this). */
+    section.parentElement.querySelectorAll('[data-promo-cta]').forEach((cta) => {
+      cta.addEventListener('click', () => {
+        window.dispatchEvent(new CustomEvent('threaditate:promo-cta', {
+          detail: {
+            option: cta.dataset.promoOption,
+            qty: cta.dataset.promoQty,
+            total: cta.dataset.promoTotal,
+            code: cta.dataset.promoCode
+          }
+        }));
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Promo landing",
+  "tag": "section",
+  "class": "section--promo-landing",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Kit",
+      "info": "Defaults to the Threaditate kit if empty."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "default"
+    },
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Limited time"
+    },
+    {
+      "type": "textarea",
+      "id": "headline",
+      "label": "Headline",
+      "default": "One to make. One to give."
+    },
+    {
+      "type": "textarea",
+      "id": "subhead",
+      "label": "Subhead",
+      "default": "Your photo, made in thread by your own hands. Buy one kit, or two and save on the second."
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image",
+      "info": "4:3 or square. A finished piece in someone's hands works best."
+    },
+    {
+      "type": "header",
+      "content": "Offer"
+    },
+    {
+      "type": "text",
+      "id": "end_at",
+      "label": "Offer ends",
+      "default": "2026-09-08T00:00:00-05:00",
+      "info": "ISO 8601 with timezone offset, e.g. 2026-09-08T00:00:00-05:00. After this the buy buttons are replaced by the ended message. Leave empty for no end."
+    },
+    {
+      "type": "text",
+      "id": "ends_text",
+      "label": "Ends line",
+      "default": "Ends Sunday night.",
+      "info": "Shown under the buy options, e.g. \"Ends Sunday, Sep 7.\" Written by hand so it always matches the date above."
+    },
+    {
+      "type": "range",
+      "id": "discount_percent",
+      "label": "Discount percent",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 50,
+      "info": "Must match the discount set up in Admin (code or automatic). Shown prices are calculated from this."
+    },
+    {
+      "type": "checkbox",
+      "id": "discount_automatic",
+      "label": "Discount is automatic (no code needed)",
+      "default": false,
+      "info": "Tick this when the discount is set up as an automatic discount in Admin. Otherwise the percent only shows on options that carry a code."
+    },
+    {
+      "type": "select",
+      "id": "discount_scope",
+      "label": "Discount applies to",
+      "default": "second",
+      "options": [
+        { "value": "second", "label": "The second kit only (buy one, get one X% off)" },
+        { "value": "all", "label": "Every kit in the option (X% off the order)" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "primary_option",
+      "label": "Highlighted option",
+      "default": "2",
+      "options": [
+        { "value": "1", "label": "Option 1" },
+        { "value": "2", "label": "Option 2" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "primary_flag",
+      "label": "Highlight badge",
+      "default": "Best value"
+    },
+    {
+      "type": "text",
+      "id": "fine_print",
+      "label": "Fine print",
+      "default": "Discount applied at checkout. Shipping shown before you pay."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sticky",
+      "label": "Show sticky buy bar after the hero scrolls away",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Option 1"
+    },
+    {
+      "type": "text",
+      "id": "opt1_label",
+      "label": "Label",
+      "default": "One kit"
+    },
+    {
+      "type": "range",
+      "id": "opt1_qty",
+      "label": "Quantity",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "text",
+      "id": "opt1_code",
+      "label": "Discount code",
+      "info": "Optional. Added to the cart link as ?discount=CODE."
+    },
+    {
+      "type": "text",
+      "id": "opt1_note",
+      "label": "Note",
+      "default": "For you"
+    },
+    {
+      "type": "text",
+      "id": "opt1_button",
+      "label": "Button",
+      "default": "Buy one kit"
+    },
+    {
+      "type": "header",
+      "content": "Option 2"
+    },
+    {
+      "type": "text",
+      "id": "opt2_label",
+      "label": "Label",
+      "default": "Two kits"
+    },
+    {
+      "type": "range",
+      "id": "opt2_qty",
+      "label": "Quantity",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "text",
+      "id": "opt2_code",
+      "label": "Discount code",
+      "info": "Optional. Added to the cart link as ?discount=CODE."
+    },
+    {
+      "type": "text",
+      "id": "opt2_note",
+      "label": "Note",
+      "default": "One for you, one to give"
+    },
+    {
+      "type": "text",
+      "id": "opt2_button",
+      "label": "Button",
+      "default": "Buy two kits"
+    },
+    {
+      "type": "header",
+      "content": "After the offer ends"
+    },
+    {
+      "type": "text",
+      "id": "ended_headline",
+      "label": "Headline",
+      "default": "This offer has ended"
+    },
+    {
+      "type": "textarea",
+      "id": "ended_text",
+      "label": "Text",
+      "default": "The kit is still here, and the app still turns any photo into a pattern you can thread by hand."
+    },
+    {
+      "type": "text",
+      "id": "ended_button",
+      "label": "Button",
+      "default": "See the kit"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "proof",
+      "name": "Proof point",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Ships from Alabama in 1 business day"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promo landing",
+      "blocks": [
+        { "type": "proof", "settings": { "text": "2,035 backers" } },
+        { "type": "proof", "settings": { "text": "Ships from Alabama in 1 business day" } },
+        { "type": "proof", "settings": { "text": "30-day guarantee" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
