@@ -175,18 +175,21 @@
   object-position: center;
   display: block;
 }
-/* Social proof line, sits between the subheading and the CTA buttons. */
+/* Social proof line, sits between the subheading and the CTA buttons.
+   Needs its own colour — without one it inherits the dark body text and
+   disappears into the hero's near-black background. */
 .hero-dark__proof {
   margin: 16px 0 0;
-  font-size: 0.9375rem;
-  line-height: 1.4;
+  font-family: var(--font-body-family);
+  font-size: 1.0625rem;
+  line-height: 1.5;
   letter-spacing: 0.02em;
-  opacity: 0.85;
+  color: rgb(var(--brand-ivory-white-rgb, 244 242 237) / 0.9);
 }
 
 @media only screen and (max-width: 767px) {
   .hero-dark__proof {
     margin-top: 12px;
-    font-size: 0.875rem;
+    font-size: 1rem;
   }
 }

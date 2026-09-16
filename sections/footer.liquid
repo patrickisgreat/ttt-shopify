@@ -174,7 +174,7 @@
 
                 <noscript>
                 {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
-                  <h2 class="visually-hidden" id="FooterCountryLabelNoScript">{{ 'localization.country_label' | t  | t }}</h2>
+                  <h2 class="visually-hidden" id="FooterCountryLabelNoScript">{{ 'localization.country_label' | t }}</h2>
                   <select class="btn btn--full" name="country_code" aria-labelledby="FooterCountryLabelNoScript">
                     {%- for country in localization.available_countries -%}
                       <option value="{{ country.iso_code }}" {%- if country.iso_code == localization.country.iso_code %} selected{% endif %}>
@@ -191,7 +191,7 @@
               <button type="button" class="btn btn--link font-body color-text js size--small" aria-label="{{ 'accessibility.language_selector_and_current' | t: current: localization.language.endonym_name }}" data-drawer-submenu-open="#localization"><strong>{{ localization.language.endonym_name | capitalize }}</strong></button>
               <noscript>
                 {%- form 'localization', id: 'FooterLanguageFormNoScript', class: 'localization-form' -%}
-                  <h2 class="visually-hidden" id="FooterLanguageLabelNoScript">{{ 'localization.language_label' | t  | t }}</h2>
+                  <h2 class="visually-hidden" id="FooterLanguageLabelNoScript">{{ 'localization.language_label' | t }}</h2>
                     <select class="btn btn--full" name="locale_code" aria-labelledby="FooterLanguageLabelNoScript">
                       {%- for language in localization.available_languages -%}
                         <option value="{{ language.iso_code }}" lang="{{ language.iso_code }}" {%- if language.iso_code == localization.language.iso_code %} selected{% endif %}>

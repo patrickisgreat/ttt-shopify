@@ -5,8 +5,9 @@
     - "items" is either a
       - list of blocks with block.settings.title and block.settings.text
       - list of articles with article.title and article.content
+      - list of blocks with block.settings.question and block.settings.answer
     - "context" is either
-      - "block" or "article"
+      - "block", "faq_item" or "article"
 {%- endcomment -%}
 
 {%- liquid
@@ -16,6 +17,11 @@
     for item in items
       assign questions = questions | append: '*__FAQ__*' | append: item.settings.title
       assign answers = answers | append: '*__FAQ__*' | append: item.settings.text
+    endfor
+  elsif context == "faq_item"
+    for item in items
+      assign questions = questions | append: '*__FAQ__*' | append: item.settings.question
+      assign answers = answers | append: '*__FAQ__*' | append: item.settings.answer
     endfor
   else
     for item in items
@@ -31,7 +37,7 @@
 {%- if questions.size > 0 -%}
 <script type="application/ld+json">
   {
-    "@context": "http://schema.org",
+    "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {%- for question in questions -%}

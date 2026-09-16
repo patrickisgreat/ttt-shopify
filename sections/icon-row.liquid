@@ -13,7 +13,7 @@
   <div class="icon-row__inner container">
 
     {%- if section.settings.heading != blank -%}
-      <h2 class="icon-row__title text-align-center">{{ section.settings.heading }}</h2>
+      <{{ section.settings.heading_tag }} class="icon-row__title text-align-center">{{ section.settings.heading }}</{{ section.settings.heading_tag }}>
     {%- endif -%}
 
     {%- if section.blocks.size > 0 -%}
@@ -66,6 +66,39 @@
       "default": "default",
       "label": "Color scheme",
       "info": "Use a dark color scheme to match the design."
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "info": "t:sections.typography.heading_tag.info",
+      "label": "t:sections.typography.heading_tag.label",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h1",
+          "label": "t:sections.typography.heading_tag.h1"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.typography.heading_tag.h2"
+        },
+        {
+          "value": "h3",
+          "label": "t:sections.typography.heading_tag.h3"
+        },
+        {
+          "value": "h4",
+          "label": "t:sections.typography.heading_tag.h4"
+        },
+        {
+          "value": "h5",
+          "label": "t:sections.typography.heading_tag.h5"
+        },
+        {
+          "value": "h6",
+          "label": "t:sections.typography.heading_tag.h6"
+        }
+      ]
     },
     {
       "type": "text",

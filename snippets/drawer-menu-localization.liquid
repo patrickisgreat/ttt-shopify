@@ -84,7 +84,7 @@
           <noscript>
             <div class="drawer-submenu__item">
               {%- form 'localization', id: 'DrawerMenuCountryForm', class: 'localization-form' -%}
-                <h2 class="visually-hidden" id="DrawerMenuCountryLabelNoScript">{{ 'localization.country_label' | t  | t }}</h2>
+                <h2 class="visually-hidden" id="DrawerMenuCountryLabelNoScript">{{ 'localization.country_label' | t }}</h2>
                 <select class="btn btn--full" name="country_code" aria-labelledby="DrawerMenuCountryLabelNoScript">
                   {%- for country in localization.available_countries -%}
                     <option value="{{ country.iso_code }}" {%- if country.iso_code == localization.country.iso_code %} selected{% endif %}>
