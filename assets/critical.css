@@ -2167,3 +2167,12 @@ details.footer-details .content {
   display: flex;
   flex-direction: column;
 }
+
+/* Sticky buy bars (product page, promo landing) set html.has-buy-bar and
+   --buy-bar-height while they are showing. Klaviyo's teaser (the "GET 10% OFF"
+   tab) is fixed to the bottom edge with inline styles and a huge z-index, so
+   lift it above the bar instead of letting it cover the buy button. */
+html.has-buy-bar [class*="kl-teaser-"] {
+  bottom: var(--buy-bar-height, 0px) !important;
+  transition: bottom 0.3s ease-in-out;
+}

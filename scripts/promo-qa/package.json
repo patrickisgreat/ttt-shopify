@@ -1,0 +1,12 @@
+{
+  "name": "promo-qa",
+  "private": true,
+  "type": "module",
+  "description": "Checks a Threaditate promo landing page against the checkout it sends people to.",
+  "scripts": {
+    "qa": "node promo-qa.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.62.1"
+  }
+}

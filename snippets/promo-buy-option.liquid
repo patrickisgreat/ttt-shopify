@@ -1,0 +1,91 @@
+{% comment %}
+  One buy option on the promo landing page: a card (default) or a compact
+  sticky-bar button (compact: true). The price maths lives here so the card
+  and the sticky bar can never disagree.
+
+  ** PARAMETERS **
+  variant_id    => REQUIRED | number  | variant the cart permalink adds
+  unit_price    => REQUIRED | number  | variant price in cents
+  qty           => REQUIRED | number  | how many kits this option adds
+  label         => REQUIRED | string  | "One kit"
+  button_label  => REQUIRED | string  | "Buy one kit"
+  code          => OPTIONAL | string  | discount code appended as ?discount=CODE
+  auto          => OPTIONAL | boolean | an automatic discount is set up in Admin, so the percent applies with no code
+  note          => OPTIONAL | string  | small line under the price
+  pct           => OPTIONAL | number  | discount percent (0 = none)
+  scope         => OPTIONAL | string  | 'second' (default) applies pct to one kit when qty >= 2, 'all' applies it to every kit
+  primary       => OPTIONAL | boolean | highlighted card + primary button
+  flag          => OPTIONAL | string  | badge text on the primary card
+  compact       => OPTIONAL | boolean | render only the button (sticky bar)
+  index         => REQUIRED | number  | 1 or 2, used for ids and QA hooks
+{% endcomment %}
+
+{%- liquid
+  assign qty = qty | default: 1 | at_least: 1
+  assign pct = pct | default: 0
+  assign code = code | strip
+  assign gross = unit_price | times: qty
+  assign discount = 0
+
+  comment
+    The percent only counts when checkout will actually apply it: the option
+    carries a code, or the merchant has said the discount is automatic.
+  endcomment
+  if code == blank and auto != true
+    assign pct = 0
+  endif
+
+  if pct > 0
+    if scope == 'all'
+      assign discount = gross | times: pct | divided_by: 100
+    elsif qty >= 2
+      assign discount = unit_price | times: pct | divided_by: 100
+    endif
+  endif
+
+  assign total = gross | minus: discount
+
+  assign url = '/cart/' | append: variant_id | append: ':' | append: qty
+  if code != blank
+    assign safe_code = code | url_encode
+    assign url = url | append: '?discount=' | append: safe_code
+  endif
+
+  if primary
+    assign btn_style = 'btn--primary'
+  else
+    assign btn_style = 'btn--secondary'
+  endif
+-%}
+
+{%- capture qa_attrs -%}
+  data-promo-cta data-promo-option="{{ index }}" data-promo-qty="{{ qty }}" data-promo-total="{{ total }}" data-promo-code="{{ code | escape }}"
+{%- endcapture -%}
+
+{%- if compact -%}
+  <a class="btn {{ btn_style }} btn--full" href="{{ url }}" {{ qa_attrs }}>
+    {{ label | escape }} · {{ total | money }}
+  </a>
+{%- else -%}
+  <div class="promo-option{% if primary %} promo-option--primary{% endif %}">
+    {%- if primary and flag != blank -%}
+      <span class="promo-option__flag">{{ flag | escape }}</span>
+    {%- endif -%}
+    <p class="promo-option__label">{{ label | escape }}</p>
+    <p class="promo-option__price">
+      <strong>{{ total | money }}</strong>
+      {%- if discount > 0 -%}
+        <s aria-label="Regular price">{{ gross | money }}</s>
+      {%- endif -%}
+    </p>
+    {%- if discount > 0 -%}
+      <p class="promo-option__save">Save {{ discount | money }}</p>
+    {%- endif -%}
+    {%- if note != blank -%}
+      <p class="promo-option__note">{{ note | escape }}</p>
+    {%- endif -%}
+    <a class="btn {{ btn_style }} btn--full" href="{{ url }}" {{ qa_attrs }}>
+      {{ button_label | escape }}
+    </a>
+  </div>
+{%- endif -%}

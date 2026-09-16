@@ -16,12 +16,21 @@ class ProductBuyBar extends HTMLElement {
             // Out of view AND scrolled a little from top -> Show bar
             this.classList.add(classes.show);
           }
+          this.syncBuyBarState();
         });
       },
       { threshold: 0.25 }
     );
 
     observer.observe(mainProductForm);
+
+    // Tell the page the bar is up, and how tall it is, so fixed third-party
+    // widgets (the Klaviyo "10% off" teaser) can sit above it instead of on it.
+    this.syncBuyBarState = () => {
+      const shown = this.classList.contains(classes.show);
+      document.documentElement.classList.toggle("has-buy-bar", shown);
+      document.documentElement.style.setProperty("--buy-bar-height", shown ? `${this.offsetHeight}px` : "0px");
+    };
 
     // This script is loaded in product-template.liquid --> Footer observer after DOM ready
     document.addEventListener("DOMContentLoaded", function () {

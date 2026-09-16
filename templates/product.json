@@ -23,7 +23,8 @@
           "type": "rating",
           "settings": {
             "margin_top": 0
-          }
+          },
+          "disabled": true
         },
         "the-title": {
           "type": "title",
@@ -31,13 +32,18 @@
             "margin_top": 12
           }
         },
+        "judgeme_badge": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "the-price": {
           "type": "price",
           "settings": {
             "margin_top": 8,
             "font_weight": "normal",
             "sm_size_multiplier": "sm-size--huge",
-            "size_multiplier": "size--huge"
+            "size_multiplier": "size--huge",
+            "shipping_note": "Ships in 1 business day from Alabama. Shipping shown before you pay."
           }
         },
         "the-description": {
@@ -199,6 +205,7 @@
         "2cb069aa-470f-47b0-97d9-b6a2c86aa996",
         "rating_Ccm9zT",
         "the-title",
+        "judgeme_badge",
         "the-price",
         "the-description",
         "2ad218b6-4cf8-49f8-a948-4ca131ed654a",
@@ -283,14 +290,14 @@
         "text_gjb7wp": {
           "type": "text",
           "settings": {
-            "text": "🇺🇸",
+            "text": "📦",
             "link": ""
           }
         },
         "text_3jVyPi": {
           "type": "text",
           "settings": {
-            "text": "Made in the USA",
+            "text": "Ships from Alabama",
             "link": ""
           }
         }
@@ -628,14 +635,35 @@
         "padding_top": 80,
         "padding_bottom": 80
       }
+    },
+    "judgeme_reviews": {
+      "type": "apps",
+      "blocks": {
+        "review_widget": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "review_widget"
+      ],
+      "settings": {
+        "enable_full_width": false,
+        "md_padding_top": 40,
+        "md_padding_bottom": 40,
+        "padding_top": 24,
+        "padding_bottom": 24
+      },
+      "disabled": true
     }
   },
   "order": [
     "main",
+    "before_after_JDmxdx",
     "sliding_text_rcCeE8",
+    "judgeme_reviews",
     "features_grid_aiQeMA",
     "split_image_content_3xrpVG",
-    "before_after_JDmxdx",
     "app_carousel_ehEbit",
     "feature_carousel_6FG3qV",
     "the-product-recommendations",

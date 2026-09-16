@@ -20,12 +20,19 @@
 }
 
 .newsletter-form__field-wrapper .field__input {
-  padding-right: 5rem;
+  flex: 1 1 100%;
+  min-width: 0;
   margin: 0;
 }
 
 .newsletter-form__field-wrapper .field {
   z-index: 0;
+  flex-wrap: wrap;
+}
+
+/* The floating label centres on the whole field; centre it on the input row now that the button sits below. */
+.newsletter-form__field-wrapper input + .field__label {
+  top: calc(var(--height) / 2 + var(--input-border-width));
 }
 
 .newsletter-form__message {
@@ -48,21 +55,25 @@
   }
 }
 
-.newsletter-form__button {
-  color: var(--input-foreground);
-  width: 4.4rem;
-  margin: 0;
-  right: var(--input-border-width);
-  top: 0;
-  height: 100%;
-  z-index: 2;
+/* The submit button is a real theme button stacked under the input, so the
+   label ("Get the good stuff") always fits on one line at every width. */
+.newsletter-form .newsletter-form__button.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex: 0 0 100%;
+  width: 100%;
+  min-height: 4.8rem;
+  margin: 1rem 0 0;
+  white-space: nowrap;
 }
 
-.newsletter-form__button:not(:focus-visible):not(.focused) {
-  box-shadow: inherit;
-  background-color: inherit;
+.newsletter-form__button-text {
+  line-height: 1;
 }
 
 .newsletter-form__button .icon {
   width: 1.5rem;
+  flex-shrink: 0;
 }
