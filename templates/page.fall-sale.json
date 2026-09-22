@@ -1,0 +1,80 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "fall-sale-landing": {
+      "type": "fall-sale-landing",
+      "blocks": {
+        "hook-evening-ritual": {
+          "type": "hook",
+          "settings": {
+            "key": "evening-ritual",
+            "eyebrow": "Fall flash · Sep 25 to 27",
+            "headline": "Your fall evening ritual, sorted.",
+            "subhead": "Lamp on, phone down, hands busy. The app reads each line out loud while a photo you love turns into thread. 25% off through Sunday."
+          }
+        },
+        "hook-actually-finish": {
+          "type": "hook",
+          "settings": {
+            "key": "actually-finish",
+            "eyebrow": "Built to reach the last line",
+            "headline": "The hobby you'll actually finish.",
+            "subhead": "Pause whenever. Pick up exactly where you left off. Finish with something worth hanging. 25% off any kit, three days only."
+          }
+        },
+        "hook-cooler-evenings": {
+          "type": "hook",
+          "settings": {
+            "key": "cooler-evenings",
+            "eyebrow": "Fall flash · Sep 25 to 27",
+            "headline": "Cooler evenings. Warmer hands.",
+            "subhead": "Something on your wall by Sunday. 25% off any Threaditate kit, Friday through Sunday."
+          }
+        }
+      },
+      "block_order": [
+        "hook-evening-ritual",
+        "hook-actually-finish",
+        "hook-cooler-evenings"
+      ],
+      "settings": {
+        "product": "string-ring-custom-string-art-kit",
+        "cta_mode": "product",
+        "discount_code": "FALL25",
+        "sale_end": "2026-09-27T23:59:59-04:00",
+        "announcement": "Fall flash · 25% off any kit through Sunday",
+        "cta_label": "Make yours",
+        "hide_theme_chrome": false,
+        "kit_price": "$89.00",
+        "sale_price": "$66.75",
+        "savings": "$22.25",
+        "hero_eyebrow": "Fall flash · Sep 25 to 27",
+        "hero_headline": "Shorter days. Longer evenings. Something worth making.",
+        "hero_subhead": "25% off any Threaditate kit for three days. A photo you love, made in thread, on the wall by the time the clocks change.",
+        "hero_image": "shopify://shop_images/Screenshot_2026-09-21_at_2.16.18_PM.png",
+        "hero_texture": "shopify://shop_images/fall_bg_f64b6733-c249-400a-b1e1-ddf171a7271f.png",
+        "hero_texture_opacity": 90,
+        "hero_texture_fade": true,
+        "ritual_image": "shopify://shop_images/610e0f10-d335-4f0f-b480-ae09c1b2ea43.png",
+        "before_image": "shopify://shop_images/Screenshot_2026-09-21_at_2.07.04_PM.png",
+        "after_image": "shopify://shop_images/Screenshot_2026-09-21_at_2.13.37_PM.png",
+        "step_ratio": "1 / 1",
+        "step1_image": "shopify://shop_images/Screenshot_2026-09-01_at_4.19.51_PM-EDIT.jpg",
+        "step2_image": "shopify://shop_images/follow-the-voice.png",
+        "step3_image": "shopify://shop_images/threaditate-laborday-step3-hang-wall-mounted.png",
+        "product_image": "shopify://shop_images/kit-shot-1.png"
+      }
+    }
+  },
+  "order": [
+    "fall-sale-landing"
+  ]
+}
