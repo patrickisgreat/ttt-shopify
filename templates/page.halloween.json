@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "halloween-landing": {
@@ -31,7 +40,11 @@
           }
         }
       },
-      "block_order": ["hook-haunting", "hook-pet-portrait", "hook-october-making"],
+      "block_order": [
+        "hook-haunting",
+        "hook-pet-portrait",
+        "hook-october-making"
+      ],
       "settings": {
         "product": "string-ring-custom-string-art-kit",
         "cta_mode": "checkout",
@@ -47,11 +60,22 @@
         "hero_eyebrow": "All October · second kit 50% off",
         "hero_headline": "Thread something haunting.",
         "hero_subhead": "Buy one Threaditate kit, get a second kit 50% off, all month. A photo you love, or the dog in a costume, made in thread by Halloween.",
-        "hero_texture_opacity": 40,
+        "hero_image": "shopify://shop_images/HalloweenLander_HERO_5b5e1216-2e24-4b7c-8cd3-7ecc0bbede2a.png",
+        "hero_texture": "shopify://shop_images/halloweenLander_hero_background.png",
+        "hero_texture_opacity": 20,
         "hero_texture_fade": true,
-        "step_ratio": "1 / 1"
+        "pet_image": "shopify://shop_images/halloweenLander_Animal_6eac24e0-3d71-4e76-8ba3-1a3e3c04c3d9.png",
+        "before_image": "shopify://shop_images/1789747297357-jdymn8.webp",
+        "after_image": "shopify://shop_images/halloweLander_PennyWise_c886e649-fac3-4e4b-afdb-38a44a4a7b4a.png",
+        "step_ratio": "1 / 1",
+        "step1_image": "shopify://shop_images/Screenshot_2026-10-06_at_4.51.51_PM.png",
+        "step2_image": "shopify://shop_images/halloweenLander_threading.png",
+        "step3_image": "shopify://shop_images/halloweenLander_Reveal.png",
+        "product_image": "shopify://shop_images/setp-1.jpg"
       }
     }
   },
-  "order": ["halloween-landing"]
+  "order": [
+    "halloween-landing"
+  ]
 }
