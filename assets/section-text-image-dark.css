@@ -9,19 +9,10 @@
   background-color: var(--brand-true-black, #0B0B0F);
 }
 
-/* ── Gradient background ── */
+/* ── Background ── */
+/* Flat brand black, no gradients. */
 .text-image-dark__bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-image:
-    radial-gradient(ellipse 65% 80% at 0%   100%, rgb(var(--brand-cobalt-blue-rgb, 20 80 196) / 0.90) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 60% at 0%    40%, rgb(var(--brand-blue-violet-rgb, 61 61 176) / 0.60) 0%, transparent 50%),
-    radial-gradient(ellipse 50% 60% at 100% 100%, rgb(var(--brand-vermillion-red-rgb, 196 61 46) / 0.85) 0%, transparent 50%),
-    radial-gradient(ellipse 35% 45% at 100%  70%, rgb(var(--brand-blue-violet-rgb, 61 61 176) / 0.50) 0%, transparent 45%),
-    radial-gradient(ellipse 30% 35% at  55%   0%, rgb(var(--brand-vermillion-red-rgb, 196 61 46) / 0.40) 0%, transparent 50%),
-    radial-gradient(ellipse 20% 30% at  15%   5%, rgb(var(--brand-cobalt-blue-rgb, 20 80 196) / 0.35) 0%, transparent 45%);
-  pointer-events: none;
+  display: none;
 }
 
 /* ── Inner ── */

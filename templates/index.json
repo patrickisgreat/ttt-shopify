@@ -14,12 +14,12 @@
       "name": "Hero Dark",
       "settings": {
         "heading": "Calmly turn your own photo into string art",
-        "subheading": "Threaditate is a personalized string art kit - upload a photo you love, then the app's voice guides you line by line, at your pace. No skills or experience needed. Enough thread for multiple calming sessions.  ⭐⭐⭐⭐½.  4.6/5 Star Reviews. 3500 kits sold.",
-        "proof_line": "95% of users report calm and focus within minutes.  Make something you're proud of. Wind down today with the new string art experience.",
-        "caption": "🧵 $89 🖼️ Everything included 🎁 5-6 hours of calm 🧠 Relaxing 🧘‍♀️ Focus tool 🙏 Fidget stim 🌀 Mind-body connection 💪 Zero craftsmanship needed 🎨🖌️",
-        "primary_button_label": "Get my art kit now",
+        "subheading": "Threaditate is a personalized string art kit. Upload a photo you love, then the app's voice guides you line by line, at your pace. No skills or experience needed.",
+        "proof_line": "3,000+ kits made. App included, no subscription.",
+        "caption": "Everything included · Ships in 48 hours · 30-day returns",
+        "primary_button_label": "Get my kit",
         "primary_button_link": "shopify://products/string-ring-custom-string-art-kit",
-        "primary_button_color": "#c43d2e",
+        "primary_button_color": "#1450c4",
         "secondary_button_label": "",
         "secondary_button_link": "",
         "image": "shopify://shop_images/IMG_8337.jpg",
@@ -29,81 +29,13 @@
         "padding_bottom": 56
       }
     },
-    "sliding_text": {
-      "type": "sliding-text",
-      "blocks": {
-        "item-03": {
-          "type": "text",
-          "settings": {
-            "text": "3,000+ kits made",
-            "link": ""
-          }
-        },
-        "item-02": {
-          "type": "text",
-          "settings": {
-            "text": "App included — no subscription",
-            "link": ""
-          }
-        },
-        "item-01": {
-          "type": "text",
-          "settings": {
-            "text": "Ships in 48 hours",
-            "link": ""
-          }
-        },
-        "item-05": {
-          "type": "text",
-          "settings": {
-            "text": "30-day returns",
-            "link": ""
-          }
-        },
-        "item-gwp-tote": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "Free tote through August 21",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "item-03",
-        "item-02",
-        "item-01",
-        "item-05",
-        "item-gwp-tote"
-      ],
-      "custom_css": [],
-      "settings": {
-        "color_scheme": "scheme-be8ef671-53c2-4895-89a6-144af711f198",
-        "text_gradient_color": "",
-        "content_order": "horizontal",
-        "font": "heading",
-        "direction": "normal",
-        "speed": 10,
-        "pause_on_hover": false,
-        "sm_size_multiplier": "sm-size--small",
-        "sm_item_gap": 80,
-        "sm_padding": 32,
-        "md_padding_top": 0,
-        "md_padding_bottom": 0,
-        "size_multiplier": "size--default",
-        "item_gap": 24,
-        "padding": 24,
-        "padding_top": 32,
-        "padding_bottom": 32
-      }
-    },
     "video_YzVdz8": {
       "type": "video",
       "name": "t:sections.blocks.video.name",
       "settings": {
         "color_scheme": "",
         "video_url": "https://youtu.be/nx8gGJW0ay4?si=f9CEV4tbISfkAqwq",
-        "title": "Watch how to make string art from your photos ✍️",
+        "title": "Watch how a photo becomes string art",
         "text": "",
         "align_content": "text-align-center",
         "position_content": "above",
@@ -131,7 +63,7 @@
             "quote_headline": "The whole world around you seems to disappear",
             "quote_body": "This is really quite relaxing. I did a portrait of my grandfather, so now I can feel his presence whenever I look at the artwork. Makes a very unique and thoughtful gift for anyone at any age. I look forward to my next one.",
             "author_name": "Roy P.",
-            "author_role": "65"
+            "author_role": "Age 65"
           }
         },
         "testimonial_6A4tbr": {
@@ -149,7 +81,7 @@
             "quote_headline": "I can finally just chill",
             "quote_body": "It's amazing. I go into a deep sense of calm and relaxation. It feels like nothing's going on outside in the world or in my mind, and thoughts clear up as I loop. I want to give my mom one.",
             "author_name": "Sean O.",
-            "author_role": "9"
+            "author_role": "Age 9"
           }
         },
         "testimonial_K4jDN8": {
@@ -158,7 +90,7 @@
             "quote_headline": "It's really calming",
             "quote_body": "It is a lot of fun. It's really cool, it's not hard at all to do. I really liked it. You get to focus on one thing. Get it if you like art.",
             "author_name": "Grace J.",
-            "author_role": "14"
+            "author_role": "Age 14"
           }
         }
       },
@@ -173,7 +105,7 @@
       "settings": {
         "color_scheme": "",
         "heading": "Made by people like you.",
-        "subheading": "Here is what makers really think:",
+        "subheading": "What makers say about their first piece.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
@@ -295,10 +227,10 @@
       ],
       "name": "How It Works",
       "settings": {
-        "color_scheme": "scheme-be8ef671-53c2-4895-89a6-144af711f198",
+        "color_scheme": "default",
         "heading": "Four steps. The app guides every one.",
         "subheading": "",
-        "button_label": "Get my kit →",
+        "button_label": "Get my kit",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
         "caption": "",
         "button_style": "primary",
@@ -372,9 +304,9 @@
       "type": "cta-banner",
       "name": "CTA Banner",
       "settings": {
-        "heading": "Turn a memory into a meditation, Turn  meditation into a masterpiece.",
+        "heading": "Turn a memory into a meditation. Turn the meditation into a piece.",
         "subheading": "Upload it. Let the app's voice guide you, line by line. Walk away with something you love on your wall.",
-        "button_label": "Get my kit →",
+        "button_label": "Get my kit",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
         "caption": "No experience needed. Everything included.",
         "md_padding_top": 120,
@@ -494,7 +426,7 @@
         "heading": "Good questions, clear answers",
         "subheading": "If you're wondering it, someone else already asked it.",
         "image": "shopify://shop_images/faq-image.jpg",
-        "button_label": "View More FAQs",
+        "button_label": "See all FAQs",
         "button_link": "shopify://pages/faq",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
@@ -509,7 +441,6 @@
   },
   "order": [
     "hero_dark_4Nid7U",
-    "sliding_text",
     "video_YzVdz8",
     "testimonials_slider_UKWpbV",
     "features_grid_J9zhXh",

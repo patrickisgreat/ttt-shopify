@@ -177,7 +177,7 @@
             id="atc-btn-{{ section.id }}"
           >
             {%- if current_variant.available -%}
-              {{ section.settings.atc_label | default: 'Add to Cart' }} →
+              {{ section.settings.atc_label | default: 'Add to cart' }}
             {%- else -%}
               Sold Out
             {%- endif -%}
@@ -325,7 +325,7 @@
         // Update ATC button
         if (atcBtn) {
           atcBtn.disabled = !matchedVariant.available;
-          atcBtn.textContent = matchedVariant.available ? '{{ section.settings.atc_label | default: "Add to Cart" }} →' : 'Sold Out';
+          atcBtn.textContent = matchedVariant.available ? '{{ section.settings.atc_label | default: "Add to cart" }}' : 'Sold Out';
         }
       }
     });
@@ -357,7 +357,7 @@
       "type": "text",
       "id": "try_it_label",
       "label": "Button label",
-      "default": "Try it with your photo →"
+      "default": "Try it with your photo"
     },
     {
       "type": "url",

@@ -1,0 +1,2583 @@
+{% comment %}
+  Threaditate — HALLOWEEN Landing Page
+  /pages/halloween
+  Thu Oct 1 to Sat Oct 31, 2026 · Buy one kit, get a second 50% off · Code: SPOOKY
+
+  Cloned from fall-sale-landing (which is cloned from labor-day-landing, the
+  reference build), reskinned per Threaditate_Promo_Briefs_v2 chapter 6:
+  - Henny Penny (cute spooky) for H1/H2 and the pair cards, Instrument Serif
+    Italic for the featured quote, theme fonts everywhere else
+    (swap-ins if Henny Penny wears thin: Griffy, Mystery Quest)
+  - Black and orange: smoke / pumpkin / candle / bone
+  - Dark hero, quotes directly under it, pet portrait feature, BOGO pair block
+  - Two-kit math, before/after reveal, same hook library, countdown,
+    copy-code, sticky CTA, FAQ accordion
+
+  URL examples:
+  /pages/halloween?hook=haunting
+  /pages/halloween?hook=pet-portrait
+  /pages/halloween?utm_content=october-making
+
+  Create SPOOKY in Shopify Admin > Discounts as Buy X Get Y:
+  buy 1 String Ring kit, get 1 at 50% off, Oct 1 to 31. Never also set a
+  sale price on the product (they stack).
+{% endcomment %}
+
+{% liquid
+  assign promo_code = section.settings.discount_code | strip
+
+  assign default_kit = all_products['string-ring-custom-string-art-kit']
+
+  if section.settings.product != blank
+    assign cta_path = section.settings.product.url
+  elsif default_kit != blank
+    assign cta_path = default_kit.url
+  else
+    assign cta_path = routes.all_products_collection_url
+  endif
+
+  comment
+    Where the buttons go.
+    - checkout: two kits in the cart, code applied, straight to checkout
+    - cart:     two kits in the cart, code applied, cart page first
+    - product:  the PDP, code applied
+    Falls back to product if we can't find a variant.
+  endcomment
+
+  if section.settings.product != blank
+    assign kit = section.settings.product
+  else
+    assign kit = default_kit
+  endif
+
+  assign variant_id = nil
+  if kit != blank and kit.selected_or_first_available_variant != blank
+    assign variant_id = kit.selected_or_first_available_variant.id
+  endif
+
+  assign cta_mode = section.settings.cta_mode | default: 'checkout'
+
+  comment
+    Cart permalinks build a fresh checkout and ignore the /discount/ cookie,
+    so the code has to ride on the permalink itself as ?discount=CODE.
+    The PDP route still uses /discount/CODE?redirect= (cookie), which the
+    storefront cart honors on the way to checkout.
+  endcomment
+
+  assign cta_url = cta_path
+  assign single_url = cta_path
+
+  if promo_code != blank
+    assign single_url = '/discount/' | append: promo_code | append: '?redirect=' | append: cta_path
+  endif
+
+  if variant_id != nil and cta_mode == 'checkout'
+    assign cta_url = '/cart/' | append: variant_id | append: ':2'
+    if promo_code != blank
+      assign cta_url = cta_url | append: '?discount=' | append: promo_code
+    endif
+  elsif variant_id != nil and cta_mode == 'cart'
+    assign cta_url = '/cart/' | append: variant_id | append: ':2?storefront=true'
+    if promo_code != blank
+      assign cta_url = cta_url | append: '&discount=' | append: promo_code
+    endif
+  else
+    assign cta_url = single_url
+  endif
+
+  assign kit_price = section.settings.kit_price
+  assign second_price = section.settings.second_kit_price
+  assign bundle_price = section.settings.bundle_price
+  assign savings = section.settings.savings
+%}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+
+<section
+  id="Spooky-{{ section.id }}"
+  class="spooky"
+  data-spooky-section
+  data-sale-end="{{ section.settings.sale_end | escape }}"
+>
+
+  {% if section.settings.hide_theme_chrome %}
+    <script>
+      document.documentElement.classList.add('threaditate-lander-active');
+    </script>
+  {% endif %}
+
+
+  {%- comment -%}
+    ============================================================
+    ANNOUNCEMENT
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="spooky__announcement">
+    <div class="spooky__shell spooky__announcement-inner">
+      <span class="spooky__announcement-text">{{ section.settings.announcement }}</span>
+
+      {% if promo_code != blank %}
+        <button
+          class="spooky__code-button"
+          type="button"
+          data-copy-code="{{ promo_code | escape }}"
+          aria-label="Copy discount code {{ promo_code }}"
+        >
+          {{ promo_code }}
+          <span class="spooky__copy-label" data-copy-label>copy</span>
+        </button>
+      {% endif %}
+
+      <span class="spooky__countdown" data-countdown hidden>
+        ends in <strong data-countdown-value></strong>
+      </span>
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    HERO
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="spooky__hero">
+    {% if section.settings.hero_texture != blank %}
+      <div class="spooky__hero-texture" aria-hidden="true">
+        {{
+          section.settings.hero_texture
+          | image_url: width: 2400
+          | image_tag:
+            loading: 'eager',
+            widths: '800, 1200, 1800, 2400',
+            sizes: '100vw',
+            alt: ''
+        }}
+      </div>
+    {% endif %}
+    <div class="spooky__hero-grid spooky__shell">
+
+      <div class="spooky__hero-copy">
+        <p class="spooky__eyebrow" data-hook-eyebrow>
+          {{ section.settings.hero_eyebrow }}
+        </p>
+
+        <h1 class="spooky__h1" data-hook-headline>
+          {{ section.settings.hero_headline }}
+        </h1>
+
+        <p class="spooky__hero-subhead" data-hook-subhead>
+          {{ section.settings.hero_subhead }}
+        </p>
+
+        <div class="spooky__hero-actions">
+          <a
+            class="spooky__button spooky__button--primary"
+            href="{{ cta_url }}"
+            data-spooky-cta
+          >
+            {{ section.settings.cta_label }}
+            <span aria-hidden="true">→</span>
+          </a>
+
+          {% if promo_code != blank %}
+            <p class="spooky__offer-note">
+              {%- if cta_mode == 'product' -%}
+                Code <strong>{{ promo_code }}</strong> is applied when you land on the kit. Any kit, any photo.
+              {%- else -%}
+                Two kits go in your cart with <strong>{{ promo_code }}</strong> already applied.
+                <a class="spooky__single-link" href="{{ single_url }}">Just want one?</a>
+              {%- endif -%}
+            </p>
+          {% endif %}
+        </div>
+
+        <div class="spooky__micro-proof">
+          <span>App included</span>
+          <span aria-hidden="true">·</span>
+          <span>No subscription</span>
+          <span aria-hidden="true">·</span>
+          <span>Any photo. Pets welcome.</span>
+        </div>
+      </div>
+
+
+      <div class="spooky__hero-media">
+        {% if section.settings.hero_image != blank %}
+          {{
+            section.settings.hero_image
+            | image_url: width: 1800
+            | image_tag:
+              class: 'spooky__hero-image',
+              loading: 'eager',
+              fetchpriority: 'high',
+              widths: '600, 900, 1200, 1500, 1800',
+              sizes: '(min-width: 990px) 50vw, 100vw',
+              alt: section.settings.hero_image.alt
+          }}
+        {% else %}
+          <div class="spooky__placeholder spooky__placeholder--hero">
+            {{ 'lifestyle-1' | placeholder_svg_tag }}
+            <span>Select your Halloween hero image</span>
+          </div>
+        {% endif %}
+
+        <div class="spooky__hero-card">
+          <span>Second kit</span>
+          <strong>{{ second_price }}</strong>
+          <small>{{ promo_code }}</small>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    Hidden hook data. JS below message-matches the hero to ?hook= / ?utm_content=
+  {%- endcomment -%}
+
+  <div hidden data-hook-library>
+    {% for block in section.blocks %}
+      {% if block.type == 'hook' %}
+        <span
+          data-hook-record
+          data-key="{{ block.settings.key | handleize }}"
+          data-eyebrow="{{ block.settings.eyebrow | escape }}"
+          data-headline="{{ block.settings.headline | escape }}"
+          data-subhead="{{ block.settings.subhead | escape }}"
+          {{ block.shopify_attributes }}
+        ></span>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    BACKER QUOTES
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="spooky__section spooky__section--white">
+    <div class="spooky__shell">
+
+      <p class="spooky__eyebrow">From people who finished one</p>
+
+      <div class="spooky__quotes">
+
+        <figure class="spooky__quote spooky__quote--featured">
+          <blockquote>
+            “The depth and detail of the finished work exceeded my expectation.
+            It looked more true to life than the rendering in the app.”
+          </blockquote>
+          <figcaption>Sheryl M. · Kickstarter backer</figcaption>
+        </figure>
+
+        <figure class="spooky__quote">
+          <blockquote>
+            “Incredibly rewarding and proud of finishing a project, because
+            I struggle with finishing projects.”
+          </blockquote>
+          <figcaption>Timothy K. · Kickstarter backer</figcaption>
+        </figure>
+
+        <figure class="spooky__quote">
+          <blockquote>
+            “It was easy, relaxing, and fun. I immediately wanted to do another.”
+          </blockquote>
+          <figcaption>Megan D. · got hers as a gift</figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    PROOF STRIP
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="spooky__proof">
+    <div class="spooky__proof-grid spooky__shell">
+
+      <div class="spooky__proof-item">
+        <strong>2,013</strong>
+        <span>Kickstarter backers</span>
+      </div>
+
+      <div class="spooky__proof-item">
+        <strong>$158K</strong>
+        <span>raised</span>
+      </div>
+
+      <div class="spooky__proof-item">
+        <strong>9 of 9</strong>
+        <span>finishers surveyed would recommend it</span>
+      </div>
+
+      <div class="spooky__proof-item spooky__proof-item--quote">
+        <strong>“Disconnecting from everyday stressors.”</strong>
+        <span>Jessica P. · made one of her grandson</span>
+      </div>
+
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    PET PORTRAIT FEATURE
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="spooky__section spooky__section--smoke">
+    <div class="spooky__shell spooky__split">
+
+      <div class="spooky__media-card">
+        {% if section.settings.pet_image != blank %}
+          {{
+            section.settings.pet_image
+            | image_url: width: 1500
+            | image_tag:
+              class: 'spooky__product-image',
+              loading: 'lazy',
+              widths: '500, 800, 1100, 1500',
+              sizes: '(min-width: 990px) 48vw, 100vw',
+              alt: section.settings.pet_image.alt
+          }}
+        {% else %}
+          <div class="spooky__placeholder">
+            {{ 'lifestyle-2' | placeholder_svg_tag }}
+            <span>Pet portrait in thread · 1500 x 1875</span>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="spooky__section-copy">
+        <p class="spooky__eyebrow spooky__eyebrow--pumpkin">Pet portrait</p>
+        <h2 class="spooky__h2 spooky__h2--light">The most photographed member of the family. Framed.</h2>
+        <p class="spooky__lead">
+          Thread makes a portrait that's a little eerie in the best way. The eyes come through first, then the rest of the face, line by line.
+        </p>
+        <p class="spooky__ritual-line">Use the photo you already have. Your dog does not need to sit still.</p>
+        <a class="spooky__button spooky__button--primary" href="{{ cta_url }}" data-spooky-cta>
+          Thread your pet
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    ONE FOR YOU / ONE FOR THEM
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="spooky__section spooky__section--bone">
+    <div class="spooky__shell">
+
+      <div class="spooky__section-heading">
+        <p class="spooky__eyebrow">Buy one kit, second kit 50% off</p>
+        <h2 class="spooky__h2">
+          One for you. One for them.
+        </h2>
+        <p>
+          Two kits, two photos. They don't have to match, and they don't have to be for the same person.
+          The second kit is 50% off all month.
+        </p>
+      </div>
+
+      <div class="spooky__pair">
+
+        <article class="spooky__pair-card spooky__pair-card--make">
+          <span class="spooky__pair-index">01</span>
+          <h3>One for you.</h3>
+          <p class="spooky__pair-lead">
+            Black thread, dark wall, one candle. October threading hits different.
+          </p>
+          <ul>
+            <li>The app reads each line out loud. Your eyes stay on the loom.</li>
+            <li>Stop whenever. Your place is saved.</li>
+            <li>Five to eight hours, spread across however many evenings you like.</li>
+          </ul>
+          <a class="spooky__button spooky__button--black" href="{{ cta_url }}" data-spooky-cta>
+            Make yours
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="spooky__pair-card spooky__pair-card--give">
+          <span class="spooky__pair-index">02</span>
+          <h3>One for them.</h3>
+          <p class="spooky__pair-lead">
+            Their dog. Their grandmother. The two of you, ten years ago. A gift they make with their own hands, in time for December.
+          </p>
+          <ul>
+            <li>Every kit works with any photo. Nothing to pre-order or customize.</li>
+            <li>Birthdays are coming. So is the holiday list.</li>
+            <li>Second kit 50% off, through October 31.</li>
+          </ul>
+          <a class="spooky__button spooky__button--primary" href="{{ cta_url }}" data-spooky-cta>
+            Give one
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    HOW IT WORKS
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="spooky__section spooky__section--black">
+    <div class="spooky__shell">
+
+      <div class="spooky__section-heading">
+        <p class="spooky__eyebrow spooky__eyebrow--pumpkin">How it works</p>
+        <h2 class="spooky__h2 spooky__h2--light">
+          From camera roll to wall.
+        </h2>
+      </div>
+
+      <div class="spooky__steps">
+
+        <article class="spooky__step">
+          <div class="spooky__step-media">
+            {% if section.settings.step1_image != blank %}
+              {{
+                section.settings.step1_image
+                | image_url: width: 1000
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '400, 700, 1000',
+                  sizes: '(min-width: 750px) 33vw, 100vw',
+                  alt: section.settings.step1_image.alt
+              }}
+            {% else %}
+              <div class="spooky__placeholder">
+                {{ 'image' | placeholder_svg_tag }}
+                <span>App upload screen</span>
+              </div>
+            {% endif %}
+          </div>
+          <span>01</span>
+          <h3>Upload a photo</h3>
+          <p>Any photo from your camera roll. The app turns it into a threading sequence.</p>
+        </article>
+
+        <article class="spooky__step">
+          <div class="spooky__step-media">
+            {% if section.settings.step2_image != blank %}
+              {{
+                section.settings.step2_image
+                | image_url: width: 1000
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '400, 700, 1000',
+                  sizes: '(min-width: 750px) 33vw, 100vw',
+                  alt: section.settings.step2_image.alt
+              }}
+            {% else %}
+              <div class="spooky__placeholder">
+                {{ 'lifestyle-2' | placeholder_svg_tag }}
+                <span>Hands threading</span>
+              </div>
+            {% endif %}
+          </div>
+          <span>02</span>
+          <h3>Follow the voice</h3>
+          <p>It tells you where to go next, line by line, at your pace. No counting.</p>
+        </article>
+
+        <article class="spooky__step">
+          <div class="spooky__step-media">
+            {% if section.settings.step3_image != blank %}
+              {{
+                section.settings.step3_image
+                | image_url: width: 1000
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '400, 700, 1000',
+                  sizes: '(min-width: 750px) 33vw, 100vw',
+                  alt: section.settings.step3_image.alt
+              }}
+            {% else %}
+              <div class="spooky__placeholder">
+                {{ 'lifestyle-1' | placeholder_svg_tag }}
+                <span>Finished piece on a wall</span>
+              </div>
+            {% endif %}
+          </div>
+          <span>03</span>
+          <h3>Hang your piece</h3>
+          <p>Your photo, made in thread. On the wall by Halloween, or whenever.</p>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    THE KIT + THE MATH
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="spooky__section spooky__section--bone">
+    <div class="spooky__shell spooky__split">
+
+      <div class="spooky__media-card">
+        {% if section.settings.product_image != blank %}
+          {{
+            section.settings.product_image
+            | image_url: width: 1500
+            | image_tag:
+              class: 'spooky__product-image',
+              loading: 'lazy',
+              widths: '500, 800, 1100, 1500',
+              sizes: '(min-width: 990px) 48vw, 100vw',
+              alt: section.settings.product_image.alt
+          }}
+        {% else %}
+          <div class="spooky__placeholder">
+            {{ 'product-1' | placeholder_svg_tag }}
+            <span>Kit contents flat lay</span>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="spooky__section-copy">
+        <p class="spooky__eyebrow">What's in the box</p>
+        <h2 class="spooky__h2">Everything. Twice.</h2>
+        <p class="spooky__lead">
+          Each kit is complete on its own. Two kits, two full sets, nothing shared.
+        </p>
+
+        <ul class="spooky__contents">
+          <li>Loom and mounting hardware</li>
+          <li>Thread, spool holder, threading tool</li>
+          <li>Numbered guide and wooden phone stand</li>
+          <li>Convertible easel box</li>
+          <li>Lifetime app access, no subscription</li>
+        </ul>
+
+        <div class="spooky__math">
+          <div class="spooky__math-row">
+            <span>First kit</span>
+            <strong>{{ kit_price }}</strong>
+          </div>
+          <div class="spooky__math-row spooky__math-row--deal">
+            <span>Second kit <em>with {{ promo_code }}</em></span>
+            <strong>{{ second_price }}</strong>
+          </div>
+          <div class="spooky__math-row spooky__math-row--total">
+            <span>Two kits</span>
+            <strong>{{ bundle_price }}</strong>
+          </div>
+          <p class="spooky__math-save">You save {{ savings }}.</p>
+        </div>
+
+        <a class="spooky__button spooky__button--primary" href="{{ cta_url }}" data-spooky-cta>
+          {{ section.settings.cta_label }}
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    BEFORE / AFTER
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="spooky__section spooky__section--smoke">
+    <div class="spooky__shell">
+
+      <div class="spooky__section-heading">
+        <p class="spooky__eyebrow spooky__eyebrow--pumpkin">The reveal</p>
+        <h2 class="spooky__h2 spooky__h2--light">It starts as a photo.</h2>
+      </div>
+
+      <div class="spooky__reveal">
+
+        <figure class="spooky__reveal-card">
+          {% if section.settings.before_image != blank %}
+            {{
+              section.settings.before_image
+              | image_url: width: 1200
+              | image_tag:
+                loading: 'lazy',
+                widths: '400, 800, 1200',
+                sizes: '(min-width: 750px) 50vw, 100vw',
+                alt: section.settings.before_image.alt
+            }}
+          {% else %}
+            <div class="spooky__placeholder">
+              {{ 'image' | placeholder_svg_tag }}
+              <span>Before · the photo · 1200 x 1500</span>
+            </div>
+          {% endif %}
+          <figcaption>The photo</figcaption>
+        </figure>
+
+        <figure class="spooky__reveal-card">
+          {% if section.settings.after_image != blank %}
+            {{
+              section.settings.after_image
+              | image_url: width: 1200
+              | image_tag:
+                loading: 'lazy',
+                widths: '400, 800, 1200',
+                sizes: '(min-width: 750px) 50vw, 100vw',
+                alt: section.settings.after_image.alt
+            }}
+          {% else %}
+            <div class="spooky__placeholder">
+              {{ 'lifestyle-1' | placeholder_svg_tag }}
+              <span>After · the piece · 1200 x 1500</span>
+            </div>
+          {% endif %}
+          <figcaption>The piece</figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    OFFER
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="spooky__offer">
+    <div class="spooky__shell spooky__offer-inner">
+
+      <p class="spooky__eyebrow">
+        October 1 to 31
+      </p>
+
+      <h2 class="spooky__h2">
+        Buy one kit. Second kit 50% off.
+      </h2>
+
+      <p class="spooky__offer-copy">
+        Any two kits, any two photos, all month. The code wraps when October does.
+      </p>
+
+      {% if promo_code != blank %}
+        <button
+          type="button"
+          class="spooky__big-code"
+          data-copy-code="{{ promo_code | escape }}"
+        >
+          <span>At checkout, use</span>
+          <strong>{{ promo_code }}</strong>
+          <small data-copy-label>tap to copy</small>
+        </button>
+      {% endif %}
+
+      <a class="spooky__button spooky__button--black" href="{{ cta_url }}" data-spooky-cta>
+        {{ section.settings.cta_label }}
+        <span aria-hidden="true">→</span>
+      </a>
+
+      <p class="spooky__offer-fine">
+        <span data-countdown-inline hidden>Ends in <strong data-countdown-value></strong>. </span>
+        Two kits, two photos. App included. Ships within one business day. 30-day returns.
+        {%- if cta_mode != 'product' %}
+          <a class="spooky__single-link" href="{{ single_url }}">Only need one kit?</a>
+        {%- endif %}
+      </p>
+
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    FAQ
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="spooky__section spooky__section--bone">
+    <div class="spooky__shell spooky__faq-shell">
+
+      <div class="spooky__section-heading">
+        <p class="spooky__eyebrow">Good questions</p>
+        <h2 class="spooky__h2">Clear answers.</h2>
+      </div>
+
+      <div class="spooky__faq">
+
+        <div class="spooky__faq-item" data-faq-item>
+          <h3 class="spooky__faq-q">
+            <button type="button" class="spooky__faq-toggle" aria-expanded="false" aria-controls="SpookyFaq-{{ section.id }}-0" data-faq-toggle>
+              <span>How does the second kit 50% off work?</span>
+              <span class="spooky__faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="spooky__faq-panel" id="SpookyFaq-{{ section.id }}-0" data-faq-panel hidden>
+            <div class="spooky__faq-panel-inner">
+              <p>
+              Two kits in the cart, code {{ promo_code }} at checkout, and the second kit drops to 50% off.
+              The buttons on this page put both kits in your cart with the code already applied.
+            </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="spooky__faq-item" data-faq-item>
+          <h3 class="spooky__faq-q">
+            <button type="button" class="spooky__faq-toggle" aria-expanded="false" aria-controls="SpookyFaq-{{ section.id }}-6" data-faq-toggle>
+              <span>Can I thread my pet?</span>
+              <span class="spooky__faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="spooky__faq-panel" id="SpookyFaq-{{ section.id }}-6" data-faq-panel hidden>
+            <div class="spooky__faq-panel-inner">
+              <p>
+              Yes, and pets make some of the best pieces. Pick a photo where the face fills the frame and
+              the eyes are sharp. Costumes count.
+            </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="spooky__faq-item" data-faq-item>
+          <h3 class="spooky__faq-q">
+            <button type="button" class="spooky__faq-toggle" aria-expanded="false" aria-controls="SpookyFaq-{{ section.id }}-1" data-faq-toggle>
+              <span>Do I need to know how to make string art?</span>
+              <span class="spooky__faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="spooky__faq-panel" id="SpookyFaq-{{ section.id }}-1" data-faq-panel hidden>
+            <div class="spooky__faq-panel-inner">
+              <p>
+              No. The app speaks each step out loud and moves line by line at your pace.
+              Most first-timers finish their first piece.
+            </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="spooky__faq-item" data-faq-item>
+          <h3 class="spooky__faq-q">
+            <button type="button" class="spooky__faq-toggle" aria-expanded="false" aria-controls="SpookyFaq-{{ section.id }}-2" data-faq-toggle>
+              <span>Can I really use my own photo?</span>
+              <span class="spooky__faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="spooky__faq-panel" id="SpookyFaq-{{ section.id }}-2" data-faq-panel hidden>
+            <div class="spooky__faq-panel-inner">
+              <p>
+              Yes. Upload a person, a pet, a place. Clear photos with a close subject and good contrast make the strongest pieces.
+            </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="spooky__faq-item" data-faq-item>
+          <h3 class="spooky__faq-q">
+            <button type="button" class="spooky__faq-toggle" aria-expanded="false" aria-controls="SpookyFaq-{{ section.id }}-3" data-faq-toggle>
+              <span>How long does one take?</span>
+              <span class="spooky__faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="spooky__faq-panel" id="SpookyFaq-{{ section.id }}-3" data-faq-panel hidden>
+            <div class="spooky__faq-panel-inner">
+              <p>
+              About 5–8 hours depending on the image. Spread it across as many October evenings as
+              you want. The app saves your progress.
+            </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="spooky__faq-item" data-faq-item>
+          <h3 class="spooky__faq-q">
+            <button type="button" class="spooky__faq-toggle" aria-expanded="false" aria-controls="SpookyFaq-{{ section.id }}-4" data-faq-toggle>
+              <span>What if I mess up?</span>
+              <span class="spooky__faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="spooky__faq-panel" id="SpookyFaq-{{ section.id }}-4" data-faq-panel hidden>
+            <div class="spooky__faq-panel-inner">
+              <p>
+              Keep going. Thousands of lines make the image, so a missed step disappears
+              into the whole. Nothing to rip out.
+            </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="spooky__faq-item" data-faq-item>
+          <h3 class="spooky__faq-q">
+            <button type="button" class="spooky__faq-toggle" aria-expanded="false" aria-controls="SpookyFaq-{{ section.id }}-5" data-faq-toggle>
+              <span>Is the app extra?</span>
+              <span class="spooky__faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="spooky__faq-panel" id="SpookyFaq-{{ section.id }}-5" data-faq-panel hidden>
+            <div class="spooky__faq-panel-inner">
+              <p>No. App access comes with the kit. No subscription, ever.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    FINAL CTA
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="spooky__final">
+    <div class="spooky__shell spooky__final-inner">
+      <p>The code expires when October does.</p>
+      <h2>Make something haunting.</h2>
+      {% if promo_code != blank %}
+        <span>Buy one kit, get a second kit 50% off with code {{ promo_code }} · through October 31</span>
+      {% endif %}
+      <a class="spooky__button spooky__button--primary" href="{{ cta_url }}" data-spooky-cta>
+        {{ section.settings.cta_label }}
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+
+
+  {%- comment -%}
+    ============================================================
+    MOBILE STICKY CTA
+    ============================================================
+  {%- endcomment -%}
+
+  <div class="spooky__sticky" data-spooky-sticky>
+    <div>
+      <strong>2nd kit 50% off</strong>
+      <span>{{ promo_code }}</span>
+    </div>
+    <a href="{{ cta_url }}" data-spooky-cta>
+      {{ section.settings.cta_label }}
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+
+</section>
+
+
+<style>
+  #Spooky-{{ section.id }} {
+    --tt-cobalt: #1450C4;
+    --tt-violet: #3D3DB0;
+    --tt-red: #C43D2E;
+    --tt-black: #0B0B0F;
+    --tt-ivory: #F4F2ED;
+
+    /* halloween additions (brief 6.2): black and orange */
+    --tt-pumpkin: #E8621A;
+    --tt-candle: #D98E3A;
+    --tt-bone: #E9E4D6;
+    --tt-smoke: #1C1B22;
+
+    --tt-heading: var(--font-heading-family, "Space Grotesk", sans-serif);
+    --tt-body: var(--font-body-family, "DM Sans", sans-serif);
+    --tt-display: "Henny Penny", "Griffy", Georgia, serif;
+    --tt-quote: "Instrument Serif", Georgia, "Times New Roman", serif;
+
+    background: var(--tt-bone);
+    color: var(--tt-black);
+    font-family: var(--tt-body);
+    font-size: 18px;
+    line-height: 1.6;
+    overflow: clip;
+  }
+
+  #Spooky-{{ section.id }} *,
+  #Spooky-{{ section.id }} *::before,
+  #Spooky-{{ section.id }} *::after {
+    box-sizing: border-box;
+  }
+
+  #Spooky-{{ section.id }} img {
+    display: block;
+    width: 100%;
+  }
+
+  #Spooky-{{ section.id }} a {
+    text-decoration: none;
+  }
+
+  #Spooky-{{ section.id }} p {
+    margin: 0;
+  }
+
+  #Spooky-{{ section.id }} .spooky__shell {
+    width: min(1180px, calc(100% - 48px));
+    margin-inline: auto;
+  }
+
+
+  /* ---------- announcement ---------- */
+
+  #Spooky-{{ section.id }} .spooky__announcement {
+    position: relative;
+    z-index: 20;
+    background: var(--tt-pumpkin);
+    color: var(--tt-black);
+    font-family: var(--tt-heading);
+  }
+
+  #Spooky-{{ section.id }} .spooky__announcement-inner {
+    min-height: 44px;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  #Spooky-{{ section.id }} .spooky__code-button {
+    appearance: none;
+    border: 1px solid rgba(11,11,15,.5);
+    background: transparent;
+    color: inherit;
+    border-radius: 999px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font: inherit;
+    letter-spacing: .12em;
+  }
+
+  #Spooky-{{ section.id }} .spooky__copy-label {
+    opacity: .7;
+    font-family: var(--tt-body);
+    font-size: 10px;
+    margin-left: 4px;
+    text-transform: lowercase;
+    letter-spacing: 0;
+  }
+
+  #Spooky-{{ section.id }} .spooky__countdown {
+    opacity: .85;
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: var(--tt-body);
+  }
+
+  #Spooky-{{ section.id }} .spooky__countdown strong {
+    font-family: var(--tt-heading);
+    font-variant-numeric: tabular-nums;
+  }
+
+
+  /* ---------- type ---------- */
+
+  #Spooky-{{ section.id }} .spooky__eyebrow {
+    margin: 0 0 22px;
+    color: var(--tt-black);
+    font-family: var(--tt-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+
+  #Spooky-{{ section.id }} .spooky__eyebrow--light {
+    color: rgba(255,255,255,.85);
+  }
+
+  #Spooky-{{ section.id }} .spooky__eyebrow--pumpkin,
+  #Spooky-{{ section.id }} .spooky__hero .spooky__eyebrow {
+    color: var(--tt-pumpkin);
+  }
+
+  /* Henny Penny for the two headline levels only; everything else stays theme fonts */
+  #Spooky-{{ section.id }} .spooky__h1,
+  #Spooky-{{ section.id }} .spooky__h2,
+  #Spooky-{{ section.id }} .spooky__final h2 {
+    margin: 0;
+    font-family: var(--tt-display);
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-wrap: balance;
+  }
+
+  #Spooky-{{ section.id }} .spooky__h1 {
+    font-size: clamp(46px, 6.4vw, 90px);
+    line-height: 1.1;
+    max-width: 760px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__h2 {
+    font-size: clamp(36px, 4.6vw, 62px);
+    line-height: 1.12;
+  }
+
+  #Spooky-{{ section.id }} .spooky__h2--light {
+    color: var(--tt-bone);
+  }
+
+  #Spooky-{{ section.id }} .spooky__lead {
+    font-size: clamp(20px, 2vw, 25px);
+    line-height: 1.45;
+  }
+
+
+  /* ---------- buttons ---------- */
+
+  #Spooky-{{ section.id }} .spooky__button {
+    min-height: 54px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 999px;
+    padding: 14px 26px;
+    font-family: var(--tt-heading);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+  }
+
+  #Spooky-{{ section.id }} .spooky__button:hover {
+    transform: translateY(-2px);
+  }
+
+  #Spooky-{{ section.id }} .spooky__button--primary {
+    background: var(--tt-pumpkin);
+    color: var(--tt-black);
+    box-shadow: 0 12px 32px rgba(232, 98, 26, .28);
+  }
+
+  #Spooky-{{ section.id }} .spooky__button--bone {
+    background: var(--tt-bone);
+    color: var(--tt-black);
+  }
+
+  #Spooky-{{ section.id }} .spooky__button--black {
+    background: var(--tt-black);
+    color: #fff;
+  }
+
+
+  /* ---------- hero ---------- */
+
+  #Spooky-{{ section.id }} .spooky__hero {
+    position: relative;
+    color: var(--tt-bone);
+    background:
+      radial-gradient(60% 70% at 78% 40%, rgba(217,142,58,.28) 0%, rgba(217,142,58,0) 70%),
+      linear-gradient(180deg, var(--tt-smoke) 0%, var(--tt-black) 100%);
+  }
+
+  /* thread-line texture, barely there */
+  #Spooky-{{ section.id }} .spooky__hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        -32deg,
+        rgba(233,228,214,.055) 0 1px,
+        transparent 1px 22px
+      );
+    pointer-events: none;
+    mask-image: linear-gradient(180deg, rgba(0,0,0,.9), transparent 75%);
+    -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,.9), transparent 75%);
+  }
+
+  #Spooky-{{ section.id }} .spooky__hero-texture {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: {{ section.settings.hero_texture_opacity | default: 12 | divided_by: 100.0 }};
+    {%- if section.settings.hero_texture_fade %}
+    mask-image: linear-gradient(180deg, rgba(0,0,0,1), transparent 85%);
+    -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,1), transparent 85%);
+    {%- endif %}
+  }
+
+  #Spooky-{{ section.id }} .spooky__hero-texture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #Spooky-{{ section.id }} .spooky__hero-grid {
+    position: relative;
+    min-height: min(820px, calc(100vh - 44px));
+    display: grid;
+    grid-template-columns: 1fr .9fr;
+    gap: clamp(40px, 6vw, 90px);
+    align-items: center;
+    padding-block: 64px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__hero-copy {
+    position: relative;
+    z-index: 2;
+  }
+
+  #Spooky-{{ section.id }} .spooky__hero-subhead {
+    max-width: 600px;
+    margin: 26px 0 0;
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.5;
+    color: rgba(233,228,214,.86);
+  }
+
+  #Spooky-{{ section.id }} .spooky__hero-actions {
+    margin-top: 30px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__offer-note {
+    margin: 14px 0 0;
+    font-size: 14px;
+    max-width: 420px;
+    color: rgba(233,228,214,.72);
+  }
+
+  #Spooky-{{ section.id }} .spooky__offer-note strong {
+    color: var(--tt-candle);
+  }
+
+  #Spooky-{{ section.id }} .spooky__single-link {
+    color: var(--tt-candle);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    margin-left: 4px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__offer .spooky__single-link {
+    color: var(--tt-black);
+  }
+
+  #Spooky-{{ section.id }} .spooky__micro-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+    color: rgba(233,228,214,.6);
+    font-size: 13px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__hero-media {
+    position: relative;
+    min-height: 650px;
+  }
+
+  /* pumpkin slab behind the photo, the one loud thing in the hero */
+  #Spooky-{{ section.id }} .spooky__hero-media::before {
+    content: "";
+    position: absolute;
+    top: 28px;
+    right: -28px;
+    bottom: -28px;
+    left: 28px;
+    background: var(--tt-pumpkin);
+    z-index: 0;
+  }
+
+  #Spooky-{{ section.id }} .spooky__hero-image,
+  #Spooky-{{ section.id }} .spooky__hero-media > .spooky__placeholder {
+    position: relative;
+    z-index: 1;
+    height: 650px;
+    object-fit: cover;
+    border-radius: 2px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__hero-card {
+    position: absolute;
+    z-index: 2;
+    left: -28px;
+    bottom: 36px;
+    width: 170px;
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 22px;
+    background: var(--tt-bone);
+    color: var(--tt-black);
+    box-shadow: 0 18px 50px rgba(0,0,0,.45);
+  }
+
+  #Spooky-{{ section.id }} .spooky__hero-card span {
+    font-size: 13px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__hero-card strong {
+    display: block;
+    margin: 3px 0;
+    font-family: var(--tt-heading);
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  #Spooky-{{ section.id }} .spooky__hero-card small {
+    font-weight: 700;
+    letter-spacing: .12em;
+  }
+
+
+  /* ---------- proof ---------- */
+
+  #Spooky-{{ section.id }} .spooky__proof {
+    border-block: 1px solid rgba(11,11,15,.13);
+    background: var(--tt-ivory);
+  }
+
+  #Spooky-{{ section.id }} .spooky__proof-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.6fr;
+  }
+
+  #Spooky-{{ section.id }} .spooky__proof-item {
+    min-height: 112px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 22px;
+    border-right: 1px solid rgba(11,11,15,.13);
+  }
+
+  #Spooky-{{ section.id }} .spooky__proof-item:last-child {
+    border-right: 0;
+  }
+
+  #Spooky-{{ section.id }} .spooky__proof-item strong {
+    font-family: var(--tt-heading);
+    font-size: 21px;
+    line-height: 1.2;
+  }
+
+  #Spooky-{{ section.id }} .spooky__proof-item--quote strong {
+    color: var(--tt-black);
+    font-size: 18px;
+    letter-spacing: -.01em;
+  }
+
+  #Spooky-{{ section.id }} .spooky__proof-item span {
+    font-size: 13px;
+    color: rgba(11,11,15,.6);
+  }
+
+
+  /* ---------- sections ---------- */
+
+  #Spooky-{{ section.id }} .spooky__section {
+    position: relative;
+    padding-block: clamp(78px, 10vw, 145px);
+  }
+
+  #Spooky-{{ section.id }} .spooky__section--ivory { background: var(--tt-ivory); }
+  #Spooky-{{ section.id }} .spooky__section--white { background: #fff; }
+  #Spooky-{{ section.id }} .spooky__section--bone  { background: var(--tt-bone); }
+
+  #Spooky-{{ section.id }} .spooky__section--smoke {
+    background: var(--tt-smoke);
+    color: var(--tt-bone);
+  }
+
+  #Spooky-{{ section.id }} .spooky__section--black {
+    background: var(--tt-black);
+    color: var(--tt-bone);
+  }
+
+  #Spooky-{{ section.id }} .spooky__section-heading {
+    max-width: 720px;
+    margin-bottom: 55px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__section-heading > p:last-child {
+    max-width: 620px;
+    margin-top: 20px;
+    font-size: 19px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(50px, 7vw, 100px);
+    align-items: center;
+  }
+
+  #Spooky-{{ section.id }} .spooky__section-copy > p {
+    max-width: 620px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__section-copy .spooky__lead {
+    margin-top: 22px;
+  }
+
+
+  /* ---------- pet portrait ---------- */
+
+  #Spooky-{{ section.id }} .spooky__ritual-line {
+    margin-top: 16px;
+    font-size: 17px;
+    color: rgba(233,228,214,.68);
+  }
+
+  #Spooky-{{ section.id }} .spooky__section--smoke .spooky__lead {
+    color: rgba(233,228,214,.9);
+  }
+
+  #Spooky-{{ section.id }} .spooky__section-copy .spooky__button {
+    margin-top: 34px;
+  }
+
+
+  /* ---------- pair (you / them) ---------- */
+
+  #Spooky-{{ section.id }} .spooky__pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__pair-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 520px;
+    padding: clamp(30px, 4vw, 52px);
+  }
+
+  #Spooky-{{ section.id }} .spooky__pair-card--make {
+    background: var(--tt-pumpkin);
+    color: var(--tt-black);
+  }
+
+  #Spooky-{{ section.id }} .spooky__pair-card--give {
+    background: var(--tt-black);
+    color: var(--tt-bone);
+  }
+
+  #Spooky-{{ section.id }} .spooky__pair-index {
+    font-family: var(--tt-heading);
+    font-size: 12px;
+    letter-spacing: .18em;
+    opacity: .75;
+  }
+
+  #Spooky-{{ section.id }} .spooky__pair-card h3 {
+    margin: 48px 0 16px;
+    font-family: var(--tt-display);
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(34px, 3.8vw, 50px);
+    line-height: 1.12;
+    letter-spacing: 0;
+  }
+
+  #Spooky-{{ section.id }} .spooky__pair-lead {
+    font-size: 19px;
+    line-height: 1.45;
+    max-width: 440px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__pair-card ul {
+    list-style: none;
+    margin: 30px 0 38px;
+    padding: 0;
+    border-top: 1px solid currentColor;
+    flex: 1;
+  }
+
+  #Spooky-{{ section.id }} .spooky__pair-card li {
+    padding: 14px 0;
+    border-bottom: 1px solid currentColor;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  #Spooky-{{ section.id }} .spooky__pair-card--make ul,
+  #Spooky-{{ section.id }} .spooky__pair-card--make li {
+    border-color: rgba(11,11,15,.28);
+  }
+
+  #Spooky-{{ section.id }} .spooky__pair-card--give ul,
+  #Spooky-{{ section.id }} .spooky__pair-card--give li {
+    border-color: rgba(233,228,214,.24);
+  }
+
+  #Spooky-{{ section.id }} .spooky__pair-card .spooky__button {
+    align-self: flex-start;
+  }
+
+
+  /* ---------- reveal (before / after) ---------- */
+
+  #Spooky-{{ section.id }} .spooky__reveal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__reveal-card {
+    margin: 0;
+  }
+
+  #Spooky-{{ section.id }} .spooky__reveal-card img,
+  #Spooky-{{ section.id }} .spooky__reveal-card .spooky__placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    height: auto;
+    min-height: 0;
+    object-fit: cover;
+  }
+
+  #Spooky-{{ section.id }} .spooky__reveal-card figcaption {
+    margin-top: 12px;
+    color: var(--tt-candle);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+
+
+  /* ---------- steps ---------- */
+
+  #Spooky-{{ section.id }} .spooky__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    border-top: 1px solid rgba(255,255,255,.22);
+    padding-top: 18px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__step-media {
+    overflow: hidden;
+    margin-bottom: 26px;
+    background: #17171d;
+  }
+
+  #Spooky-{{ section.id }} .spooky__step-media img,
+  #Spooky-{{ section.id }} .spooky__step-media .spooky__placeholder {
+    aspect-ratio: {{ section.settings.step_ratio | default: '1 / 1' }};
+    height: auto;
+    min-height: 0;
+    object-fit: cover;
+  }
+
+  #Spooky-{{ section.id }} .spooky__step > span {
+    color: var(--tt-pumpkin);
+    font-family: var(--tt-heading);
+    font-size: 12px;
+    letter-spacing: .18em;
+  }
+
+  #Spooky-{{ section.id }} .spooky__step h3 {
+    margin: 10px 0 10px;
+    font-family: var(--tt-heading);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -.02em;
+  }
+
+  #Spooky-{{ section.id }} .spooky__step p {
+    color: rgba(233,228,214,.7);
+    font-size: 15px;
+    max-width: 340px;
+  }
+
+
+  /* ---------- imagery ---------- */
+
+  #Spooky-{{ section.id }} .spooky__media-card {
+    overflow: hidden;
+  }
+
+  #Spooky-{{ section.id }} .spooky__product-image,
+  #Spooky-{{ section.id }} .spooky__media-card > .spooky__placeholder {
+    aspect-ratio: 4 / 5;
+    height: auto;
+    object-fit: cover;
+  }
+
+  #Spooky-{{ section.id }} .spooky__placeholder {
+    position: relative;
+    min-height: 450px;
+    display: grid;
+    place-items: center;
+    background: rgba(0,0,0,.08);
+    overflow: hidden;
+  }
+
+  #Spooky-{{ section.id }} .spooky__section--smoke .spooky__placeholder,
+  #Spooky-{{ section.id }} .spooky__section--black .spooky__placeholder {
+    background: rgba(233,228,214,.08);
+  }
+
+  #Spooky-{{ section.id }} .spooky__section--smoke .spooky__placeholder span,
+  #Spooky-{{ section.id }} .spooky__section--black .spooky__placeholder span {
+    background: var(--tt-pumpkin);
+    color: var(--tt-black);
+  }
+
+  #Spooky-{{ section.id }} .spooky__placeholder svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  #Spooky-{{ section.id }} .spooky__placeholder span {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    padding: 7px 10px;
+    background: var(--tt-black);
+    color: #fff;
+    font-size: 11px;
+  }
+
+
+  /* ---------- kit contents + math ---------- */
+
+  #Spooky-{{ section.id }} .spooky__contents {
+    list-style: none;
+    margin: 30px 0 34px;
+    padding: 0;
+    border-top: 1px solid rgba(11,11,15,.18);
+  }
+
+  #Spooky-{{ section.id }} .spooky__contents li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(11,11,15,.18);
+    font-size: 16px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__math {
+    margin: 0 0 34px;
+    padding: 22px 26px;
+    background: #fff;
+    border: 1px solid rgba(11,11,15,.14);
+    max-width: 440px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__math-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 8px 0;
+    font-size: 16px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__math-row strong {
+    font-family: var(--tt-heading);
+    font-variant-numeric: tabular-nums;
+  }
+
+  #Spooky-{{ section.id }} .spooky__math-row em {
+    display: inline-block;
+    font-style: normal;
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    background: var(--tt-pumpkin);
+    color: var(--tt-black);
+    padding: 3px 8px;
+    border-radius: 999px;
+    margin-left: 6px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__math-row--deal strong {
+    color: var(--tt-black);
+  }
+
+  #Spooky-{{ section.id }} .spooky__math-row--total {
+    margin-top: 6px;
+    padding-top: 14px;
+    border-top: 1px solid var(--tt-black);
+    font-size: 19px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__math-row--total strong {
+    font-size: 28px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__math-save {
+    margin-top: 6px;
+    font-size: 13px;
+    color: rgba(11,11,15,.6);
+  }
+
+
+  /* ---------- quotes ---------- */
+
+  #Spooky-{{ section.id }} .spooky__quotes {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 18px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__quote {
+    margin: 0;
+    padding: clamp(28px, 4vw, 48px);
+    background: var(--tt-bone);
+    border: 1px solid rgba(11,11,15,.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #Spooky-{{ section.id }} .spooky__quote--featured {
+    background: var(--tt-pumpkin);
+    color: var(--tt-black);
+    border-color: var(--tt-pumpkin);
+  }
+
+  #Spooky-{{ section.id }} .spooky__quote blockquote {
+    margin: 0;
+    font-family: var(--tt-heading);
+    font-size: clamp(21px, 2.2vw, 30px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -.025em;
+  }
+
+  #Spooky-{{ section.id }} .spooky__quote--featured blockquote {
+    font-family: var(--tt-quote);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(32px, 3.6vw, 50px);
+    line-height: 1.04;
+    letter-spacing: -.01em;
+  }
+
+  #Spooky-{{ section.id }} .spooky__quote figcaption {
+    margin-top: 28px;
+    font-size: 13px;
+    opacity: .68;
+  }
+
+
+  /* ---------- offer ---------- */
+
+  #Spooky-{{ section.id }} .spooky__offer {
+    position: relative;
+    padding-block: clamp(80px, 11vw, 150px);
+    background:
+      linear-gradient(135deg, var(--tt-pumpkin) 0%, var(--tt-candle) 100%);
+    color: var(--tt-black);
+    text-align: center;
+    overflow: hidden;
+  }
+
+  #Spooky-{{ section.id }} .spooky__offer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        -32deg,
+        rgba(11,11,15,.08) 0 1px,
+        transparent 1px 18px
+      );
+    pointer-events: none;
+  }
+
+  #Spooky-{{ section.id }} .spooky__offer-inner {
+    position: relative;
+    max-width: 800px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__offer-copy {
+    max-width: 520px;
+    margin: 24px auto 35px;
+    color: rgba(11,11,15,.8);
+    font-size: 20px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__big-code {
+    appearance: none;
+    width: min(460px, 100%);
+    display: grid;
+    gap: 3px;
+    margin: 0 auto 26px;
+    padding: 24px;
+    border: 1px solid rgba(11,11,15,.45);
+    background: rgba(233,228,214,.35);
+    color: var(--tt-black);
+    cursor: pointer;
+    font-family: var(--tt-body);
+  }
+
+  #Spooky-{{ section.id }} .spooky__big-code span {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .18em;
+  }
+
+  #Spooky-{{ section.id }} .spooky__big-code strong {
+    font-family: var(--tt-heading);
+    font-size: clamp(33px, 5vw, 50px);
+    letter-spacing: .06em;
+  }
+
+  #Spooky-{{ section.id }} .spooky__big-code small {
+    opacity: .7;
+  }
+
+  #Spooky-{{ section.id }} .spooky__offer-fine {
+    margin: 20px auto 0;
+    max-width: 520px;
+    font-size: 12px;
+    color: rgba(11,11,15,.72);
+  }
+
+  #Spooky-{{ section.id }} .spooky__offer-fine strong {
+    color: var(--tt-black);
+    font-variant-numeric: tabular-nums;
+  }
+
+
+  /* ---------- faq ---------- */
+
+  #Spooky-{{ section.id }} .spooky__faq-shell {
+    display: grid;
+    grid-template-columns: .7fr 1.3fr;
+    gap: 80px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__faq-item {
+    border-top: 1px solid rgba(11,11,15,.18);
+  }
+
+  #Spooky-{{ section.id }} .spooky__faq-item:last-child {
+    border-bottom: 1px solid rgba(11,11,15,.18);
+  }
+
+  #Spooky-{{ section.id }} .spooky__faq-q {
+    margin: 0;
+  }
+
+  #Spooky-{{ section.id }} .spooky__faq-toggle {
+    appearance: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+    padding: 24px 4px 24px 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--tt-heading);
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: normal;
+    text-transform: none;
+    box-shadow: none;
+    min-height: 0;
+  }
+
+  #Spooky-{{ section.id }} .spooky__faq-toggle:hover {
+    color: rgba(11,11,15,.6);
+  }
+
+  #Spooky-{{ section.id }} .spooky__faq-toggle:focus-visible {
+    outline: 2px solid var(--tt-pumpkin);
+    outline-offset: 4px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__faq-icon {
+    position: relative;
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__faq-icon::before,
+  #Spooky-{{ section.id }} .spooky__faq-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 16px;
+    height: 2px;
+    background: currentColor;
+    transition: transform .2s ease;
+  }
+
+  #Spooky-{{ section.id }} .spooky__faq-icon::after {
+    transform: rotate(90deg);
+  }
+
+  #Spooky-{{ section.id }} .spooky__faq-toggle[aria-expanded="true"] .spooky__faq-icon::after {
+    transform: rotate(0deg);
+  }
+
+  #Spooky-{{ section.id }} .spooky__faq-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .25s ease;
+  }
+
+  #Spooky-{{ section.id }} .spooky__faq-panel[hidden] {
+    display: grid;
+  }
+
+  #Spooky-{{ section.id }} .spooky__faq-panel.is-open {
+    grid-template-rows: 1fr;
+  }
+
+  #Spooky-{{ section.id }} .spooky__faq-panel-inner {
+    overflow: hidden;
+    color: rgba(11,11,15,.68);
+  }
+
+  #Spooky-{{ section.id }} .spooky__faq-panel-inner p {
+    padding: 0 50px 24px 0;
+  }
+
+
+  /* ---------- final ---------- */
+
+  #Spooky-{{ section.id }} .spooky__final {
+    padding-block: 110px;
+    background:
+      radial-gradient(50% 60% at 50% 100%, rgba(232,98,26,.22) 0%, rgba(232,98,26,0) 70%),
+      var(--tt-black);
+    color: var(--tt-bone);
+    text-align: center;
+  }
+
+  #Spooky-{{ section.id }} .spooky__final-inner {
+    max-width: 850px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__final p {
+    margin: 0 0 6px;
+    font-size: 18px;
+    color: var(--tt-candle);
+    margin-bottom: 30px;
+  }
+
+  #Spooky-{{ section.id }} .spooky__final h2 {
+    font-size: clamp(44px, 6.2vw, 84px);
+    line-height: 1.1;
+    color: var(--tt-bone);
+  }
+
+  #Spooky-{{ section.id }} .spooky__final > div > span {
+    display: block;
+    margin: 24px 0;
+    color: rgba(233,228,214,.7);
+    font-size: 14px;
+  }
+
+
+  /* ---------- sticky mobile ---------- */
+
+  #Spooky-{{ section.id }} .spooky__sticky {
+    display: none;
+  }
+
+
+  /* ---------- hide header/footer option ---------- */
+
+  .threaditate-lander-active .shopify-section-group-header-group,
+  .threaditate-lander-active .shopify-section-group-footer-group {
+    display: none !important;
+  }
+
+
+  /* ---------- responsive ---------- */
+
+  @media screen and (max-width: 989px) {
+
+    #Spooky-{{ section.id }} {
+      font-size: 16px;
+    }
+
+    #Spooky-{{ section.id }} .spooky__hero-grid,
+    #Spooky-{{ section.id }} .spooky__split,
+    #Spooky-{{ section.id }} .spooky__pair,
+    #Spooky-{{ section.id }} .spooky__faq-shell {
+      grid-template-columns: 1fr;
+    }
+
+    #Spooky-{{ section.id }} .spooky__pair-card {
+      min-height: 0;
+    }
+
+    #Spooky-{{ section.id }} .spooky__hero-grid {
+      min-height: auto;
+      gap: 48px;
+      padding-block: 50px;
+    }
+
+    #Spooky-{{ section.id }} .spooky__hero-media,
+    #Spooky-{{ section.id }} .spooky__hero-image,
+    #Spooky-{{ section.id }} .spooky__hero-media > .spooky__placeholder {
+      min-height: 0;
+      height: auto;
+      aspect-ratio: 4 / 5;
+    }
+
+    #Spooky-{{ section.id }} .spooky__hero-media::before {
+      top: 16px; right: -16px; bottom: -16px; left: 16px;
+    }
+
+    #Spooky-{{ section.id }} .spooky__hero-card {
+      left: 16px;
+      bottom: 16px;
+    }
+
+    #Spooky-{{ section.id }} .spooky__proof-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    #Spooky-{{ section.id }} .spooky__proof-item:nth-child(2) {
+      border-right: 0;
+    }
+
+    #Spooky-{{ section.id }} .spooky__proof-item:nth-child(-n+2) {
+      border-bottom: 1px solid rgba(11,11,15,.13);
+    }
+
+    #Spooky-{{ section.id }} .spooky__proof-item--quote {
+      grid-column: 1 / -1;
+      border-right: 0;
+      border-top: 1px solid rgba(11,11,15,.13);
+    }
+
+    #Spooky-{{ section.id }} .spooky__steps {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    #Spooky-{{ section.id }} .spooky__step-media {
+      max-width: 520px;
+    }
+
+    #Spooky-{{ section.id }} .spooky__quotes {
+      grid-template-columns: 1fr;
+    }
+
+    #Spooky-{{ section.id }} .spooky__faq-shell {
+      gap: 20px;
+    }
+
+  }
+
+  @media screen and (max-width: 640px) {
+    #Spooky-{{ section.id }} .spooky__reveal {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+  @media screen and (max-width: 640px) {
+
+    #Spooky-{{ section.id }} {
+      padding-bottom: 74px;
+    }
+
+    #Spooky-{{ section.id }} .spooky__shell {
+      width: min(100% - 32px, 1180px);
+    }
+
+    #Spooky-{{ section.id }} .spooky__announcement-inner {
+      min-height: 42px;
+      justify-content: space-between;
+      font-size: 11px;
+      gap: 10px;
+    }
+
+    #Spooky-{{ section.id }} .spooky__announcement-text {
+      display: none;
+    }
+
+    #Spooky-{{ section.id }} .spooky__h1 {
+      font-size: clamp(40px, 11.5vw, 54px);
+    }
+
+    #Spooky-{{ section.id }} .spooky__h2 {
+      font-size: clamp(34px, 9.6vw, 46px);
+    }
+
+    #Spooky-{{ section.id }} .spooky__pair-card h3 {
+      margin-top: 28px;
+    }
+
+    #Spooky-{{ section.id }} .spooky__pair-card .spooky__button {
+      align-self: stretch;
+    }
+
+    #Spooky-{{ section.id }} .spooky__hero-grid {
+      padding-top: 40px;
+    }
+
+    #Spooky-{{ section.id }} .spooky__hero-subhead {
+      margin-top: 20px;
+    }
+
+    #Spooky-{{ section.id }} .spooky__button {
+      width: 100%;
+    }
+
+    #Spooky-{{ section.id }} .spooky__micro-proof {
+      font-size: 11px;
+    }
+
+    #Spooky-{{ section.id }} .spooky__hero-card {
+      width: 145px;
+      min-height: 145px;
+      padding: 18px;
+    }
+
+    #Spooky-{{ section.id }} .spooky__hero-card strong {
+      font-size: 25px;
+    }
+
+    #Spooky-{{ section.id }} .spooky__proof-item {
+      min-height: 95px;
+      padding: 16px;
+    }
+
+    #Spooky-{{ section.id }} .spooky__proof-item strong {
+      font-size: 17px;
+    }
+
+    #Spooky-{{ section.id }} .spooky__math {
+      max-width: none;
+    }
+
+    #Spooky-{{ section.id }} .spooky__faq-panel-inner p {
+      padding-right: 20px;
+    }
+
+    #Spooky-{{ section.id }} .spooky__sticky {
+      position: fixed;
+      z-index: 999;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 8px 8px 16px;
+      background: var(--tt-black);
+      color: #fff;
+      border-radius: 999px;
+      box-shadow: 0 12px 45px rgba(0,0,0,.28);
+      transform: translateY(120%);
+      transition: transform .3s ease;
+    }
+
+    #Spooky-{{ section.id }} .spooky__sticky.is-visible {
+      transform: translateY(0);
+    }
+
+    #Spooky-{{ section.id }} .spooky__sticky > div {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    #Spooky-{{ section.id }} .spooky__sticky strong {
+      font-family: var(--tt-heading);
+      font-size: 13px;
+    }
+
+    #Spooky-{{ section.id }} .spooky__sticky span {
+      font-size: 10px;
+      opacity: .7;
+      letter-spacing: .1em;
+    }
+
+    #Spooky-{{ section.id }} .spooky__sticky > a {
+      min-height: 46px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: var(--tt-pumpkin);
+      color: var(--tt-black);
+      font-family: var(--tt-heading);
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #Spooky-{{ section.id }} *,
+    #Spooky-{{ section.id }} *::before,
+    #Spooky-{{ section.id }} *::after {
+      scroll-behavior: auto !important;
+      transition-duration: .01ms !important;
+      animation-duration: .01ms !important;
+    }
+  }
+</style>
+
+
+<script>
+  (() => {
+    const section = document.querySelector('#Spooky-{{ section.id }}');
+    if (!section) return;
+
+
+    /* ---------------------------------
+       Ad hook → hero message matching
+    --------------------------------- */
+
+    const params = new URLSearchParams(window.location.search);
+    const incomingHook = params.get('hook') || params.get('utm_content') || '';
+
+    const normalize = (value) =>
+      decodeURIComponent(value || '')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+
+    const hookKey = normalize(incomingHook);
+
+    if (hookKey) {
+      for (const record of section.querySelectorAll('[data-hook-record]')) {
+        if (normalize(record.dataset.key) !== hookKey) continue;
+
+        const eyebrow = section.querySelector('[data-hook-eyebrow]');
+        const headline = section.querySelector('[data-hook-headline]');
+        const subhead = section.querySelector('[data-hook-subhead]');
+
+        if (eyebrow && record.dataset.eyebrow) eyebrow.textContent = record.dataset.eyebrow;
+        if (headline && record.dataset.headline) headline.textContent = record.dataset.headline;
+        if (subhead && record.dataset.subhead) subhead.textContent = record.dataset.subhead;
+
+        section.dataset.activeHook = hookKey;
+        window.dispatchEvent(new CustomEvent('threaditate:hook-applied', { detail: { hook: hookKey } }));
+        break;
+      }
+    }
+
+
+    /* ---------------------------------
+       Countdown to sale end
+       Reads data-sale-end (ISO 8601 with offset)
+    --------------------------------- */
+
+    const saleEnd = Date.parse(section.dataset.saleEnd || '');
+    const countdownEls = section.querySelectorAll('[data-countdown], [data-countdown-inline]');
+
+    if (!Number.isNaN(saleEnd) && countdownEls.length) {
+      const render = () => {
+        const diff = saleEnd - Date.now();
+
+        if (diff <= 0) {
+          countdownEls.forEach((el) => { el.hidden = true; });
+          return false;
+        }
+
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+
+        const text = d > 0
+          ? `${d}d ${h}h ${String(m).padStart(2, '0')}m`
+          : `${h}h ${String(m).padStart(2, '0')}m`;
+
+        countdownEls.forEach((el) => {
+          const value = el.querySelector('[data-countdown-value]');
+          if (value) value.textContent = text;
+          el.hidden = false;
+        });
+
+        return true;
+      };
+
+      if (render()) window.setInterval(render, 30000);
+    }
+
+
+    /* ---------------------------------
+       FAQ accordion
+       Own toggle, so theme <details> hooks can't swallow clicks
+    --------------------------------- */
+
+    section.querySelectorAll('[data-faq-toggle]').forEach((toggle) => {
+      const panel = section.querySelector('#' + toggle.getAttribute('aria-controls'));
+      if (!panel) return;
+
+      toggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const open = toggle.getAttribute('aria-expanded') !== 'true';
+        toggle.setAttribute('aria-expanded', String(open));
+        panel.classList.toggle('is-open', open);
+
+        if (open) {
+          panel.hidden = false;
+        } else {
+          panel.addEventListener('transitionend', () => {
+            if (toggle.getAttribute('aria-expanded') !== 'true') panel.hidden = true;
+          }, { once: true });
+        }
+      });
+    });
+
+
+    /* ---------------------------------
+       Discount code copy
+    --------------------------------- */
+
+    section.querySelectorAll('[data-copy-code]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const code = button.dataset.copyCode;
+        if (!code) return;
+
+        try {
+          await navigator.clipboard.writeText(code);
+          const label = button.querySelector('[data-copy-label]');
+          if (label) {
+            const original = label.textContent;
+            label.textContent = 'copied';
+            window.setTimeout(() => { label.textContent = original; }, 1800);
+          }
+        } catch (error) {
+          console.warn('Could not copy discount code.', error);
+        }
+      });
+    });
+
+
+    /* ---------------------------------
+       Mobile sticky CTA
+    --------------------------------- */
+
+    const sticky = section.querySelector('[data-spooky-sticky]');
+    const hero = section.querySelector('.spooky__hero');
+
+    if (sticky && hero && 'IntersectionObserver' in window) {
+      new IntersectionObserver(
+        ([entry]) => sticky.classList.toggle('is-visible', !entry.isIntersecting),
+        { threshold: 0.05 }
+      ).observe(hero);
+    }
+
+
+    /* ---------------------------------
+       CTA tracking event (GA4 / GTM / Elevar hook)
+    --------------------------------- */
+
+    section.querySelectorAll('[data-spooky-cta]').forEach((cta) => {
+      cta.addEventListener('click', () => {
+        window.dispatchEvent(
+          new CustomEvent('threaditate:spooky-cta', {
+            detail: {
+              hook: section.dataset.activeHook || 'default',
+              promo: '{{ promo_code | escape }}'
+            }
+          })
+        );
+      });
+    });
+
+  })();
+</script>
+
+
+{% schema %}
+{
+  "name": "Halloween landing page",
+  "tag": "section",
+  "class": "threaditate-halloween",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "CTA product",
+      "info": "Defaults to the String Ring kit if empty."
+    },
+    {
+      "type": "select",
+      "id": "cta_mode",
+      "label": "Buttons go to",
+      "default": "checkout",
+      "info": "Checkout and Cart pre-load two kits with the code (BOGO). Product sends them to the PDP with the code applied.",
+      "options": [
+        { "value": "checkout", "label": "Checkout, two kits, code applied" },
+        { "value": "cart", "label": "Cart page, two kits, code applied" },
+        { "value": "product", "label": "Product page, code applied" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "discount_code",
+      "label": "Discount code",
+      "default": "SPOOKY"
+    },
+    {
+      "type": "text",
+      "id": "sale_end",
+      "label": "Sale end (ISO 8601)",
+      "default": "2026-10-31T23:59:59-04:00",
+      "info": "Drives the countdown. Include the timezone offset."
+    },
+    {
+      "type": "text",
+      "id": "announcement",
+      "label": "Announcement",
+      "default": "October · buy one kit, second kit 50% off"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA label",
+      "default": "Make yours"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_theme_chrome",
+      "label": "Hide store header and footer",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Offer math"
+    },
+    {
+      "type": "text",
+      "id": "kit_price",
+      "label": "Kit price",
+      "default": "$89.00"
+    },
+    {
+      "type": "text",
+      "id": "second_kit_price",
+      "label": "Second kit price",
+      "default": "$44.50"
+    },
+    {
+      "type": "text",
+      "id": "bundle_price",
+      "label": "Two kits total",
+      "default": "$133.50"
+    },
+    {
+      "type": "text",
+      "id": "savings",
+      "label": "Savings",
+      "default": "$44.50"
+    },
+    {
+      "type": "header",
+      "content": "Default hero"
+    },
+    {
+      "type": "text",
+      "id": "hero_eyebrow",
+      "label": "Eyebrow",
+      "default": "All October · second kit 50% off"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_headline",
+      "label": "Headline",
+      "default": "Thread something haunting."
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subhead",
+      "label": "Subheadline",
+      "default": "Buy one Threaditate kit, get a second kit 50% off, all month. A photo you love, or the dog in a costume, made in thread by Halloween."
+    },
+    {
+      "type": "header",
+      "content": "Photography"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image",
+      "info": "1800 x 1350, 4:3. Finished piece on a dark wall, candlelight. Crops to 4:5 on phones."
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_texture",
+      "label": "Hero background texture",
+      "info": "2400 x 800, 3:1. Smoke, cobweb or thread-web texture on near-black. Sits behind the hero at low opacity."
+    },
+    {
+      "type": "range",
+      "id": "hero_texture_opacity",
+      "label": "Texture opacity",
+      "min": 5,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 40
+    },
+    {
+      "type": "checkbox",
+      "id": "hero_texture_fade",
+      "label": "Fade texture out toward the bottom",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "pet_image",
+      "label": "Pet portrait image",
+      "info": "1500 x 1875, 4:5. A pet in thread, ideally with the source photo in frame."
+    },
+    {
+      "type": "image_picker",
+      "id": "before_image",
+      "label": "Before (the photo)",
+      "info": "1200 x 1500, 4:5. The pet or person photo."
+    },
+    {
+      "type": "image_picker",
+      "id": "after_image",
+      "label": "After (the piece)",
+      "info": "1200 x 1500, 4:5. Same subject in thread. Identical framing to Before."
+    },
+    {
+      "type": "select",
+      "id": "step_ratio",
+      "label": "Step image shape",
+      "default": "1 / 1",
+      "info": "Square fits mixed landscape and portrait photos. Set a focal point on each image in Files if the crop still misses.",
+      "options": [
+        { "value": "1 / 1", "label": "Square" },
+        { "value": "4 / 3", "label": "Landscape (4:3)" },
+        { "value": "4 / 5", "label": "Portrait (4:5)" }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "step1_image",
+      "label": "Step 1 — Upload"
+    },
+    {
+      "type": "image_picker",
+      "id": "step2_image",
+      "label": "Step 2 — Follow the voice"
+    },
+    {
+      "type": "image_picker",
+      "id": "step3_image",
+      "label": "Step 3 — Hang",
+      "info": "Finished piece on a wall."
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Kit image",
+      "info": "1500 x 1875, 4:5. Two kits open on a dark table."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hook",
+      "name": "Ad hook",
+      "settings": [
+        {
+          "type": "text",
+          "id": "key",
+          "label": "Hook key",
+          "info": "Used in ?hook= or utm_content. Example: pet-portrait"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow"
+        },
+        {
+          "type": "textarea",
+          "id": "headline",
+          "label": "Headline"
+        },
+        {
+          "type": "textarea",
+          "id": "subhead",
+          "label": "Subheadline"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Halloween landing page",
+      "blocks": [
+        {
+          "type": "hook",
+          "settings": {
+            "key": "haunting",
+            "eyebrow": "All October · second kit 50% off",
+            "headline": "Thread something haunting.",
+            "subhead": "Buy one Threaditate kit, get a second kit 50% off, all month. A photo you love, or the dog in a costume, made in thread by Halloween."
+          }
+        },
+        {
+          "type": "hook",
+          "settings": {
+            "key": "pet-portrait",
+            "eyebrow": "Pet portrait season",
+            "headline": "Your pet deserves a portrait.",
+            "subhead": "The most photographed member of the family, framed in thread. Use the photo you already have. Buy one kit, get a second kit 50% off through October 31."
+          }
+        },
+        {
+          "type": "hook",
+          "settings": {
+            "key": "october-making",
+            "eyebrow": "All October · second kit 50% off",
+            "headline": "October is for making.",
+            "subhead": "Shorter days, one candle, a photo slowly turning into thread. Buy one kit, get a second kit 50% off, all month long."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
