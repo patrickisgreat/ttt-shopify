@@ -30,7 +30,11 @@
         {%- if block.type == 'feature_card' -%}
           <div class="features-grid__card-wrapper" {{ block.shopify_attributes }}>
             <div class="features-grid__card">
-              {%- if block.settings.icon != blank -%}
+              {%- if block.settings.icon_preset != blank and block.settings.icon_preset != 'none' -%}
+                <div class="features-grid__icon features-grid__icon--preset">
+                  {%- render 'icon-feature', icon: block.settings.icon_preset -%}
+                </div>
+              {%- elsif block.settings.icon != blank -%}
                 <div class="features-grid__icon">
                   <img
                     src="{{ block.settings.icon | img_url: '80x80' }}"
@@ -138,6 +142,22 @@
       "name": "Feature Card",
       "type": "feature_card",
       "settings": [
+        {
+          "type": "select",
+          "id": "icon_preset",
+          "label": "Icon",
+          "info": "Brand line icons drawn for Threaditate. Overrides the image and SVG fields below.",
+          "default": "none",
+          "options": [
+            { "value": "none", "label": "None (use image or SVG below)" },
+            { "value": "forgiving", "label": "Forgiving thread (loop with check)" },
+            { "value": "voice", "label": "Voice guide (phone speaking)" },
+            { "value": "photo", "label": "Photo becomes thread" },
+            { "value": "box", "label": "Everything in the box" },
+            { "value": "rhythm", "label": "Time slips (clock as loom)" },
+            { "value": "frame", "label": "Hung on the wall" }
+          ]
+        },
         {
           "type": "image_picker",
           "id": "icon",

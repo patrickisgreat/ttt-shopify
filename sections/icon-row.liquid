@@ -2,7 +2,7 @@
 
 <div
   id="{{ section.id }}"
-  class="icon-row-section pt pb sm-pt sm-pb color-{{ section.settings.color_scheme }}"
+  class="icon-row-section icon-row-section--{{ section.settings.layout | default: 'icons' }} pt pb sm-pt sm-pb color-{{ section.settings.color_scheme }}"
   style="
     --pt: {{ section.settings.padding_top | append: 'px' }};
     --pb: {{ section.settings.padding_bottom | append: 'px' }};
@@ -22,23 +22,38 @@
           {%- if block.type == 'icon_item' -%}
             <div class="icon-row__item" {{ block.shopify_attributes }}>
 
-              <div class="icon-row__icon">
-                {%- if block.settings.icon_image != blank -%}
-                  <img
-                    src="{{ block.settings.icon_image | img_url: '120x120' }}"
-                    alt="{{ block.settings.label }}"
-                    width="64"
-                    height="64"
-                    loading="lazy"
-                  >
-                {%- elsif block.settings.icon_svg != blank -%}
-                  {{ block.settings.icon_svg }}
-                {%- else -%}
-                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4"/>
-                  </svg>
-                {%- endif -%}
-              </div>
+              {%- if section.settings.layout == 'photos' -%}
+                <div class="icon-row__photo{% if block.settings.photo == blank %} icon-row__photo--placeholder{% endif %}">
+                  {%- if block.settings.photo != blank -%}
+                    {%- render 'img',
+                      lazyload: true,
+                      wrapped: false,
+                      src: block.settings.photo
+                    -%}
+                  {%- else -%}
+                    {{ 'image' | placeholder_svg_tag }}
+                  {%- endif -%}
+                  <span class="icon-row__step" aria-hidden="true">{{ forloop.index }}</span>
+                </div>
+              {%- else -%}
+                <div class="icon-row__icon">
+                  {%- if block.settings.icon_image != blank -%}
+                    <img
+                      src="{{ block.settings.icon_image | img_url: '120x120' }}"
+                      alt="{{ block.settings.label }}"
+                      width="64"
+                      height="64"
+                      loading="lazy"
+                    >
+                  {%- elsif block.settings.icon_svg != blank -%}
+                    {{ block.settings.icon_svg }}
+                  {%- else -%}
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4"/>
+                    </svg>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
 
               {%- if block.settings.label != blank -%}
                 <p class="icon-row__label">{{ block.settings.label }}</p>
@@ -66,6 +81,17 @@
       "default": "default",
       "label": "Color scheme",
       "info": "Use a dark color scheme to match the design."
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "icons",
+      "options": [
+        { "value": "icons", "label": "Icons" },
+        { "value": "photos", "label": "Photos" }
+      ],
+      "info": "Photos shows each block's photo as a numbered card. Pick a photo on every block."
     },
     {
       "type": "select",
@@ -162,6 +188,12 @@
       "settings": [
         {
           "type": "image_picker",
+          "id": "photo",
+          "label": "Photo",
+          "info": "Used by the Photos layout. Landscape, 4:3 works best."
+        },
+        {
+          "type": "image_picker",
           "id": "icon_image",
           "label": "Icon image",
           "info": "Upload a white PNG or SVG icon. Overrides SVG code below."
@@ -176,7 +208,7 @@
           "type": "text",
           "id": "label",
           "label": "Label",
-          "default": "Assemble your loom"
+          "default": "Mount your loom"
         }
       ]
     }
@@ -189,7 +221,7 @@
         {
           "type": "icon_item",
           "settings": {
-            "label": "Assemble your loom"
+            "label": "Mount your loom"
           }
         },
         {
@@ -201,7 +233,7 @@
         {
           "type": "icon_item",
           "settings": {
-            "label": "Start stringing with confidence"
+            "label": "Start threading with confidence"
           }
         }
       ]

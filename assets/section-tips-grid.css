@@ -58,12 +58,12 @@
   position: relative;
   border-radius: var(--card-border-radius, 12px);
   padding: 1px;
-  background: var(--color-borders, #d8d5cd);
+  background: var(--brand-cobalt-hairline, rgb(20 80 196 / 0.18));
 }
 
 /* Inner card */
 .tips-grid__card {
-  background: var(--color-card-background, var(--color-background-alt, #ECE4E4));
+  background: var(--brand-cobalt-wash, #E4EBF8);
   border-radius: calc(var(--card-border-radius, 12px) - 1px);
   padding: 28px 24px 32px;
   height: 100%;
@@ -78,8 +78,8 @@
   display: inline-flex;
   align-items: center;
   align-self: flex-start;
-  background: var(--color-foreground, #0B0B0F);
-  color: var(--color-background, #F4F2ED);
+  background: var(--brand-cobalt-blue, #1450C4);
+  color: var(--brand-ivory-white, #F4F2ED);
   font-family: var(--font-body-family);
   font-size: 1.3rem;
   font-weight: 600;

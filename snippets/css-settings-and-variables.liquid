@@ -66,6 +66,19 @@
     background-color: var(--color-background);
   }
 
+  {%- comment -%}
+    Near-black schemes (site header, dark bands) get a subtle black-to-deep-cobalt
+    gradient instead of a flat fill so the top of every page reads as brand, not void.
+  {%- endcomment -%}
+  {%- for scheme in settings.color_schemes -%}
+    {%- assign lightness = scheme.settings.background | color_extract: 'lightness' -%}
+    {%- if lightness < 10 -%}
+  .color-{{ scheme.id }} {
+    background-image: var(--brand-dark-gradient);
+  }
+    {%- endif -%}
+  {%- endfor %}
+
   :root {
     --ideal-width: {{ settings.content_ideal_width | append: 'px' }};
     --container-inner-width: min(100vw - var(--container-margin)*2  , var(--ideal-width));
@@ -92,6 +105,11 @@
     --brand-blue-violet-rgb: 61 61 176;
     --brand-vermillion-red-rgb: 196 61 46;
     --brand-true-black-rgb: 11 11 15;
+    /* Card surfaces: a light cobalt wash with a matching hairline. */
+    --brand-cobalt-wash: #E4EBF8;
+    --brand-cobalt-hairline: rgb(20 80 196 / 0.18);
+    /* Subtle dark surface: true black into a deep cobalt shadow. */
+    --brand-dark-gradient: linear-gradient(135deg, #0B0B0F 0%, #0C1530 55%, #10204A 100%);
     --brand-ivory-white-rgb: 244 242 237;
 
     /* Roles — the semantic layer sections should reach for */
