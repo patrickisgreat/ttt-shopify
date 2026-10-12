@@ -66,11 +66,11 @@
   position: relative;
   border-radius: var(--card-border-radius, 12px);
   padding: 1px;
-  background: var(--color-borders, #d8d5cd);
+  background: var(--brand-cobalt-hairline, rgb(20 80 196 / 0.18));
 }
 
 .features-grid__card {
-  background: var(--color-card-background, var(--color-background-alt, #ECE4E4));
+  background: var(--brand-cobalt-wash, #E4EBF8);
   border-radius: calc(var(--card-border-radius, 12px) - 1px);
   padding: 40px 28px 36px;
   text-align: center;
@@ -100,6 +100,21 @@
 .features-grid__icon svg {
   width: 48px;
   height: 48px;
+}
+
+/* Brand preset icons: cobalt line work in a soft cobalt disc */
+.features-grid__icon--preset {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--brand-cobalt-blue, #1450C4);
+  color: var(--brand-ivory-white, #F4F2ED);
+  margin-bottom: 8px;
+}
+
+.features-grid__icon--preset svg {
+  width: 36px;
+  height: 36px;
 }
 
 /* Card text */

@@ -1,0 +1,63 @@
+{%- comment -%}
+  Brand line icons for the features grid. 48x48 viewBox, 1.75px strokes,
+  currentColor so the card CSS sets the colour.
+  Usage: {% render 'icon-feature', icon: 'voice' %}
+{%- endcomment -%}
+{%- case icon -%}
+  {%- when 'forgiving' -%}
+    {%- comment -%} A thread that loops back on itself and still lands on a check. {%- endcomment -%}
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <path d="M5 30c6-10 10-10 14-4s7 7 11 1 7-8 13-6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      <path d="M19 26c-3 6 1 10 5 7s2-9-2-9" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      <circle cx="37" cy="14" r="7" stroke="currentColor" stroke-width="1.75"/>
+      <path d="m33.5 14 2.5 2.5 4.5-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  {%- when 'voice' -%}
+    {%- comment -%} A phone with sound waves: the app reads each step aloud. {%- endcomment -%}
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <rect x="9" y="5" width="18" height="38" rx="4" stroke="currentColor" stroke-width="1.75"/>
+      <path d="M15 10h6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      <circle cx="18" cy="37" r="1.5" fill="currentColor"/>
+      <path d="M32 18c2.5 3.5 2.5 8.5 0 12" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      <path d="M36.5 14c4.5 6 4.5 14 0 20" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      <path d="M41 10c6.5 8.5 6.5 19.5 0 28" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+    </svg>
+  {%- when 'photo' -%}
+    {%- comment -%} Left half photo, right half the same frame resolved into thread lines. {%- endcomment -%}
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <rect x="4" y="9" width="40" height="30" rx="3" stroke="currentColor" stroke-width="1.75"/>
+      <path d="M24 9v30" stroke="currentColor" stroke-width="1.75" stroke-dasharray="2 3"/>
+      <circle cx="12" cy="17" r="2.5" stroke="currentColor" stroke-width="1.75"/>
+      <path d="M4 33l7-8 5 5 4-4 4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M26 37l16-18M26 29l16-9M26 21l16 4M26 13l16 16M30 37l14-6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+    </svg>
+  {%- when 'box' -%}
+    {%- comment -%} Open kit box with the loom ring and thread spool inside. {%- endcomment -%}
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <path d="M6 20h36v20a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V20Z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+      <path d="M6 20l5-9h26l5 9" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+      <path d="M24 11v9" stroke="currentColor" stroke-width="1.75"/>
+      <circle cx="17" cy="32" r="6" stroke="currentColor" stroke-width="1.75" stroke-dasharray="2.5 2.5"/>
+      <rect x="27" y="27" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.75"/>
+      <path d="M27 30h10M27 34h10" stroke="currentColor" stroke-width="1.25"/>
+    </svg>
+  {%- when 'rhythm' -%}
+    {%- comment -%} A clock face whose rim is a pinned loom; the hands are thread. {%- endcomment -%}
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.75"/>
+      <circle cx="24" cy="24" r="14.5" stroke="currentColor" stroke-width="1.25" stroke-dasharray="1.5 3.2"/>
+      <path d="M24 24V13" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      <path d="M24 24c3 1 6 3 8 6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      <path d="M13 31c4-7 10-7 16-3" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+      <circle cx="24" cy="24" r="1.75" fill="currentColor"/>
+    </svg>
+  {%- when 'frame' -%}
+    {%- comment -%} Finished piece hanging from a single pin by its own thread. {%- endcomment -%}
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <circle cx="24" cy="6" r="1.75" fill="currentColor"/>
+      <path d="M24 7.5 13 17h22L24 7.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      <rect x="9" y="17" width="30" height="26" rx="2" stroke="currentColor" stroke-width="1.75"/>
+      <circle cx="24" cy="30" r="8" stroke="currentColor" stroke-width="1.25" stroke-dasharray="1.5 2.5"/>
+      <path d="M18 34l12-8M17 28l13 6M20 23l8 14" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+    </svg>
+{%- endcase -%}

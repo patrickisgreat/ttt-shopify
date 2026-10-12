@@ -5,15 +5,44 @@
 .cta-banner {
   position: relative;
   overflow: hidden;
+  /* Cobalt is the default. The editor's Style setting switches these. */
+  --cta-bg: var(--brand-cobalt-blue, #1450C4);
+  --cta-fg: var(--brand-ivory-white, #F4F2ED);
+  --cta-fg-rgb: var(--brand-ivory-white-rgb, 244 242 237);
+  --cta-btn-bg: var(--brand-ivory-white, #F4F2ED);
+  --cta-btn-fg: var(--brand-cobalt-blue, #1450C4);
+  --cta-btn-hover: rgb(var(--brand-ivory-white-rgb, 244 242 237) / 0.85);
 }
 
-/* Flat brand cobalt. One colour, no mesh. */
+.cta-banner--ivory {
+  --cta-bg: var(--brand-ivory-white, #F4F2ED);
+  --cta-fg: var(--brand-true-black, #0B0B0F);
+  --cta-fg-rgb: var(--brand-true-black-rgb, 11 11 15);
+  --cta-btn-bg: var(--brand-cobalt-blue, #1450C4);
+  --cta-btn-fg: var(--brand-ivory-white, #F4F2ED);
+  --cta-btn-hover: #0F3F9C;
+}
+
+.cta-banner--black {
+  --cta-bg: var(--brand-true-black, #0B0B0F);
+  --cta-fg: var(--brand-ivory-white, #F4F2ED);
+  --cta-fg-rgb: var(--brand-ivory-white-rgb, 244 242 237);
+  --cta-btn-bg: var(--brand-cobalt-blue, #1450C4);
+  --cta-btn-fg: var(--brand-ivory-white, #F4F2ED);
+  --cta-btn-hover: #0F3F9C;
+}
+
+/* One flat colour, no mesh. */
 .cta-banner__bg {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-color: var(--brand-cobalt-blue, #1450C4);
+  background-color: var(--cta-bg);
   pointer-events: none;
+}
+
+.cta-banner--black .cta-banner__bg {
+  background-image: var(--brand-dark-gradient);
 }
 
 /* Inner layout */
@@ -23,7 +52,7 @@
 }
 
 .cta-banner__content {
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -36,16 +65,18 @@
   font-family: var(--font-heading-family);
   font-weight: var(--font-heading-weight);
   font-style: var(--font-heading-style);
-  font-size: 2.8rem;
-  line-height: var(--font-heading-line-height);
+  font-size: 3.6rem;
+  line-height: 1.1;
   letter-spacing: var(--font-heading-letter-spacing);
   text-transform: var(--font-heading-text-transform);
-  color: var(--brand-ivory-white, #F4F2ED);
+  color: var(--cta-fg);
   margin: 0;
+  text-wrap: balance;
 }
 
+/* Closing statement: hero scale, not section scale. */
 @media only screen and (min-width: 768px) {
-  .cta-banner__title { font-size: 3.6rem; }
+  .cta-banner__title { font-size: 5.2rem; }
 }
 
 /* Subheading */
@@ -53,7 +84,7 @@
   font-family: var(--font-body-family);
   font-size: 1.6rem;
   line-height: var(--font-body-line-height);
-  color: rgb(var(--brand-ivory-white-rgb, 244 242 237) / 0.75);
+  color: rgb(var(--cta-fg-rgb) / 0.78);
   margin: 0;
   max-width: 600px;
 }
@@ -67,8 +98,8 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: var(--brand-ivory-white, #F4F2ED);
-  color: var(--brand-cobalt-blue, #1450C4);
+  background: var(--cta-btn-bg);
+  color: var(--cta-btn-fg);
   font-family: var(--font-button-family, var(--font-heading-family));
   font-weight: var(--font-heading-weight);
   font-size: 1.6rem;
@@ -81,7 +112,7 @@
 }
 
 .cta-banner__btn:hover {
-  background: rgb(var(--brand-ivory-white-rgb, 244 242 237) / 0.85);
+  background: var(--cta-btn-hover);
   transform: translateY(-1px);
 }
 
@@ -100,7 +131,7 @@
 .cta-banner__caption {
   font-family: var(--font-body-family);
   font-size: 1.4rem;
-  color: rgb(var(--brand-ivory-white-rgb, 244 242 237) / 0.7);
+  color: rgb(var(--cta-fg-rgb) / 0.7);
   margin: 0;
 }
 

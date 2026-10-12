@@ -69,16 +69,24 @@
   }
 }
 
-/* FAQ item */
+/* FAQ item: a filled card, no hairline. Closed items sit quietly on the
+   card tint; the open item gets a cobalt frame, cobalt question and a filled
+   cobalt disc so the active answer is unmistakable. */
 .faq-full__item {
-  border: 1.5px solid var(--color-borders, #e5e7eb);
-  border-radius: 14px;
+  background: var(--brand-cobalt-wash, #E4EBF8);
+  border: 1.5px solid var(--brand-cobalt-hairline, rgb(20 80 196 / 0.18));
+  border-radius: var(--card-border-radius, 12px);
   overflow: hidden;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.faq-full__item:hover {
+  border-color: rgb(var(--brand-cobalt-blue-rgb, 20 80 196) / 0.45);
 }
 
 .faq-full__item.is-open {
-  border-color: var(--color-outlines, #d1d5db);
+  border-color: var(--brand-cobalt-blue, #1450C4);
+  background: var(--color-background, #F4F2ED);
 }
 
 /* Question button */
@@ -88,7 +96,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 22px 24px;
+  padding: 20px 20px 20px 24px;
   background: none;
   border: none;
   cursor: pointer;
@@ -96,27 +104,56 @@
   color: var(--color-foreground);
   font-family: var(--font-heading-family);
   font-weight: var(--font-heading-weight);
-  font-size: 1.6rem;
-  line-height: 1.4;
+  font-style: var(--font-heading-style);
+  font-size: 1.7rem;
+  line-height: 1.35;
+  letter-spacing: var(--font-heading-letter-spacing);
   -webkit-tap-highlight-color: transparent;
-  transition: opacity 0.15s ease;
+  transition: color 0.2s ease;
 }
 
-.faq-full__question:hover {
-  opacity: 0.75;
+.faq-full__question:hover,
+.faq-full__item.is-open .faq-full__question {
+  color: var(--brand-cobalt-blue, #1450C4);
+}
+
+.faq-full__question:focus-visible {
+  outline: 2px solid var(--focus-ring, #1450C4);
+  outline-offset: -4px;
+  border-radius: calc(var(--card-border-radius, 12px) - 2px);
 }
 
 @media only screen and (min-width: 768px) {
-  .faq-full__question { font-size: 1.8rem; }
+  .faq-full__question {
+    font-size: 1.9rem;
+    padding: 22px 22px 22px 28px;
+  }
 }
 
-/* Chevron icons */
+/* Disclosure disc: cobalt ring when closed, filled when open */
 .faq-full__icon {
   flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  color: var(--color-foreground);
-  opacity: 0.45;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1.5px solid var(--brand-cobalt-blue, #1450C4);
+  color: var(--brand-cobalt-blue, #1450C4);
+  background: transparent;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.faq-full__icon svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+}
+
+.faq-full__item.is-open .faq-full__icon {
+  background: var(--brand-cobalt-blue, #1450C4);
+  color: var(--brand-ivory-white, #F4F2ED);
 }
 
 .faq-full__chevron-down  { display: none; }
@@ -125,7 +162,7 @@
 .faq-full__item.is-open .faq-full__chevron-down  { display: block; }
 .faq-full__item.is-open .faq-full__chevron-right { display: none; }
 
-/* Answer — CSS grid trick for smooth animation */
+/* Answer panel */
 .faq-full__answer {
   display: grid;
   grid-template-rows: 0fr;
@@ -145,13 +182,18 @@
   padding-bottom: 24px;
 }
 
+@media only screen and (min-width: 768px) {
+  .faq-full__answer-inner { padding: 0 28px; }
+  .faq-full__item.is-open .faq-full__answer-inner { padding-bottom: 26px; }
+}
+
 .faq-full__answer-inner p,
 .faq-full__answer-inner li {
   font-family: var(--font-body-family);
   font-size: 1.5rem;
   line-height: 1.7;
   color: var(--color-foreground);
-  opacity: 0.70;
+  opacity: 0.82;
   margin: 0 0 10px;
 }
 
