@@ -32,7 +32,7 @@
   font-family: var(--font-heading-family);
   font-weight: var(--font-heading-weight);
   font-style: var(--font-heading-style);
-  font-size: 3.2rem;
+  font-size: 3.6rem;
   line-height: 1.15;
   letter-spacing: var(--font-heading-letter-spacing);
   text-transform: var(--font-heading-text-transform);
@@ -41,7 +41,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .contact-split__title { font-size: 4.0rem; }
+  .contact-split__title { font-size: 4.8rem; }
 }
 
 .contact-split__body p {

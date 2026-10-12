@@ -79,7 +79,6 @@
                   {% unless selected_variant.available %}disabled{% endunless %}
                 >
                   {{ section.settings.button_label }}
-                  <span aria-hidden="true">→</span>
                 </button>
               {%- endform -%}
             {%- else -%}
@@ -88,7 +87,6 @@
                 class="split-image-content__btn"
               >
                 {{ section.settings.button_label }}
-                <span aria-hidden="true">→</span>
               </a>
             {%- endif -%}
           </div>
@@ -219,7 +217,7 @@
       "type": "text",
       "id": "button_label",
       "label": "Button label",
-      "default": "Add to Cart →"
+      "default": "Add to cart"
     },
     {
       "type": "product",

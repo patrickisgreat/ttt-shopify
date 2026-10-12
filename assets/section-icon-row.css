@@ -10,7 +10,7 @@
   font-family: var(--font-heading-family);
   font-weight: var(--font-heading-weight);
   font-style: var(--font-heading-style);
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   line-height: var(--font-heading-line-height);
   letter-spacing: var(--font-heading-letter-spacing);
   text-transform: var(--font-heading-text-transform);
@@ -19,7 +19,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .icon-row__title { font-size: 3.2rem; }
+  .icon-row__title { font-size: 3.6rem; }
 }
 
 /* Grid */

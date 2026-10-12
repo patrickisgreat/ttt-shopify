@@ -42,13 +42,13 @@
         {%- endif -%}
       </p>
       {%- else -%}
-        <h2 class="h1 pl-8 {{ size_multiplier_classes }}" aria-hidden="true">
+        <p class="h1 pl-8 {{ size_multiplier_classes }}" aria-hidden="true">
           {%- if block.settings.link != blank -%}
             <a class="the-text" href="{{ block.settings.link }}">{{ block.settings.text | newline_to_br }}</a>
           {%- else -%}
             <span class="the-text">{{ block.settings.text | newline_to_br }}</span>
           {%- endif -%}
-        </h2>
+        </p>
       {%- endif -%}
     {% endfor %}
   </div>
