@@ -137,3 +137,16 @@ superpowered-video[data-context="card"] iframe {
     display: none;
   }
 }
+/* Section heading above/below the video: same scale as every other section H2 */
+.video-section .section__header .h2 {
+  font-size: 2.8rem;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .video-section .section__header .h2 {
+    font-size: 3.6rem;
+    margin-bottom: 28px;
+  }
+}

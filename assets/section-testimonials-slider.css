@@ -94,7 +94,7 @@
 
 /* Inner card */
 .testimonials__card {
-  background: var(--color-background, #F4F2ED);
+  background: var(--color-card-background, var(--color-background-alt, #ECE4E4));
   border-radius: calc(var(--card-border-radius, 12px) - 1px);
   padding: 28px 28px 32px;
   height: 100%;

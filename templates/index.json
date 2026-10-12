@@ -39,10 +39,10 @@
         "text": "",
         "align_content": "text-align-center",
         "position_content": "above",
-        "md_padding_top": 48,
-        "md_padding_bottom": 48,
-        "padding_top": 32,
-        "padding_bottom": 32
+        "md_padding_top": 64,
+        "md_padding_bottom": 64,
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "testimonials_slider_UKWpbV": {
@@ -103,7 +103,7 @@
       ],
       "name": "Testimonials Slider",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "alternative-1",
         "heading": "Made by people like you.",
         "subheading": "What makers say about their first piece.",
         "md_padding_top": 80,
@@ -175,8 +175,8 @@
       "name": "Features Grid",
       "settings": {
         "color_scheme": "",
-        "heading": "Built to relax and soothe",
-        "subheading": "Designed to finish and display",
+        "heading": "Built to relax. Designed to finish and display.",
+        "subheading": "",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
@@ -227,7 +227,7 @@
       ],
       "name": "How It Works",
       "settings": {
-        "color_scheme": "default",
+        "color_scheme": "alternative-1",
         "heading": "Four steps. The app guides every one.",
         "subheading": "",
         "button_label": "Get my kit",
