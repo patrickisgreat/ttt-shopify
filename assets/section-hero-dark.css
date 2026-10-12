@@ -126,7 +126,7 @@
 .hero-dark__caption {
   font-family: var(--font-body-family);
   font-size: 1.4rem;
-  color: rgb(var(--brand-ivory-white-rgb, 244 242 237) / 0.50);
+  color: rgb(var(--brand-ivory-white-rgb, 244 242 237) / 0.72);
   margin: 0;
 }
 
