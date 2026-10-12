@@ -31,21 +31,24 @@
           "type": "icon_item",
           "settings": {
             "icon_svg": "<svg width=\"75\" height=\"75\" viewbox=\"0 0 75 75\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M37.5 1.5C17.6177 1.5 1.5 17.6177 1.5 37.5C1.5 57.3823 17.6177 73.5 37.5 73.5\" stroke=\"white\" stroke-width=\"3\" stroke-dasharray=\"12.18 9.47\"></path>\n<path d=\"M37.5 73.5C57.3822 73.5 73.5 57.3823 73.5 37.5C73.5 17.6177 57.3823 1.5 37.5 1.5\" stroke=\"white\" stroke-width=\"3\"></path>\n</svg>",
-            "label": "Assemble your loom"
+            "label": "Mount your loom",
+            "title": null
           }
         },
         "icon_item_ErqxAD": {
           "type": "icon_item",
           "settings": {
             "icon_svg": "<svg width=\"65\" height=\"72\" viewbox=\"0 0 65 72\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M0.000337791 1.05946V67.3394C0.000337791 67.8689 0.441617 68.3984 1.05926 68.3984H36.6263C36.9794 68.3984 37.244 67.9571 37.0676 67.604C33.4492 61.7792 33.7137 54.1009 38.3914 48.4525C39.3621 47.2169 40.5096 46.2461 41.7453 45.3636C42.1865 45.0987 41.9216 44.481 41.4804 44.481H4.94254C4.85434 44.481 4.76614 44.3928 4.76614 44.3046L4.76586 4.50133C4.76586 4.41313 4.85405 4.32493 4.94225 4.32493H53.0416C53.1298 4.32493 53.218 4.41313 53.218 4.50133L53.2183 42.1865C53.2183 42.4514 53.3946 42.6278 53.6595 42.6278C54.8952 42.8042 56.1308 43.1572 57.3661 43.6867C57.7192 43.8631 58.0723 43.5985 58.0723 43.2454V1.05921C58.0723 0.529733 57.631 0.000287291 57.0134 0.000287291L0.971033 0C0.441271 0 0 0.441278 0 1.05921L0.000337791 1.05946Z\" fill=\"white\"></path>\n<path d=\"M7.94305 40.5097H49.9527C50.7471 40.5097 51.1884 39.539 50.7471 38.921L36.4497 17.6514C36.0084 17.0337 35.214 17.0337 34.861 17.6514L22.9464 35.2142C22.5934 35.8319 21.7108 35.8319 21.3577 35.2142L16.3273 27.7125C15.9742 27.0948 15.0916 27.0948 14.7385 27.7125L7.23679 38.8327C6.7076 39.5389 7.14888 40.5096 7.94295 40.5096L7.94305 40.5097Z\" fill=\"white\"></path>\n<path d=\"M16.5924 17.2102C16.5924 15.2687 15.0037 13.6799 13.0622 13.6799C11.1207 13.6799 9.53198 15.2687 9.53198 17.2102C9.53198 19.1516 11.1207 20.7404 13.0622 20.7404C15.0037 20.8289 16.5924 19.2402 16.5924 17.2102Z\" fill=\"white\"></path>\n<path d=\"M61.073 67.2511C65.6622 61.6909 64.8682 53.395 59.3079 48.8057C53.7476 44.2166 45.4518 45.0106 40.8625 50.5708C36.2733 56.1311 37.0673 64.427 42.6276 69.0163C48.276 73.6054 56.4837 72.8111 61.073 67.2511ZM56.1308 57.7195H53.3067C53.1303 57.7195 53.0419 57.8959 53.0419 57.9844V66.81C53.0419 67.0749 52.777 67.3395 52.6006 67.3395H49.4234C49.1586 67.3395 48.894 67.0746 48.894 66.81V57.9844C48.894 57.808 48.8058 57.7195 48.6291 57.7195H45.8051C45.3638 57.7195 45.1874 57.2782 45.452 56.9252L50.5709 50.6591C50.7473 50.3942 51.1886 50.3942 51.3653 50.6591L56.4843 56.9252C56.8368 57.2782 56.5722 57.7195 56.1309 57.7195H56.1308Z\" fill=\"white\"></path>\n</svg>",
-            "label": "Upload a photo to generate your guide"
+            "label": "Upload a photo to generate your guide",
+            "title": null
           }
         },
         "icon_item_cymWwb": {
           "type": "icon_item",
           "settings": {
             "icon_svg": "<svg width=\"72\" height=\"72\" viewbox=\"0 0 72 72\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle cx=\"36\" cy=\"36\" r=\"34.5\" stroke=\"white\" stroke-width=\"3\"></circle>\n<path d=\"M36 1.75128V70.2487\" stroke=\"white\" stroke-width=\"3\"></path>\n<path d=\"M1.75635 36.005L70.2538 36.005\" stroke=\"white\" stroke-width=\"3\"></path>\n<path d=\"M4.13525 48.5417L67.8784 23.4675\" stroke=\"white\" stroke-width=\"3\"></path>\n<path d=\"M22.0039 67.2562L50.0148 4.7479\" stroke=\"white\" stroke-width=\"3\"></path>\n<path d=\"M49.457 67.4962L22.5615 4.49994\" stroke=\"white\" stroke-width=\"3\"></path>\n<path d=\"M68.2661 47.4973L3.74691 24.4936\" stroke=\"white\" stroke-width=\"3\"></path>\n<path d=\"M11.7842 11.786L60.2192 60.221\" stroke=\"white\" stroke-width=\"3\"></path>\n<path d=\"M11.791 60.2209L60.226 11.7859\" stroke=\"white\" stroke-width=\"3\"></path>\n</svg>",
-            "label": "Start stringing with confidence"
+            "label": "Start threading with confidence",
+            "title": null
           }
         }
       },
@@ -57,7 +60,7 @@
       "name": "Icon Row",
       "settings": {
         "color_scheme": "scheme-be8ef671-53c2-4895-89a6-144af711f198",
-        "heading": "What You'll Do",
+        "heading": "What you'll do",
         "md_padding_top": 64,
         "md_padding_bottom": 64,
         "padding_top": 48,
@@ -71,7 +74,7 @@
           "type": "step",
           "settings": {
             "image": "shopify://shop_images/setp-1.jpg",
-            "title": "Assemble & Mount Your Loom",
+            "title": "Mount your loom",
             "description": "Snap the interlocking pieces together to form your loom.",
             "tip": "We recommend mounting to a wall just below eye level for the best stability, ergonomics, and ease of use.  You may also or turn the box into an easel for a seated experience."
           }
@@ -80,16 +83,16 @@
           "type": "step",
           "settings": {
             "image": "shopify://shop_images/step-2.jpg",
-            "title": "Prepare Your Workspace",
+            "title": "Prepare your workspace",
             "description": "Attach the paper number guide, aligning the tall pin at the top with pin 0, then attaching the rest.",
-            "tip": "Assemble the phone and spool holders. Feed thread through the spool holder's eye hole, then through the wide end of the wand, then insert foam plug. Tie thread to loom anywhere with a Fisherman's Knot."
+            "tip": "Set up the phone and spool holders. Feed thread through the spool holder's eye hole, then through the wide end of the wand, then insert foam plug. Tie thread to loom anywhere with a Fisherman's Knot."
           }
         },
         "step_Xm4zYR": {
           "type": "step",
           "settings": {
             "image": "shopify://shop_images/step-3.jpg",
-            "title": "Upload Your Photo",
+            "title": "Upload your photo",
             "description": "Upload your image in the app to generate a custom threading guide.",
             "tip": "Select photos to try by following the Tips Guide. Zoom in! Now zoom in more! After uploading many photos, you will develop an eye for what images make for great string art. Optimize and choose line count/ detail level. Every 500 lines takes under an hour. 3500-4000 lines look best in our opinion."
           }
@@ -113,10 +116,10 @@
       "name": "Steps with Images",
       "settings": {
         "color_scheme": "",
-        "heading": "Getting Started",
+        "heading": "Getting started",
         "subheading": "Follow these steps in order for the smoothest experience.",
         "number_color": "#1450c4",
-        "button_label": "Start your piece",
+        "button_label": "Get my kit",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
         "button_style": "primary",
         "md_padding_top": 80,
@@ -132,7 +135,7 @@
         "color_scheme": "",
         "video_url": "https://www.youtube.com/watch?v=uqd7Kh_kwQs",
         "title": "How to Threaditate",
-        "text": "<p>A quick walkthrough of the whole process, from your photo to a finished masterpiece.</p>",
+        "text": "A quick walkthrough of the whole process, from your photo to a finished piece.",
         "align_content": "text-align-center",
         "position_content": "above",
         "md_padding_top": 24,
@@ -156,7 +159,7 @@
           "type": "tip_card",
           "settings": {
             "badge_label": "",
-            "title": "Mistakes Are Okay",
+            "title": "Mistakes are okay",
             "description": "Zero craftsmanship needed.  If you lose your place or mess up, just keep going - no undoing required.  All errors vanish."
           }
         },
@@ -164,7 +167,7 @@
           "type": "tip_card",
           "settings": {
             "badge_label": "",
-            "title": "Stay Loose",
+            "title": "Stay loose",
             "description": "A relaxed mind and hand make the best experience.  Take a break from all tension."
           }
         },
@@ -186,8 +189,8 @@
       "name": "Tips Grid",
       "settings": {
         "color_scheme": "",
-        "heading": "Helpful Tips for a Smooth Experience",
-        "subheading": "You don't need to rush - this is meant to be enjoyed.",
+        "heading": "Tips for a smooth first piece",
+        "subheading": "You don't need to rush. This is meant to be enjoyed.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
@@ -260,7 +263,7 @@
       "settings": {
         "heading": "Want the full guide?",
         "subheading": "Read the step-by-step, helpful tips, and answers to common questions.",
-        "button_label": "Read the FAQ →",
+        "button_label": "Read the FAQ",
         "button_link": "shopify://pages/faq",
         "caption": "",
         "md_padding_top": 64,
@@ -274,8 +277,8 @@
       "name": "CTA Banner",
       "settings": {
         "heading": "Create your Threaditate",
-        "subheading": "Turn a meaningful photo into custom string art — guided, calming, and designed to be finished.",
-        "button_label": "Make yours",
+        "subheading": "Turn a meaningful photo into custom string art: guided, calming, and designed to be finished.",
+        "button_label": "Get my kit",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
         "caption": "No experience needed. Everything included.",
         "md_padding_top": 120,

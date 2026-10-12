@@ -231,7 +231,7 @@
       ],
       "settings": {
         "product_image_aspect_ratio": "square",
-        "media_fill_rule": "contain",
+        "media_fill_rule": "cover",
         "color_scheme": "scheme-d41b7294-aad9-4454-94d4-1e261262bb1f",
         "show_breadcrumb": false,
         "section_bg": "",
@@ -254,80 +254,6 @@
         "media_gap": 3,
         "padding_top": 0,
         "padding_bottom": 0
-      }
-    },
-    "sliding_text_rcCeE8": {
-      "type": "sliding-text",
-      "blocks": {
-        "text_Ytzbjp": {
-          "type": "text",
-          "settings": {
-            "text": "🤝",
-            "link": ""
-          }
-        },
-        "text_caxCW4": {
-          "type": "text",
-          "settings": {
-            "text": "2,035 backers",
-            "link": ""
-          }
-        },
-        "text_DkifYx": {
-          "type": "text",
-          "settings": {
-            "text": "💸",
-            "link": ""
-          }
-        },
-        "text_w6yp7R": {
-          "type": "text",
-          "settings": {
-            "text": "$172,797 raised",
-            "link": ""
-          }
-        },
-        "text_gjb7wp": {
-          "type": "text",
-          "settings": {
-            "text": "📦",
-            "link": ""
-          }
-        },
-        "text_3jVyPi": {
-          "type": "text",
-          "settings": {
-            "text": "Ships from Alabama",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "text_Ytzbjp",
-        "text_caxCW4",
-        "text_DkifYx",
-        "text_w6yp7R",
-        "text_gjb7wp",
-        "text_3jVyPi"
-      ],
-      "settings": {
-        "color_scheme": "scheme-be8ef671-53c2-4895-89a6-144af711f198",
-        "text_gradient_color": "",
-        "content_order": "horizontal",
-        "font": "heading",
-        "direction": "normal",
-        "speed": 10,
-        "pause_on_hover": false,
-        "sm_size_multiplier": "sm-size--small",
-        "sm_item_gap": 80,
-        "sm_padding": 32,
-        "md_padding_top": 0,
-        "md_padding_bottom": 0,
-        "size_multiplier": "size--default",
-        "item_gap": 24,
-        "padding": 24,
-        "padding_top": 32,
-        "padding_bottom": 32
       }
     },
     "features_grid_aiQeMA": {
@@ -366,7 +292,7 @@
       "name": "Features Grid",
       "settings": {
         "color_scheme": "",
-        "heading": "So, What Is Threaditate?",
+        "heading": "What is Threaditate?",
         "subheading": "A hands-on, guided art kit. Your hands make something real. Your mind goes quiet while they do.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
@@ -393,7 +319,7 @@
         "bullet_8": "",
         "bullet_9": "",
         "bullet_10": "",
-        "button_label": "Add to Cart",
+        "button_label": "Add to cart",
         "product": "string-ring-custom-string-art-kit",
         "button_link": "",
         "button_color": "#1450c4",
@@ -421,7 +347,7 @@
         "title_Mhnqb6": {
           "type": "title",
           "settings": {
-            "title": "From Your Camera Roll to Your Wall",
+            "title": "From your camera roll to your wall",
             "heading_tag": "h2",
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 4,
@@ -554,7 +480,7 @@
       "name": "Features Carousel",
       "settings": {
         "color_scheme": "",
-        "heading": "What Makes Threaditate Different",
+        "heading": "What makes Threaditate different",
         "subheading": "From the guided app to the convertible easel box, every detail was built to get you to the last line — and leave you with something worth displaying.",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
@@ -627,7 +553,7 @@
       "settings": {
         "heading": "Create your Threaditate",
         "subheading": "A meaningful photo, a guided evening or three, and a piece on your wall that you made.",
-        "button_label": "Make yours",
+        "button_label": "Get my kit",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
         "caption": "No experience needed. Everything included.",
         "md_padding_top": 120,
@@ -660,7 +586,6 @@
   "order": [
     "main",
     "before_after_JDmxdx",
-    "sliding_text_rcCeE8",
     "judgeme_reviews",
     "features_grid_aiQeMA",
     "split_image_content_3xrpVG",
