@@ -17,7 +17,8 @@
           "settings": {
             "badges_position": "over-media",
             "margin_top": 0
-          }
+          },
+          "disabled": true
         },
         "rating_Ccm9zT": {
           "type": "rating",
@@ -34,7 +35,8 @@
         },
         "judgeme_badge": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
+          "settings": {},
+          "disabled": true
         },
         "the-price": {
           "type": "price",
@@ -43,7 +45,7 @@
             "font_weight": "normal",
             "sm_size_multiplier": "sm-size--huge",
             "size_multiplier": "size--huge",
-            "shipping_note": "Ships in 1 business day from Alabama. Shipping shown before you pay."
+            "shipping_note": "$5.95 flat US shipping. Ships in 1 business day from Alabama."
           }
         },
         "the-description": {
@@ -52,23 +54,8 @@
             "enable_collapsible": false,
             "collapsible_type": "collapsible",
             "margin_top": 24
-          }
-        },
-        "2ad218b6-4cf8-49f8-a948-4ca131ed654a": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Your hands make it. The app walks you through every step.</p><p>Upload any photo and the app turns it into a real-time, voice-guided sequence that flows at your pace — no diagrams to decode, no wrong moves to undo, no buttons to tap between lines. You, the thread, and the next number.</p>",
-            "read_more": false,
-            "margin_top": 24
-          }
-        },
-        "text_tRMRrA": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>What's included:</strong></p><ul><li>20-inch interlocking loom</li><li>Pre-cut thread and spool holder</li><li>Precision threading tool</li><li>Numbered paper guide</li><li>Wooden phone stand</li><li>Convertible box easel</li><li>App access for personalized guides — no subscription</li></ul>",
-            "read_more": true,
-            "margin_top": 8
-          }
+          },
+          "disabled": true
         },
         "557a3a73-80c5-47b2-abb8-a78027516c90": {
           "type": "variant_picker",
@@ -101,22 +88,7 @@
             "show_gift_card_recipient": false,
             "add_multipliers": "",
             "add_multipliers_layout": "single-line",
-            "margin_top": 28
-          }
-        },
-        "custom_liquid_6FiWtW": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<a href=\"/pages/faq\" class=\"try-photo-button btn btn--secondary\">\n  <span class=\"try-photo-icon\" aria-hidden=\"true\">\n    <!-- FAQ / question-mark icon -->\n    <svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\">\n      <circle cx=\"12\" cy=\"12\" r=\"10\" fill=\"black\"/>\n      <path d=\"M9.3 9.3a2.8 2.8 0 1 1 4.1 2.6c-.9.5-1.5 1.1-1.5 2.1v.3\" stroke=\"white\" stroke-width=\"1.7\" fill=\"none\" stroke-linecap=\"round\"/>\n      <circle cx=\"12\" cy=\"17.3\" r=\"1.15\" fill=\"white\"/>\n    </svg>\n  </span>\n  <span class=\"try-photo-text\">Read the FAQ</span>\n</a>",
             "margin_top": 20
-          }
-        },
-        "text_ytmJky": {
-          "type": "text",
-          "settings": {
-            "text": "<p>No experience needed. Ships from Huntsville, AL within one business day. 30-day guarantee.</p>",
-            "read_more": false,
-            "margin_top": 16
           }
         },
         "the-inventory-status": {
@@ -156,17 +128,6 @@
             "page": "",
             "open_as_drawer": false,
             "icon": "icon-caret__right",
-            "margin_top": 24
-          }
-        },
-        "cb99c690-44cf-4273-8519-6e54272edcba": {
-          "type": "collapsible_tab",
-          "settings": {
-            "title": "Benefits",
-            "content": "<ul><li><strong>Your hands know what to do next</strong> — the app speaks each step in real time, from the first line to the last.</li><li><strong>It keeps your pace</strong> — the guide flows on a rhythm you set. Speed up as your hands learn; slow down to sink in.</li><li><strong>The finished piece is yours</strong> — every Threaditate starts from a photo you uploaded. It can't exist anywhere else.</li><li><strong>You will finish this</strong> — the process is designed around completion. The app saves your place, and every session picks up exactly where you left off.</li><li><strong>No experience needed</strong> — the app accounts for that; zero crafting background required.</li><li><strong>Nothing missing from the box</strong> — the kit ships complete: loom, thread, tools, phone stand, easel box, and app access.</li><li><strong>Hands busy, mind quiet</strong> — the kind of focus screens don't provide.</li><li><strong>It makes a real gift</strong> — a completed Threaditate made from a meaningful photo says more than anything off a shelf.</li></ul>",
-            "page": "",
-            "open_as_drawer": false,
-            "icon": "icon-caret__right",
             "margin_top": 0
           }
         },
@@ -184,19 +145,58 @@
         "collapsible_tab_ftBRFa": {
           "type": "collapsible_tab",
           "settings": {
-            "title": "Shipping & Returns",
-            "content": "<p>Ships from Huntsville, AL within 24 business hours.</p><p>30-day guarantee - if it's not for you, send it back in new condition. </p>",
+            "title": "Shipping and returns",
+            "content": "<p>$5.95 standard US shipping, 3 to 5 days. Expedited 1 to 2 day options at checkout.</p><p>Ships from Huntsville, AL within 1 business day.</p><p>30-day guarantee. If it's not for you, send it back in new condition for a full refund.</p>",
             "page": "",
             "open_as_drawer": false,
             "icon": "icon-caret__right",
             "margin_top": 8
           }
         },
-        "share_7PLqah": {
-          "type": "share",
+        "text_proof": {
+          "type": "text",
           "settings": {
-            "share_label": "Share",
-            "hide_on_desktop": true,
+            "text": "<p><strong>3,000+ kits made.</strong> App included, no subscription.</p>",
+            "read_more": false,
+            "margin_top": 8
+          }
+        },
+        "text_bullets": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li>Turn any photo into string art</li><li>No skills needed. The app's voice guides every line</li><li>Loom, thread and tools included. Nothing else to buy</li><li>Relaxing and mess-free. 5 to 8 hours, at your pace</li></ul>",
+            "read_more": false,
+            "margin_top": 20
+          }
+        },
+        "trust_row": {
+          "type": "trust_row",
+          "settings": {
+            "item_1": "Ships in 1 business day",
+            "item_2": "30-day guarantee",
+            "item_3": "3,000+ kits made",
+            "margin_top": 16
+          }
+        },
+        "tab_included": {
+          "type": "collapsible_tab",
+          "settings": {
+            "title": "What's in the box",
+            "content": "<ul><li>20-inch interlocking loom</li><li>Pre-cut thread and spool holder</li><li>Precision threading wand</li><li>Numbered paper guide</li><li>Wooden phone stand</li><li>Convertible box easel</li><li>App access for personalized guides, no subscription</li></ul>",
+            "page": "",
+            "open_as_drawer": false,
+            "icon": "icon-caret__right",
+            "margin_top": 24
+          }
+        },
+        "tab_how": {
+          "type": "collapsible_tab",
+          "settings": {
+            "title": "How it works",
+            "content": "<p>Upload any photo and the app turns it into a voice-guided sequence. It speaks each pin number, shows the line, then flows to the next at your pace. Lose your place? Keep going. Missed lines vanish into the whole. The app saves your spot, so every session picks up where you left off.</p>",
+            "page": "",
+            "open_as_drawer": false,
+            "icon": "icon-caret__right",
             "margin_top": 0
           }
         }
@@ -205,25 +205,24 @@
         "2cb069aa-470f-47b0-97d9-b6a2c86aa996",
         "rating_Ccm9zT",
         "the-title",
+        "text_proof",
         "judgeme_badge",
         "the-price",
         "the-description",
-        "2ad218b6-4cf8-49f8-a948-4ca131ed654a",
-        "text_tRMRrA",
+        "text_bullets",
         "557a3a73-80c5-47b2-abb8-a78027516c90",
         "6fc29670-ecc3-4bbf-bc13-6d7232b75085",
         "custom_liquid_gwp_tote",
         "the-buy-buttons",
-        "custom_liquid_6FiWtW",
-        "text_ytmJky",
+        "trust_row",
         "the-inventory-status",
         "the-pickup-availability",
         "the-sticky-buy-bar",
+        "tab_included",
+        "tab_how",
         "75b14a74-c1c5-4fcc-932f-e2bfa017fba2",
-        "cb99c690-44cf-4273-8519-6e54272edcba",
         "collapsible_tab_GJhtdP",
-        "collapsible_tab_ftBRFa",
-        "share_7PLqah"
+        "collapsible_tab_ftBRFa"
       ],
       "custom_css": [
         "span.try-photo-text {color: black;}",
@@ -264,7 +263,8 @@
           "settings": {
             "icon_svg": "",
             "title": "Forgiving by design",
-            "description": "Lose your place? Keep going. With thousands of lines, missed steps disappear into the whole — there's nothing to undo."
+            "description": "Lose your place? Keep going. With thousands of lines, missed steps disappear into the whole — there's nothing to undo.",
+            "icon_preset": "forgiving"
           }
         },
         "feature_card_jMkMTj": {
@@ -272,7 +272,8 @@
           "settings": {
             "icon_svg": "",
             "title": "You won't get lost",
-            "description": "The app speaks and shows every step, flowing line by line at your pace. No experience needed."
+            "description": "The app speaks and shows every step, flowing line by line at your pace. No experience needed.",
+            "icon_preset": "voice"
           }
         },
         "feature_card_JkAaLp": {
@@ -280,7 +281,8 @@
           "settings": {
             "icon_svg": "",
             "title": "Your photo, your art",
-            "description": "Any meaningful image becomes one-of-a-kind string art. No two pieces will ever match."
+            "description": "Any meaningful image becomes one-of-a-kind string art. No two pieces will ever match.",
+            "icon_preset": "photo"
           }
         }
       },
@@ -486,7 +488,8 @@
         "md_padding_bottom": 80,
         "padding_top": 48,
         "padding_bottom": 48
-      }
+      },
+      "disabled": true
     },
     "the-product-recommendations": {
       "type": "product-recommendations",
@@ -581,18 +584,147 @@
         "padding_bottom": 24
       },
       "disabled": true
+    },
+    "testimonials_pdp": {
+      "type": "testimonials-slider",
+      "blocks": {
+        "testimonial_NQjQ3B": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "I would 100% recommend this",
+            "quote_body": "I had a great time creating this portrait. It's a different type of meditative art that I can actually see as a hobby.",
+            "author_name": "Jaiden T.",
+            "author_role": "Age 24"
+          }
+        },
+        "testimonial_nN4hjg": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "The whole world around you seems to disappear",
+            "quote_body": "This is really quite relaxing. I did a portrait of my grandfather, so now I can feel his presence whenever I look at the artwork. Makes a very unique and thoughtful gift for anyone at any age. I look forward to my next one.",
+            "author_name": "Roy P.",
+            "author_role": "Age 65"
+          }
+        },
+        "testimonial_6A4tbr": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "It was my favorite part of this week",
+            "quote_body": "I had so much fun with my kit. It just calmed me down after my stressful work days, and now I have this beautiful piece of art. Now I'm obsessed and I want something to look forward to after work again.",
+            "author_name": "Kendal J.",
+            "author_role": "Age 35"
+          }
+        },
+        "testimonial_J3XqcC": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "I can finally just chill",
+            "quote_body": "It's amazing. I go into a deep sense of calm and relaxation. It feels like nothing's going on outside in the world or in my mind, and thoughts clear up as I loop. I want to give my mom one.",
+            "author_name": "Sean O.",
+            "author_role": "Age 9"
+          }
+        },
+        "testimonial_K4jDN8": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "It's really calming",
+            "quote_body": "It is a lot of fun. It's really cool, it's not hard at all to do. I really liked it. You get to focus on one thing. Get it if you like art.",
+            "author_name": "Grace J.",
+            "author_role": "Age 14"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_NQjQ3B",
+        "testimonial_nN4hjg",
+        "testimonial_6A4tbr",
+        "testimonial_J3XqcC",
+        "testimonial_K4jDN8"
+      ],
+      "name": "Testimonials Slider",
+      "settings": {
+        "color_scheme": "alternative-1",
+        "heading": "Made by people like you.",
+        "subheading": "What makers say about their first piece.",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "faq_pdp": {
+      "type": "faq-with-image",
+      "blocks": {
+        "faq_item_Thbefr": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will my photo actually turn out good?",
+            "answer": "<p>Yes - a clear photo with a close-up subject in good contrast makes a strong piece. Faces, pets, and simple compositions work beautifully.</p>"
+          }
+        },
+        "faq_item_jPDegj": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does this actually work?",
+            "answer": "<p>Upload a photo and the app turns it into a numbered sequence. It speaks aloud and shows each step, then flows to the next at whatever pace you set - line by line until you're done. You can tap to advance, or autoplay.</p>"
+          }
+        },
+        "faq_item_3wGpVc": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Be honest… is Threaditate hard?",
+            "answer": "<p>No, it's easy. If you can count to 240, you can Threaditate. The app accounts for everything else.</p>"
+          }
+        },
+        "faq_item_3eyjFJ": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does it take to make?",
+            "answer": "<p>Most pieces take 6 hours, but can be finished in 5 or take 8, depending on detail. Plenty of makers spread that across a few evenings. The app saves your place - it's ready whenever you are. You deserve moments of calm, take as many as often as you'd like.</p>"
+          }
+        },
+        "faq_item_fThdwz": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What exactly do I get?",
+            "answer": "<p>The loom, thread, spool holder, precision wand, numbered paper guide, wooden phone stand, mounting accessories, the easel-box, and app access - no subscription ever.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_Thbefr",
+        "faq_item_jPDegj",
+        "faq_item_3wGpVc",
+        "faq_item_3eyjFJ",
+        "faq_item_fThdwz"
+      ],
+      "name": "FAQ with Image",
+      "settings": {
+        "color_scheme": "alternative-1",
+        "heading": "Questions before you buy",
+        "subheading": "Straight answers to what most people ask first.",
+        "image": "shopify://shop_images/faq-image.jpg",
+        "button_label": "See all FAQs",
+        "button_link": "shopify://pages/faq",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
     }
   },
   "order": [
     "main",
     "before_after_JDmxdx",
+    "testimonials_pdp",
     "judgeme_reviews",
-    "features_grid_aiQeMA",
     "split_image_content_3xrpVG",
+    "features_grid_aiQeMA",
     "app_carousel_ehEbit",
     "feature_carousel_6FG3qV",
     "the-product-recommendations",
     "video_HFaPVc",
+    "faq_pdp",
     "cta_banner_GTHMPG"
   ]
 }

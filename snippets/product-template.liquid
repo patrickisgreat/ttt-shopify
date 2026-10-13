@@ -342,6 +342,9 @@
               {%- endif -%}
             {%- when 'custom_liquid' -%}
               {{ block.settings.custom_liquid }}
+            {%- when 'trust_row' -%}
+              {{ 'component-trust-row.css' | asset_url | stylesheet_tag }}
+              {%- render 'trust-row', block: block -%}
             {%- when 'collapsible_tab' -%}
               {%- assign collapsible_id = 'Details-' | append: block.id | append: '-' | append: section.id -%}
               {%- capture summary_title -%}

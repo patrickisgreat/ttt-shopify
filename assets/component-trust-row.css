@@ -1,0 +1,38 @@
+/* ==================
+   Trust row (product buy box)
+   ================== */
+
+.trust-row {
+  list-style: none;
+  margin: 0;
+  padding: 14px 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  border: 1px solid var(--brand-cobalt-hairline, rgb(20 80 196 / 0.18));
+  background: var(--brand-cobalt-wash, #E4EBF8);
+  border-radius: var(--card-border-radius, 12px);
+}
+
+.trust-row__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  font-family: var(--font-body-family);
+  font-size: 1.3rem;
+  line-height: 1.3;
+  color: var(--color-foreground);
+}
+
+.trust-row__icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: var(--brand-cobalt-blue, #1450C4);
+}
+
+@media only screen and (min-width: 768px) {
+  .trust-row__item { font-size: 1.4rem; }
+}
