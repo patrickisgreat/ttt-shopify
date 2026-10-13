@@ -171,3 +171,32 @@
 @media only screen and (min-width: 768px) {
   .icon-row-section--photos .icon-row__label { font-size: 2.0rem; }
 }
+
+/* ── Mobile: photo steps as compact rows so all three fit on one screen ── */
+@media only screen and (max-width: 599px) {
+  .icon-row-section--photos.pt { padding-top: min(var(--pt), 24px) !important; }
+  .icon-row-section--photos.pb { padding-bottom: min(var(--pb), 32px) !important; }
+  .icon-row-section--photos .icon-row__title {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+  }
+  .icon-row-section--photos .icon-row__grid { gap: 14px; }
+  .icon-row-section--photos .icon-row__item {
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+  }
+  .icon-row-section--photos .icon-row__photo {
+    width: 112px;
+    flex-shrink: 0;
+    aspect-ratio: 1;
+  }
+  .icon-row-section--photos .icon-row__step {
+    top: 6px;
+    left: 6px;
+    width: 26px;
+    height: 26px;
+    font-size: 1.3rem;
+  }
+  .icon-row-section--photos .icon-row__label { max-width: none; }
+}

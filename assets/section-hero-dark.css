@@ -208,3 +208,32 @@
     font-size: 1.4rem;
   }
 }
+
+/* ── Mobile: the whole hero, CTA included, fits on one phone screen ──
+   Padding is capped in code so a roomy mobile padding setting in the editor
+   can't push the button below the fold again. */
+@media only screen and (max-width: 767px) {
+  .hero-dark.pt { padding-top: min(var(--pt), 20px) !important; }
+  .hero-dark.pb { padding-bottom: min(var(--pb), 32px) !important; }
+
+  .hero-dark__grid { gap: 16px; }
+  .hero-dark__text-col { gap: 12px; }
+  .hero-dark__title { font-size: 2.6rem; }
+  .hero-dark__subheading { font-size: 1.5rem; line-height: 1.5; }
+  .hero-dark__proof { margin-top: 0; font-size: 1.3rem; }
+  .hero-dark__buttons { gap: 10px; }
+  .hero-dark__btn { padding: 14px 22px; }
+  .hero-dark__caption { font-size: 1.3rem; }
+
+  /* A short photo strip that scales with the screen, not a 4:3 block */
+  .hero-dark__image {
+    aspect-ratio: auto;
+    height: clamp(120px, 24svh, 240px);
+    border-radius: 14px;
+  }
+  .hero-dark__image--compare { height: auto; }
+  .hero-dark__image--compare .before-after-container {
+    aspect-ratio: auto;
+    height: clamp(160px, 30svh, 280px);
+  }
+}
