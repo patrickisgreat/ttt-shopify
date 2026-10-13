@@ -51,6 +51,14 @@
       object-position: {{ focal_point_mobile }};
     }
 
+    {%- comment -%}
+      A pixel height is capped at half the phone screen so the products below
+      a banner still show on the first screen. Text taller than that still
+      fits: min-height grows with content.
+    {%- endcomment -%}
+    {%- if section.settings.section_height == 'by_pixels' -%}
+      {%- assign section_height = 'min(' | append: section_height | append: ', 50svh)' -%}
+    {%- endif -%}
     {%- if section.settings.content_align_mobile contains 'contained' -%}
       #{{ section.id }} .hero__media {
         height: {{ section_height }};

@@ -742,6 +742,13 @@ html:not(.sticky-header-show) header.header.overlay.use-foreground {
   width: var(--logo-width);
   min-width: var(--logo-width);
 }
+/* Phones: cap the logo so the sticky header doesn't eat the first screen */
+@media only screen and (max-width: 767px) {
+  .site-logo:not(.--text) {
+    width: min(var(--logo-width), 140px);
+    min-width: min(var(--logo-width), 140px);
+  }
+}
 html.sticky-header-show .header-logo.--alt-on-overlay .site-logo.--alt,
 html:not(.sticky-header-show) .header-logo.--alt-on-overlay .site-logo.--default {
   display: none;

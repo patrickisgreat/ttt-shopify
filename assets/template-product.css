@@ -171,11 +171,15 @@
    Phones: get the bullets and Add to cart onto the first screen.
    ================== */
 @media only screen and (max-width: 767px) {
-  /* Gallery at 4:3 instead of square: ~100px shorter on a 390px phone. */
+  /* Gallery at 4:3 instead of square, and never taller than a third of
+     the screen, so short phones still get the price on the first screen. */
   .media-sliders .media.square {
     aspect-ratio: 4 / 3 !important;
     padding: 0 !important;
+    width: 100%;
     height: auto !important;
+    /* the explicit width stops the cap from shrinking the image sideways */
+    max-height: clamp(180px, 34svh, 360px);
   }
 
   .pdp-content .sticky {
@@ -226,5 +230,31 @@
     padding-top: 11px;
     padding-bottom: 11px;
     font-size: 1.5rem;
+  }
+}
+
+/* ── Mobile: price and Add to cart on the first screen ──
+   A tighter title, and the buy controls pulled up to sit
+   right under the price. Description, bullets and tabs follow the button.
+   Only blocks after the price move, so the merchant's block order still
+   rules everything above it. */
+@media only screen and (max-width: 767px) {
+  .product-main.grid { row-gap: 16px; }
+
+  .pdp-content .sticky {
+    display: flex;
+    flex-direction: column;
+  }
+  .product-block__title .h1 { font-size: 2.4rem; }
+  .product-block__price .installment { font-size: 1.3rem; }
+
+  .product-block__price ~ .product-block { order: 2; }
+  .product-block__price ~ :is(
+    .product-block__variant_picker,
+    .product-block__quantity_selector,
+    .product-block__buy_buttons,
+    .product-block__inventory_status
+  ) {
+    order: 1;
   }
 }

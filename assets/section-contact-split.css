@@ -216,3 +216,19 @@
   color: var(--brand-ivory-white, #F4F2ED);
   font-size: 1.4rem;
 }
+/* ── Mobile: heading, intro and the email link on the first screen ── */
+@media only screen and (max-width: 767px) {
+  .contact-split.pt { padding-top: min(var(--pt), 24px) !important; }
+  .contact-split__grid { gap: 24px; }
+  .contact-split__title {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+  }
+  .contact-split__body p {
+    font-size: 1.5rem;
+    line-height: 1.55;
+  }
+  .contact-split__bullets { margin-top: 12px; }
+  .contact-split__divider { margin: 16px 0; }
+  .contact-split__card { padding: 20px 16px; }
+}
