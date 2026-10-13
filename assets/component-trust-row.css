@@ -27,10 +27,16 @@
 }
 
 .trust-row__icon {
+  display: inline-flex;
   width: 24px;
   height: 24px;
   flex-shrink: 0;
   color: var(--brand-cobalt-blue, #1450C4);
+}
+
+.trust-row__icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 @media only screen and (min-width: 768px) {

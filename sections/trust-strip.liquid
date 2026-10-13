@@ -1,0 +1,86 @@
+{{ 'section-trust-strip.css' | asset_url | stylesheet_tag }}
+
+<div
+  id="{{ section.id }}"
+  class="trust-strip-section container pt pb sm-pt sm-pb color-{{ section.settings.color_scheme }}"
+  style="
+    --pt: {{ section.settings.padding_top | append: 'px' }};
+    --pb: {{ section.settings.padding_bottom | append: 'px' }};
+    --sm-pt: {{ section.settings.md_padding_top | append: 'px' }};
+    --sm-pb: {{ section.settings.md_padding_bottom | append: 'px' }};
+  "
+>
+  {%- if section.blocks.size > 0 -%}
+    <ul class="trust-strip">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'item' and block.settings.text != blank -%}
+          <li class="trust-strip__item" {{ block.shopify_attributes }}>
+            <span class="trust-strip__icon">{%- render 'icon-trust', icon: block.settings.icon -%}</span>
+            <span class="trust-strip__text">{{ block.settings.text | escape }}</span>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Trust strip",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "default",
+      "label": "Color scheme"
+    },
+    { "type": "header", "content": "Desktop layout" },
+    { "type": "range", "id": "md_padding_top", "min": 0, "max": 80, "step": 4, "unit": "px", "label": "Padding top", "default": 20 },
+    { "type": "range", "id": "md_padding_bottom", "min": 0, "max": 80, "step": 4, "unit": "px", "label": "Padding bottom", "default": 20 },
+    { "type": "header", "content": "Mobile layout" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 80, "step": 4, "unit": "px", "label": "Padding top", "default": 16 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 80, "step": 4, "unit": "px", "label": "Padding bottom", "default": 16 }
+  ],
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "name": "Item",
+      "type": "item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "default": "kits",
+          "options": [
+            { "value": "kits", "label": "Kits made (people)" },
+            { "value": "patent", "label": "Patent (seal)" },
+            { "value": "app", "label": "App (phone)" },
+            { "value": "ship", "label": "Shipping (box)" },
+            { "value": "guarantee", "label": "Guarantee (shield)" },
+            { "value": "gift", "label": "Gift" },
+            { "value": "clock", "label": "Time" }
+          ]
+        },
+        { "type": "text", "id": "text", "label": "Text", "default": "3,000+ kits made" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust strip",
+      "category": "Custom",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "kits", "text": "3,000+ kits made" } },
+        { "type": "item", "settings": { "icon": "patent", "text": "U.S. Patent 12,423,349" } },
+        { "type": "item", "settings": { "icon": "app", "text": "App included, no subscription" } },
+        { "type": "item", "settings": { "icon": "ship", "text": "Ships in 1 business day" } },
+        { "type": "item", "settings": { "icon": "guarantee", "text": "30-day guarantee" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

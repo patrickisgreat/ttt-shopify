@@ -1,0 +1,9 @@
+{%- comment -%} Yes / partly / no cell for the comparison table. {%- endcomment -%}
+{%- case value -%}
+  {%- when 'yes' -%}
+    <span class="comparison__mark comparison__mark--yes" role="img" aria-label="Yes"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="m5 10.5 3.2 3.2L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  {%- when 'partial' -%}
+    <span class="comparison__mark comparison__mark--partial" role="img" aria-label="Partly"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M5.5 10h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+  {%- else -%}
+    <span class="comparison__mark comparison__mark--no" role="img" aria-label="No"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="m6.5 6.5 7 7m0-7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+{%- endcase -%}

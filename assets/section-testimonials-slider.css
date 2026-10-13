@@ -238,3 +238,22 @@
 .testimonials__dot:hover {
   opacity: 0.5;
 }
+/* Finished-piece photo above the quote */
+.testimonials__card--with-piece {
+  padding-top: 0;
+}
+
+.testimonials__piece {
+  margin: 0 -28px 20px;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: calc(var(--card-border-radius, 12px) - 1px) calc(var(--card-border-radius, 12px) - 1px) 0 0;
+  background: var(--color-background-alt);
+}
+
+.testimonials__piece img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

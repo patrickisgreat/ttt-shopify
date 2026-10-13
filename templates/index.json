@@ -13,10 +13,10 @@
       "type": "hero-dark",
       "name": "Hero Dark",
       "settings": {
-        "heading": "Calmly turn your own photo into string art",
-        "subheading": "Threaditate is a personalized string art kit. Upload a photo you love, then the app's voice guides you line by line, at your pace. No skills or experience needed.",
+        "heading": "Turn any photo into string art you made with your own hands.",
+        "subheading": "Upload a photo. The app's voice guides you line by line through 5 to 8 hours of phone-free calm. No skill needed, nothing to undo.",
         "proof_line": "3,000+ kits made. App included, no subscription.",
-        "caption": "Everything included · Ships in 48 hours · 30-day returns",
+        "caption": "",
         "primary_button_label": "Get my kit",
         "primary_button_link": "shopify://products/string-ring-custom-string-art-kit",
         "primary_button_color": "#1450c4",
@@ -26,7 +26,14 @@
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 56,
-        "padding_bottom": 56
+        "padding_bottom": 56,
+        "image_before": "shopify://shop_images/aphrodite-half-shell.jpg",
+        "image_after": "shopify://shop_images/aphrodite-string.png",
+        "before_label": "Your photo",
+        "after_label": "Your string art",
+        "label_colors": "#ffffff",
+        "label_position": "top",
+        "media_aspect_ratio": "square"
       }
     },
     "video_YzVdz8": {
@@ -379,7 +386,8 @@
         "full_width_buttons": false,
         "padding_top": 24,
         "padding_bottom": 24
-      }
+      },
+      "disabled": true
     },
     "faq_with_image_pJeM3D": {
       "type": "faq-with-image",
@@ -444,11 +452,155 @@
     "1777486347bf7f30d3": {
       "type": "_blocks",
       "settings": {}
+    },
+    "trust_strip_home": {
+      "type": "trust-strip",
+      "blocks": {
+        "ts_kits": {
+          "type": "item",
+          "settings": {
+            "icon": "kits",
+            "text": "3,000+ kits made"
+          }
+        },
+        "ts_patent": {
+          "type": "item",
+          "settings": {
+            "icon": "patent",
+            "text": "U.S. Patent 12,423,349"
+          }
+        },
+        "ts_app": {
+          "type": "item",
+          "settings": {
+            "icon": "app",
+            "text": "App included, no subscription"
+          }
+        },
+        "ts_ship": {
+          "type": "item",
+          "settings": {
+            "icon": "ship",
+            "text": "Ships in 1 business day"
+          }
+        },
+        "ts_guarantee": {
+          "type": "item",
+          "settings": {
+            "icon": "guarantee",
+            "text": "30-day guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "ts_kits",
+        "ts_patent",
+        "ts_app",
+        "ts_ship",
+        "ts_guarantee"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "md_padding_top": 20,
+        "md_padding_bottom": 20,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "comparison_home": {
+      "type": "comparison-table",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "label": "Made from your own photo",
+            "us": "yes",
+            "c2": "no",
+            "c3": "no",
+            "c4": "no"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "label": "No skill or experience needed",
+            "us": "yes",
+            "c2": "partial",
+            "c3": "yes",
+            "c4": "yes"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "label": "A voice guides every step",
+            "us": "yes",
+            "c2": "no",
+            "c3": "no",
+            "c4": "partial"
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "label": "Hands busy, phone face down",
+            "us": "yes",
+            "c2": "yes",
+            "c3": "yes",
+            "c4": "no"
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "label": "A keepsake you hang on the wall",
+            "us": "yes",
+            "c2": "yes",
+            "c3": "yes",
+            "c4": "no"
+          }
+        },
+        "row_6": {
+          "type": "row",
+          "settings": {
+            "label": "Patented in the U.S.",
+            "us": "yes",
+            "c2": "no",
+            "c3": "no",
+            "c4": "no"
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "heading": "Not another craft kit",
+        "subheading": "Only one of these starts from your own photo and gets you off your phone.",
+        "col_us": "Threaditate",
+        "col_2": "Paint by numbers",
+        "col_3": "Diamond art",
+        "col_4": "Meditation app",
+        "button_label": "Get my kit",
+        "button_link": "shopify://products/string-ring-custom-string-art-kit",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
     }
   },
   "order": [
     "hero_dark_4Nid7U",
+    "trust_strip_home",
     "video_YzVdz8",
+    "comparison_home",
     "testimonials_slider_UKWpbV",
     "features_grid_J9zhXh",
     "how_it_works_xQzgqf",
