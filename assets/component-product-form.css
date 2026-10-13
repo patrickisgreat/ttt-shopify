@@ -161,6 +161,19 @@ variant-selects {
 .product-form__buttons .product-form__submit{
   min-height: 48px;
 }
+/* Phones: a slightly smaller Add to cart leaves more of the page in view. */
+@media only screen and (max-width: 767px) {
+  .product-form__buttons .product-form__submit {
+    min-height: 44px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: calc(var(--font-button-size) * 0.92);
+  }
+  .product-form__buttons quantity-input,
+  .product-form__buttons .quantity {
+    min-height: 44px;
+  }
+}
 .product-form__buttons .shopify-payment-button__button {
   border-radius: var(--button-border-radius) !important;
   min-height: 48px;

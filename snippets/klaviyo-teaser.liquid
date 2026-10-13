@@ -1,0 +1,23 @@
+{%- comment -%}
+  Klaviyo injects its "GET 10% OFF" teaser tab with inline styles. On phones
+  we shrink it (critical.css) and hide it after a short while so it stops
+  covering content. Tapping it before then still opens the form.
+{%- endcomment -%}
+<script>
+  (function () {
+    if (!window.matchMedia || !window.matchMedia('(max-width: 767px)').matches) return;
+    var DELAY = 8000;
+    var root = document.documentElement;
+    function arm() {
+      var teaser = document.querySelector('[class*="kl-teaser-"]');
+      if (!teaser) return false;
+      setTimeout(function () { root.classList.add('kl-teaser-dismissed'); }, DELAY);
+      return true;
+    }
+    if (arm()) return;
+    var tries = 0;
+    var timer = setInterval(function () {
+      if (arm() || ++tries > 40) clearInterval(timer);
+    }, 500);
+  })();
+</script>

@@ -166,3 +166,65 @@
   cursor: var(--css-icon-zoom-in) 22 22, auto;
   z-index: 1;
 }
+
+/* ==================
+   Phones: get the bullets and Add to cart onto the first screen.
+   ================== */
+@media only screen and (max-width: 767px) {
+  /* Gallery at 4:3 instead of square: ~100px shorter on a 390px phone. */
+  .media-sliders .media.square {
+    aspect-ratio: 4 / 3 !important;
+    padding: 0 !important;
+    height: auto !important;
+  }
+
+  .pdp-content .sticky {
+    padding-top: 16px;
+  }
+
+  .pdp-content .h1 {
+    font-size: 2.4rem;
+    line-height: 1.15;
+  }
+
+  /* Price: one size down from the desktop 'huge' */
+  .pdp-content .price.sm-size--huge,
+  .pdp-content .price.size--huge {
+    font-size: calc(var(--font-size) * 1.3);
+  }
+
+  /* Shop Pay installments: one quiet line, not two */
+  .pdp-content shopify-payment-terms {
+    display: block;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    opacity: 0.8;
+  }
+
+  /* Bullets: tight */
+  .pdp-content .rte ul {
+    margin: 0 0 0 18px;
+  }
+  .pdp-content .rte li {
+    font-size: 1.45rem;
+    line-height: 1.4;
+    margin: 0 0 3px;
+  }
+
+  /* Buy row: quantity moves to the cart; the button is normal height */
+  .product-form__buttons quantity-input,
+  .product-form__buttons .quantity {
+    display: none;
+  }
+  .product-form__buttons .add-to-cart-container.with-quantity-input {
+    display: block;
+    grid-template-columns: 1fr;
+  }
+  .product-form__buttons .product-form__submit {
+    width: 100%;
+    min-height: 44px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    font-size: 1.5rem;
+  }
+}
