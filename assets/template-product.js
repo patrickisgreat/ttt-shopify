@@ -12,8 +12,9 @@ class ProductBuyBar extends HTMLElement {
           if (entry.isIntersecting) {
             // In view -> Hide bar
             this.classList.remove(classes.show);
-          } else if (window.scrollY > 200) {
-            // Out of view AND scrolled a little from top -> Show bar
+          } else if (window.scrollY > 200 || (entry.target === mainProductForm && entry.boundingClientRect.top > 0)) {
+            // Out of view: scrolled past it, or it starts below the fold on a
+            // short phone screen -> Show bar so Add to cart is always reachable
             this.classList.add(classes.show);
           }
           this.syncBuyBarState();
