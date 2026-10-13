@@ -941,6 +941,35 @@
       ]
     },
     {
+      "type": "trust_row",
+      "name": "Trust row",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Three short reassurances under the Add to cart button, each with a brand line icon."
+        },
+        { "type": "text", "id": "item_1", "label": "Item 1 (shipping)", "default": "Ships in 1 business day" },
+        { "type": "text", "id": "item_2", "label": "Item 2 (guarantee)", "default": "30-day guarantee" },
+        { "type": "text", "id": "item_3", "label": "Item 3 (proof)", "default": "3,000+ kits made" },
+        {
+          "type": "header",
+          "content": "t:sections.headers.layout"
+        },
+        {
+          "id": "margin_top",
+          "type": "range",
+          "label": "t:sections.layout.margin_top",
+          "info": "t:sections.blocks.margin_info",
+          "unit": "px",
+          "default": 16,
+          "min": 0,
+          "max": 48,
+          "step": 4
+        }
+      ]
+    },
+    {
       "type": "custom_liquid",
       "name": "t:sections.blocks.custom_liquid.name",
       "settings": [
