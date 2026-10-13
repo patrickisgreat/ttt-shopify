@@ -605,7 +605,7 @@
             "header_text": "Made by people like you.",
             "show_average_rating": false,
             "reviews_selection": "all",
-            "star_rating": "5",
+            "star_rating": "5_star",
             "max_reviews": 12,
             "reviews_shown": 3,
             "display_order": "media_first",
