@@ -255,7 +255,7 @@
             "image": "shopify://shop_images/image.png",
             "video_url": "",
             "media_toggle": "show_image",
-            "md_padding_top": 32,
+            "md_padding_top": 0,
             "md_padding_bottom": 32,
             "padding_top": 0,
             "padding_bottom": 0
@@ -266,7 +266,7 @@
           "settings": {
             "title": "Everything you need to create calming art, in one box",
             "heading_tag": "h2",
-            "sm_size_multiplier": "sm-size--default",
+            "sm_size_multiplier": "sm-size--huge",
             "sm_margin_top": 0,
             "size_multiplier": "size--default",
             "margin_top": 0
@@ -276,8 +276,8 @@
           "type": "text",
           "settings": {
             "text": "<p>No extra tools, no guesswork. Open the box, mount the loom, and you're making.</p>",
-            "sm_size_multiplier": "sm-size--default",
-            "sm_margin_top": 8,
+            "sm_size_multiplier": "sm-size--large",
+            "sm_margin_top": 16,
             "size_multiplier": "size--default",
             "margin_top": 0
           }
@@ -303,7 +303,8 @@
         "full_width_buttons": false,
         "sm_down_hide_hotspot_titles": true,
         "padding_top": 0,
-        "padding_bottom": 24
+        "padding_bottom": 24,
+        "vertical_alignment": "start"
       }
     },
     "cta_banner_knnhyi": {

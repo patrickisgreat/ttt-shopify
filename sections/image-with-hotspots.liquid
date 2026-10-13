@@ -37,7 +37,7 @@
     --sm-pb: {{ section.settings.md_padding_bottom | append: 'px' }};
   ">
   <div
-    class="grid col-align-items-center col-justify-items-center sm-br-img"
+    class="grid col-align-items-{{ section.settings.vertical_alignment | default: 'center' }} col-justify-items-center sm-br-img"
     style="
       {%- if section.settings.section_bg != blank -%}
       background: {{ section.settings.section_bg }};
@@ -196,6 +196,17 @@
       "id": "enable_full_width",
       "label": "t:sections.layout.section_width.full_width",
       "default": false
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment",
+      "label": "Vertical alignment",
+      "info": "Top lines the text up with the top edge of the image on desktop.",
+      "default": "center",
+      "options": [
+        { "value": "center", "label": "Center" },
+        { "value": "start", "label": "Top" }
+      ]
     },
     {
       "type": "select",

@@ -45,7 +45,7 @@
   .faq__body {
     grid-template-columns: 1fr 1fr;
     gap: 48px;
-    align-items: center;
+    align-items: start;
   }
 }
 
