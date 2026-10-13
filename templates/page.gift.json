@@ -1,0 +1,296 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "heading_text_align": "text-align-left",
+        "page_pixel_width_desktop": 650,
+        "sm_size_multiplier": "sm-size--default",
+        "md_padding_top": 40,
+        "md_padding_bottom": 40,
+        "size_multiplier": "size--default",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "hero_gift": {
+      "type": "hero-dark",
+      "settings": {
+        "heading": "Give them their favourite photo, in thread, made by their own hands.",
+        "subheading": "A Threaditate kit turns one photo into a few quiet evenings and a piece on the wall. Send it with the photo already chosen, or let them pick the memory.",
+        "proof_line": "3,000+ kits made. App included, no subscription.",
+        "caption": "",
+        "primary_button_label": "Give a kit",
+        "primary_button_link": "shopify://products/string-ring-custom-string-art-kit",
+        "primary_button_color": "#1450c4",
+        "secondary_button_label": "",
+        "secondary_button_link": "",
+        "image": "shopify://shop_images/IMG_8337.jpg",
+        "image_before": "shopify://shop_images/aphrodite-half-shell.jpg",
+        "image_after": "shopify://shop_images/aphrodite-string.png",
+        "before_label": "Their photo",
+        "after_label": "Their string art",
+        "label_colors": "#ffffff",
+        "label_position": "top",
+        "media_aspect_ratio": "square",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "trust_strip_gift": {
+      "type": "trust-strip",
+      "blocks": {
+        "ts_kits": {
+          "type": "item",
+          "settings": {
+            "icon": "kits",
+            "text": "3,000+ kits made"
+          }
+        },
+        "ts_patent": {
+          "type": "item",
+          "settings": {
+            "icon": "patent",
+            "text": "U.S. Patent 12,423,349"
+          }
+        },
+        "ts_app": {
+          "type": "item",
+          "settings": {
+            "icon": "app",
+            "text": "App included, no subscription"
+          }
+        },
+        "ts_ship": {
+          "type": "item",
+          "settings": {
+            "icon": "ship",
+            "text": "Ships in 1 business day"
+          }
+        },
+        "ts_guarantee": {
+          "type": "item",
+          "settings": {
+            "icon": "guarantee",
+            "text": "30-day guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "ts_kits",
+        "ts_patent",
+        "ts_app",
+        "ts_ship",
+        "ts_guarantee"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "md_padding_top": 20,
+        "md_padding_bottom": 20,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "gift_use_cases": {
+      "type": "gift-use-cases",
+      "blocks": {
+        "uc_pet": {
+          "type": "use_case",
+          "settings": {
+            "eyebrow": "Pet memorials",
+            "title": "The dog who was always there",
+            "text": "Their face in thread, on the wall, made over a few evenings you'll remember."
+          }
+        },
+        "uc_grand": {
+          "type": "use_case",
+          "settings": {
+            "eyebrow": "Grandparents",
+            "title": "The person who raised you",
+            "text": "A portrait made by your hands says more than anything off a shelf."
+          }
+        },
+        "uc_wedding": {
+          "type": "use_case",
+          "settings": {
+            "eyebrow": "Weddings and anniversaries",
+            "title": "The photo from that day",
+            "text": "Turned into the piece above the bed, by the two of you."
+          }
+        }
+      },
+      "block_order": [
+        "uc_pet",
+        "uc_grand",
+        "uc_wedding"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "heading": "The gift that is also a few quiet evenings",
+        "subheading": "Send a kit with their photo already loaded, or give it blank and let them choose the memory.",
+        "button_label": "Give a kit",
+        "button_link": "shopify://products/string-ring-custom-string-art-kit",
+        "caption": "Ships in 1 business day. Gift note at checkout.",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "testimonials_gift": {
+      "type": "testimonials-slider",
+      "blocks": {
+        "testimonial_NQjQ3B": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "I would 100% recommend this",
+            "quote_body": "I had a great time creating this portrait. It's a different type of meditative art that I can actually see as a hobby.",
+            "author_name": "Jaiden T.",
+            "author_role": "Age 24"
+          }
+        },
+        "testimonial_nN4hjg": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "The whole world around you seems to disappear",
+            "quote_body": "This is really quite relaxing. I did a portrait of my grandfather, so now I can feel his presence whenever I look at the artwork. Makes a very unique and thoughtful gift for anyone at any age. I look forward to my next one.",
+            "author_name": "Roy P.",
+            "author_role": "Age 65"
+          }
+        },
+        "testimonial_6A4tbr": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "It was my favorite part of this week",
+            "quote_body": "I had so much fun with my kit. It just calmed me down after my stressful work days, and now I have this beautiful piece of art. Now I'm obsessed and I want something to look forward to after work again.",
+            "author_name": "Kendal J.",
+            "author_role": "Age 35"
+          }
+        },
+        "testimonial_J3XqcC": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "I can finally just chill",
+            "quote_body": "It's amazing. I go into a deep sense of calm and relaxation. It feels like nothing's going on outside in the world or in my mind, and thoughts clear up as I loop. I want to give my mom one.",
+            "author_name": "Sean O.",
+            "author_role": "Age 9"
+          }
+        },
+        "testimonial_K4jDN8": {
+          "type": "testimonial",
+          "settings": {
+            "quote_headline": "It's really calming",
+            "quote_body": "It is a lot of fun. It's really cool, it's not hard at all to do. I really liked it. You get to focus on one thing. Get it if you like art.",
+            "author_name": "Grace J.",
+            "author_role": "Age 14"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_NQjQ3B",
+        "testimonial_nN4hjg",
+        "testimonial_6A4tbr",
+        "testimonial_J3XqcC",
+        "testimonial_K4jDN8"
+      ],
+      "name": "Testimonials Slider",
+      "settings": {
+        "color_scheme": "alternative-1",
+        "heading": "Made for someone they love",
+        "subheading": "What makers say about the piece and the person it was for.",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "faq_gift": {
+      "type": "faq-with-image",
+      "blocks": {
+        "faq_item_Thbefr": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will my photo actually turn out good?",
+            "answer": "<p>Yes - a clear photo with a close-up subject in good contrast makes a strong piece. Faces, pets, and simple compositions work beautifully.</p>"
+          }
+        },
+        "faq_item_jPDegj": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does this actually work?",
+            "answer": "<p>Upload a photo and the app turns it into a numbered sequence. It speaks aloud and shows each step, then flows to the next at whatever pace you set - line by line until you're done. You can tap to advance, or autoplay.</p>"
+          }
+        },
+        "faq_item_3wGpVc": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Be honest… is Threaditate hard?",
+            "answer": "<p>No, it's easy. If you can count to 240, you can Threaditate. The app accounts for everything else.</p>"
+          }
+        },
+        "faq_item_3eyjFJ": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does it take to make?",
+            "answer": "<p>Most pieces take 6 hours, but can be finished in 5 or take 8, depending on detail. Plenty of makers spread that across a few evenings. The app saves your place - it's ready whenever you are. You deserve moments of calm, take as many as often as you'd like.</p>"
+          }
+        },
+        "faq_item_fThdwz": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What exactly do I get?",
+            "answer": "<p>The loom, thread, spool holder, precision wand, numbered paper guide, wooden phone stand, mounting accessories, the easel-box, and app access - no subscription ever.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_Thbefr",
+        "faq_item_jPDegj",
+        "faq_item_3wGpVc",
+        "faq_item_3eyjFJ",
+        "faq_item_fThdwz"
+      ],
+      "name": "FAQ with Image",
+      "settings": {
+        "color_scheme": "scheme-bf7917d8-f156-4251-bf4f-deaadfdc3234",
+        "heading": "Gifting questions",
+        "subheading": "What people ask before sending a kit.",
+        "image": "shopify://shop_images/faq-image.jpg",
+        "button_label": "See all FAQs",
+        "button_link": "shopify://pages/faq",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "cta_gift": {
+      "type": "cta-banner",
+      "settings": {
+        "style": "cobalt",
+        "heading": "One photo. A few evenings. A piece they keep.",
+        "subheading": "Everything in the box, app included. No subscription, no experience needed.",
+        "button_label": "Give a kit",
+        "button_link": "shopify://products/string-ring-custom-string-art-kit",
+        "caption": "30-day guarantee. Ships in 1 business day.",
+        "md_padding_top": 120,
+        "md_padding_bottom": 120,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_gift",
+    "trust_strip_gift",
+    "gift_use_cases",
+    "testimonials_gift",
+    "faq_gift",
+    "cta_gift"
+  ]
+}

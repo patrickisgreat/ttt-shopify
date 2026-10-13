@@ -1,34 +1,24 @@
 {%- comment -%}
   Three reassurances under the buy button. Icons are fixed per slot:
-  1 shipping (box), 2 guarantee (shield), 3 proof (people).
+  1 shipping, 2 guarantee, 3 kits made. Shares icons with the trust-strip section.
   Usage: {% render 'trust-row', block: block %}
 {%- endcomment -%}
 <ul class="trust-row" {{ block.shopify_attributes }} style="margin-top: {{ block.settings.margin_top }}px;">
   {%- if block.settings.item_1 != blank -%}
     <li class="trust-row__item">
-      <svg class="trust-row__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-        <path d="M3 8.5 12 4l9 4.5v9L12 22l-9-4.5v-9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-        <path d="M3 8.5 12 13l9-4.5M12 13v9" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-      </svg>
+      <span class="trust-row__icon">{%- render 'icon-trust', icon: 'ship' -%}</span>
       <span>{{ block.settings.item_1 | escape }}</span>
     </li>
   {%- endif -%}
   {%- if block.settings.item_2 != blank -%}
     <li class="trust-row__item">
-      <svg class="trust-row__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-        <path d="M12 3 4.5 6v5.5c0 4.5 3.2 7.8 7.5 9.5 4.3-1.7 7.5-5 7.5-9.5V6L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-        <path d="m9 12 2 2 4-4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <span class="trust-row__icon">{%- render 'icon-trust', icon: 'guarantee' -%}</span>
       <span>{{ block.settings.item_2 | escape }}</span>
     </li>
   {%- endif -%}
   {%- if block.settings.item_3 != blank -%}
     <li class="trust-row__item">
-      <svg class="trust-row__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-        <circle cx="9" cy="8" r="3.5" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-        <path d="M15.5 5.2a3.5 3.5 0 0 1 0 5.6M17 14.6c2.4.5 4 2.3 4.5 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
+      <span class="trust-row__icon">{%- render 'icon-trust', icon: 'kits' -%}</span>
       <span>{{ block.settings.item_3 | escape }}</span>
     </li>
   {%- endif -%}

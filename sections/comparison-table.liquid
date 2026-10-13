@@ -1,0 +1,114 @@
+{{ 'section-comparison-table.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign rows = section.blocks | where: 'type', 'row'
+-%}
+
+<div
+  id="{{ section.id }}"
+  class="comparison-section container pt pb sm-pt sm-pb color-{{ section.settings.color_scheme }}"
+  style="
+    --pt: {{ section.settings.padding_top | append: 'px' }};
+    --pb: {{ section.settings.padding_bottom | append: 'px' }};
+    --sm-pt: {{ section.settings.md_padding_top | append: 'px' }};
+    --sm-pb: {{ section.settings.md_padding_bottom | append: 'px' }};
+  "
+>
+  <div class="comparison__header text-align-center">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="comparison__title">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <p class="comparison__subheading">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+  </div>
+
+  {%- if rows.size > 0 -%}
+    <div class="comparison__scroll">
+      <table class="comparison">
+        <thead>
+          <tr>
+            <th scope="col" class="comparison__label-head"><span class="visually-hidden">Feature</span></th>
+            <th scope="col" class="comparison__us">{{ section.settings.col_us | escape }}</th>
+            {%- if section.settings.col_2 != blank -%}<th scope="col">{{ section.settings.col_2 | escape }}</th>{%- endif -%}
+            {%- if section.settings.col_3 != blank -%}<th scope="col">{{ section.settings.col_3 | escape }}</th>{%- endif -%}
+            {%- if section.settings.col_4 != blank -%}<th scope="col">{{ section.settings.col_4 | escape }}</th>{%- endif -%}
+          </tr>
+        </thead>
+        <tbody>
+          {%- for block in rows -%}
+            <tr {{ block.shopify_attributes }}>
+              <th scope="row">{{ block.settings.label | escape }}</th>
+              <td class="comparison__us">{%- render 'comparison-mark', value: block.settings.us -%}</td>
+              {%- if section.settings.col_2 != blank -%}<td>{%- render 'comparison-mark', value: block.settings.c2 -%}</td>{%- endif -%}
+              {%- if section.settings.col_3 != blank -%}<td>{%- render 'comparison-mark', value: block.settings.c3 -%}</td>{%- endif -%}
+              {%- if section.settings.col_4 != blank -%}<td>{%- render 'comparison-mark', value: block.settings.c4 -%}</td>{%- endif -%}
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.button_label != blank -%}
+    <div class="comparison__cta text-align-center">
+      <a href="{{ section.settings.button_link | default: '#' }}" class="btn btn--primary">{{ section.settings.button_label | escape }}</a>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Comparison table",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "default": "default", "label": "Color scheme" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Not another craft kit" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Only one of these starts from your own photo and gets you off your phone." },
+    { "type": "header", "content": "Columns" },
+    { "type": "text", "id": "col_us", "label": "Our column", "default": "Threaditate" },
+    { "type": "text", "id": "col_2", "label": "Column 2", "default": "Paint by numbers" },
+    { "type": "text", "id": "col_3", "label": "Column 3", "default": "Diamond art" },
+    { "type": "text", "id": "col_4", "label": "Column 4", "default": "Meditation app" },
+    { "type": "header", "content": "Button" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Get my kit" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "header", "content": "Desktop layout" },
+    { "type": "range", "id": "md_padding_top", "min": 0, "max": 160, "step": 8, "unit": "px", "label": "Padding top", "default": 80 },
+    { "type": "range", "id": "md_padding_bottom", "min": 0, "max": 160, "step": 8, "unit": "px", "label": "Padding bottom", "default": 80 },
+    { "type": "header", "content": "Mobile layout" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 160, "step": 8, "unit": "px", "label": "Padding top", "default": 48 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 160, "step": 8, "unit": "px", "label": "Padding bottom", "default": 48 }
+  ],
+  "max_blocks": 8,
+  "blocks": [
+    {
+      "name": "Row",
+      "type": "row",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Feature", "default": "Made from your own photo" },
+        { "type": "select", "id": "us", "label": "Our column", "default": "yes", "options": [ { "value": "yes", "label": "Yes" }, { "value": "partial", "label": "Partly" }, { "value": "no", "label": "No" } ] },
+        { "type": "select", "id": "c2", "label": "Column 2", "default": "no", "options": [ { "value": "yes", "label": "Yes" }, { "value": "partial", "label": "Partly" }, { "value": "no", "label": "No" } ] },
+        { "type": "select", "id": "c3", "label": "Column 3", "default": "no", "options": [ { "value": "yes", "label": "Yes" }, { "value": "partial", "label": "Partly" }, { "value": "no", "label": "No" } ] },
+        { "type": "select", "id": "c4", "label": "Column 4", "default": "no", "options": [ { "value": "yes", "label": "Yes" }, { "value": "partial", "label": "Partly" }, { "value": "no", "label": "No" } ] }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Comparison table",
+      "category": "Custom",
+      "blocks": [
+        { "type": "row", "settings": { "label": "Made from your own photo", "us": "yes", "c2": "no", "c3": "no", "c4": "no" } },
+        { "type": "row", "settings": { "label": "No skill or experience needed", "us": "yes", "c2": "partial", "c3": "yes", "c4": "yes" } },
+        { "type": "row", "settings": { "label": "A voice guides every step", "us": "yes", "c2": "no", "c3": "no", "c4": "partial" } },
+        { "type": "row", "settings": { "label": "Hands busy, phone face down", "us": "yes", "c2": "yes", "c3": "yes", "c4": "no" } },
+        { "type": "row", "settings": { "label": "A keepsake you hang on the wall", "us": "yes", "c2": "yes", "c3": "yes", "c4": "no" } },
+        { "type": "row", "settings": { "label": "Patented in the U.S.", "us": "yes", "c2": "no", "c3": "no", "c4": "no" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

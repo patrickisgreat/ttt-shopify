@@ -1,4 +1,7 @@
 {{ 'section-hero-dark.css' | asset_url | stylesheet_tag }}
+{%- if section.settings.image_before != blank and section.settings.image_after != blank -%}
+  {{ 'section-before-after.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
 
 {%- style -%}
   #{{ section.id }} .hero-dark__btn--primary {
@@ -62,8 +65,14 @@
 
       </div>
 
-      {%- comment -%} ── Right: Image ── {%- endcomment -%}
-      {%- if section.settings.image != blank -%}
+      {%- comment -%} ── Right: before/after slider, or a single image ── {%- endcomment -%}
+      {%- if section.settings.image_before != blank and section.settings.image_after != blank -%}
+        <div class="hero-dark__image-col">
+          <div class="hero-dark__image hero-dark__image--compare">
+            {%- render 'before-after-image-slider', block: section, sizes: '(min-width: 768px) 50vw, 100vw' -%}
+          </div>
+        </div>
+      {%- elsif section.settings.image != blank -%}
         <div class="hero-dark__image-col">
           <div class="hero-dark__image">
             {%- render 'img',
@@ -83,7 +92,11 @@
 {
   "name": "Hero Dark",
   "disabled_on": {
-    "groups": ["header", "footer", "aside"]
+    "groups": [
+      "header",
+      "footer",
+      "aside"
+    ]
   },
   "settings": [
     {
@@ -157,8 +170,84 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Right side image",
+      "label": "Image (used when no before/after pair is set)",
       "info": "Portrait or square image recommended."
+    },
+    {
+      "type": "header",
+      "content": "Before / after slider"
+    },
+    {
+      "type": "paragraph",
+      "content": "Set both images to replace the hero image with a drag slider: the customer's photo on the left, the finished piece on the right."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_before",
+      "label": "Before (the photo)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_after",
+      "label": "After (the string art)"
+    },
+    {
+      "type": "text",
+      "id": "before_label",
+      "label": "Before label",
+      "default": "Your photo"
+    },
+    {
+      "type": "text",
+      "id": "after_label",
+      "label": "After label",
+      "default": "Your string art"
+    },
+    {
+      "type": "color",
+      "id": "label_colors",
+      "label": "Label text colour",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "label_position",
+      "label": "Label position",
+      "default": "top",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "media_aspect_ratio",
+      "label": "Slider aspect ratio",
+      "default": "square",
+      "options": [
+        {
+          "value": "square",
+          "label": "Square"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        },
+        {
+          "value": "natural",
+          "label": "Natural"
+        }
+      ]
     },
     {
       "type": "header",

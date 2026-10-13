@@ -26,7 +26,17 @@
         {%- for block in section.blocks -%}
           {%- if block.type == 'testimonial' -%}
             <div class="testimonials__card-wrapper" {{ block.shopify_attributes }}>
-              <div class="testimonials__card">
+              <div class="testimonials__card{% if block.settings.piece_image != blank %} testimonials__card--with-piece{% endif %}">
+                {%- if block.settings.piece_image != blank -%}
+                  <div class="testimonials__piece">
+                    {%- render 'img',
+                      lazyload: true,
+                      wrapped: false,
+                      src: block.settings.piece_image,
+                      sizes: '(min-width: 768px) 360px, 85vw'
+                    -%}
+                  </div>
+                {%- endif -%}
                 <div class="testimonials__card-top">
                   <div class="testimonials__avatar">
                     {%- if block.settings.avatar != blank -%}
@@ -127,7 +137,11 @@
 {
   "name": "Testimonials Slider",
   "disabled_on": {
-    "groups": ["header", "footer", "aside"]
+    "groups": [
+      "header",
+      "footer",
+      "aside"
+    ]
   },
   "settings": [
     {
@@ -202,6 +216,12 @@
       "name": "Testimonial",
       "type": "testimonial",
       "settings": [
+        {
+          "type": "image_picker",
+          "id": "piece_image",
+          "label": "Finished piece photo",
+          "info": "The customer's finished string art. Shown above the quote when set."
+        },
         {
           "type": "image_picker",
           "id": "avatar",
