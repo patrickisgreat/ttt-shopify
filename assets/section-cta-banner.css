@@ -18,18 +18,18 @@
   --cta-bg: var(--brand-ivory-white, #F4F2ED);
   --cta-fg: var(--brand-true-black, #0B0B0F);
   --cta-fg-rgb: var(--brand-true-black-rgb, 11 11 15);
-  --cta-btn-bg: var(--brand-cta, #C43D2E);
+  --cta-btn-bg: var(--brand-cta, #B23A2C);
   --cta-btn-fg: var(--brand-on-cta, #F4F2ED);
-  --cta-btn-hover: var(--brand-cta-hover, #A8321F);
+  --cta-btn-hover: var(--brand-cta-hover, #9A3022);
 }
 
 .cta-banner--black {
   --cta-bg: var(--brand-true-black, #0B0B0F);
   --cta-fg: var(--brand-ivory-white, #F4F2ED);
   --cta-fg-rgb: var(--brand-ivory-white-rgb, 244 242 237);
-  --cta-btn-bg: var(--brand-cta, #C43D2E);
+  --cta-btn-bg: var(--brand-cta, #B23A2C);
   --cta-btn-fg: var(--brand-on-cta, #F4F2ED);
-  --cta-btn-hover: var(--brand-cta-hover, #A8321F);
+  --cta-btn-hover: var(--brand-cta-hover, #9A3022);
 }
 
 /* One flat colour, no mesh. */
