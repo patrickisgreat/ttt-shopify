@@ -2183,3 +2183,22 @@ html.has-buy-bar [class*="kl-teaser-"] {
   bottom: var(--buy-bar-height, 0px) !important;
   transition: bottom 0.3s ease-in-out;
 }
+
+/* On phones the teaser is a small tab tucked bottom-right, and it slides
+   away after a few seconds (see snippets/klaviyo-teaser.liquid). */
+@media only screen and (max-width: 767px) {
+  [class*="kl-teaser-"] {
+    left: auto !important;
+    right: 12px !important;
+    width: auto !important;
+    max-width: 60vw !important;
+    transform: scale(0.8);
+    transform-origin: bottom right;
+    transition: bottom 0.3s ease-in-out, transform 0.35s ease, opacity 0.35s ease;
+  }
+  html.kl-teaser-dismissed [class*="kl-teaser-"] {
+    opacity: 0;
+    transform: scale(0.8) translateY(140%);
+    pointer-events: none;
+  }
+}

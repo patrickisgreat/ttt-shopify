@@ -187,7 +187,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  /* Photos of people: crop from the bottom, never the head. */
+  object-position: center top;
   display: block;
 }
 /* Social proof line, sits between the subheading and the CTA buttons.
