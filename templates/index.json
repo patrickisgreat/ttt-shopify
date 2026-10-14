@@ -117,7 +117,8 @@
         "md_padding_bottom": 80,
         "padding_top": 48,
         "padding_bottom": 48
-      }
+      },
+      "disabled": true
     },
     "features_grid_J9zhXh": {
       "type": "features-grid",
@@ -594,6 +595,50 @@
         "padding_top": 48,
         "padding_bottom": 48
       }
+    },
+    "reviews_home": {
+      "type": "apps",
+      "blocks": {
+        "judgeme_cards_home": {
+          "type": "shopify://apps/judge-me-reviews/blocks/cards_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "header_text": "Made by people like you.",
+            "show_average_rating": false,
+            "reviews_selection": "all",
+            "star_rating": "5_star",
+            "max_reviews": 12,
+            "reviews_shown": 3,
+            "display_order": "media_first",
+            "show_review_media": true,
+            "no_image_fallback": "review_text_only",
+            "show_product_name": false,
+            "show_reviewer_name": true,
+            "show_sample_reviews": false,
+            "review_length": "medium",
+            "text_size": "medium",
+            "corner_styling": "soft",
+            "transition_speed": 8,
+            "max_width": 1100,
+            "card_color": "#ECEAE4",
+            "text_color": "#0B0B0F",
+            "header_color": "#0B0B0F",
+            "stars_color": "#1450C4",
+            "arrows_color": "#1450C4",
+            "hide_arrows_mobile": false,
+            "arrows_position": "bottom"
+          }
+        }
+      },
+      "block_order": [
+        "judgeme_cards_home"
+      ],
+      "settings": {
+        "enable_full_width": false,
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
     }
   },
   "order": [
@@ -601,6 +646,7 @@
     "trust_strip_home",
     "video_YzVdz8",
     "comparison_home",
+    "reviews_home",
     "testimonials_slider_UKWpbV",
     "features_grid_J9zhXh",
     "how_it_works_xQzgqf",
