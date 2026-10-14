@@ -133,6 +133,8 @@
       },
       "overlay-scheme": {
         "settings": {
+          "cta_background": "#F4F2ED",
+          "cta_foreground": "#1450C4",
           "foreground": "#f4f2ed",
           "background": "#1450c4",
           "button_background": "#f4f2ed",

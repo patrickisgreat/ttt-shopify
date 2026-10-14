@@ -29,6 +29,9 @@
       --color-background: {{ scheme.settings.background }};
       --color-button-foreground: {{ scheme.settings.button_foreground }};
       --color-button-background: {{ scheme.settings.button_background }};
+      --color-cta-foreground: {{ scheme.settings.cta_foreground | default: '#F4F2ED' }};
+      --color-cta-background: {{ scheme.settings.cta_background | default: '#C43D2E' }};
+      --color-cta-hover: {{ scheme.settings.cta_background | default: '#C43D2E' | color_darken: 8 }};
       --color-outlines: {{ scheme.settings.outlines }};
       --color-borders: {{ scheme.settings.borders }};
       --color-overlay: {{ scheme.settings.overlay }};
@@ -99,6 +102,11 @@
     --brand-cobalt-text-tint: #8FB2ED;
     --brand-violet-text-tint: #7C7CD6;
     --brand-vermillion-text-tint: #F5C2B5;
+
+    /* Primary call-to-action: vermillion so buy buttons stand apart from the cobalt accents. */
+    --brand-cta: #C43D2E;
+    --brand-cta-hover: #A8321F;
+    --brand-on-cta: #F4F2ED;
 
     /* RGB triplets for rgba() composition (glows, overlays, borders) */
     --brand-cobalt-blue-rgb: 20 80 196;

@@ -145,6 +145,19 @@
           },
           {
             "type": "color",
+            "id": "cta_background",
+            "label": "Primary call-to-action background",
+            "default": "#C43D2E",
+            "info": "Add to cart and Get my kit buttons. Secondary (outlined) buttons keep the outline colour."
+          },
+          {
+            "type": "color",
+            "id": "cta_foreground",
+            "label": "Primary call-to-action text",
+            "default": "#F4F2ED"
+          },
+          {
+            "type": "color",
             "id": "outlines",
             "label": "t:sections.colors.button_outline",
             "default": "#111111"
