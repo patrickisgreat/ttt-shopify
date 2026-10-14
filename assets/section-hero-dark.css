@@ -107,9 +107,13 @@
   transform: translateY(0);
 }
 
-/* Primary — color set via style block */
+/* Primary: the brand call-to-action colour, same as every other buy button */
 .hero-dark__btn--primary {
-  color: var(--brand-ivory-white, #F4F2ED);
+  color: var(--brand-on-cta, #F4F2ED);
+  background: var(--brand-cta, #B23A2C);
+}
+.hero-dark__btn--primary:hover {
+  background: var(--brand-cta-hover, #9A3022);
 }
 
 /* Secondary — ivory outline */

@@ -3,12 +3,6 @@
   {{ 'section-before-after.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
 
-{%- style -%}
-  #{{ section.id }} .hero-dark__btn--primary {
-    background: {{ section.settings.primary_button_color | default: '#C43D2E' }};
-  }
-{%- endstyle -%}
-
 <div
   id="{{ section.id }}"
   class="hero-dark pt pb sm-pt sm-pb"
@@ -141,12 +135,6 @@
       "type": "url",
       "id": "primary_button_link",
       "label": "Link"
-    },
-    {
-      "type": "color",
-      "id": "primary_button_color",
-      "label": "Button color",
-      "default": "#C43D2E"
     },
     {
       "type": "header",
