@@ -35,8 +35,30 @@
     top: var(--sticky-header-margin-top);
   }
 
+  /* Title top-aligns with the top of the product photo, and the buy box
+     (title through trust row) fits a 900px-tall desktop viewport. */
   .pdp-content .sticky {
-    padding: 40px 0;
+    padding: 0 0 40px;
+  }
+  .pdp-content .product-block__title {
+    margin-top: 0 !important;
+  }
+  .pdp-content .product-block__title .h1 {
+    line-height: 1.1;
+  }
+  .pdp-content shopify-payment-terms,
+  .pdp-content .product-block__price .installment {
+    display: block;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    opacity: 0.8;
+  }
+  .pdp-content .rte ul {
+    margin: 0 0 0 18px;
+  }
+  .pdp-content .rte li {
+    line-height: 1.4;
+    margin: 0 0 4px;
   }
 
   .thumbnails-next-to {

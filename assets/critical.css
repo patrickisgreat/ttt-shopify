@@ -1102,8 +1102,8 @@ header.header.sub-menu-open .site-logo.--alt {
   border: solid 1px;
   position: relative;
 
-  color: var(--color-button-foreground);
-  background-color: var(--color-button-background);
+  color: var(--color-cta-foreground, var(--color-button-foreground));
+  background-color: var(--color-cta-background, var(--color-button-background));
   border-color: transparent;
   display: inline-flex;
   justify-content: center;
@@ -1130,8 +1130,8 @@ header.header.sub-menu-open .site-logo.--alt {
   border: solid 1px !important;
   position: relative !important;
 
-  color: var(--color-button-foreground) !important;
-  background-color: var(--color-button-background) !important;
+  color: var(--color-cta-foreground, var(--color-button-foreground)) !important;
+  background-color: var(--color-cta-background, var(--color-button-background)) !important;
   border-color: transparent !important;
   display: inline-flex !important;
   line-height: inherit !important;
@@ -1163,7 +1163,8 @@ header.header.sub-menu-open .site-logo.--alt {
 
 /* Primary:Hover */
 :is(.btn--primary, .shopify-payment-button__button--unbranded):not([disabled]):not(.disabled):hover {
-  box-shadow: 0 0 0 3px var(--color-button-background), 0 0 0 6px var(--color-button-foreground), 0 2px 4px 6px rgba(0,0,0,0.25);
+  background-color: var(--color-cta-hover, var(--color-cta-background));
+  box-shadow: 0 0 0 3px var(--color-cta-background, var(--color-button-background)), 0 0 0 6px var(--color-cta-foreground, var(--color-button-foreground)), 0 2px 4px 6px rgba(0,0,0,0.25);
   z-index: 1;
 }
 
