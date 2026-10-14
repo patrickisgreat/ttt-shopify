@@ -14,18 +14,18 @@
       "blocks": {
         "2cb069aa-470f-47b0-97d9-b6a2c86aa996": {
           "type": "badges",
+          "disabled": true,
           "settings": {
             "badges_position": "over-media",
             "margin_top": 0
-          },
-          "disabled": true
+          }
         },
         "rating_Ccm9zT": {
           "type": "rating",
+          "disabled": true,
           "settings": {
             "margin_top": 0
-          },
-          "disabled": true
+          }
         },
         "the-title": {
           "type": "title",
@@ -35,27 +35,27 @@
         },
         "judgeme_badge": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {},
-          "disabled": true
+          "disabled": true,
+          "settings": {}
         },
         "the-price": {
           "type": "price",
           "settings": {
             "margin_top": 8,
             "font_weight": "normal",
+            "shipping_note": "$5.95 flat US shipping. Ships in 1 business day from Alabama.",
             "sm_size_multiplier": "sm-size--huge",
-            "size_multiplier": "size--huge",
-            "shipping_note": "$5.95 flat US shipping. Ships in 1 business day from Alabama."
+            "size_multiplier": "size--huge"
           }
         },
         "the-description": {
           "type": "description",
+          "disabled": true,
           "settings": {
             "enable_collapsible": false,
             "collapsible_type": "collapsible",
             "margin_top": 24
-          },
-          "disabled": true
+          }
         },
         "557a3a73-80c5-47b2-abb8-a78027516c90": {
           "type": "variant_picker",
@@ -261,28 +261,28 @@
         "feature_card_Qnxz7P": {
           "type": "feature_card",
           "settings": {
+            "icon_preset": "forgiving",
             "icon_svg": "",
             "title": "Forgiving by design",
-            "description": "Lose your place? Keep going. With thousands of lines, missed steps disappear into the whole — there's nothing to undo.",
-            "icon_preset": "forgiving"
+            "description": "Lose your place? Keep going. With thousands of lines, missed steps disappear into the whole — there's nothing to undo."
           }
         },
         "feature_card_jMkMTj": {
           "type": "feature_card",
           "settings": {
+            "icon_preset": "voice",
             "icon_svg": "",
             "title": "You won't get lost",
-            "description": "The app speaks and shows every step, flowing line by line at your pace. No experience needed.",
-            "icon_preset": "voice"
+            "description": "The app speaks and shows every step, flowing line by line at your pace. No experience needed."
           }
         },
         "feature_card_JkAaLp": {
           "type": "feature_card",
           "settings": {
+            "icon_preset": "photo",
             "icon_svg": "",
             "title": "Your photo, your art",
-            "description": "Any meaningful image becomes one-of-a-kind string art. No two pieces will ever match.",
-            "icon_preset": "photo"
+            "description": "Any meaningful image becomes one-of-a-kind string art. No two pieces will ever match."
           }
         }
       },
@@ -479,6 +479,7 @@
         "slide_GDPB8K",
         "slide_aCGwWy"
       ],
+      "disabled": true,
       "name": "Features Carousel",
       "settings": {
         "color_scheme": "",
@@ -488,8 +489,7 @@
         "md_padding_bottom": 80,
         "padding_top": 48,
         "padding_bottom": 48
-      },
-      "disabled": true
+      }
     },
     "the-product-recommendations": {
       "type": "product-recommendations",
@@ -576,14 +576,14 @@
       "block_order": [
         "review_widget"
       ],
+      "disabled": true,
       "settings": {
         "enable_full_width": false,
         "md_padding_top": 40,
         "md_padding_bottom": 40,
         "padding_top": 24,
         "padding_bottom": 24
-      },
-      "disabled": true
+      }
     },
     "testimonials_pdp": {
       "type": "testimonials-slider",
@@ -641,6 +641,7 @@
         "testimonial_J3XqcC",
         "testimonial_K4jDN8"
       ],
+      "disabled": true,
       "name": "Testimonials Slider",
       "settings": {
         "color_scheme": "alternative-1",
@@ -650,8 +651,7 @@
         "md_padding_bottom": 80,
         "padding_top": 48,
         "padding_bottom": 48
-      },
-      "disabled": true
+      }
     },
     "faq_pdp": {
       "type": "faq-with-image",
@@ -719,30 +719,29 @@
         "judgeme_cards_pdp": {
           "type": "shopify://apps/judge-me-reviews/blocks/cards_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
-            "header_text": "Made by people like you.",
-            "show_average_rating": false,
+            "show_sample_reviews": false,
             "reviews_selection": "all",
             "star_rating": "5_star",
-            "max_reviews": 12,
-            "reviews_shown": 3,
-            "display_order": "media_first",
             "show_review_media": true,
+            "display_order": "media_first",
             "no_image_fallback": "review_text_only",
-            "show_product_name": false,
-            "show_reviewer_name": true,
-            "show_sample_reviews": false,
+            "max_reviews": 12,
             "review_length": "medium",
             "text_size": "medium",
-            "corner_styling": "soft",
-            "transition_speed": 8,
+            "reviews_shown": 3,
+            "show_reviewer_name": true,
+            "show_product_name": false,
+            "hide_arrows_mobile": false,
+            "arrows_position": "bottom",
             "max_width": 1100,
-            "card_color": "#ECEAE4",
+            "corner_styling": "soft",
             "text_color": "#0B0B0F",
-            "header_color": "#0B0B0F",
+            "card_color": "#ECEAE4",
             "stars_color": "#1450C4",
             "arrows_color": "#1450C4",
-            "hide_arrows_mobile": false,
-            "arrows_position": "bottom"
+            "transition_speed": 8,
+            "header_text": "Made by people like you.",
+            "show_average_rating": false
           }
         }
       },
