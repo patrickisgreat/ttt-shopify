@@ -1,6 +1,7 @@
 <div id="{{ section.id }}"
   class="screen-fit pt pb sm-pt sm-pb container{% if section.settings.enable_full_width %} edge-to-edge{% endif %}{% if section.settings.color_scheme != blank %} color-{{ section.settings.color_scheme }}{% endif %}"
   style="
+    {%- if section.settings.background != blank -%}background-color: {{ section.settings.background }};{%- endif -%}
     --pt: {{ section.settings.padding_top | append: 'px' }};
     --pb: {{ section.settings.padding_bottom | append: 'px' }};
     --sm-pt: {{ section.settings.md_padding_top | append: 'px' }};
@@ -46,6 +47,12 @@
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background color",
+      "info": "Overrides the color scheme's background. Text colors still come from the scheme."
     },
     {
       "type": "text",
