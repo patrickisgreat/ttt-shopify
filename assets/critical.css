@@ -2239,6 +2239,24 @@ html.has-buy-bar [class*="kl-teaser-"] {
   width: min(100%, calc((var(--fit-room) - 14svh - 96px) * 16 / 9));
   margin-inline: auto;
 }
+/* Phones: a 16:9 player can never fill a tall screen, so instead of a small
+   player floating in an empty screen it runs edge to edge, close under its
+   heading, and the section is only as tall as it needs to be. */
+@media only screen and (max-width: 767px) {
+  .screen-fit:has(> .video-section) {
+    min-height: 0;
+  }
+  .video-section .video-container {
+    width: auto;
+    margin-inline: calc(var(--container-margin) * -1);
+  }
+  .video-section .video-container iframe {
+    border-radius: 0;
+  }
+  .video-section.pt { padding-top: 28px !important; }
+  .video-section.pb { padding-bottom: 28px !important; }
+  .video-section .section__header { margin-bottom: 16px; }
+}
 
 /* Short laptop screens: section padding shrinks a little further */
 @media only screen and (min-width: 768px) and (max-height: 800px) {

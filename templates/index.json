@@ -32,8 +32,53 @@
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 56,
-        "padding_bottom": 56
-      }
+        "padding_bottom": 56,
+        "text_alignment": "center"
+      },
+      "blocks": {
+        "ts_kits": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "kits",
+            "text": "3,000+ kits made"
+          }
+        },
+        "ts_patent": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "patent",
+            "text": "U.S. Patent 12,423,349"
+          }
+        },
+        "ts_app": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "app",
+            "text": "App included, no subscription"
+          }
+        },
+        "ts_ship": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "ship",
+            "text": "Ships in 1 business day"
+          }
+        },
+        "ts_guarantee": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "guarantee",
+            "text": "30-day guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "ts_kits",
+        "ts_patent",
+        "ts_app",
+        "ts_ship",
+        "ts_guarantee"
+      ]
     },
     "video_YzVdz8": {
       "type": "video",
@@ -505,7 +550,8 @@
         "md_padding_bottom": 20,
         "padding_top": 16,
         "padding_bottom": 16
-      }
+      },
+      "disabled": true
     },
     "comparison_home": {
       "type": "comparison-table",

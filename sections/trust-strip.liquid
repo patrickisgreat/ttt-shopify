@@ -24,17 +24,6 @@
   {%- endif -%}
 </div>
 
-<script>
-  /* The hero above sizes itself so hero + strip fill one screen. */
-  (() => {
-    const strip = document.getElementById('{{ section.id }}');
-    if (!strip) return;
-    const publish = () => document.documentElement.style.setProperty('--trust-strip-height', strip.offsetHeight + 'px');
-    publish();
-    if ('ResizeObserver' in window) new ResizeObserver(publish).observe(strip);
-  })();
-</script>
-
 {% schema %}
 {
   "name": "Trust strip",
