@@ -2180,15 +2180,17 @@ details.footer-details .content {
    --buy-bar-height while they are showing. Klaviyo's teaser (the "GET 10% OFF"
    tab) is fixed to the bottom edge with inline styles and a huge z-index, so
    lift it above the bar instead of letting it cover the buy button. */
-html.has-buy-bar [class*="kl-teaser-"] {
+html.has-buy-bar body [class*="kl-teaser-"] {
   bottom: var(--buy-bar-height, 0px) !important;
   transition: bottom 0.3s ease-in-out;
 }
 
 /* On phones the teaser is a small tab tucked bottom-right, and it slides
-   away after a few seconds (see snippets/klaviyo-teaser.liquid). */
+   away after a few seconds (see snippets/klaviyo-teaser.liquid).
+   Scoped to elements inside body: the <html> tag's own classes must never
+   match, or the whole page gets the tab's size and scale. */
 @media only screen and (max-width: 767px) {
-  [class*="kl-teaser-"] {
+  body [class*="kl-teaser-"] {
     left: auto !important;
     right: 12px !important;
     width: auto !important;
@@ -2197,7 +2199,7 @@ html.has-buy-bar [class*="kl-teaser-"] {
     transform-origin: bottom right;
     transition: bottom 0.3s ease-in-out, transform 0.35s ease, opacity 0.35s ease;
   }
-  html.kl-teaser-dismissed [class*="kl-teaser-"] {
+  html.klaviyo-teaser-hidden body [class*="kl-teaser-"] {
     opacity: 0;
     transform: scale(0.8) translateY(140%);
     pointer-events: none;
