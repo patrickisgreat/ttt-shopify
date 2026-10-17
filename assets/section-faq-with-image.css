@@ -222,3 +222,31 @@
     order: -1;
   }
 }
+
+/* ── One screen ──
+   Shorter question rows, the photo capped to the screen on desktop and
+   dropped on phones, where the questions are what matter. */
+@media only screen and (max-height: 900px), (max-width: 767px) {
+  .faq__question { padding-top: 14px; padding-bottom: 14px; }
+  .faq__accordion { gap: 8px; }
+}
+@media only screen and (min-width: 768px) {
+  .faq__image {
+    max-height: calc(var(--fit-room) - 14svh - 200px);
+  }
+}
+@media only screen and (max-width: 1023px) {
+  .faq__image-col { display: none; }
+  .faq__body { grid-template-columns: 1fr; }
+}
+
+@media only screen and (min-width: 768px) and (max-height: 900px) {
+  .faq__header { margin-bottom: 24px; }
+  .faq__question { padding-top: 10px; padding-bottom: 10px; }
+}
+
+@media only screen and (max-width: 767px) and (max-height: 760px) {
+  .faq__subheading { display: none; }
+  .faq__header { margin-bottom: 20px; }
+  .faq__question { padding-top: 10px; padding-bottom: 10px; }
+}

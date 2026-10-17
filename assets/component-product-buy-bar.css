@@ -56,3 +56,35 @@
     width: 80px;
   }
 }
+
+/* On pages with the floating Add to cart bar, every one-screen section keeps
+   its bottom clear of the bar so no button or link sits underneath it.
+   --bar-space also shrinks the photo and video caps (critical.css). */
+body:has(product-buy-bar) {
+  --bar-space: 84px;
+  --fit-room: calc(var(--screen-fit) - var(--bar-space));
+}
+@media only screen and (min-width: 768px) {
+  body:has(product-buy-bar) { --bar-space: 96px; }
+}
+body:has(product-buy-bar) :is(.screen-fit, .split-image-content__content)::after {
+  content: "";
+  display: block;
+  flex: none;
+  grid-column: 1 / -1;
+  height: var(--bar-space);
+}
+
+/* With the bar taking the bottom of the screen, the FAQ and the split
+   section drop their secondary lines on short screens so their buttons stay
+   above it. */
+@media only screen and (max-width: 767px), (max-height: 800px) {
+  body:has(product-buy-bar) .faq__subheading { display: none; }
+  body:has(product-buy-bar) .faq__header { margin-bottom: 16px; }
+  body:has(product-buy-bar) .faq__question { padding-top: 10px; padding-bottom: 10px; }
+  body:has(product-buy-bar) .split-image-content__intro { display: none; }
+}
+@media only screen and (max-width: 767px) and (max-height: 760px) {
+  body:has(product-buy-bar) .split-image-content__bullets li { font-size: 1.3rem; }
+  body:has(product-buy-bar) .split-image-content__image-col { height: 18svh; }
+}

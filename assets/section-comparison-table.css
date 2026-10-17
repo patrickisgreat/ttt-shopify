@@ -143,3 +143,36 @@
   .comparison th, .comparison td { padding: 18px 16px; }
   .comparison tbody th { padding-left: 4px; }
 }
+
+/* ── One screen: tighter rows on shorter screens ── */
+@media only screen and (max-height: 900px) {
+  .comparison th,
+  .comparison td {
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+  .comparison__header {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-height: 800px), (max-width: 1023px) {
+  .comparison th,
+  .comparison td {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .comparison__subheading { display: none; }
+}
+
+/* the table scrolls inside its own box, never the page */
+.comparison__scroll {
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media only screen and (max-width: 767px) and (max-height: 760px) {
+  .comparison th,
+  .comparison td { padding-top: 6px; padding-bottom: 6px; }
+  .comparison__cta { margin-top: 16px; }
+}

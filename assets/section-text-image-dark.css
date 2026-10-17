@@ -135,3 +135,11 @@
   display: block;
   background: rgb(var(--brand-ivory-white-rgb, 244 242 237) / 0.06);
 }
+
+/* ── One screen: the photo shrinks to leave room for the text ── */
+.text-image-dark__image {
+  max-height: calc(var(--fit-room) - 14svh);
+}
+@media only screen and (max-width: 767px) {
+  .text-image-dark__image { aspect-ratio: 16 / 9; max-height: 28svh; }
+}
