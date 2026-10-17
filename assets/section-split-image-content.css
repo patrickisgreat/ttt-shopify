@@ -143,6 +143,7 @@
 
 /* ── CTA Button — color via style block ── */
 .split-image-content__btn {
+  background: var(--brand-cta, #B23A2C);
   display: inline-flex;
   align-items: center;
   gap: 10px;

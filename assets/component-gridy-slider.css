@@ -30,6 +30,9 @@ gridy-slider {
   z-index: 1;
 }
 .gridy-arrow {
+  /* navigation, not a call to action: keep the scheme's button colour */
+  color: var(--color-button-foreground);
+  background-color: var(--color-button-background);
   pointer-events: auto;
   position: absolute;
   top: -50%;
@@ -200,4 +203,9 @@ gridy-slider {
   .md-scroll-hidden {
     overflow: hidden !important;
   }
+}
+
+.gridy-arrow:not([disabled]):not(.disabled):hover {
+  background-color: var(--color-button-background);
+  box-shadow: 0 0 0 3px var(--color-button-background), 0 0 0 6px var(--color-button-foreground), 0 2px 4px 6px rgba(0,0,0,0.25);
 }
