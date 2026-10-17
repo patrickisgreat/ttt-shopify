@@ -40,28 +40,10 @@
           if rating_product == blank
             assign rating_product = all_products['string-ring-custom-string-art-kit']
           endif
-          assign rating = rating_product.metafields.reviews.rating.value
           assign rating_count = rating_product.metafields.reviews.rating_count.value | default: 0
         -%}
-        {%- if section.settings.show_rating and rating != blank and rating_count > 0 -%}
-          {{ 'component-rating.css' | asset_url | stylesheet_tag }}
-          {%- liquid
-            assign rating_decimal = 0
-            assign decimal = rating.rating | modulo: 1
-            if decimal >= 0.3 and decimal <= 0.7
-              assign rating_decimal = 0.5
-            elsif decimal > 0.7
-              assign rating_decimal = 1
-            endif
-          -%}
-          <p class="hero-dark__rating">
-            <span class="rating" role="img" aria-label="{{ rating.rating | round: 1 }} out of {{ rating.scale_max }} stars">
-              <span aria-hidden="true" class="rating-star" style="--rating: {{ rating.rating | floor }}; --rating-max: {{ rating.scale_max }}; --rating-decimal: {{ rating_decimal }};"></span>
-            </span>
-            <span class="hero-dark__rating-text">
-              <strong>{{ rating.rating | round: 1 }}</strong> from {{ rating_count }} {% if rating_count == 1 %}review{% else %}reviews{% endif %}
-            </span>
-          </p>
+        {%- if section.settings.show_rating and rating_count > 0 -%}
+          {%- render 'rating-summary', product: rating_product, class: 'hero-dark__rating' -%}
         {%- elsif section.settings.proof_line != blank -%}
           <p class="hero-dark__proof">{{ section.settings.proof_line }}</p>
         {%- endif -%}

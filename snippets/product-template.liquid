@@ -156,9 +156,10 @@
   endif
 -%}
 
+{%- assign details_breaks = section.blocks | where: 'type', 'details_break' -%}
 <div
   id="{{ section.id }}"
-  class="container pt pb sm-pt sm-pb sm-down-edge-to-edge color-{{ section.settings.color_scheme }}{% if section.settings.enable_full_width %} full-width{% endif %}"
+  class="{% if details_breaks.size > 0 %}screen-fit pdp-first-screen {% endif %}container pt pb sm-pt sm-pb sm-down-edge-to-edge color-{{ section.settings.color_scheme }}{% if section.settings.enable_full_width %} full-width{% endif %}"
   style="
     --pt: {{ section.settings.padding_top | append: 'px' }};
     --pb: {{ section.settings.padding_bottom | append: 'px' }};
@@ -244,10 +245,25 @@
           {% render 'breadcrumb' %}
         </div>
       {% endif %}
+      {%- liquid
+        comment
+          Blocks after a "Details section starts here" block are captured into
+          details_html and rendered as their own full-screen band under the
+          gallery, so the first screen holds only the buying essentials.
+        endcomment
+        assign in_details = false
+        assign details_html = ''
+        assign details_block = nil
+      -%}
       {%- for block in section.blocks -%}
         {%- liquid
           #Skip "STATIC" blocks
           if block.type == 'sticky_buy_bar'
+            continue
+          endif
+          if block.type == 'details_break'
+            assign in_details = true
+            assign details_block = block
             continue
           endif
         -%}
@@ -611,8 +627,7 @@
                 </product-form>
               {%- endunless -%}
             {%- when 'rating' -%}
-              {{ 'component-rating.css' | asset_url | stylesheet_tag }}
-              {%- render 'rating', product: product -%}
+              {%- render 'rating-summary', product: product, class: 'pdp-rating' -%}
             {%- when 'inventory_status' -%}
               {%- render 'product-inventory-status',
                 product: product,
@@ -705,9 +720,16 @@
         {%- endcapture -%}
 
         {%- if show_block -%}
-          <div class="product-block product-block__{{ block.type | escape }}" style="margin-top: {{ block.settings.margin_top | append: 'px' }}" {{ block.shopify_attributes }}>
-            {{ block_inner_html }}
-          </div>
+          {%- capture block_html -%}
+            <div class="product-block product-block__{{ block.type | escape }}" style="margin-top: {{ block.settings.margin_top | append: 'px' }}" {{ block.shopify_attributes }}>
+              {{ block_inner_html }}
+            </div>
+          {%- endcapture -%}
+          {%- if in_details -%}
+            {%- assign details_html = details_html | append: block_html -%}
+          {%- else -%}
+            {{ block_html }}
+          {%- endif -%}
         {%- endif -%}
       {%- endfor -%}
     </div>
@@ -715,6 +737,21 @@
 
   </div>
 </div>
+
+{%- if details_block -%}
+  <div
+    class="screen-fit container product-details pt pb sm-pt sm-pb color-{{ details_block.settings.color_scheme }}"
+    style="--pt: 40px; --pb: 40px; --sm-pt: 64px; --sm-pb: 64px;"
+    {{ details_block.shopify_attributes }}
+  >
+    <div class="product-details__inner">
+      {%- if details_block.settings.heading != blank -%}
+        <h2 class="product-details__heading">{{ details_block.settings.heading | escape }}</h2>
+      {%- endif -%}
+      {{ details_html }}
+    </div>
+  </div>
+{%- endif -%}
 
 {%- if show_zoom_mobile or show_zoom_desktop -%}
   {% render 'modal-zoom-gallery',
