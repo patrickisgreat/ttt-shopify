@@ -84,7 +84,7 @@
       "type": "video",
       "name": "t:sections.blocks.video.name",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "alternative-2",
         "video_url": "https://youtu.be/nx8gGJW0ay4?si=f9CEV4tbISfkAqwq",
         "title": "Watch how a photo becomes string art",
         "text": "",
@@ -93,7 +93,10 @@
         "md_padding_top": 64,
         "md_padding_bottom": 64,
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "text_below": "<p>Upload a photo and the app turns it into a numbered pattern. Then it speaks every line, one at a time, while your hands do the rest.</p>",
+        "button_label": "Get my kit",
+        "button_link": "shopify://products/string-ring-custom-string-art-kit"
       }
     },
     "testimonials_slider_UKWpbV": {
@@ -232,7 +235,7 @@
       ],
       "name": "Features Grid",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-d41b7294-aad9-4454-94d4-1e261262bb1f",
         "heading": "Built to relax. Designed to finish and display.",
         "subheading": "",
         "md_padding_top": 80,
@@ -285,7 +288,7 @@
       ],
       "name": "How It Works",
       "settings": {
-        "color_scheme": "alternative-1",
+        "color_scheme": "alternative-2",
         "heading": "Four steps. The app guides every one.",
         "subheading": "",
         "button_label": "Get my kit",
@@ -341,7 +344,7 @@
         "text_b7KTBk"
       ],
       "settings": {
-        "color_scheme": "default",
+        "color_scheme": "scheme-d41b7294-aad9-4454-94d4-1e261262bb1f",
         "section_bg": "",
         "numbered_hotspots": false,
         "enable_full_width": false,
@@ -482,7 +485,7 @@
       ],
       "name": "FAQ with Image",
       "settings": {
-        "color_scheme": "scheme-bf7917d8-f156-4251-bf4f-deaadfdc3234",
+        "color_scheme": "scheme-d41b7294-aad9-4454-94d4-1e261262bb1f",
         "heading": "Good questions, clear answers",
         "subheading": "If you're wondering it, someone else already asked it.",
         "image": "shopify://shop_images/faq-image.jpg",
@@ -626,7 +629,7 @@
         "row_6"
       ],
       "settings": {
-        "color_scheme": "default",
+        "color_scheme": "scheme-d41b7294-aad9-4454-94d4-1e261262bb1f",
         "heading": "Not another craft kit",
         "subheading": "Only one of these starts from your own photo and gets you off your phone.",
         "col_us": "Threaditate",
@@ -681,7 +684,8 @@
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
-        "padding_bottom": 48
+        "padding_bottom": 48,
+        "color_scheme": "alternative-2"
       }
     }
   },

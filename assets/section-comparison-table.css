@@ -176,3 +176,31 @@
   .comparison td { padding-top: 6px; padding-bottom: 6px; }
   .comparison__cta { margin-top: 16px; }
 }
+
+/* Phones: every column fits on the screen, no sideways swipe.
+   Narrow mark columns, wrapped headers, a row label that takes the rest. */
+@media only screen and (max-width: 767px) {
+  .comparison {
+    min-width: 0;
+    table-layout: fixed;
+    font-size: 1.25rem;
+  }
+  .comparison tbody th {
+    min-width: 0;
+    width: 30%;
+    line-height: 1.3;
+    position: static;
+  }
+  .comparison thead th {
+    font-size: 1rem;
+    line-height: 1.2;
+    letter-spacing: 0;
+    padding-left: 1px;
+    padding-right: 1px;
+  }
+  .comparison .comparison__label-head { width: 30%; }
+  .comparison .comparison__us { min-width: 0; }
+  .comparison td { padding-left: 2px; padding-right: 2px; }
+  .comparison__mark { width: 22px; height: 22px; }
+  .comparison__mark svg { width: 16px; height: 16px; }
+}

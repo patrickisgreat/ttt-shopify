@@ -1,5 +1,5 @@
 <div id="{{ section.id }}"
-  class="screen-fit pt pb sm-pt sm-pb container{% if section.settings.enable_full_width %} edge-to-edge{% endif %}"
+  class="screen-fit pt pb sm-pt sm-pb container{% if section.settings.enable_full_width %} edge-to-edge{% endif %}{% if section.settings.color_scheme != blank %} color-{{ section.settings.color_scheme }}{% endif %}"
   style="
     --pt: {{ section.settings.padding_top | append: 'px' }};
     --pb: {{ section.settings.padding_bottom | append: 'px' }};
@@ -17,6 +17,11 @@
   "name": "t:sections.apps.name",
   "class": "app-wrapper",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
     {
       "type": "checkbox",
       "id": "enable_full_width",

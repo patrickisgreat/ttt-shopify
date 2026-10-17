@@ -32,6 +32,11 @@
       --color-cta-foreground: {{ scheme.settings.cta_foreground | default: '#F4F2ED' }};
       --color-cta-background: {{ scheme.settings.cta_background | default: '#B23A2C' }};
       --color-cta-hover: {{ scheme.settings.cta_background | default: '#B23A2C' | color_darken: 8 }};
+      {%- assign scheme_bg = scheme.settings.background | downcase -%}
+      {%- if scheme_bg == '#e4ebf8' -%}
+      /* On the light-blue band, cards that are normally light blue turn ivory so they stay visible */
+      --brand-cobalt-wash: #F4F2ED;
+      {%- endif -%}
       --color-outlines: {{ scheme.settings.outlines }};
       --color-borders: {{ scheme.settings.borders }};
       --color-overlay: {{ scheme.settings.overlay }};

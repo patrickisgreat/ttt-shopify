@@ -47,126 +47,174 @@
         {{ content }}
       </header>
     {%- endif -%}
+
+    {%- if section.settings.text_below != blank or section.settings.button_label != blank -%}
+      <div class="video-section__after">
+        {%- if section.settings.text_below != blank -%}
+          <div class="video-section__copy rte">{{ section.settings.text_below }}</div>
+        {%- endif -%}
+        {%- if section.settings.button_label != blank -%}
+          <a class="btn btn--primary video-section__btn" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label | escape }}</a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
   </div>
 </div>
 
 {% schema %}
-  {
-    "name": "t:sections.video.name",
-    "class": "section",
-    "disabled_on": {
-      "groups": ["header", "footer", "aside"]
-    },
-    "settings": [
-      {
-        "type": "paragraph",
-        "content": "t:sections.video.info"
-      },
-      {
-        "type": "color_scheme",
-        "id": "color_scheme",
-        "label": "t:sections.colors.color_scheme.label",
-        "default": "default"
-      },
-      {
-        "type": "image_picker",
-        "id": "cover_image",
-        "label": "t:sections.images.cover_image"
-      },
-      {
-        "type": "text",
-        "id": "video_url",
-        "label": "t:sections.inputs.url.video_url",
-        "info": "t:sections.inputs.url.video_url__info"
-      }, {
-        "type": "text",
-        "id": "title",
-        "default": "Video",
-        "label": "t:sections.inputs.text.title"
-      }, {
-        "type": "richtext",
-        "id": "text",
-        "label": "t:sections.inputs.text.text"
-      }, {
-        "type": "select",
-        "id": "align_content",
-        "label": "t:sections.typography.text_align",
-        "default": "text-align-left",
-        "options": [
-          {
-            "value": "text-align-left",
-            "label": "t:sections.layout.position.options.left"
-          }, {
-            "value": "text-align-center",
-            "label": "t:sections.layout.position.options.center"
-          }, {
-            "value": "text-align-right",
-            "label": "t:sections.layout.position.options.right"
-          }
-        ]
-      }, {
-        "type": "select",
-        "id": "position_content",
-        "label": "t:sections.layout.position.content_label",
-        "default": "above",
-        "options": [
-          {
-            "value": "above",
-            "label": "t:sections.layout.position.options.above_video"
-          }, {
-            "value": "below",
-            "label": "t:sections.layout.position.options.below_video"
-          }
-        ]
-      }, {
-        "type": "header",
-        "content": "t:sections.headers.desktop_layout"
-      }, {
-        "type": "range",
-        "id": "md_padding_top",
-        "min": 0,
-        "max": 160,
-        "step": 8,
-        "unit": "px",
-        "label": "t:sections.layout.margin_top",
-        "default": 0
-      }, {
-        "type": "range",
-        "id": "md_padding_bottom",
-        "min": 0,
-        "max": 160,
-        "step": 8,
-        "unit": "px",
-        "label": "t:sections.layout.margin_bottom",
-        "default": 40
-      }, {
-        "type": "header",
-        "content": "t:sections.headers.mobile_layout"
-      }, {
-        "type": "range",
-        "id": "padding_top",
-        "min": 0,
-        "max": 160,
-        "step": 8,
-        "unit": "px",
-        "label": "t:sections.layout.margin_top",
-        "default": 0
-      }, {
-        "type": "range",
-        "id": "padding_bottom",
-        "min": 0,
-        "max": 160,
-        "step": 8,
-        "unit": "px",
-        "label": "t:sections.layout.margin_bottom",
-        "default": 24
-      }
-    ],
-    "presets": [
-      {
-        "name": "t:sections.blocks.video.name",
-        "category": "t:sections.section_categories.visual_and_storytelling"
-      }
+{
+  "name": "t:sections.video.name",
+  "class": "section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer",
+      "aside"
     ]
-  }
+  },
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.video.info"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.colors.color_scheme.label",
+      "default": "default"
+    },
+    {
+      "type": "image_picker",
+      "id": "cover_image",
+      "label": "t:sections.images.cover_image"
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "t:sections.inputs.url.video_url",
+      "info": "t:sections.inputs.url.video_url__info"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Video",
+      "label": "t:sections.inputs.text.title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:sections.inputs.text.text"
+    },
+    {
+      "type": "select",
+      "id": "align_content",
+      "label": "t:sections.typography.text_align",
+      "default": "text-align-left",
+      "options": [
+        {
+          "value": "text-align-left",
+          "label": "t:sections.layout.position.options.left"
+        },
+        {
+          "value": "text-align-center",
+          "label": "t:sections.layout.position.options.center"
+        },
+        {
+          "value": "text-align-right",
+          "label": "t:sections.layout.position.options.right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "position_content",
+      "label": "t:sections.layout.position.content_label",
+      "default": "above",
+      "options": [
+        {
+          "value": "above",
+          "label": "t:sections.layout.position.options.above_video"
+        },
+        {
+          "value": "below",
+          "label": "t:sections.layout.position.options.below_video"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Under the video"
+    },
+    {
+      "type": "richtext",
+      "id": "text_below",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "info": "Leave empty for no button."
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.headers.desktop_layout"
+    },
+    {
+      "type": "range",
+      "id": "md_padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "t:sections.layout.margin_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "md_padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "t:sections.layout.margin_bottom",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "t:sections.headers.mobile_layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "t:sections.layout.margin_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "t:sections.layout.margin_bottom",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.blocks.video.name",
+      "category": "t:sections.section_categories.visual_and_storytelling"
+    }
+  ]
+}
 {% endschema %}

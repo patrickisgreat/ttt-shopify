@@ -2241,23 +2241,42 @@ html.has-buy-bar body [class*="kl-teaser-"] {
   width: min(100%, calc((var(--fit-room) - 14svh - 96px) * 16 / 9));
   margin-inline: auto;
 }
-/* Phones: a 16:9 player can never fill a tall screen, so instead of a small
-   player floating in an empty screen it runs edge to edge, close under its
-   heading, and the section is only as tall as it needs to be. */
+/* With copy and a button under the player, the player leaves room for them */
+.video-section:has(.video-section__after) .video-container {
+  width: min(100%, calc((var(--fit-room) - 14svh - 96px - 150px) * 16 / 9));
+}
+.video-section__after {
+  max-width: 620px;
+  margin: 24px auto 0;
+  text-align: center;
+}
+.video-section__copy p {
+  margin: 0 0 6px;
+  font-size: 1.7rem;
+  line-height: 1.5;
+}
+.video-section__btn {
+  margin-top: 16px;
+}
+.video-section.screen-fit,
+.screen-fit > .video-section {
+  width: 100%;
+}
+
+/* Phones: the player runs edge to edge, with heading above and copy and
+   button below, and the whole thing is centred as its own full screen. */
 @media only screen and (max-width: 767px) {
-  .screen-fit:has(> .video-section) {
-    min-height: 0;
-  }
-  .video-section .video-container {
+  .video-section .video-container,
+  .video-section:has(.video-section__after) .video-container {
     width: auto;
     margin-inline: calc(var(--container-margin) * -1);
   }
   .video-section .video-container iframe {
     border-radius: 0;
   }
-  .video-section.pt { padding-top: 28px !important; }
-  .video-section.pb { padding-bottom: 28px !important; }
   .video-section .section__header { margin-bottom: 16px; }
+  .video-section__after { margin-top: 18px; }
+  .video-section__copy p { font-size: 1.5rem; }
 }
 
 /* Short laptop screens: section padding shrinks a little further */

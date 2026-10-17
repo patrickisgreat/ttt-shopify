@@ -67,7 +67,7 @@ body:has(product-buy-bar) {
 @media only screen and (min-width: 768px) {
   body:has(product-buy-bar) { --bar-space: 96px; }
 }
-body:has(product-buy-bar) :is(.screen-fit, .split-image-content__content)::after {
+body:has(product-buy-bar) :is(.screen-fit:not(.pdp-first-screen), .split-image-content__content)::after {
   content: "";
   display: block;
   flex: none;
