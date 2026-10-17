@@ -11,7 +11,7 @@
 
 <div
   id="{{ section.id }}"
-  class="hero-dark pt pb sm-pt sm-pb"
+  class="screen-fit hero-dark pt pb sm-pt sm-pb"
   style="
     --pt: {{ section.settings.padding_top | append: 'px' }};
     --pb: {{ section.settings.padding_bottom | append: 'px' }};
@@ -35,8 +35,40 @@
           <p class="hero-dark__subheading">{{ section.settings.subheading }}</p>
         {%- endif -%}
 
-        {%- comment -%} Social proof sits above the CTA, where it can still earn the click. {%- endcomment -%}
-        {%- if section.settings.proof_line != blank -%}
+        {%- comment -%}
+          Social proof sits above the CTA, where it can still earn the click.
+          The star rating and review count come from the product's review
+          metafields (Judge.me keeps them current). The proof line shows
+          when there is no rating to show.
+        {%- endcomment -%}
+        {%- liquid
+          assign rating_product = section.settings.rating_product
+          if rating_product == blank
+            assign rating_product = all_products['string-ring-custom-string-art-kit']
+          endif
+          assign rating = rating_product.metafields.reviews.rating.value
+          assign rating_count = rating_product.metafields.reviews.rating_count.value | default: 0
+        -%}
+        {%- if section.settings.show_rating and rating != blank and rating_count > 0 -%}
+          {{ 'component-rating.css' | asset_url | stylesheet_tag }}
+          {%- liquid
+            assign rating_decimal = 0
+            assign decimal = rating.rating | modulo: 1
+            if decimal >= 0.3 and decimal <= 0.7
+              assign rating_decimal = 0.5
+            elsif decimal > 0.7
+              assign rating_decimal = 1
+            endif
+          -%}
+          <p class="hero-dark__rating">
+            <span class="rating" role="img" aria-label="{{ rating.rating | round: 1 }} out of {{ rating.scale_max }} stars">
+              <span aria-hidden="true" class="rating-star" style="--rating: {{ rating.rating | floor }}; --rating-max: {{ rating.scale_max }}; --rating-decimal: {{ rating_decimal }};"></span>
+            </span>
+            <span class="hero-dark__rating-text">
+              <strong>{{ rating.rating | round: 1 }}</strong> from {{ rating_count }} {% if rating_count == 1 %}review{% else %}reviews{% endif %}
+            </span>
+          </p>
+        {%- elsif section.settings.proof_line != blank -%}
           <p class="hero-dark__proof">{{ section.settings.proof_line }}</p>
         {%- endif -%}
 
@@ -114,6 +146,19 @@
       "id": "subheading",
       "label": "Subheading",
       "default": "A calming, hands-on art kit that turns meaningful photos into custom string art — no experience needed."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show star rating and review count",
+      "default": true,
+      "info": "From the product's reviews (Judge.me). Replaces the proof line when there are reviews."
+    },
+    {
+      "type": "product",
+      "id": "rating_product",
+      "label": "Rating from product",
+      "info": "Defaults to the Threaditate kit."
     },
     {
       "type": "text",

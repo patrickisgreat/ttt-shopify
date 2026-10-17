@@ -126,3 +126,10 @@
   width: 16px;
   height: 16px;
 }
+
+/* ── One screen: the slider leaves room for its heading and text ── */
+.section--before-after before-after-slider {
+  display: block;
+  width: min(100%, calc(var(--fit-room) - 14svh - 190px));
+  margin-inline: auto;
+}

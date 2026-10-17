@@ -173,3 +173,34 @@
   cursor: not-allowed;
   transform: none;
 }
+
+/* ── One screen ──
+   Desktop: the photo and text fill exactly one screen.
+   Phones: a shorter photo so the bullets and button stay on screen. */
+@media only screen and (min-width: 768px) {
+  .split-image-content__grid {
+    min-height: var(--screen-fit);
+  }
+}
+@media only screen and (max-width: 767px) {
+  .split-image-content__image-col { height: 22svh; }
+  .split-image-content__bullets { gap: 4px; }
+  .split-image-content__grid { min-height: var(--screen-fit); grid-template-rows: auto 1fr; }
+  .split-image-content__content-col { display: flex; flex-direction: column; justify-content: center; }
+}
+
+@media only screen and (max-height: 760px) {
+  .split-image-content__bullets { gap: 6px; }
+  .split-image-content__content { padding-top: 0; padding-bottom: 0; }
+}
+@media only screen and (max-width: 767px) and (max-height: 760px) {
+  .split-image-content__image-col { height: 22svh; }
+}
+
+@media only screen and (max-width: 767px) {
+  .split-image-content__content-col.pt { padding-top: 24px !important; }
+  .split-image-content__content-col.pb { padding-bottom: 24px !important; }
+}
+@media only screen and (max-width: 767px) and (max-height: 760px) {
+  .split-image-content__intro { display: none; }
+}

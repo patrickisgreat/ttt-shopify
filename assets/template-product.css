@@ -280,3 +280,37 @@
     order: 1;
   }
 }
+
+/* ── Desktop: gallery and buy box fit one screen ──
+   The gallery was a square as wide as its column, so on any screen wider
+   than tall it ran past the bottom. Cap the main image to the screen
+   (photos crop to landscape, they are mostly 3:2), and keep the thumbnail
+   row small enough to stay on screen with it. */
+@media only screen and (min-width: 1024px) {
+  .pdp-media .product-media-slider .media {
+    aspect-ratio: auto;
+    width: 100%;
+    height: min(calc(var(--screen-fit) - 7svh - 104px), 760px);
+  }
+  .pdp-media .product-thumbnails-slider {
+    width: min(100%, 440px);
+  }
+}
+
+/* Short laptop screens: a slightly smaller title and tighter buy box */
+@media only screen and (min-width: 1024px) and (max-height: 820px) {
+  .pdp-content .product-block__title .h1 {
+    font-size: 3.2rem;
+  }
+  .pdp-content .rte li {
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .pdp-media .product-media-slider .media {
+    aspect-ratio: auto;
+    width: 100%;
+    height: 36svh;
+  }
+}
