@@ -11,7 +11,7 @@
     function arm() {
       var teaser = document.querySelector('[class*="kl-teaser-"]');
       if (!teaser) return false;
-      setTimeout(function () { root.classList.add('kl-teaser-dismissed'); }, DELAY);
+      setTimeout(function () { root.classList.add('klaviyo-teaser-hidden'); }, DELAY);
       return true;
     }
     if (arm()) return;
