@@ -317,10 +317,10 @@
       "name": "t:sections.before_after.name",
       "settings": {
         "color_scheme": "scheme-be8ef671-53c2-4895-89a6-144af711f198",
-        "media_position_desktop": "top",
+        "media_position_desktop": "left",
         "media_width": "narrow",
         "content_width": "col-sm-max-5",
-        "desktop_alignment": "center",
+        "desktop_alignment": "left",
         "sm_full_width_buttons": false,
         "md_padding_top": 40,
         "md_padding_bottom": 40,
