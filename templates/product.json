@@ -83,11 +83,11 @@
         },
         "6fc29670-ecc3-4bbf-bc13-6d7232b75085": {
           "type": "quantity_selector",
+          "disabled": true,
           "settings": {
             "next_to_add_to_cart": true,
             "margin_top": 12
-          },
-          "disabled": true
+          }
         },
         "custom_liquid_gwp_tote": {
           "type": "custom_liquid",
@@ -360,7 +360,7 @@
             "corner_styling": "soft",
             "header_text_color": "#000000",
             "text_color": "#0b0b0f",
-            "card_color": "#eceae4",
+            "card_color": "#F4F2ED",
             "stars_color": "#1450c4",
             "arrows_color": "#1450c4",
             "transition_speed": 8,
@@ -374,12 +374,14 @@
         "judgeme_cards_pdp"
       ],
       "settings": {
+        "color_scheme": "alternative-1",
         "enable_full_width": false,
         "md_padding_top": 80,
         "md_padding_bottom": 80,
         "padding_top": 48,
         "padding_bottom": 48,
-        "color_scheme": "scheme-d41b7294-aad9-4454-94d4-1e261262bb1f"
+        "heading": "Made by people like you.",
+        "background": "#E3E1F2"
       }
     },
     "testimonials_pdp": {
@@ -497,7 +499,6 @@
         "button_label": "Add to cart",
         "product": "string-ring-custom-string-art-kit",
         "button_link": "",
-        "button_color": "#1450c4",
         "md_padding_top": 64,
         "md_padding_bottom": 64,
         "padding_top": 40,
@@ -705,11 +706,11 @@
         "text": "",
         "align_content": "text-align-center",
         "position_content": "above",
+        "text_below": "<p>Upload a photo and the app turns it into a numbered pattern. Then it speaks every line, one at a time, while your hands do the rest.</p>",
         "md_padding_top": 48,
         "md_padding_bottom": 48,
         "padding_top": 32,
-        "padding_bottom": 32,
-        "text_below": "<p>Upload a photo and the app turns it into a numbered pattern. Then it speaks every line, one at a time, while your hands do the rest.</p>"
+        "padding_bottom": 32
       }
     },
     "faq_pdp": {
