@@ -5,7 +5,7 @@
 
 <div
   id="{{ section.id }}"
-  class="screen-fit hero-dark pt pb sm-pt sm-pb"
+  class="screen-fit hero-dark hero-dark--align-{{ section.settings.text_alignment | default: 'center' }} pt pb sm-pt sm-pb"
   style="
     --pt: {{ section.settings.padding_top | append: 'px' }};
     --pb: {{ section.settings.padding_bottom | append: 'px' }};
@@ -89,6 +89,20 @@
           <p class="hero-dark__caption">{{ section.settings.caption }}</p>
         {%- endif -%}
 
+        {%- assign trust_items = section.blocks | where: 'type', 'trust_item' -%}
+        {%- if trust_items.size > 0 -%}
+          <ul class="hero-dark__trust" role="list">
+            {%- for block in trust_items -%}
+              {%- if block.settings.text != blank -%}
+                <li class="hero-dark__trust-item" {{ block.shopify_attributes }}>
+                  <span class="hero-dark__trust-icon">{%- render 'icon-trust', icon: block.settings.icon -%}</span>
+                  <span>{{ block.settings.text | escape }}</span>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
       </div>
 
       {%- comment -%} ── Right: before/after slider, or a single image ── {%- endcomment -%}
@@ -125,6 +139,22 @@
     ]
   },
   "settings": [
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+        {
+          "value": "center",
+          "label": "Centered"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        }
+      ]
+    },
     {
       "type": "header",
       "content": "Content"
@@ -335,6 +365,57 @@
     {
       "name": "Hero Dark",
       "category": "Custom"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "trust_item",
+      "name": "Trust point",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "default": "kits",
+          "options": [
+            {
+              "value": "kits",
+              "label": "Kits made (people)"
+            },
+            {
+              "value": "patent",
+              "label": "Patent (seal)"
+            },
+            {
+              "value": "app",
+              "label": "App (phone)"
+            },
+            {
+              "value": "ship",
+              "label": "Shipping (box)"
+            },
+            {
+              "value": "guarantee",
+              "label": "Guarantee (shield)"
+            },
+            {
+              "value": "gift",
+              "label": "Gift"
+            },
+            {
+              "value": "clock",
+              "label": "Time"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "3,000+ kits made"
+        }
+      ]
     }
   ]
 }
