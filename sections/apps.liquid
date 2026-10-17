@@ -7,10 +7,35 @@
     --sm-pb: {{ section.settings.md_padding_bottom | append: 'px' }};
   "
 >
+  {%- if section.settings.heading != blank -%}
+    <h2 class="apps-section__heading">{{ section.settings.heading | escape }}</h2>
+  {%- endif -%}
   {% for block in section.blocks %}
     {% render block %}
   {% endfor %}
 </div>
+
+{%- if section.settings.heading != blank -%}
+  {%- style -%}
+    .apps-section__heading {
+      margin: 0 auto 24px;
+      max-width: 820px;
+      text-align: center;
+      font-family: var(--font-heading-family);
+      font-weight: var(--font-heading-weight);
+      font-size: 2.8rem;
+      line-height: var(--font-heading-line-height);
+      letter-spacing: var(--font-heading-letter-spacing);
+      color: var(--color-foreground);
+    }
+    @media only screen and (min-width: 768px) {
+      .apps-section__heading { font-size: 3.6rem; margin-bottom: 32px; }
+    }
+    /* The section prints the heading; hide the app widget's own (Judge.me's
+       truncates to one line with an ellipsis on phones). */
+    #{{ section.id }} .jdgm-header { display: none !important; }
+  {%- endstyle -%}
+{%- endif -%}
 
 {% schema %}
 {
@@ -21,6 +46,12 @@
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Shown above the app in the theme's heading style. When set, the app's own heading is hidden."
     },
     {
       "type": "checkbox",
