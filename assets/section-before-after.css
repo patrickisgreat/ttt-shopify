@@ -133,3 +133,24 @@
   width: min(100%, calc(var(--fit-room) - 14svh - 190px));
   margin-inline: auto;
 }
+/* Side by side (photo left or right of the text): no text under the slider,
+   so it can use the full screen height. */
+@media only screen and (min-width: 768px) {
+  .section--before-after .sm-grid-cols-2 before-after-slider {
+    width: min(100%, calc(var(--fit-room) - 14svh));
+  }
+}
+/* Portrait tablets: two columns would make the slider small, so stack it
+   above the text and let it use the width. */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .section--before-after .media-with-text.sm-grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  .section--before-after .media-with-text.sm-grid-cols-2 > * {
+    order: 0;
+    text-align: center;
+  }
+  .section--before-after .sm-grid-cols-2 before-after-slider {
+    width: min(100%, calc(var(--fit-room) - 14svh - 190px));
+  }
+}
