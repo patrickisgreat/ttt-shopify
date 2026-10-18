@@ -15,6 +15,55 @@
   <div class="cta-banner__inner container">
     <div class="cta-banner__content text-align-center">
 
+      {%- comment -%}
+        Three photos that follow the headline: a memory (the original photo),
+        a meditation (someone threading), a piece (someone with the finished
+        piece). Empty slots show only inside the Theme Editor, never to
+        customers.
+      {%- endcomment -%}
+      {%- liquid
+        assign show_trio = false
+        if section.settings.image_memory != blank or section.settings.image_meditation != blank or section.settings.image_piece != blank
+          assign show_trio = true
+        endif
+        if request.design_mode
+          assign show_trio = true
+        endif
+      -%}
+      {%- if show_trio -%}
+        <div class="cta-banner__trio">
+          {%- for slot in (1..3) -%}
+            {%- liquid
+              case slot
+                when 1
+                  assign img = section.settings.image_memory
+                  assign label = section.settings.memory_label
+                when 2
+                  assign img = section.settings.image_meditation
+                  assign label = section.settings.meditation_label
+                else
+                  assign img = section.settings.image_piece
+                  assign label = section.settings.piece_label
+              endcase
+            -%}
+            {%- if img != blank or request.design_mode -%}
+              <figure class="cta-banner__trio-item">
+                <div class="cta-banner__trio-media">
+                  {%- if img != blank -%}
+                    {{ img | image_url: width: 600 | image_tag: loading: 'lazy', widths: '240, 400, 600', sizes: '(min-width: 768px) 220px, 30vw', alt: label }}
+                  {%- else -%}
+                    {{ 'image' | placeholder_svg_tag: 'cta-banner__placeholder' }}
+                  {%- endif -%}
+                </div>
+                {%- if label != blank -%}
+                  <figcaption class="cta-banner__trio-label">{{ label | escape }}</figcaption>
+                {%- endif -%}
+              </figure>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
       {%- if section.settings.heading != blank -%}
         <h2 class="cta-banner__title">{{ section.settings.heading }}</h2>
       {%- endif -%}
@@ -44,7 +93,11 @@
 {
   "name": "CTA Banner",
   "disabled_on": {
-    "groups": ["header", "footer", "aside"]
+    "groups": [
+      "header",
+      "footer",
+      "aside"
+    ]
   },
   "settings": [
     {
@@ -54,10 +107,67 @@
       "info": "Use Ivory when this banner sits directly above or below another cobalt section.",
       "default": "cobalt",
       "options": [
-        { "value": "cobalt", "label": "Cobalt" },
-        { "value": "ivory", "label": "Ivory" },
-        { "value": "black", "label": "Black" }
+        {
+          "value": "cobalt",
+          "label": "Cobalt"
+        },
+        {
+          "value": "ivory",
+          "label": "Ivory"
+        },
+        {
+          "value": "black",
+          "label": "Black"
+        }
       ]
+    },
+    {
+      "type": "header",
+      "content": "Photos"
+    },
+    {
+      "type": "paragraph",
+      "content": "Three photos above the heading, in order: the memory, the meditation, the piece. Empty slots only show here in the editor."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_memory",
+      "label": "Memory",
+      "info": "The original photo, e.g. framed on a mantle."
+    },
+    {
+      "type": "text",
+      "id": "memory_label",
+      "label": "Memory label",
+      "default": "A memory"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_meditation",
+      "label": "Meditation",
+      "info": "Someone threading the loom."
+    },
+    {
+      "type": "text",
+      "id": "meditation_label",
+      "label": "Meditation label",
+      "default": "A meditation"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_piece",
+      "label": "Piece",
+      "info": "Someone with the finished piece."
+    },
+    {
+      "type": "text",
+      "id": "piece_label",
+      "label": "Piece label",
+      "default": "A piece"
+    },
+    {
+      "type": "header",
+      "content": "Text"
     },
     {
       "type": "text",
