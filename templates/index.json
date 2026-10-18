@@ -11,30 +11,6 @@
   "sections": {
     "hero_dark_4Nid7U": {
       "type": "hero-dark",
-      "name": "Hero Dark",
-      "settings": {
-        "heading": "Turn any photo into string art you made with your own hands.",
-        "subheading": "Upload a photo. The app's voice guides you line by line through 5 to 8 hours of phone-free calm. No skill needed, nothing to undo.",
-        "proof_line": "3,000+ kits made. App included, no subscription.",
-        "caption": "",
-        "primary_button_label": "Get my kit",
-        "primary_button_link": "shopify://products/string-ring-custom-string-art-kit",
-        "secondary_button_label": "",
-        "secondary_button_link": "",
-        "image": "shopify://shop_images/Screenshot_2026-09-21_at_2.16.18_PM.png",
-        "image_before": "shopify://shop_images/aphrodite-half-shell.jpg",
-        "image_after": "shopify://shop_images/aphrodite-string.png",
-        "before_label": "Your photo",
-        "after_label": "Your string art",
-        "label_colors": "#ffffff",
-        "label_position": "top",
-        "media_aspect_ratio": "square",
-        "md_padding_top": 80,
-        "md_padding_bottom": 80,
-        "padding_top": 56,
-        "padding_bottom": 56,
-        "text_alignment": "center"
-      },
       "blocks": {
         "ts_kits": {
           "type": "trust_item",
@@ -78,7 +54,88 @@
         "ts_app",
         "ts_ship",
         "ts_guarantee"
-      ]
+      ],
+      "name": "Hero Dark",
+      "settings": {
+        "text_alignment": "center",
+        "heading": "Turn any photo into string art you made with your own hands.",
+        "subheading": "Upload a photo. The app's voice guides you line by line through 5 to 8 hours of phone-free calm. No skill needed, nothing to undo.",
+        "show_rating": true,
+        "rating_product": "",
+        "proof_line": "3,000+ kits made. App included, no subscription.",
+        "caption": "",
+        "primary_button_label": "Get my kit",
+        "primary_button_link": "shopify://products/string-ring-custom-string-art-kit",
+        "secondary_button_label": "",
+        "secondary_button_link": "",
+        "image": "shopify://shop_images/Screenshot_2026-09-21_at_2.16.18_PM.png",
+        "image_before": "shopify://shop_images/new_aphrodite_string.png",
+        "image_after": "shopify://shop_images/aphrodite_string.png",
+        "before_label": "Your photo",
+        "after_label": "Your string art",
+        "label_colors": "#ffffff",
+        "label_position": "top",
+        "media_aspect_ratio": "square",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "trust_strip_home": {
+      "type": "trust-strip",
+      "blocks": {
+        "ts_kits": {
+          "type": "item",
+          "settings": {
+            "icon": "kits",
+            "text": "3,000+ kits made"
+          }
+        },
+        "ts_patent": {
+          "type": "item",
+          "settings": {
+            "icon": "patent",
+            "text": "U.S. Patent 12,423,349"
+          }
+        },
+        "ts_app": {
+          "type": "item",
+          "settings": {
+            "icon": "app",
+            "text": "App included, no subscription"
+          }
+        },
+        "ts_ship": {
+          "type": "item",
+          "settings": {
+            "icon": "ship",
+            "text": "Ships in 1 business day"
+          }
+        },
+        "ts_guarantee": {
+          "type": "item",
+          "settings": {
+            "icon": "guarantee",
+            "text": "30-day guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "ts_kits",
+        "ts_patent",
+        "ts_app",
+        "ts_ship",
+        "ts_guarantee"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "md_padding_top": 20,
+        "md_padding_bottom": 20,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
     },
     "video_YzVdz8": {
       "type": "video",
@@ -90,13 +147,156 @@
         "text": "",
         "align_content": "text-align-center",
         "position_content": "above",
+        "text_below": "<p>Upload a photo and the app turns it into a numbered pattern. Then it speaks every line, one at a time, while your hands do the rest.</p>",
+        "button_label": "Get my kit",
+        "button_link": "shopify://products/string-ring-custom-string-art-kit",
         "md_padding_top": 64,
         "md_padding_bottom": 64,
         "padding_top": 40,
-        "padding_bottom": 40,
-        "text_below": "<p>Upload a photo and the app turns it into a numbered pattern. Then it speaks every line, one at a time, while your hands do the rest.</p>",
+        "padding_bottom": 40
+      }
+    },
+    "comparison_home": {
+      "type": "comparison-table",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "label": "Made from your own photo",
+            "us": "yes",
+            "c2": "no",
+            "c3": "no",
+            "c4": "no"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "label": "No skill or experience needed",
+            "us": "yes",
+            "c2": "partial",
+            "c3": "yes",
+            "c4": "yes"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "label": "A voice guides every step",
+            "us": "yes",
+            "c2": "no",
+            "c3": "no",
+            "c4": "partial"
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "label": "Hands busy, phone face down",
+            "us": "yes",
+            "c2": "yes",
+            "c3": "yes",
+            "c4": "no"
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "label": "A keepsake you hang on the wall",
+            "us": "yes",
+            "c2": "yes",
+            "c3": "yes",
+            "c4": "no"
+          }
+        },
+        "row_6": {
+          "type": "row",
+          "settings": {
+            "label": "Patented in the U.S.",
+            "us": "yes",
+            "c2": "no",
+            "c3": "no",
+            "c4": "no"
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6"
+      ],
+      "settings": {
+        "color_scheme": "scheme-d41b7294-aad9-4454-94d4-1e261262bb1f",
+        "heading": "Not another craft kit",
+        "subheading": "Only one of these starts from your own photo and gets you off your phone.",
+        "col_us": "Threaditate",
+        "col_2": "Paint by numbers",
+        "col_3": "Diamond art",
+        "col_4": "Meditation app",
         "button_label": "Get my kit",
-        "button_link": "shopify://products/string-ring-custom-string-art-kit"
+        "button_link": "shopify://products/string-ring-custom-string-art-kit",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "reviews_home": {
+      "type": "apps",
+      "blocks": {
+        "judgeme_cards_home": {
+          "type": "shopify://apps/judge-me-reviews/blocks/cards_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "show_sample_reviews": false,
+            "reviews_selection": "product_reviews",
+            "products": [
+              "string-ring-custom-string-art-kit"
+            ],
+            "filter_pinned": true,
+            "filter_featured": false,
+            "filter_custom_tags": "",
+            "star_rating": "5_star",
+            "show_review_media": true,
+            "display_order": "media_first",
+            "no_image_fallback": "review_text_only",
+            "max_reviews": 12,
+            "review_length": "medium",
+            "text_size": "medium",
+            "image_ratio": "1",
+            "reviews_shown": 3,
+            "show_reviewer_name": true,
+            "show_product_name": false,
+            "hide_arrows_mobile": false,
+            "arrows_position": "bottom",
+            "max_width": 1100,
+            "corner_styling": "soft",
+            "header_text_color": "#000000",
+            "text_color": "#0b0b0f",
+            "card_color": "#f4f2ed",
+            "stars_color": "#1450c4",
+            "arrows_color": "#1450c4",
+            "transition_speed": 8,
+            "header_text": "Made by people like you.",
+            "show_average_rating": false,
+            "rating_display": "default"
+          }
+        }
+      },
+      "block_order": [
+        "judgeme_cards_home"
+      ],
+      "settings": {
+        "color_scheme": "alternative-1",
+        "background": "#e3e1f2",
+        "heading": "Made by people like you.",
+        "enable_full_width": false,
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
     "testimonials_slider_UKWpbV": {
@@ -366,6 +566,7 @@
       "type": "cta-banner",
       "name": "CTA Banner",
       "settings": {
+        "style": "cobalt",
         "heading": "Turn a memory into a meditation. Turn the meditation into a piece.",
         "subheading": "Upload it. Let the app's voice guide you, line by line. Walk away with something you love on your wall.",
         "button_label": "Get my kit",
@@ -500,195 +701,6 @@
     "1777486347bf7f30d3": {
       "type": "_blocks",
       "settings": {}
-    },
-    "trust_strip_home": {
-      "type": "trust-strip",
-      "blocks": {
-        "ts_kits": {
-          "type": "item",
-          "settings": {
-            "icon": "kits",
-            "text": "3,000+ kits made"
-          }
-        },
-        "ts_patent": {
-          "type": "item",
-          "settings": {
-            "icon": "patent",
-            "text": "U.S. Patent 12,423,349"
-          }
-        },
-        "ts_app": {
-          "type": "item",
-          "settings": {
-            "icon": "app",
-            "text": "App included, no subscription"
-          }
-        },
-        "ts_ship": {
-          "type": "item",
-          "settings": {
-            "icon": "ship",
-            "text": "Ships in 1 business day"
-          }
-        },
-        "ts_guarantee": {
-          "type": "item",
-          "settings": {
-            "icon": "guarantee",
-            "text": "30-day guarantee"
-          }
-        }
-      },
-      "block_order": [
-        "ts_kits",
-        "ts_patent",
-        "ts_app",
-        "ts_ship",
-        "ts_guarantee"
-      ],
-      "settings": {
-        "color_scheme": "default",
-        "md_padding_top": 20,
-        "md_padding_bottom": 20,
-        "padding_top": 16,
-        "padding_bottom": 16
-      },
-      "disabled": true
-    },
-    "comparison_home": {
-      "type": "comparison-table",
-      "blocks": {
-        "row_1": {
-          "type": "row",
-          "settings": {
-            "label": "Made from your own photo",
-            "us": "yes",
-            "c2": "no",
-            "c3": "no",
-            "c4": "no"
-          }
-        },
-        "row_2": {
-          "type": "row",
-          "settings": {
-            "label": "No skill or experience needed",
-            "us": "yes",
-            "c2": "partial",
-            "c3": "yes",
-            "c4": "yes"
-          }
-        },
-        "row_3": {
-          "type": "row",
-          "settings": {
-            "label": "A voice guides every step",
-            "us": "yes",
-            "c2": "no",
-            "c3": "no",
-            "c4": "partial"
-          }
-        },
-        "row_4": {
-          "type": "row",
-          "settings": {
-            "label": "Hands busy, phone face down",
-            "us": "yes",
-            "c2": "yes",
-            "c3": "yes",
-            "c4": "no"
-          }
-        },
-        "row_5": {
-          "type": "row",
-          "settings": {
-            "label": "A keepsake you hang on the wall",
-            "us": "yes",
-            "c2": "yes",
-            "c3": "yes",
-            "c4": "no"
-          }
-        },
-        "row_6": {
-          "type": "row",
-          "settings": {
-            "label": "Patented in the U.S.",
-            "us": "yes",
-            "c2": "no",
-            "c3": "no",
-            "c4": "no"
-          }
-        }
-      },
-      "block_order": [
-        "row_1",
-        "row_2",
-        "row_3",
-        "row_4",
-        "row_5",
-        "row_6"
-      ],
-      "settings": {
-        "color_scheme": "scheme-d41b7294-aad9-4454-94d4-1e261262bb1f",
-        "heading": "Not another craft kit",
-        "subheading": "Only one of these starts from your own photo and gets you off your phone.",
-        "col_us": "Threaditate",
-        "col_2": "Paint by numbers",
-        "col_3": "Diamond art",
-        "col_4": "Meditation app",
-        "button_label": "Get my kit",
-        "button_link": "shopify://products/string-ring-custom-string-art-kit",
-        "md_padding_top": 80,
-        "md_padding_bottom": 80,
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
-    },
-    "reviews_home": {
-      "type": "apps",
-      "blocks": {
-        "judgeme_cards_home": {
-          "type": "shopify://apps/judge-me-reviews/blocks/cards_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "show_sample_reviews": false,
-            "reviews_selection": "all",
-            "star_rating": "5_star",
-            "show_review_media": true,
-            "display_order": "media_first",
-            "no_image_fallback": "review_text_only",
-            "max_reviews": 12,
-            "review_length": "medium",
-            "text_size": "medium",
-            "reviews_shown": 3,
-            "show_reviewer_name": true,
-            "show_product_name": false,
-            "hide_arrows_mobile": false,
-            "arrows_position": "bottom",
-            "max_width": 1100,
-            "corner_styling": "soft",
-            "text_color": "#0B0B0F",
-            "card_color": "#F4F2ED",
-            "stars_color": "#1450C4",
-            "arrows_color": "#1450C4",
-            "transition_speed": 8,
-            "header_text": "Made by people like you.",
-            "show_average_rating": false
-          }
-        }
-      },
-      "block_order": [
-        "judgeme_cards_home"
-      ],
-      "settings": {
-        "enable_full_width": false,
-        "md_padding_top": 80,
-        "md_padding_bottom": 80,
-        "padding_top": 48,
-        "padding_bottom": 48,
-        "color_scheme": "alternative-1",
-        "heading": "Made by people like you.",
-        "background": "#E3E1F2"
-      }
     }
   },
   "order": [
