@@ -721,7 +721,7 @@
 
         {%- if show_block -%}
           {%- capture block_html -%}
-            <div class="product-block product-block__{{ block.type | escape }}" style="margin-top: {{ block.settings.margin_top | append: 'px' }}" {{ block.shopify_attributes }}>
+            <div class="product-block product-block__{{ block.type | escape }}{% if block.settings.visibility == 'desktop' %} product-block--desktop-only{% elsif block.settings.visibility == 'mobile' %} product-block--mobile-only{% endif %}" style="margin-top: {{ block.settings.margin_top | append: 'px' }}" {{ block.shopify_attributes }}>
               {{ block_inner_html }}
             </div>
           {%- endcapture -%}
