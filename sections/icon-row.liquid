@@ -12,8 +12,15 @@
 >
   <div class="icon-row__inner container">
 
-    {%- if section.settings.heading != blank -%}
-      <{{ section.settings.heading_tag }} class="icon-row__title text-align-center">{{ section.settings.heading }}</{{ section.settings.heading_tag }}>
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="icon-row__header">
+        {%- if section.settings.heading != blank -%}
+          <{{ section.settings.heading_tag }} class="icon-row__title">{{ section.settings.heading }}</{{ section.settings.heading_tag }}>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="icon-row__subheading">{{ section.settings.subheading | escape }}</p>
+        {%- endif -%}
+      </div>
     {%- endif -%}
 
     {%- if section.blocks.size > 0 -%}
@@ -72,7 +79,11 @@
 {
   "name": "Icon Row",
   "disabled_on": {
-    "groups": ["header", "footer", "aside"]
+    "groups": [
+      "header",
+      "footer",
+      "aside"
+    ]
   },
   "settings": [
     {
@@ -88,8 +99,14 @@
       "label": "Layout",
       "default": "icons",
       "options": [
-        { "value": "icons", "label": "Icons" },
-        { "value": "photos", "label": "Photos" }
+        {
+          "value": "icons",
+          "label": "Icons"
+        },
+        {
+          "value": "photos",
+          "label": "Photos"
+        }
       ],
       "info": "Photos shows each block's photo as a numbered card. Pick a photo on every block."
     },
@@ -131,6 +148,11 @@
       "id": "heading",
       "label": "Heading",
       "default": "What You'll Do"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
     },
     {
       "type": "header",
