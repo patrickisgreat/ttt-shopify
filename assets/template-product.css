@@ -354,7 +354,11 @@
 
 @media only screen and (min-width: 1024px) {
   .pdp-first-screen .pdp-content .sticky { padding-bottom: 0; }
-  .pdp-first-screen .product-main { align-items: center; }
+  /* The title lines up with the top of the photo */
+  .pdp-first-screen .product-main { align-items: start; }
+  .pdp-first-screen .pdp-content .sticky { padding-top: 0; }
+  .pdp-first-screen .product-block__title { margin-top: 0 !important; }
+  .pdp-first-screen .product-block__title .h1 { margin-top: 0; }
 }
 
 /* Phones and tablets: the text takes what it needs and the photo gallery
@@ -418,3 +422,14 @@
 .product-details .rte li { line-height: 1.45; margin: 0 0 4px; }
 /* Keep the editor's block order on the first screen (price, rating, button) */
 .pdp-first-screen .product-block__price ~ .product-block { order: 0; }
+
+/* Text blocks shown only on some screens (the block's "Show on" setting) */
+@media only screen and (max-width: 1023px) {
+  .product-block--desktop-only { display: none; }
+}
+@media only screen and (min-width: 1024px) {
+  .product-block--mobile-only { display: none; }
+}
+/* About the product, under Add to cart on laptops */
+.pdp-first-screen .product-block--desktop-only .rte ul { margin: 0 0 0 18px; }
+.pdp-first-screen .product-block--desktop-only .rte li { line-height: 1.45; margin: 0 0 4px; }

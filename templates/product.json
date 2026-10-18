@@ -69,7 +69,8 @@
           "settings": {
             "text": "<ul><li>Turn any photo into string art</li><li>No skills needed. The app's voice guides every line</li><li>Loom, thread and tools included. Nothing else to buy</li><li>Relaxing and mess-free. 5 to 8 hours, at your pace</li></ul>",
             "read_more": false,
-            "margin_top": 0
+            "margin_top": 0,
+            "visibility": "mobile"
           }
         },
         "557a3a73-80c5-47b2-abb8-a78027516c90": {
@@ -214,6 +215,15 @@
             "color_scheme": "alternative-2",
             "heading": "About the kit"
           }
+        },
+        "text_about": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li>Turn any photo into string art</li><li>No skills needed. The app's voice guides every line</li><li>Loom, thread and tools included. Nothing else to buy</li><li>Relaxing and mess-free. 5 to 8 hours, at your pace</li></ul>",
+            "read_more": false,
+            "margin_top": 20,
+            "visibility": "desktop"
+          }
         }
       },
       "block_order": [
@@ -228,6 +238,7 @@
         "6fc29670-ecc3-4bbf-bc13-6d7232b75085",
         "custom_liquid_gwp_tote",
         "the-buy-buttons",
+        "text_about",
         "details_break",
         "the-description",
         "text_bullets",
@@ -301,7 +312,7 @@
         "text_VFiFGN": {
           "type": "text",
           "settings": {
-            "text": "<p>Slide to see how a photo you already have becomes a finished piece you made with your own hands.</p>",
+            "text": "<p>Slide to see a real photo become a finished piece, made by hand on the 20-inch loom.</p><ul><li><strong>Pick a photo you love.</strong> Faces, pets and close-ups with clear contrast come out best.</li><li><strong>The app makes the pattern.</strong> Your photo becomes a numbered thread guide in seconds.</li><li><strong>You thread it, line by line.</strong> The app speaks every step, so you never get lost.</li><li><strong>Hang it on your wall.</strong> Most pieces take 5 to 8 hours, at your own pace.</li></ul>",
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 12,
             "size_multiplier": "size--default",
