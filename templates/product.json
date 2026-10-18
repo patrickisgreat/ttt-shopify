@@ -525,7 +525,8 @@
             "icon_preset": "forgiving",
             "icon_svg": "",
             "title": "Forgiving by design",
-            "description": "Lose your place? Keep going. With thousands of lines, missed steps disappear into the whole — there's nothing to undo."
+            "description": "Lose your place? Keep going. With thousands of lines, missed steps disappear into the whole — there's nothing to undo.",
+            "photo": "shopify://shop_images/finished-image.jpg"
           }
         },
         "feature_card_jMkMTj": {
@@ -534,7 +535,8 @@
             "icon_preset": "voice",
             "icon_svg": "",
             "title": "You won't get lost",
-            "description": "The app speaks and shows every step, flowing line by line at your pace. No experience needed."
+            "description": "The app speaks and shows every step, flowing line by line at your pace. No experience needed.",
+            "photo": "shopify://shop_images/follow-the-voice.png"
           }
         },
         "feature_card_JkAaLp": {
@@ -543,7 +545,8 @@
             "icon_preset": "photo",
             "icon_svg": "",
             "title": "Your photo, your art",
-            "description": "Any meaningful image becomes one-of-a-kind string art. No two pieces will ever match."
+            "description": "Any meaningful image becomes one-of-a-kind string art. No two pieces will ever match.",
+            "photo": "shopify://shop_images/IMG_8337.jpg"
           }
         }
       },
