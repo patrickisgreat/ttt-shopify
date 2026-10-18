@@ -28,10 +28,26 @@
     <div class="features-grid__grid">
       {%- for block in section.blocks -%}
         {%- if block.type == 'feature_card' -%}
+          {%- liquid
+            assign icon_color = block.settings.icon_color | default: 'auto'
+            if icon_color == 'auto'
+              assign cycle = forloop.index0 | modulo: 2
+              if cycle == 0
+                assign icon_color = 'cobalt'
+              else
+                assign icon_color = 'violet'
+              endif
+            endif
+          -%}
           <div class="features-grid__card-wrapper" {{ block.shopify_attributes }}>
-            <div class="features-grid__card">
+            <div class="features-grid__card{% if block.settings.photo != blank %} features-grid__card--photo{% endif %}">
+              {%- if block.settings.photo != blank -%}
+                <div class="features-grid__photo" aria-hidden="true">
+                  {{ block.settings.photo | image_url: width: 720 | image_tag: loading: 'lazy', widths: '360, 540, 720', sizes: '(min-width: 1024px) 380px, 82vw', alt: '' }}
+                </div>
+              {%- endif -%}
               {%- if block.settings.icon_preset != blank and block.settings.icon_preset != 'none' -%}
-                <div class="features-grid__icon features-grid__icon--preset">
+                <div class="features-grid__icon features-grid__icon--preset features-grid__icon--{{ icon_color }}">
                   {%- render 'icon-feature', icon: block.settings.icon_preset -%}
                 </div>
               {%- elsif block.settings.icon != blank -%}
@@ -67,7 +83,11 @@
 {
   "name": "Features Grid",
   "disabled_on": {
-    "groups": ["header", "footer", "aside"]
+    "groups": [
+      "header",
+      "footer",
+      "aside"
+    ]
   },
   "settings": [
     {
@@ -143,19 +163,74 @@
       "type": "feature_card",
       "settings": [
         {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Photo",
+          "info": "A small photo across the top of the card that fades into it."
+        },
+        {
           "type": "select",
           "id": "icon_preset",
           "label": "Icon",
           "info": "Brand line icons drawn for Threaditate. Overrides the image and SVG fields below.",
           "default": "none",
           "options": [
-            { "value": "none", "label": "None (use image or SVG below)" },
-            { "value": "forgiving", "label": "Forgiving thread (loop with check)" },
-            { "value": "voice", "label": "Voice guide (phone speaking)" },
-            { "value": "photo", "label": "Photo becomes thread" },
-            { "value": "box", "label": "Everything in the box" },
-            { "value": "rhythm", "label": "Time slips (clock as loom)" },
-            { "value": "frame", "label": "Hung on the wall" }
+            {
+              "value": "none",
+              "label": "None (use image or SVG below)"
+            },
+            {
+              "value": "forgiving",
+              "label": "Forgiving thread (loop with check)"
+            },
+            {
+              "value": "voice",
+              "label": "Voice guide (phone speaking)"
+            },
+            {
+              "value": "photo",
+              "label": "Photo becomes thread"
+            },
+            {
+              "value": "box",
+              "label": "Everything in the box"
+            },
+            {
+              "value": "rhythm",
+              "label": "Time slips (clock as loom)"
+            },
+            {
+              "value": "frame",
+              "label": "Hung on the wall"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "icon_color",
+          "label": "Icon color",
+          "default": "auto",
+          "options": [
+            {
+              "value": "auto",
+              "label": "Alternate cobalt and violet"
+            },
+            {
+              "value": "cobalt",
+              "label": "Cobalt"
+            },
+            {
+              "value": "violet",
+              "label": "Blue violet"
+            },
+            {
+              "value": "vermillion",
+              "label": "Vermillion"
+            },
+            {
+              "value": "black",
+              "label": "Black"
+            }
           ]
         },
         {

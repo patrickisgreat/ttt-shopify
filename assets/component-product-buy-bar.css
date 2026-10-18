@@ -78,7 +78,7 @@ body:has(product-buy-bar) :is(.screen-fit:not(.pdp-first-screen), .split-image-c
 /* With the bar taking the bottom of the screen, the FAQ and the split
    section drop their secondary lines on short screens so their buttons stay
    above it. */
-@media only screen and (max-width: 767px), (max-height: 800px) {
+@media only screen and (max-width: 767px), (max-height: 860px) {
   body:has(product-buy-bar) .faq__subheading { display: none; }
   body:has(product-buy-bar) .faq__header { margin-bottom: 16px; }
   body:has(product-buy-bar) .faq__question { padding-top: 10px; padding-bottom: 10px; }
