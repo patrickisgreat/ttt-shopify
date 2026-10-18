@@ -393,7 +393,8 @@
         "padding_bottom": 48,
         "heading": "Made by people like you.",
         "background": "#E3E1F2"
-      }
+      },
+      "disabled": true
     },
     "testimonials_pdp": {
       "type": "testimonials-slider",
@@ -802,12 +803,31 @@
         "padding_top": 80,
         "padding_bottom": 80
       }
+    },
+    "reviews_wall_pdp": {
+      "type": "reviews-wall",
+      "settings": {
+        "style": "cobalt",
+        "heading": "Made by people like you.",
+        "product": "",
+        "min_rating": 4,
+        "max_reviews": 9,
+        "hide_anonymous": true,
+        "show_product": true,
+        "button_label": "",
+        "button_link": "",
+        "md_padding_top": 64,
+        "md_padding_bottom": 64,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
     "main",
     "before_after_JDmxdx",
     "reviews_pdp",
+    "reviews_wall_pdp",
     "testimonials_pdp",
     "judgeme_reviews",
     "split_image_content_3xrpVG",
