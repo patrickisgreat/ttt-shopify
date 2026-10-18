@@ -364,3 +364,22 @@
   .hero-dark__subheading { font-size: 1.35rem; }
   .hero-dark__text-col { gap: 8px; }
 }
+
+/* ── Portrait tablets: stacked like the phone, slider filling the space ── */
+@media only screen and (min-width: 768px) and (max-width: 1100px) and (orientation: portrait) {
+  .hero-dark.screen-fit { justify-content: flex-start; }
+  .hero-dark.screen-fit > .hero-dark__inner { flex: 1 1 auto; grid-template-rows: 1fr; }
+  .hero-dark__grid { display: flex; flex-direction: column; align-items: stretch; gap: 24px; min-height: 0; }
+  .hero-dark__image-col { order: -1; flex: 1 1 auto; min-height: 280px; display: flex; }
+  .hero-dark__text-col { flex: none; }
+  .hero-dark__image--compare { flex: 1 1 auto; width: min(100%, 720px); height: auto; display: flex; margin-inline: auto; }
+  .hero-dark__image--compare > * { flex: 1 1 auto; }
+  .hero-dark__image--compare .before-after-container { aspect-ratio: auto; height: 100%; min-height: 280px; }
+  .hero-dark__title { font-size: 4.4rem; max-width: 640px; }
+  .hero-dark__subheading { max-width: 560px; font-size: 1.8rem; }
+}
+@media only screen and (min-width: 768px) and (max-width: 1100px) and (orientation: portrait) and (max-height: 1100px) {
+  .hero-dark__image-col, .hero-dark__image--compare .before-after-container { min-height: 200px; }
+  .hero-dark__title { font-size: 3.8rem; }
+  .hero-dark__grid { gap: 18px; }
+}

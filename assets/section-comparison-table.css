@@ -204,3 +204,20 @@
   .comparison__mark { width: 22px; height: 22px; }
   .comparison__mark svg { width: 16px; height: 16px; }
 }
+
+/* ── Portrait tablets: a full-width table with room to breathe ── */
+@media only screen and (min-width: 768px) and (max-width: 1100px) and (orientation: portrait) {
+  .comparison__scroll { max-width: none; }
+  .comparison { font-size: 1.7rem; }
+  .comparison thead th { font-size: 1.5rem; }
+  .comparison th, .comparison td { padding-top: 20px !important; padding-bottom: 20px !important; }
+  .comparison__mark { width: 32px; height: 32px; }
+  .comparison__mark svg { width: 22px; height: 22px; }
+  .comparison__subheading { display: block !important; }
+}
+@media only screen and (min-width: 768px) and (max-width: 1100px) and (orientation: portrait) and (max-height: 1100px) {
+  .comparison th, .comparison td { padding-top: 11px !important; padding-bottom: 11px !important; }
+}
+@media only screen and (min-width: 1024px) and (max-height: 860px) {
+  .comparison th, .comparison td { padding-top: 8px; padding-bottom: 8px; }
+}

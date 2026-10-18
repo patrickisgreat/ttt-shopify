@@ -86,3 +86,14 @@ a.hotspot:hover {
     opacity: 0;
   }
 }
+
+/* ── Portrait tablets: photo on top at full width, text under it ── */
+@media only screen and (min-width: 768px) and (max-width: 1100px) and (orientation: portrait) {
+  .screen-fit:has(.hotspot-container) > .grid > [class*="col-sm-6"] {
+    grid-column: 1 / -1 !important;
+    width: 100%;
+    max-width: none;
+  }
+  .screen-fit:has(.hotspot-container) > .grid > [class*="col-sm-6"]:has(.hotspot-container) { order: -1 !important; }
+  .screen-fit:has(.hotspot-container) .hotspot-container .media { max-height: 48svh; }
+}
