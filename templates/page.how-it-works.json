@@ -63,12 +63,13 @@
       "settings": {
         "color_scheme": "scheme-be8ef671-53c2-4895-89a6-144af711f198",
         "layout": "photos",
-        "heading_tag": "h2",
-        "heading": "What you'll do",
+        "heading_tag": "h1",
+        "heading": "Set up your kit in three steps",
         "md_padding_top": 64,
         "md_padding_bottom": 64,
         "padding_top": 48,
-        "padding_bottom": 48
+        "padding_bottom": 48,
+        "subheading": "Mount the loom, upload a photo, and start threading. The app guides you from there."
       }
     },
     "steps_with_images_WMKPeF": {
@@ -119,7 +120,7 @@
       ],
       "name": "Steps with Images",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-d41b7294-aad9-4454-94d4-1e261262bb1f",
         "heading": "Getting started",
         "subheading": "Follow these steps in order for the smoothest experience.",
         "number_color": "#1450c4",
@@ -136,7 +137,7 @@
       "type": "video",
       "name": "t:sections.blocks.video.name",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "alternative-2",
         "video_url": "https://www.youtube.com/watch?v=uqd7Kh_kwQs",
         "title": "How to Threaditate",
         "text": "<p>A quick walkthrough of the whole process, from your photo to a finished piece.</p>",
@@ -145,7 +146,8 @@
         "md_padding_top": 24,
         "md_padding_bottom": 56,
         "padding_top": 16,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "text_below": "<p>Watch the whole process once, then follow along with the app as you thread.</p>"
       }
     },
     "tips_grid_zVTVpN": {
@@ -192,7 +194,7 @@
       ],
       "name": "Tips Grid",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-d41b7294-aad9-4454-94d4-1e261262bb1f",
         "heading": "Tips for a smooth first piece",
         "subheading": "You don't need to rush. This is meant to be enjoyed.",
         "md_padding_top": 80,
@@ -249,7 +251,7 @@
       ],
       "name": "FAQ with Image",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "alternative-2",
         "heading": "Frequently asked questions",
         "subheading": "A few quick answers before you begin. The full list is just a tap away.",
         "image": "shopify://shop_images/faq-image.jpg",
@@ -275,7 +277,8 @@
         "md_padding_bottom": 64,
         "padding_top": 48,
         "padding_bottom": 48
-      }
+      },
+      "disabled": true
     },
     "cta_banner_HAWR4j": {
       "type": "cta-banner",
