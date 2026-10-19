@@ -2293,12 +2293,14 @@ html.has-buy-bar body [class*="kl-teaser-"] {
 
 /* ── Large monitors ──
    One section per screen stops making sense on a 27" or 32" display: a
-   section stretched to 1,900px tall is mostly empty space. Above this size
+   section stretched to 1,900px tall is mostly empty space. This also covers
+   a browser taking half of a large monitor (about 1,300px wide and tall).
+   Tablets stay out: an iPad Pro in portrait is 1,024px wide. Above this size
    the "screen" every section fills is capped at 1,000px, so sections take
    their natural height (roughly a laptop screen's worth) and the next one
    shows below, as on most large-screen storefronts. Phones, tablets and
    laptops are untouched. */
-@media only screen and (min-width: 1400px) and (min-height: 1100px) {
+@media only screen and (min-width: 1100px) and (min-height: 1100px) {
   :root {
     /* still caps photos, videos and sliders so they don't balloon */
     --screen-fit: min(calc(100svh - var(--header-height, 0px)), 1000px);
