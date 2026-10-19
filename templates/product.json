@@ -150,7 +150,7 @@
           "type": "collapsible_tab",
           "settings": {
             "title": "What's in the box",
-            "content": "<ul><li>20-inch interlocking loom</li><li>Pre-cut thread and spool holder</li><li>Precision threading wand</li><li>Numbered paper guide</li><li>Wooden phone stand</li><li>Convertible box easel</li><li>App access for personalized guides, no subscription</li></ul>",
+            "content": "<ul><li>20-inch interlocking loom</li><li>Pre-cut thread and spool holder</li><li>Threading wand</li><li>Numbered paper guide</li><li>Wooden phone stand</li><li>A box that turns into your easel</li><li>App access for personalized guides, no subscription</li></ul>",
             "page": "",
             "open_as_drawer": false,
             "icon": "icon-caret__right",
@@ -183,7 +183,7 @@
           "type": "collapsible_tab",
           "settings": {
             "title": "Specs",
-            "content": "<p><strong>Loom</strong></p><ul><li>Diameter: 20\"</li><li>Patent-pending loom design</li><li>Interlocking modular pieces</li><li>Tool-free</li><li>Easel- or wall-mounted</li></ul><p><strong>Thread</strong></p><ul><li>Pre-cut thread set</li><li>Integrated spool holder included</li></ul><p><strong>Tools included</strong></p><ul><li>Precision threading wand</li><li>Numbered paper guide</li><li>Wooden phone stand</li></ul><p><strong>Packaging</strong></p><ul><li>Mailbox-sized box converts to easel work surface</li><li>No additional stand required</li></ul><p><strong>App</strong></p><ul><li>iOS and Android</li><li>Cost: Free (included with kit)</li><li>Features: photo upload, real-time voice-guided session, adjustable pacing, design preview</li><li>U.S. Patent 12,423,349</li></ul><p><strong>Project duration</strong></p><ul><li>Estimated completion: 5–8 hours depending on design complexity</li><li>Session flexibility: pause and resume — the app saves your progress</li></ul>",
+            "content": "<p><strong>Loom</strong></p><ul><li>Diameter: 20\"</li><li>Patented loom design, U.S. Patent 12,423,349</li><li>Interlocking modular pieces</li><li>Tool-free</li><li>Easel- or wall-mounted</li></ul><p><strong>Thread</strong></p><ul><li>Pre-cut thread set</li><li>Integrated spool holder included</li></ul><p><strong>Tools included</strong></p><ul><li>Precision threading wand</li><li>Numbered paper guide</li><li>Wooden phone stand</li></ul><p><strong>Packaging</strong></p><ul><li>Mailbox-sized box converts to easel work surface</li><li>No additional stand required</li></ul><p><strong>App</strong></p><ul><li>iOS and Android</li><li>Cost: Free (included with kit)</li><li>Features: photo upload, real-time voice-guided session, adjustable pacing, design preview</li><li>U.S. Patent 12,423,349</li></ul><p><strong>Project duration</strong></p><ul><li>Estimated completion: 5–8 hours depending on design complexity</li><li>Session flexibility: pause and resume — the app saves your progress</li></ul>",
             "page": "",
             "open_as_drawer": false,
             "icon": "icon-caret__right",
@@ -497,14 +497,14 @@
         "image": "shopify://shop_images/everything-you-need.jpg",
         "image_position": "left",
         "heading": "Everything you need, in one box",
-        "intro": "Open the box and you're ready to start. Nothing to source, nothing missing — every tool you'll need is already inside.",
+        "intro": "Open the box and you are ready to start. Nothing to source, nothing missing.",
         "bullet_1": "20-inch interlocking loom",
         "bullet_2": "Pre-cut thread & spool holder",
-        "bullet_3": "Precision threading tool",
+        "bullet_3": "Threading wand",
         "bullet_4": "Numbered paper guide",
         "bullet_5": "Wooden phone stand",
-        "bullet_6": "Convertible box easel",
-        "bullet_7": "App access for personalized guides",
+        "bullet_6": "A box that turns into your easel",
+        "bullet_7": "App access, no subscription",
         "bullet_8": "",
         "bullet_9": "",
         "bullet_10": "",
@@ -756,7 +756,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How long does it take to make?",
-            "answer": "<p>Most pieces take 6 hours, but can be finished in 5 or take 8, depending on detail. Plenty of makers spread that across a few evenings. The app saves your place - it's ready whenever you are. You deserve moments of calm, take as many as often as you'd like.</p>"
+            "answer": "<p>Most pieces take 5 to 8 hours, depending on detail. Plenty of makers spread that across a few evenings. The app saves your place, so it's ready whenever you are.</p>"
           }
         },
         "faq_item_fThdwz": {
@@ -793,7 +793,7 @@
       "name": "CTA Banner",
       "settings": {
         "style": "cobalt",
-        "heading": "Create your Threaditate",
+        "heading": "Your photo, in thread, made by you.",
         "subheading": "A meaningful photo, a guided evening or three, and a piece on your wall that you made.",
         "button_label": "Get my kit",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",

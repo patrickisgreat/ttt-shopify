@@ -2290,3 +2290,18 @@ html.has-buy-bar body [class*="kl-teaser-"] {
   .pt { padding-top: min(var(--pt), 4svh) !important }
   .pb { padding-bottom: min(var(--pb), 4svh) !important }
 }
+
+/* ── Large monitors ──
+   One section per screen stops making sense on a 27" or 32" display: a
+   section stretched to 1,900px tall is mostly empty space. Above this size
+   the "screen" every section fills is capped at 1,000px, so sections take
+   their natural height (roughly a laptop screen's worth) and the next one
+   shows below, as on most large-screen storefronts. Phones, tablets and
+   laptops are untouched. */
+@media only screen and (min-width: 1400px) and (min-height: 1100px) {
+  :root {
+    --screen-fit: min(calc(100svh - var(--header-height, 0px)), 1000px);
+  }
+  .sm-pt { padding-top: min(var(--sm-pt), 80px) !important }
+  .sm-pb { padding-bottom: min(var(--sm-pb), 80px) !important }
+}

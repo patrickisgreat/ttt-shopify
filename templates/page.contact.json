@@ -102,48 +102,48 @@
     "faq_with_image_Frazwi": {
       "type": "faq-with-image",
       "blocks": {
-        "faq_item_kwyQVn": {
+        "faq_item_Thbefr": {
           "type": "faq_item",
           "settings": {
             "question": "Will my photo actually turn out good?",
-            "answer": "<p>Yes, as long as your photo is clear and the subject stands out, you’ll get a strong result. Faces, pets, and simple compositions work best.</p>"
+            "answer": "<p>Yes - a clear photo with a close-up subject in good contrast makes a strong piece. Faces, pets, and simple compositions work beautifully.</p>"
           }
         },
-        "faq_item_g4fKTt": {
+        "faq_item_jPDegj": {
           "type": "faq_item",
           "settings": {
             "question": "How does this actually work?",
-            "answer": "<p>Upload your photo, and we turn it into a custom string pattern. You’ll get a kit with everything you need, just follow the guide and connect the thread to bring your image to life.</p>"
+            "answer": "<p>Upload a photo and the app turns it into a numbered sequence. It speaks aloud and shows each step, then flows to the next at whatever pace you set - line by line until you're done. You can tap to advance, or autoplay.</p>"
           }
         },
-        "faq_item_FtzWVk": {
+        "faq_item_3wGpVc": {
           "type": "faq_item",
           "settings": {
-            "question": "Be honest…is Threaditate hard?",
-            "answer": "<p>Not really. It might look intimidating at first, but it’s designed for beginners. If you can follow a step-by-step guide, you can definitely do this, most people get the hang of it pretty quickly.</p>"
+            "question": "Be honest… is Threaditate hard?",
+            "answer": "<p>No, it's easy. If you can count to 240, you can Threaditate. The app accounts for everything else.</p>"
           }
         },
-        "faq_item_w8AKYB": {
+        "faq_item_3eyjFJ": {
           "type": "faq_item",
           "settings": {
             "question": "How long does it take to make?",
-            "answer": "<p>Most pieces take around 4–8 hours, depending on size and detail. Some people finish it in one sitting, others spread it out over a few nights.</p>"
+            "answer": "<p>Most pieces take 5 to 8 hours, depending on detail. Plenty of makers spread that across a few evenings. The app saves your place, so it's ready whenever you are.</p>"
           }
         },
-        "faq_item_MqCbY4": {
+        "faq_item_fThdwz": {
           "type": "faq_item",
           "settings": {
             "question": "What exactly do I get?",
-            "answer": "<p>Everything you need: a pre-nailed board, thread, your custom pattern, and the tools to complete it. No extra trips to the store required.</p>"
+            "answer": "<p>The loom, thread, spool holder, precision wand, numbered paper guide, wooden phone stand, mounting accessories, the easel-box, and app access - no subscription ever.</p>"
           }
         }
       },
       "block_order": [
-        "faq_item_kwyQVn",
-        "faq_item_g4fKTt",
-        "faq_item_FtzWVk",
-        "faq_item_w8AKYB",
-        "faq_item_MqCbY4"
+        "faq_item_Thbefr",
+        "faq_item_jPDegj",
+        "faq_item_3wGpVc",
+        "faq_item_3eyjFJ",
+        "faq_item_fThdwz"
       ],
       "name": "FAQ with Image",
       "settings": {
@@ -167,7 +167,7 @@
         "subheading": "Turn a meaningful photo into a piece of string art you'll actually want to keep. The app guides every step — no experience needed.",
         "button_label": "Get my kit",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
-        "caption": "No experience needed. Everything included. Ships fast.",
+        "caption": "No experience needed. Everything included. Ships in 1 business day.",
         "md_padding_top": 120,
         "md_padding_bottom": 120,
         "padding_top": 80,
