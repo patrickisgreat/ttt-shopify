@@ -443,7 +443,7 @@
       "name": "Features Grid",
       "settings": {
         "color_scheme": "scheme-d41b7294-aad9-4454-94d4-1e261262bb1f",
-        "heading": "Built to relax. Designed to finish and display.",
+        "heading": "Six reasons people actually finish this one",
         "subheading": "",
         "md_padding_top": 80,
         "md_padding_bottom": 80,
@@ -458,7 +458,7 @@
           "type": "step",
           "settings": {
             "image": "shopify://shop_images/Untitled_design.gif",
-            "title": "1. Upload your photo",
+            "title": "2. Upload your photo",
             "description": "A person, a pet, a pattern. Your personalized guide is ready in seconds."
           }
         },
@@ -466,7 +466,7 @@
           "type": "step",
           "settings": {
             "image": "shopify://shop_images/setp-1.jpg",
-            "title": "2. Mount your loom",
+            "title": "1. Mount your loom",
             "description": "Snap the pieces together. Place thread in the spool holder. Attach number guide. Tie on. Go."
           }
         },
@@ -673,7 +673,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How long does it take to make?",
-            "answer": "<p>Most pieces take 6 hours, but can be finished in 5 or take 8, depending on detail. Plenty of makers spread that across a few evenings. The app saves your place - it's ready whenever you are. You deserve moments of calm, take as many as often as you'd like.</p>"
+            "answer": "<p>Most pieces take 5 to 8 hours, depending on detail. Plenty of makers spread that across a few evenings. The app saves your place, so it's ready whenever you are.</p>"
           }
         },
         "faq_item_fThdwz": {

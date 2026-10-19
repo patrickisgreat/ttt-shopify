@@ -115,7 +115,7 @@
           "type": "step",
           "settings": {
             "image": "shopify://shop_images/calming-image.jpg",
-            "title": "For 45 minutes, nothing else gets in",
+            "title": "While you thread, nothing else gets in",
             "description": "Your hands move. Your mind goes quiet. You come out the other side with something you made."
           }
         }
@@ -129,7 +129,7 @@
       "name": "How It Works",
       "settings": {
         "color_scheme": "",
-        "heading": "Designed for the way people actually create",
+        "heading": "What makes people finish this one",
         "subheading": "Upload a photo. Follow the app. Walk away with something you made.",
         "button_label": "Get my kit",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
@@ -144,7 +144,7 @@
       "type": "cta-banner",
       "name": "CTA Banner",
       "settings": {
-        "heading": "Create your Threaditate",
+        "heading": "Your photo, in thread, made by you.",
         "subheading": "Turn a meaningful photo into custom string art: guided, hands-on, and designed to be finished.",
         "button_label": "Get my kit",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",
@@ -158,35 +158,35 @@
     "faq_with_image_GcpAJR": {
       "type": "faq-with-image",
       "blocks": {
-        "faq_item_FL3eBG": {
+        "faq_item_Thbefr": {
           "type": "faq_item",
           "settings": {
             "question": "Will my photo actually turn out good?",
             "answer": "<p>Yes - a clear photo with a close-up subject in good contrast makes a strong piece. Faces, pets, and simple compositions work beautifully.</p>"
           }
         },
-        "faq_item_wxXUYV": {
+        "faq_item_jPDegj": {
           "type": "faq_item",
           "settings": {
             "question": "How does this actually work?",
             "answer": "<p>Upload a photo and the app turns it into a numbered sequence. It speaks aloud and shows each step, then flows to the next at whatever pace you set - line by line until you're done. You can tap to advance, or autoplay.</p>"
           }
         },
-        "faq_item_gwa6eK": {
+        "faq_item_3wGpVc": {
           "type": "faq_item",
           "settings": {
             "question": "Be honest… is Threaditate hard?",
             "answer": "<p>No, it's easy. If you can count to 240, you can Threaditate. The app accounts for everything else.</p>"
           }
         },
-        "faq_item_CCBHGf": {
+        "faq_item_3eyjFJ": {
           "type": "faq_item",
           "settings": {
             "question": "How long does it take to make?",
-            "answer": "<p>Most pieces take 6 hours, but can be finished in 5 or take 8, depending on detail. Plenty of makers spread that across a few evenings. The app saves your place - it's ready whenever you are. You deserve moments of calm, take as many as often as you'd like.</p>"
+            "answer": "<p>Most pieces take 5 to 8 hours, depending on detail. Plenty of makers spread that across a few evenings. The app saves your place, so it's ready whenever you are.</p>"
           }
         },
-        "faq_item_fF8WnA": {
+        "faq_item_fThdwz": {
           "type": "faq_item",
           "settings": {
             "question": "What exactly do I get?",
@@ -195,11 +195,11 @@
         }
       },
       "block_order": [
-        "faq_item_FL3eBG",
-        "faq_item_wxXUYV",
-        "faq_item_gwa6eK",
-        "faq_item_CCBHGf",
-        "faq_item_fF8WnA"
+        "faq_item_Thbefr",
+        "faq_item_jPDegj",
+        "faq_item_3wGpVc",
+        "faq_item_3eyjFJ",
+        "faq_item_fThdwz"
       ],
       "name": "FAQ with Image",
       "settings": {
@@ -221,7 +221,7 @@
         "text_proof": {
           "type": "text",
           "settings": {
-            "text": "<p>“It's amazing. I go into a deep sense of calm and relaxation. It feels like nothing's going on outside in the world or in my mind, and thoughts clear up as I loop.” — Kendal, 35</p><p><strong>2,035 Kickstarter backers · 30-day guarantee · Ships in 48 hours</strong></p>",
+            "text": "<p>“It's amazing. I go into a deep sense of calm and relaxation. It feels like nothing's going on outside in the world or in my mind, and thoughts clear up as I loop.” — Kendal, 35</p><p><strong>3,000+ kits made · 30-day guarantee · Ships in 1 business day</strong></p>",
             "read_more": false,
             "sm_size_multiplier": "sm-size--default",
             "sm_margin_top": 0,

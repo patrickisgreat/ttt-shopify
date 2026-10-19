@@ -81,7 +81,7 @@
             "image": "shopify://shop_images/setp-1.jpg",
             "title": "Mount your loom",
             "description": "Snap the interlocking pieces together to form your loom.",
-            "tip": "We recommend mounting to a wall just below eye level for the best stability, ergonomics, and ease of use.  You may also or turn the box into an easel for a seated experience."
+            "tip": "We recommend mounting to a wall just below eye level for the best stability, ergonomics, and ease of use.  You can also turn the box into an easel for a seated experience."
           }
         },
         "step_xQfen7": {
@@ -108,7 +108,7 @@
             "image": "shopify://shop_images/step-4.jpg",
             "title": "Set your phone down and begin",
             "description": "The app speaks and shows the next step, then continues at your pace. It starts at 10-second intervals. Speed up as your skill improves, then slow it down a few clicks to switch from focus mode to relax mode.",
-            "tip": "Mistakes don't matter, they all disappear behind the other steps.  Line after line, this craft is forgiving.  No craftsmanship needed.  Stress is impossible."
+            "tip": "Mistakes don't matter, they all disappear behind the other steps.  Line after line, this craft is forgiving.  No craftsmanship needed. "
           }
         }
       },
@@ -231,7 +231,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How long does it take?",
-            "answer": "<p>Pieces take an average of six hours, it all depends on the line count. The app saves your place after every line, so you can take breaks and go at your own pace.</p>"
+            "answer": "<p>Most pieces take 5 to 8 hours, depending on the line count. The app saves your place after every line, so you can take breaks and go at your own pace.</p>"
           }
         },
         "faq_item_FBchyJ": {
@@ -285,7 +285,7 @@
       "name": "CTA Banner",
       "settings": {
         "style": "cobalt",
-        "heading": "Create your Threaditate",
+        "heading": "Your photo, in thread, made by you.",
         "subheading": "Turn a meaningful photo into custom string art: guided, calming, and designed to be finished.",
         "button_label": "Get my kit",
         "button_link": "shopify://products/string-ring-custom-string-art-kit",

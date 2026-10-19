@@ -37,7 +37,7 @@
           "type": "faq_item",
           "settings": {
             "question": "What is Threaditate?",
-            "answer": "<p>Threaditate is an art kit for turning a photo you love into string art by hand. You upload the photo to the app to convert it into a thread pattern, and you follow the spoken instructions line by line on a 20-inch loom until your picture appears over six hours. No experience needed. Everything you need to relax and create - the loom, the thread, and the app - ships in one box.</p>"
+            "answer": "<p>Threaditate is an art kit for turning a photo you love into string art by hand. You upload the photo to the app to convert it into a thread pattern, and you follow the spoken instructions line by line on a 20-inch loom until your picture appears, usually over 5 to 8 hours. No experience needed. Everything you need to relax and create - the loom, the thread, and the app - ships in one box.</p>"
           }
         },
         "q_any_photo": {
@@ -51,7 +51,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Do I need any experience?",
-            "answer": "<p>None. The app walks you through every step, one thread at a time, like an audio paint by number. There's nothing to figure out on your own. The first step is the same for everyone and the result always wows.</p>"
+            "answer": "<p>None. The app walks you through every step, one thread at a time, like an audio paint by number. There's nothing to figure out on your own. The first step is the same for everyone.</p>"
           }
         },
         "topic_the_kit": {
@@ -91,7 +91,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How long does it take?",
-            "answer": "<p>Most pieces take six to eight hours, depending on the line count- each 500 lines takes under an hour, and we recommend 3000-4000 lines. Pause whenever, you don't have to finish in one sitting. The app saves your place after every step, so you can take it easy at your own pace.</p>"
+            "answer": "<p>Most pieces take 5 to 8 hours, depending on the line count- each 500 lines takes under an hour, and we recommend 3000-4000 lines. Pause whenever, you don't have to finish in one sitting. The app saves your place after every step, so you can take it easy at your own pace.</p>"
           }
         },
         "q_lose_place": {
