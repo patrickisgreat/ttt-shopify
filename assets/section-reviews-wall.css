@@ -228,3 +228,22 @@
   .reviews-wall__product { margin: 6px -16px 0; padding: 8px 16px; font-size: 1.25rem; }
   .reviews-wall__product img { width: 32px; height: 32px; }
 }
+
+/* Header centred, heading at the same scale as every other section heading */
+.reviews-wall__header {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 14px;
+}
+.reviews-wall__summary { display: flex; flex-direction: column; align-items: center; }
+.reviews-wall__score { justify-content: center; }
+.reviews-wall .reviews-wall__heading {
+  margin: 0 0 10px;
+  font-size: 2.8rem;
+  line-height: var(--font-heading-line-height, 1.15);
+}
+@media only screen and (min-width: 768px) {
+  .reviews-wall .reviews-wall__heading { font-size: 3.6rem; }
+}
