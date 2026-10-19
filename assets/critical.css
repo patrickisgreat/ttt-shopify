@@ -2300,8 +2300,18 @@ html.has-buy-bar body [class*="kl-teaser-"] {
    laptops are untouched. */
 @media only screen and (min-width: 1400px) and (min-height: 1100px) {
   :root {
+    /* still caps photos, videos and sliders so they don't balloon */
     --screen-fit: min(calc(100svh - var(--header-height, 0px)), 1000px);
   }
-  .sm-pt { padding-top: min(var(--sm-pt), 80px) !important }
-  .sm-pb { padding-bottom: min(var(--sm-pb), 80px) !important }
+  /* Sections take their natural height: no minimum, so no dead space
+     above or below the content. */
+  .screen-fit,
+  .hero-dark.screen-fit,
+  .pdp-first-screen.screen-fit,
+  .split-image-content__grid {
+    min-height: 0 !important;
+  }
+  .sm-pt { padding-top: min(var(--sm-pt), 96px) !important }
+  .sm-pb { padding-bottom: min(var(--sm-pb), 96px) !important }
+  .hero-dark.screen-fit { padding-top: 96px !important; padding-bottom: 96px !important; }
 }
