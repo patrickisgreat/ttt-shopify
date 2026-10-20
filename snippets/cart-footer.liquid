@@ -11,10 +11,14 @@
         <span>{{ cart.original_total_price | money_with_currency }}</span>
       </div>
       {%- render 'cart-discounts', cart: cart -%}
+      {%- if settings.cart_reassurance != blank -%}
+        <p class="cart__reassurance">{{ settings.cart_reassurance | escape }}</p>
+      {%- endif -%}
     </div>
 
     <div class="cart-buttons">
-      <button class="btn btn--full {% if additional_checkout_buttons and settings.show_accelerated_checkout %}btn--secondary{% else %}btn--primary{% endif %} btn--full" type="submit" name="checkout">
+      {%- comment -%} Always the filled call-to-action button, above the express buttons. {%- endcomment -%}
+      <button class="btn btn--full btn--primary cart__checkout" type="submit" name="checkout">
         {{ 'sections.cart.checkout' | t }}
       </button>
 
