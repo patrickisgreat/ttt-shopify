@@ -1412,6 +1412,13 @@
         "info": "t:settings_schema.cart.settings.show_accelerated_checkout.info"
       },
       {
+        "type": "text",
+        "id": "cart_reassurance",
+        "label": "Reassurance line under the subtotal",
+        "default": "$5.95 flat US shipping · 30-day guarantee",
+        "info": "Shown in the cart drawer and on the cart page, so shipping and the guarantee are not a surprise at checkout."
+      },
+      {
         "type": "checkbox",
         "id": "show_cart_recommendations",
         "label": "t:settings_schema.cart.settings.show_cart_recommendations.label",

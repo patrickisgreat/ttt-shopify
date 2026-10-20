@@ -317,3 +317,15 @@ cart-items {
 drawer-cart [data-contents] {
   height: 100%;
 }
+
+/* Reassurance under the subtotal: shipping and guarantee before checkout */
+.cart__reassurance {
+  margin: 8px 0 0;
+  font-size: 1.35rem;
+  line-height: 1.4;
+  opacity: 0.8;
+}
+.cart__checkout {
+  min-height: 52px;
+  font-size: 1.7rem;
+}
